@@ -1,0 +1,20 @@
+# Obsidian local-only state — don't sync workspace UI between machines
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/plugins/*/data.json
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+*.swp
+
+# Temp / scratch artifacts
+_scratch/.tmp/
+*.tmp
+*.bak
