@@ -6,14 +6,16 @@ _Last updated: 2026-04-25_
 Bootstrapping this vault as a second brain and standing up the clawbot (cloud automation that feeds GitHub activity into `_clawbot/`).
 
 ## In progress
-- Vault scaffold (this commit).
-- Cloning openclaw locally as the foundation for clawbot.
+- Pushing vault to private `main-brain` repo (waiting on PAT permission or manual repo create).
+- Pushing clawbot worker code to private `clawbot` repo.
 
 ## Next
-- Decide on hosting for clawbot (GitHub Actions cron is the working assumption).
-- Push this vault to a private GitHub repo so the clawbot can write into it.
-- First clawbot job: daily digest of GitHub repos, commits, open PRs, open issues.
+- Wire `CLAWBOT_PAT` secret + `VAULT_REPO` variable on the clawbot repo (via gh CLI once installed).
+- First daily-digest run via `workflow_dispatch` to verify end-to-end.
+- Configure openclaw locally with a memory plugin pointed at this vault.
 
-## Open questions
-- Do we extend openclaw directly or build a slim `clawbot` repo that borrows its agent ideas?
-- Which GitHub account should the clawbot operate on? (PAT scope to confirm.)
+## Decided
+- Two artifacts joined by the vault git repo: cloud `clawbot` (GH Actions cron) + local openclaw (chat-side AI). See decisions.md 2026-04-25 entries.
+
+## GitHub account
+- `RUBIEM-DEVELOPERS-REPO` — 22 owned repos to be scanned by the digest.
