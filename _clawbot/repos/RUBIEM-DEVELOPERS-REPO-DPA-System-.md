@@ -4,9 +4,10 @@ _Snapshot: 2026-04-29_
 
 ### [RUBIEM-DEVELOPERS-REPO/DPA-System-](https://github.com/RUBIEM-DEVELOPERS-REPO/DPA-System-) *(private)*
 > this is a system the aligns organizations with the data protection act of zimbabwe 
-_Last pushed: 2026-04-24T10:42:01Z_
+_Last pushed: 2026-04-29T11:07:09Z_
 
-**Recent commits (4)**
+**Recent commits (5)**
+- `faed98b` feat: Add manual data uploads, Data Explorer UI, erasure requests, and cohesive demo mock data — RUBIEM-DEVELOPERS-REPO
 - `9095caf` feat: add CSV exports, dashboard filtering, DSAR data retrieval, and real-time polling — RUBIEM-DEVELOPERS-REPO
 - `3365467` security: helmet, rate limiting, registration lockdown, fix error leakage; remove node_modules from tracking — RUBIEM-DEVELOPERS-REPO
 - `06fb242` v1 — RUBIEM-DEVELOPERS-REPO
