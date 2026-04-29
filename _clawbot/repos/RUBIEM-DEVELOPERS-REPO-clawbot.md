@@ -4,9 +4,11 @@ _Snapshot: 2026-04-29_
 
 ### [RUBIEM-DEVELOPERS-REPO/clawbot](https://github.com/RUBIEM-DEVELOPERS-REPO/clawbot) *(private)*
 > Cloud-side worker that feeds GitHub activity into the main-brain Obsidian vault
-_Last pushed: 2026-04-28T15:21:53Z_
+_Last pushed: 2026-04-29T09:33:01Z_
 
-**Recent commits (7)**
+**Recent commits (9)**
+- `544ad28` fix(server): load .env from repo root, not server package dir — Arthur Magaya
+- `d8a2d8f` neuroworks: redesign + reliable task delegation pipeline — Arthur Magaya
 - `79f6cbe` neuroworks: auto-open browser + tolerant boot — Arthur Magaya
 - `77dd3a2` neuroworks: move ports to 7470/7471 to avoid local-server conflicts — Arthur Magaya
 - `f4567d8` feat: NeuroWorks local console (server + web) — Arthur Magaya
