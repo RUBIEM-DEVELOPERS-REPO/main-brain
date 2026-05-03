@@ -1,11 +1,12 @@
 # RUBIEM-DEVELOPERS-REPO/main-brain
 
-_Snapshot: 2026-05-02_
+_Snapshot: 2026-05-03_
 
 ### [RUBIEM-DEVELOPERS-REPO/main-brain](https://github.com/RUBIEM-DEVELOPERS-REPO/main-brain) *(private)*
-_Last pushed: 2026-05-01T08:27:32Z_
+_Last pushed: 2026-05-02T08:02:39Z_
 
-**Recent commits (13)**
+**Recent commits (9)**
+- `9121901` clawbot: digest 2026-05-02 — clawbot
 - `8701c88` clawbot: digest 2026-05-01 — clawbot
 - `aba0b17` clawbot: digest 2026-04-30 — clawbot
 - `5770585` clawbot: digest 2026-04-30 — clawbot
@@ -14,9 +15,4 @@ _Last pushed: 2026-05-01T08:27:32Z_
 - `f9f8d1e` clawbot: digest 2026-04-29 — clawbot
 - `1158e56` clawbot: digest 2026-04-28 — clawbot
 - `826b0ec` clawbot: digest 2026-04-27 — clawbot
-- `9b73344` clawbot: digest 2026-04-26 — clawbot
-- `0a9cc3f` session: bootstrap second brain + clawbot — Arthur Magaya
-- `8d67641` clawbot: digest 2026-04-25 — clawbot
-- `95caac1` vault: add architecture decisions, update active context — Arthur Magaya
-- `de6b78f` vault: bootstrap second brain scaffold — Arthur Magaya
 
