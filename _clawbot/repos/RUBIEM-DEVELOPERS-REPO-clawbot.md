@@ -1,12 +1,12 @@
 # RUBIEM-DEVELOPERS-REPO/clawbot
 
-_Snapshot: 2026-05-03_
+_Snapshot: 2026-05-04_
 
 ### [RUBIEM-DEVELOPERS-REPO/clawbot](https://github.com/RUBIEM-DEVELOPERS-REPO/clawbot) *(private)*
 > Cloud-side worker that feeds GitHub activity into the main-brain Obsidian vault
 _Last pushed: 2026-04-30T12:08:40Z_
 
-**Recent commits (11)**
+**Recent commits (10)**
 - `902ac54` chore: gitignore .neuroworks/ runtime state — Arthur Magaya
 - `d1fd94b` feat(neuroworks): general-task agent + primitives catalog + auto-template persistence — Arthur Magaya
 - `5c23aef` fix(neuroworks): robust chat→delegation routing + bounded vault push — Arthur Magaya
@@ -17,5 +17,4 @@ _Last pushed: 2026-04-30T12:08:40Z_
 - `79f6cbe` neuroworks: auto-open browser + tolerant boot — Arthur Magaya
 - `77dd3a2` neuroworks: move ports to 7470/7471 to avoid local-server conflicts — Arthur Magaya
 - `f4567d8` feat: NeuroWorks local console (server + web) — Arthur Magaya
-- `442d100` feat: write per-repo snapshot for every scanned repo, not just active ones — RUBIEM-DEVELOPERS-REPO
 
