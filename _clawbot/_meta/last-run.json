@@ -1,8 +1,8 @@
 {
-  "ranAt": "2026-05-13T07:06:29.391Z",
+  "ranAt": "2026-05-13T09:22:11.318Z",
   "reposScanned": 27,
-  "totalCommits": 37,
+  "totalCommits": 11,
   "totalPrs": 1,
   "totalIssues": 0,
-  "lookbackDays": 14
+  "lookbackDays": 7
 }

@@ -6,7 +6,4 @@ _Snapshot: 2026-05-13_
 > this is a system the aligns organizations with the data protection act of zimbabwe 
 _Last pushed: 2026-04-30T09:05:16Z_
 
-**Recent commits (2)**
-- `5095995` feat: integrate privacy risk control matrix features — RUBIEM-DEVELOPERS-REPO
-- `faed98b` feat: Add manual data uploads, Data Explorer UI, erasure requests, and cohesive demo mock data — RUBIEM-DEVELOPERS-REPO
-
+_No commits, PRs, or issues since 2026-05-06._
