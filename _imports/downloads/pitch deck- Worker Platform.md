@@ -1,0 +1,20 @@
+﻿---
+title: "pitch deck- Worker Platform"
+imported_from: "C:/Users/Arthur Magaya/Downloads/pitch deck- Worker Platform.pdf"
+imported_at: 2026-05-26T19:08:14.2538214+02:00
+created: 2026-05-26
+kind: pdf
+size_kb: 2542.1
+tags: [imported, downloads, bulk-import]
+---
+
+# pitch deck- Worker Platform
+
+Imported from `C:\Users\Arthur Magaya\Downloads\pitch deck- Worker Platform.pdf` on 2026-05-26. Original size 2542.1 KB.
+
+The full file is filed in your vault at [[_imports/downloads/pitch deck- Worker Platform.pdf]] — open it in Obsidian for the content.
+
+## Source provenance
+- Original path: `C:\Users\Arthur Magaya\Downloads\pitch deck- Worker Platform.pdf`
+- Imported by: bulk-import script (downloads)
+- Original preserved on the PC.

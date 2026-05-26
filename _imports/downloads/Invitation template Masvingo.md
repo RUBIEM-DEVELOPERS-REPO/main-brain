@@ -1,0 +1,20 @@
+﻿---
+title: "Invitation template Masvingo"
+imported_from: "C:/Users/Arthur Magaya/Downloads/Invitation template Masvingo.docx"
+imported_at: 2026-05-26T19:08:14.2538214+02:00
+created: 2026-05-26
+kind: docx
+size_kb: 35.5
+tags: [imported, downloads, bulk-import]
+---
+
+# Invitation template Masvingo
+
+Imported from `C:\Users\Arthur Magaya\Downloads\Invitation template Masvingo.docx` on 2026-05-26. Original size 35.5 KB.
+
+The full file is filed in your vault at [[_imports/downloads/Invitation template Masvingo.docx]] — open it in Obsidian for the content.
+
+## Source provenance
+- Original path: `C:\Users\Arthur Magaya\Downloads\Invitation template Masvingo.docx`
+- Imported by: bulk-import script (downloads)
+- Original preserved on the PC.

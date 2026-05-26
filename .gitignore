@@ -18,3 +18,23 @@ desktop.ini
 _scratch/.tmp/
 *.tmp
 *.bak
+
+# Bulk-imported binaries (Downloads + Documents → _imports/).
+# Keep the .md sidecars (frontmatter + extracted excerpt) in git so the
+# vault is searchable, but exclude the source binaries — they're 240+ MB
+# of PDFs/Office docs that bloat the pack history and don't need to live
+# on GitHub. Originals stay on disk at C:\Users\…\Downloads / Documents.
+_imports/**/*.pdf
+_imports/**/*.docx
+_imports/**/*.doc
+_imports/**/*.xlsx
+_imports/**/*.xls
+_imports/**/*.pptx
+_imports/**/*.ppt
+_imports/**/*.rtf
+_imports/**/*.odt
+_imports/**/*.ods
+_imports/**/*.odp
+
+# Office lockfiles (~$foo.docx) sometimes get swept in by bulk copies.
+~$*
