@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/downloads/Methodology.ppt]] â
 - Original path: `C:\Users\Arthur Magaya\Downloads\Methodology.ppt`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 49 chars, unsupported)
+
+(.ppt binary file â€” no text extractor configured)

@@ -18,3 +18,46 @@ The full file is filed in your vault at [[_imports/downloads/Invitation Mutapa I
 - Original path: `C:\Users\Arthur Magaya\Downloads\Invitation Mutapa Investiments Final.pdf`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 1 733 chars, pdf) — 1 page
+
+BoardMembers:DrDennisMagaya–Chairman(Zimbabwe),DrLickyErastus-DeputyChairman(Namibia),MrCleopas
+Chiketa-Deputy
+Chairman(Zimbabwe),MrRobertRusike–Treasurer(Zimbabwe),DrMartinManuhwa(Zimbabwe),MsPerpetuaChimeura
+(Zimbabwe),MrOabonaKgengwenyane(Botswana),MrEmmanuelMbewe(Zambia),MsRuthGorerokufa(Zimbabwe)
+ArtificialIntelligenceInstituteAfrica
+275HebertChitepoAve,Harare,Zimbabwe
++263786434988
+admin@aiinstituteafrica.com
+www.aiinstituteafrica.com
+13
+th
+May2026
+Attention:DrJ.Mangudya
+ChiefExecutiveOfficer
+MutapaInvestmentFund(MIF),
+49KewDrive,Highlands,
+Harare,Zimbabwe
+DearDr.J.Mangudya,
+REF:Invitation–AIforNationalTransformation:Zimbabwe2.0&AITechForumSummit
+WearepleasedtoinvitetheMutapaInvestmentFund(MIF)ChiefExecutiveOfficertoattendthe
+followingsummit:
+TheAITechForum2026willtakeplacefrom16–17June2026atMasvingoUrbanLifestyleHotel,
+underthetheme:
+“EngineeringtheFuture:MasteringNext-GenerationAISystemsinPracticeatScale.”
+ThiswillbefollowedbytheAIforNationalTransformation:Zimbabwe2.0Summit,scheduledfor
+17–18June2026,underthetheme:
+“LeveragingAIforInnovation,Policy,andInclusiveNationalDevelopment.”
+WefurtherinviteMutapaInvestmentFund(MIF)tosenddelegatestothesummit.
+HostedbytheArtificialIntelligenceInstituteAfrica(Aiia)inpartnershipwithMinistryofICTand
+Zimpapers,theSummitbringstogetherkeystakeholderstounpackimplementation.
+YourleadershipgreatlyenrichesconversationsthatshapeAIadoptiontodriveNDS2.
+Pleasefindattachedthepricingandsponsorshippackagesforyourconsideration.
+Forfurtherdetails,kindlycontact:
+AIInstituteAfrica:+263786434988
+MicaZinduru:+263772331156
+WesincerelyhopeyouwilljoinusinwhatpromisestobeadefiningmomentforAIadvancementin
+Zimbabwe.
+Yourssincerely,
+DrDennisMagaya
+Chairman–AIInstituteAfrica:+263717770666

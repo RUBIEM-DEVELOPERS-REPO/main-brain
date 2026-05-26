@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/downloads/NACZ presentation (
 - Original path: `C:\Users\Arthur Magaya\Downloads\NACZ presentation (1).pptx`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 50 chars, unsupported)
+
+(.pptx binary file — no text extractor configured)

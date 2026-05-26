@@ -18,3 +18,30 @@ The full file is filed in your vault at [[_imports/downloads/Mufaro-Holdings-Let
 - Original path: `C:\Users\Arthur Magaya\Downloads\Mufaro-Holdings-Letterhead.pdf`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 1 138 chars, pdf) — 1 page
+
+MUFAROHOLDINGS
+[75HerbertChitepoAvenue]
+[HarareZimbabwe]
+[12/01/2025]
+TO:RubiemIntelligence
+RE:ReferenceforAITrainingConductedon10November2025
+DearSir/Madam,
+WearepleasedtoprovidethisreferenceforRubiemIntelligencefollowingthesuccessful
+completionofanArtificialIntelligence(AI)trainingprogramdeliveredtoMufaroHoldingson
+10November2025.
+ThetrainingprovidedbyRubiemIntelligencewashighlyprofessional,well-structured,and
+tailoredtomeetourorganizationalneeds.Theirteamdemonstratedstrongtechnicalexpertise,
+clearcommunication,andanin-depthunderstandingofAIconceptsandpracticalapplications
+relevanttoouroperations.
+ParticipantsfromMufaroHoldingsbenefitedgreatlyfromthesession,gainingvaluableinsights
+intoAItools,implementationstrategies,andreal-worldusecases.Thetraininghascontributed
+positivelytoourteam'scapacitytoadoptandleverageAI-drivensolutionswithinourbusiness
+processes.
+WecommendRubiemIntelligencefortheircommitmenttoexcellenceandwouldconfidently
+recommendtheirservicestoanyorganizationseekinghigh-qualityAItrainingandadvisory
+support.
+Shouldyourequireanyfurtherinformation,pleasedonothesitatetocontactus.
+Yoursfaithfully,
+MufaroHoldings

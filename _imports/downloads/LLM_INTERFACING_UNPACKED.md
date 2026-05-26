@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/downloads/LLM_INTERFACING_UNP
 - Original path: `C:\Users\Arthur Magaya\Downloads\LLM_INTERFACING_UNPACKED.ppt`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 49 chars, unsupported)
+
+(.ppt binary file — no text extractor configured)

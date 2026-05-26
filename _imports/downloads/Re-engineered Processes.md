@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/downloads/Re-engineered Proce
 - Original path: `C:\Users\Arthur Magaya\Downloads\Re-engineered Processes.xlsx`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 106 chars, xlsx)
+
+(XLSX extraction failed: Cannot access file D:\Main brain\_imports\downloads\Re-engineered Processes.xlsx)

@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/downloads/Bill_Payment_Transa
 - Original path: `C:\Users\Arthur Magaya\Downloads\Bill_Payment_Transactions-2025-01-01-2026-03-01-13-MAR-2026.xlsx`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 142 chars, xlsx)
+
+(XLSX extraction failed: Cannot access file D:\Main brain\_imports\downloads\Bill_Payment_Transactions-2025-01-01-2026-03-01-13-MAR-2026.xlsx)

@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/downloads/student_leads clean
 - Original path: `C:\Users\Arthur Magaya\Downloads\student_leads clean.xlsx`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 102 chars, xlsx)
+
+(XLSX extraction failed: Cannot access file D:\Main brain\_imports\downloads\student_leads clean.xlsx)

@@ -18,3 +18,25 @@ The full file is filed in your vault at [[_imports/downloads/POP-MOBI260302D95AC
 - Original path: `C:\Users\Arthur Magaya\Downloads\POP-MOBI260302D95AC2.pdf`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 669 chars, pdf) — 1 page
+
+ZB Financial Holdings
+21 Natal Road, Avondale, Harare
+Phone: +263 8677 002 005/1
+Email: help@zb.co.zw
+WhatsApp: +263 772 442 685
+Payment Confirmation
+Thank you for your payment!
+Transaction Date:2026-03-02 15:22:00
+Payer Name:Rubiem Innovations Pvt Ltd
+Purpose:Hosting
+Reference Number:MOBI260302D95AC2
+Transaction Type:Rtgs Transfer
+Beneficiary Name:WEBDEV PVT LTD
+Destination Bank:CBZ
+Account Number:23000610067
+Transaction Amount:$15.75 USD
+This payment confirmation is a receipt by the Bank of a transfer request.The onus is on the
+beneficiary to confirm with their bankers that funds have been deposited before offering
+service. Thank you for choosing our service!

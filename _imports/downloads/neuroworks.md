@@ -18,3 +18,28 @@ The full file is filed in your vault at [[_imports/downloads/neuroworks.pdf]] �
 - Original path: `C:\Users\Arthur Magaya\Downloads\neuroworks.pdf`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 642 chars, pdf) — 1 page
+
+Employees can describe tasks using natural
+language, making interaction simple and intuitive
+for everyone involved. Or upload a job description
+that will frame the AI’s tasks 
+Natural Language Input or Job
+Description
+01
+The system efficiently translates requests into
+structured workflows, automating tasks across
+multiple systems to enhance productivity. The
+system converts business processes into AI
+workflows. 
+Process Automation
+02
+Built-in governance features ensure security and
+compliance, with approvals and audit trails
+maintaining organizational integrity throughout
+processes.
+Comprehensive Governance
+03
+NeuroWorks 
+AI workforce

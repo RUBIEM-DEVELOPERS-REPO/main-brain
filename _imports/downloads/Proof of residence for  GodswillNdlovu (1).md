@@ -18,3 +18,31 @@ The full file is filed in your vault at [[_imports/downloads/Proof of residence 
 - Original path: `C:\Users\Arthur Magaya\Downloads\Proof of residence for  GodswillNdlovu (1).pdf`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 516 chars, pdf) — 1 page
+
+Rubiem
+275HerbertChitepo
+Harare,Zimbabwe.
+Telephone:
+0719974292Email:
+rumbi@rubiem.com
+12February2026
+The
+Branch
+Manager
+POSD
+Bank
+Zimbabwe
+DearSir/Madam
+CONFIRMATIONOFEMPLOYMENTANDADDRESSGODSWILLS.NDLOVU
+WewritetoconfirmthatGodswillS.Ndlovu08-2106322B35isemployedona
+contracttimebasisbyAIInnovationConsultant.Hisdetailsareasfollows:
+GodswillNdlovu:IDnumber08-2106322B35
+ResidentialAddress:40JesmondRoad,Hatfield,Harare,
+Zimbabwe
+Yourassistanceinthisregardwillbegreatlyappreciated.
+.
+YoursSincerely,
+Dr.Dennis
+Magaya

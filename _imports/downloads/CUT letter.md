@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/downloads/CUT letter.doc]] â€
 - Original path: `C:\Users\Arthur Magaya\Downloads\CUT letter.doc`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 49 chars, unsupported)
+
+(.doc binary file â€” no text extractor configured)

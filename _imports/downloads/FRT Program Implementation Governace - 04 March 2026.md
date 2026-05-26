@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/downloads/FRT Program Impleme
 - Original path: `C:\Users\Arthur Magaya\Downloads\FRT Program Implementation Governace - 04 March 2026.ppt`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 49 chars, unsupported)
+
+(.ppt binary file — no text extractor configured)

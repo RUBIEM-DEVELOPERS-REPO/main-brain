@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/downloads/ADRS_MVP_Role_Assig
 - Original path: `C:\Users\Arthur Magaya\Downloads\ADRS_MVP_Role_Assigned_Detailed_Collab_Gantt_Feb18-Apr11_2026.xlsx`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 144 chars, xlsx)
+
+(XLSX extraction failed: Cannot access file D:\Main brain\_imports\downloads\ADRS_MVP_Role_Assigned_Detailed_Collab_Gantt_Feb18-Apr11_2026.xlsx)

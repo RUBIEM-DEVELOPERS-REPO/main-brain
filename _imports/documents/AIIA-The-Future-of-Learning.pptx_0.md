@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/documents/AIIA-The-Future-of-
 - Original path: `C:\Users\Arthur Magaya\Documents\AIIA-The-Future-of-Learning.pptx_0.odp`
 - Imported by: bulk-import script (documents)
 - Original preserved on the PC.
+
+## Excerpt (first 49 chars, unsupported)
+
+(.odp binary file — no text extractor configured)

@@ -18,3 +18,24 @@ The full file is filed in your vault at [[_imports/downloads/POP- (2).pdf]] — 
 - Original path: `C:\Users\Arthur Magaya\Downloads\POP- (2).pdf`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 626 chars, pdf) — 1 page
+
+ZB Bank
+21 Natal Road, Avondale, Harare
+Phone: +263 8677 002 005/1
+Email: help@zb.co.zw
+WhatsApp: +263 772 442 685
+Payment Confirmation
+Thank you for your payment!
+Transaction Date:2026-05-04 15:20:00
+Payer Name:Rubiem Financial Services Pvt Ltd
+Purpose:personal
+Transaction Type:Zipit
+Beneficiary Name:Andrew Teera
+Destination Bank:ECOCASH
+Account Number:+263779954927
+Transaction Amount:$150.00 USD
+This payment confirmation is a receipt by the Bank of a transfer request.The onus is on the
+beneficiary to confirm with their bankers that funds have been deposited before offering
+service. Thank you for choosing our service!

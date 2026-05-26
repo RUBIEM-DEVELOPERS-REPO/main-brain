@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/downloads/HEXCO_Accreditation
 - Original path: `C:\Users\Arthur Magaya\Downloads\HEXCO_Accreditation_Tracker.xlsx`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 110 chars, xlsx)
+
+(XLSX extraction failed: Cannot access file D:\Main brain\_imports\downloads\HEXCO_Accreditation_Tracker.xlsx)

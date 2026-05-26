@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/downloads/Corporate Account F
 - Original path: `C:\Users\Arthur Magaya\Downloads\Corporate Account Form.doc`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 49 chars, unsupported)
+
+(.doc binary file — no text extractor configured)

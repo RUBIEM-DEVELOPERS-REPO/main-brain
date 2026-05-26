@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/downloads/NeuroWorks 1 (1).pp
 - Original path: `C:\Users\Arthur Magaya\Downloads\NeuroWorks 1 (1).pptx`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 50 chars, unsupported)
+
+(.pptx binary file — no text extractor configured)

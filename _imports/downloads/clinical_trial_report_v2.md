@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/downloads/clinical_trial_repo
 - Original path: `C:\Users\Arthur Magaya\Downloads\clinical_trial_report_v2.pdf`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 59 chars, pdf)
+
+(PDF extraction failed: PDFDocument: stream must have data)

@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/documents/fv%20Rubiem_Innovat
 - Original path: `C:\Users\Arthur Magaya\Documents\fv%20Rubiem_Innovations_Tender_Cover_Letter%201.docx_0.odt`
 - Imported by: bulk-import script (documents)
 - Original preserved on the PC.
+
+## Excerpt (first 49 chars, unsupported)
+
+(.odt binary file — no text extractor configured)

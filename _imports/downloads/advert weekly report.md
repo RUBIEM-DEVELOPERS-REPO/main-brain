@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/downloads/advert weekly repor
 - Original path: `C:\Users\Arthur Magaya\Downloads\advert weekly report.pdf`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 132 chars, pdf) — 1 page
+
+With PDFmyURL you can easily save entire websites as PDF and use our API service to create PDFs automatically from webpages or HTML.

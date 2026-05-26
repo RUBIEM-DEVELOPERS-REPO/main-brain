@@ -18,3 +18,39 @@ The full file is filed in your vault at [[_imports/downloads/Invitation Letter t
 - Original path: `C:\Users\Arthur Magaya\Downloads\Invitation Letter to ZIMRA.pdf`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 1 601 chars, pdf) — 1 page
+
+BoardMembers:DrDennisMagaya–Chairman(Zimbabwe),DrLickyErastus-DeputyChairman(Namibia),MrCleopas
+Chiketa-Deputy
+Chairman(Zimbabwe),MrRobertRusike–Treasurer(Zimbabwe),DrMartinManuhwa(Zimbabwe),MsPerpetuaChimeura
+(Zimbabwe),MrOabonaKgengwenyane(Botswana),MrEmmanuelMbewe(Zambia),MsRuthGorerokufa(Zimbabwe)
+ArtificialIntelligenceInstituteAfrica
+275HebertChitepoAve,Harare,Zimbabwe
++263786434988
+admin@aiinstituteafrica.com
+www.aiinstituteafrica.com
+08May2026
+DearMsReginaChinamasa,
+REF:Invitation–AIforNationalTransformation:Zimbabwe2.0&AITechForumSummit
+WearepleasedtoinvitetheZimbabweRevenueAuthorityCommissionerGeneraltospeakat
+thefollowingsummit:
+TheAITechForum2026willtakeplacefrom16–17June2026atMasvingoUrbanLifestyle
+Hotel,underthetheme:
+“EngineeringtheFuture:MasteringNext-GenerationAISystemsinPracticeatScale.”
+ThiswillbefollowedbytheAIforNationalTransformation:Zimbabwe2.0Summit,scheduled
+for17–18June2026,underthetheme:
+“LeveragingAIforInnovation,Policy,andInclusiveNationalDevelopment.”
+WefurtherinviteZIMRAtosenddelegatestothesummit.
+HostedbytheArtificialIntelligenceInstituteAfrica(Aiia)inpartnershipwithMinistryofICTand
+Zimpapers,theSummitbringstogetherkeystakeholderstounpackimplementation.
+YourleadershipgreatlyenrichesconversationsthatshapeAIadoptiontodriveNDS2.
+Pleasefindattachedthepricingandsponsorshippackagesforyourconsideration.
+Forfurtherdetails,kindlycontact:
+AIInstituteAfrica:+263786434988
+MicaZinduru:+263772331156
+WesincerelyhopeyouwilljoinusinwhatpromisestobeadefiningmomentforAI
+advancementinZimbabwe.
+Yourssincerely,
+DrDennisMagaya
+Chairman–AIInstituteAfrica:+263717770666

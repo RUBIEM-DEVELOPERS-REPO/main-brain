@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/documents/AFC/Outgoing_RTGS_C
 - Original path: `C:\Users\Arthur Magaya\Documents\AFC\Outgoing_RTGS_Channels-2025-01-01-2026-03-01-13-MAR-2026.xlsx`
 - Imported by: bulk-import script (documents)
 - Original preserved on the PC.
+
+## Excerpt (first 143 chars, xlsx)
+
+(XLSX extraction failed: Cannot access file D:\Main brain\_imports\documents\AFC\Outgoing_RTGS_Channels-2025-01-01-2026-03-01-13-MAR-2026.xlsx)

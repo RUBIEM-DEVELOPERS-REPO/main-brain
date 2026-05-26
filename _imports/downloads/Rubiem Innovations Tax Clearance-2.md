@@ -18,3 +18,23 @@ The full file is filed in your vault at [[_imports/downloads/Rubiem Innovations 
 - Original path: `C:\Users\Arthur Magaya\Downloads\Rubiem Innovations Tax Clearance-2.pdf`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 611 chars, pdf) — 1 page
+
+Zimbabwe Revenue Authority
+TAX CLEARANCE CERTIFICATE (ITF263)
+Your Tax position is Satisfactory. No tax should be withheld
+Validity Period (from-to): 27 January 2025 - 27 July 2025
+TIN2000809141
+Taxpayer Name:
+RUBIEM INNOVATION
+S
+Trade Name:Rubiem Innovations
+Issued on:27/01/2025
+Authentication Code:47392692
+The authentication and validity of this certificate must be
+validated on ZIMRA page:mytaxselfservice.zimra.co.zw using
+the Authentication Code or QR Code
+ZIMRA reserves the right to withdraw this certificate at any
+time, should it become necessary during the period for which
+this certificate is valid

@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/downloads/AFC Process Improve
 - Original path: `C:\Users\Arthur Magaya\Downloads\AFC Process Improvement Project Benefits Calculation.xlsx`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 135 chars, xlsx)
+
+(XLSX extraction failed: Cannot access file D:\Main brain\_imports\downloads\AFC Process Improvement Project Benefits Calculation.xlsx)

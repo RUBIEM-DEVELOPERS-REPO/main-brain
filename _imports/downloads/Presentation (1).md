@@ -18,3 +18,7 @@ The full file is filed in your vault at [[_imports/downloads/Presentation (1).pp
 - Original path: `C:\Users\Arthur Magaya\Downloads\Presentation (1).ppt`
 - Imported by: bulk-import script (downloads)
 - Original preserved on the PC.
+
+## Excerpt (first 49 chars, unsupported)
+
+(.ppt binary file — no text extractor configured)
