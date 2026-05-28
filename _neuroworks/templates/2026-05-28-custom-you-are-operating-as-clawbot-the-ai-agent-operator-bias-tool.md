@@ -1,22 +1,46 @@
 ---
 type: template
-title: Default research plan for: Chat, give me a breakdown of the tasks done today (custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool)
+title: Research the day's completed tasks for the clawbot email bridge. (custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool)
 slug: custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool
-created: 2026-05-28T15:09:59.137Z
+created: 2026-05-28T15:10:49.374Z
 templateId: custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool
 role: Custom
-originTask: (You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)  Chat, give me a breakdown of the tasks done today
+originTask: (You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)  Re: clawbot email bridge — test  Chat, give me a breakdown of the tasks done today  **Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output: - Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items. - Named people, roles, accounts, vendors → reference each by name. - Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim. - Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section. - Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step. - Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.  If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.
 ---
 
-# Default research plan for: Chat, give me a breakdown of the tasks done today (custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool)
+# Research the day's completed tasks for the clawbot email bridge. (custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool)
 
 Saved from chat: "(You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)
 
-Chat, give me a breakdown of the tasks done today"
+Re: clawbot email bridge — test
+
+Chat, give me a breakdown of the tasks done today
+
+**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:
+- Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items.
+- Named people, roles, accounts, vendors → reference each by name.
+- Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim.
+- Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section.
+- Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step.
+- Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.
+
+If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently."
 
 **Origin task:** (You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)
 
+Re: clawbot email bridge — test
+
 Chat, give me a breakdown of the tasks done today
+
+**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:
+- Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items.
+- Named people, roles, accounts, vendors → reference each by name.
+- Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim.
+- Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section.
+- Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step.
+- Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.
+
+If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.
 
 ## Saved plan
 
@@ -26,19 +50,18 @@ Chat, give me a breakdown of the tasks done today
     {
       "tool": "research.deep",
       "args": {
-        "query": "Chat, give me a breakdown of the tasks done today",
-        "depth": 3,
+        "query": "clawbot email bridge tasks completed today",
+        "depth": 2,
         "capture": true
       },
-      "rationale": "default fallback: search vault + web, synthesise, capture findings to 0-Inbox/",
-      "label": "Researching \"Chat, give me a breakdown of the tasks done today\" — vault + web"
+      "label": "Researching \"clawbot email bridge tasks completed today\" — vault + web"
     },
     {
       "tool": "quality.check",
       "args": {
-        "task": "(You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nChat, give me a breakdown of the tasks done today",
-        "answer": "**How to see a “break‑down of the tasks you completed today”**\n\n1. **Open the Search bar** in Asana (top‑right).  \n2. Click **Advanced Search**.  \n3. Set the following filters:  \n\n   * **Assignee** – *Me* (or the person whose work you want to review)  \n   * **Completion Date** – *Today* (you can also pick “Yesterday” or a custom range)  \n\n4. Press **Search**.  \n5. When the results appear, click the **star** icon to **save** the search.  \n   *Saved searches act like a permanent view, so you can open it again without re‑creating the filter.*  \n\n6. (Optional) In the results list you can **sort** by **Completed On** to see the exact order you finished each task.  \n\n**Why this works**\n\n- The Asana forum confirms that the “completed‑today” view is still possible, but you must remove the default “incomplete‑only” filter and use an advanced search with a *completionDate = today* filter. Saving the search avoids having to rebuild it each day【1†L1-L8】.  \n\n**If you’re on the free plan**\n\n- The free tier does not include the “Saved Search” shortcut, but you can still run the same advanced search manually each day.  \n\n**Quick cheat‑sheet**\n\n| Step | Action | Result |\n|------|--------|--------|\n| 1 | Click search bar → *Advanced Search* | Opens filter dialog |\n| 2 | Set **Assignee = Me** | Limits to your tasks |\n| 3 | Set **Completion Date = Today** | Shows only tasks finished today |\n| 4 | Click **Search** | Displays the list |\n| 5 | (Free plan) Bookmark the URL or (paid) ★ to save | Easy repeat access |\n\nThat list is your “break‑down of the tasks done today.”",
-        "sources": "[1] research.deep (query=\"Chat, give me a breakdown of the tasks done today\")\n**How to see a “break‑down of the tasks you completed today”**\n\n1. **Open the Search bar** in Asana (top‑right).  \n2. Click **Advanced Search**.  \n3. Set the following filters:  \n\n   * **Assignee** – *Me* (or the person whose work you want to review)  \n   * **Completion Date** – *Today* (you can also pick “Yesterday” or a custom range)  \n\n4. Press **Search**.  \n5. When the results appear, click the **star** icon to **save** the search.  \n   *Saved searches act like a permanent view, so you can open it again without re‑creating the filter.*  \n\n6. (Optional) In the results list you can **sort** by **Completed On** to see the exact order you finished each task.  \n\n**Why this works**\n\n- The Asana forum confirms that the “completed‑today” view is still possible, but you must remove the default “incomplete‑only” filter and use an advanced search with a *completionDate = today* filter. Saving the search avoids having to rebuild it each day【1†L1-L8】.  \n\n**If you’re on the free plan**\n\n- The free tier does not include the “Saved Search” shortcut, but you can still run the same advanced search manually each day.  \n\n**Quick cheat‑sheet**\n\n| Step | Action | Result |\n|------|--------|--------|\n| 1 | Click search bar → *Advanced Search* | Opens filter dialog |\n| 2 | Set **Assignee = Me** | Limits to your tasks |\n| 3 | Set **Completion Date = Today** | Shows only tasks finished today |\n| 4 | Click **Search** | Displays the list |\n| 5 | (Free plan) Bookmark the URL or (paid) ★ to save | Easy"
+        "task": "(You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nRe: clawbot email bridge — test\n\nChat, give me a breakdown of the tasks done today\n\n**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:\n- Named counts (\"5 steps\", \"top 3 risks\", \"4-stage loop\", \"3 social variants\") → produce exactly that many items.\n- Named people, roles, accounts, vendors → reference each by name.\n- Specific dates, deadlines, scale numbers (\"by 2026-06-15\", \"1200 employees\", \"$99/mo\") → echo verbatim.\n- Named sections / deliverable shape (\"Title, Symptoms, Root cause, Resolution, Prevention\" or \"must-haves vs nice-to-haves\") → produce each named section.\n- Named steps in a process (\"paging on-call → scoping impact → status page → comms → escalation → post-mortem\") → cover every step.\n- Output format directives (\"numbered list\", \"table\", \"≤4 bullets\") → honour exactly.\n\nIf the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.",
+        "answer": "**Report – Tasks Completed Today (Clawbot Email Bridge)**  \n\nI could not locate any records or documentation indicating that any tasks related to the Clawbot email bridge were completed today. The available evidence only references work on cron‑job finalisation and testing, with no mention of the email bridge or specific daily completions.\n\n**What is Needed to Provide a Complete Report**\n\n1. **Access to the Clawbot task tracker** (e.g., JIRA, Asana, or internal Kanban board) for the current day.  \n2. **Logs or commit messages** that reference the email bridge module.  \n3. **Any automated status updates** (e.g., Slack messages, email summaries) that were generated today.  \n4. **Confirmation from the developer or team lead** who worked on the email bridge today.  \n\nOnce the above information is available, I can produce a detailed breakdown of the tasks completed, including dates, owners, and outcomes.",
+        "sources": "[1] research.deep (query=\"clawbot email bridge tasks completed today\")\nI’m sorry, but the available evidence does not contain any information about “clawbot email bridge tasks completed today.” The only relevant snippet mentions working on cron‑job finalisation and testing, with no reference to an email bridge or to tasks completed on a specific day. Consequently, I can’t provide a factual answer to that question based on the supplied sources."
       },
       "rationale": "auto-injected: score factuality, citation coverage, persona fit (evidence-aware)",
       "label": "Quality-checking the draft"
@@ -46,7 +69,7 @@ Chat, give me a breakdown of the tasks done today
     {
       "tool": "security.scan",
       "args": {
-        "content": "**How to see a “break‑down of the tasks you completed today”**\n\n1. **Open the Search bar** in Asana (top‑right).  \n2. Click **Advanced Search**.  \n3. Set the following filters:  \n\n   * **Assignee** – *Me* (or the person whose work you want to review)  \n   * **Completion Date** – *Today* (you can also pick “Yesterday” or a custom range)  \n\n4. Press **Search**.  \n5. When the results appear, click the **star** icon to **save** the search.  \n   *Saved searches act like a permanent view, so you can open it again without re‑creating the filter.*  \n\n6. (Optional) In the results list you can **sort** by **Completed On** to see the exact order you finished each task.  \n\n**Why this works**\n\n- The Asana forum confirms that the “completed‑today” view is still possible, but you must remove the default “incomplete‑only” filter and use an advanced search with a *completionDate = today* filter. Saving the search avoids having to rebuild it each day【1†L1-L8】.  \n\n**If you’re on the free plan**\n\n- The free tier does not include the “Saved Search” shortcut, but you can still run the same advanced search manually each day.  \n\n**Quick cheat‑sheet**\n\n| Step | Action | Result |\n|------|--------|--------|\n| 1 | Click search bar → *Advanced Search* | Opens filter dialog |\n| 2 | Set **Assignee = Me** | Limits to your tasks |\n| 3 | Set **Completion Date = Today** | Shows only tasks finished today |\n| 4 | Click **Search** | Displays the list |\n| 5 | (Free plan) Bookmark the URL or (paid) ★ to save | Easy repeat access |\n\nThat list is your “break‑down of the tasks done today.”",
+        "content": "**Report – Tasks Completed Today (Clawbot Email Bridge)**  \n\nI could not locate any records or documentation indicating that any tasks related to the Clawbot email bridge were completed today. The available evidence only references work on cron‑job finalisation and testing, with no mention of the email bridge or specific daily completions.\n\n**What is Needed to Provide a Complete Report**\n\n1. **Access to the Clawbot task tracker** (e.g., JIRA, Asana, or internal Kanban board) for the current day.  \n2. **Logs or commit messages** that reference the email bridge module.  \n3. **Any automated status updates** (e.g., Slack messages, email summaries) that were generated today.  \n4. **Confirmation from the developer or team lead** who worked on the email bridge today.  \n\nOnce the above information is available, I can produce a detailed breakdown of the tasks completed, including dates, owners, and outcomes.",
         "kind": "note"
       },
       "rationale": "auto-injected: scan answer for secrets, dodgy URLs",
@@ -55,14 +78,14 @@ Chat, give me a breakdown of the tasks done today
     {
       "tool": "peer.review",
       "args": {
-        "task": "(You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nChat, give me a breakdown of the tasks done today",
-        "answer": "**How to see a “break‑down of the tasks you completed today”**\n\n1. **Open the Search bar** in Asana (top‑right).  \n2. Click **Advanced Search**.  \n3. Set the following filters:  \n\n   * **Assignee** – *Me* (or the person whose work you want to review)  \n   * **Completion Date** – *Today* (you can also pick “Yesterday” or a custom range)  \n\n4. Press **Search**.  \n5. When the results appear, click the **star** icon to **save** the search.  \n   *Saved searches act like a permanent view, so you can open it again without re‑creating the filter.*  \n\n6. (Optional) In the results list you can **sort** by **Completed On** to see the exact order you finished each task.  \n\n**Why this works**\n\n- The Asana forum confirms that the “completed‑today” view is still possible, but you must remove the default “incomplete‑only” filter and use an advanced search with a *completionDate = today* filter. Saving the search avoids having to rebuild it each day【1†L1-L8】.  \n\n**If you’re on the free plan**\n\n- The free tier does not include the “Saved Search” shortcut, but you can still run the same advanced search manually each day.  \n\n**Quick cheat‑sheet**\n\n| Step | Action | Result |\n|------|--------|--------|\n| 1 | Click search bar → *Advanced Search* | Opens filter dialog |\n| 2 | Set **Assignee = Me** | Limits to your tasks |\n| 3 | Set **Completion Date = Today** | Shows only tasks finished today |\n| 4 | Click **Search** | Displays the list |\n| 5 | (Free plan) Bookmark the URL or (paid) ★ to save | Easy repeat access |\n\nThat list is your “break‑down of the tasks done today.”"
+        "task": "(You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nRe: clawbot email bridge — test\n\nChat, give me a breakdown of the tasks done today\n\n**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:\n- Named counts (\"5 steps\", \"top 3 risks\", \"4-stage loop\", \"3 social variants\") → produce exactly that many items.\n- Named people, roles, accounts, vendors → reference each by name.\n- Specific dates, deadlines, scale numbers (\"by 2026-06-15\", \"1200 employees\", \"$99/mo\") → echo verbatim.\n- Named sections / deliverable shape (\"Title, Symptoms, Root cause, Resolution, Prevention\" or \"must-haves vs nice-to-haves\") → produce each named section.\n- Named steps in a process (\"paging on-call → scoping impact → status page → comms → escalation → post-mortem\") → cover every step.\n- Output format directives (\"numbered list\", \"table\", \"≤4 bullets\") → honour exactly.\n\nIf the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.",
+        "answer": "**Report – Tasks Completed Today (Clawbot Email Bridge)**  \n\nI could not locate any records or documentation indicating that any tasks related to the Clawbot email bridge were completed today. The available evidence only references work on cron‑job finalisation and testing, with no mention of the email bridge or specific daily completions.\n\n**What is Needed to Provide a Complete Report**\n\n1. **Access to the Clawbot task tracker** (e.g., JIRA, Asana, or internal Kanban board) for the current day.  \n2. **Logs or commit messages** that reference the email bridge module.  \n3. **Any automated status updates** (e.g., Slack messages, email summaries) that were generated today.  \n4. **Confirmation from the developer or team lead** who worked on the email bridge today.  \n\nOnce the above information is available, I can produce a detailed breakdown of the tasks completed, including dates, owners, and outcomes."
       },
-      "rationale": "auto-injected: quality score=0.61 (pass=true) — peer review for a second opinion",
+      "rationale": "auto-injected: quality score=0.41 (pass=false) — peer review for a second opinion",
       "label": "Asking a peer to review the draft"
     }
   ],
-  "summary": "Default research plan for: Chat, give me a breakdown of the tasks done today",
+  "summary": "Research the day's completed tasks for the clawbot email bridge.",
   "waves": [
     [
       0
