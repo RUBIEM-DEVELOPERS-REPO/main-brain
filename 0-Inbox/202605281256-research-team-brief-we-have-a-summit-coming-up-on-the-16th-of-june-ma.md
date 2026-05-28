@@ -11,80 +11,67 @@ sources_dropped: 0
 # Research: Team brief:
 we have a summit coming up, on the 16th of june make me a action plan and client lead generation approach and a financial projection for the summit
 
-Your part as [Priya · Product Manager]:
-product owner
+Your part as [AIIA Marketing Specialist · Marketing Specialist at AI Institute Africa. Responsibilities: write social medi]:
+you handle the marketing
 
-**Alignment check — required before responding.** The user's request names concrete elements (counts, people, dates, scale numbers, named sections, named steps, deliverable shape). The
+**Alignment check — required before responding.** The user's request names concrete elem
 
-**Summit Action Plan – 16 June**  
-*Role: Priya – Product Owner (focus on outcomes, not hard dates)*  
+**Marketing Action Plan – AI Institute Africa Summit (16 June)**  
 
-| Phase | Owner | Key Activities (outcome‑focused) | Timeline |
-|-------|-------|-----------------------------------|----------|
-| **1. Vision & Scope (Now)** | Priya + Summit Lead | • Define summit purpose (e.g., “Generate 150 qualified pipeline leads and showcase 3 new product concepts”). <br>• Draft a **Now‑Next‑Later** roadmap rather than a fixed‑date feature list (see Teresa Torres on avoiding unrealistic date‑based expectations)【1】. <br>• Identify success metrics (lead count, NPS, conversion rate). | by 5 May |
-| **2. Resource & Dependency Planning (Next)** | Priya + Ops, Marketing, Sales | • List people, budget, tech (registration platform, streaming, analytics). <br>• Capture dependencies (speaker contracts, venue, CRM integration). <br>• Assign confidence levels and risk tags (high‑risk: speaker drop‑out, low‑risk: email invites). | by 19 May |
-| **3. Lead‑Generation Engine (Now‑Next)** | Marketing Lead | • Adopt the 2026 lead‑gen framework: **Owned‑media + Paid‑media + Partnerships** (the video outlines a modern funnel: content teasers → gated‑download → nurture)【2】. <br>• Build a pre‑summit funnel: <br>  ‑ LinkedIn carousel ads (target 30‑50 k prospects). <br>  ‑ Landing page with QR‑code for early‑bird badge (capture name, company, intent score). <br>  ‑ Automated nurture sequence (3 emails, 1 LinkedIn InMail). |
-| **4. Product Showcase Prep (Now‑Later)** | Priya + Design | • Finalise 3 product concepts to demo. <br>• Create short “teaser” videos (30 s) for social ads. <br>• Build a live‑poll/feedback widget to capture attendee interest (feeds directly into lead scoring). |
-| **5. Execution & Live Ops (Later)** | Ops Lead | • Run a dry‑run 2 weeks before summit (test streaming, registration flow, lead capture). <br>• On‑day: real‑time dashboard (registrations, engagement, lead‑quality score). |
-| **6. Post‑Summit Review (Later)** | Priya | • Conduct a product‑review debrief (focus on outcomes, not feature checklist) – follow the “review debrief” best‑practice of asking “What did we achieve vs. our success metrics?”【3】. <br>• Export lead list, assign to sales owners, set follow‑up cadence. |
-
----
-
-### Lead‑Generation Approach (core tactics)
-
-| Funnel Stage | Tactic | Expected Yield |
-|--------------|--------|----------------|
-| **Awareness** | LinkedIn carousel + retargeting video ads (use teaser videos) | 30 % of target audience reach |
-| **Interest** | Free “Summit Playbook” gated PDF (promoted via email & ads) | 1 800 downloads → 1 200 qualified leads |
-| **Consideration** | Webinar‑style pre‑summit Q&A (30 min) | 500 registrants, 70 % conversion to summit sign‑up |
-| **Conversion** | On‑site live demo + instant‑quote form (integrated with CRM) | 150 high‑intent leads (target) |
-| **Nurture** | 3‑step post‑summit email series + LinkedIn follow‑up | 40 % pipeline progression within 30 days |
-
-*Key principle*: Align every tactic with a measurable outcome (lead count, intent score) rather than a vague “run a campaign” task【1】.
+| Timeline | Key Activity | What you’ll do | Why it matters (evidence) |
+|----------|--------------|----------------|---------------------------|
+| **T‑30 days (mid‑May)** | **Define Ideal Customer Profile (ICP)** | List job‑titles, company size, industry and geography of the attendees you want to attract (e.g., CEOs of African fintechs, CTOs of health‑tech startups, investors in AI). | The AI‑lead‑gen machine starts with a clear ICP before any outreach can be automated [1]. |
+| **T‑28 days** | **Build the AI‑powered lead‑gen pipeline** | Using the no‑code stack described (n8n + Airtable + Google Gemini), set up three automations: 1️⃣ scrape LinkedIn/Google for unlimited leads that match the ICP; 2️⃣ enrich each lead with contact details, company info and verified work email; 3️⃣ run the AI qualification score to keep only the highest‑fit prospects. | The workflow described sources “UNLIMITED leads”, enriches them with full contact data, and scores them against the ICP [1]. |
+| **T‑21 days** | **Cold‑outreach sequencing** | Export the qualified list to an email‑automation tool (e.g., Mailshake or Lemlist). Create a 4‑step sequence: 1) invitation with summit value‑prop, 2) reminder + speaker highlights, 3) early‑bird discount deadline, 4) “last chance” call‑to‑action. | Automated outreach saves manual effort and focuses on “most qualified prospects” [1]. |
+| **T‑14 days** | **Social‑media amplification** | – Publish a teaser carousel on LinkedIn/Twitter using speaker quotes and AI‑industry stats. <br>– Run a paid LinkedIn Sponsored Content campaign targeting the same ICP (job‑title, industry, location). <br>– Use retargeting pixels on the summit landing page to serve reminder ads. | Social posts and LinkedIn ads reach the same professional audience the lead‑gen engine is pulling, reinforcing brand recall. |
+| **T‑10 days** | **Webinar‑style pre‑summit** | Host a 30‑minute live “AI in Africa 2026” preview with two keynote speakers. Capture registrants through the same Airtable form; feed them back into the lead‑gen pipeline for follow‑up. | Live previews increase conversion rates and give you fresh, engaged leads to nurture. |
+| **T‑5 days** | **Final push & scarcity** | Send a “Only 2 days left for early‑bird tickets” email + LinkedIn InMail to the top‑scoring leads. Highlight limited seating and any exclusive networking perks. | Scarcity drives urgency; the AI‑scored list ensures you target those most likely to buy. |
+| **Day 0 (16 June)** | **Live‑event coverage** | Assign a social‑media “live‑tweet” team, post real‑time Instagram Stories, and stream key sessions on YouTube. Encourage attendees to use a branded hashtag. | Real‑time content extends reach beyond physical attendees and creates post‑event assets. |
+| **Post‑event (T + 7 days)** | **Nurture & upsell** | Email attendees a thank‑you note, link to session recordings, and a “next‑step” offer (e.g., AI‑consulting package, 2027 summit early‑bird). Add new contacts to the CRM for future campaigns. | Keeps the momentum and turns summit attendees into long‑term clients. |
 
 ---
 
-### Financial Projection (high‑level)
+### Client Lead‑Generation Approach (AI‑driven)
 
-| Item | Cost (USD) | Rationale |
-|------|------------|-----------|
-| **Venue / Streaming platform** | 12,000 | Hybrid physical‑virtual setup |
-| **Marketing spend** (LinkedIn ads, content production) | 18,000 | 60 % of budget for paid acquisition (per 2026 lead‑gen trends)【2】 |
-| **Creative assets** (videos, PDFs, landing page) | 5,000 | Production of 3 product teasers + playbook |
-| **CRM & Lead‑scoring tools** | 3,000 | Integration with registration flow |
-| **Speaker fees / Travel** | 7,000 | 3 industry thought‑leaders |
-| **Ops & Staff (incl. debrief) ** | 4,000 | Coordination, dry‑run, on‑day support |
-| **Contingency (10 %)** | 4,900 | Covers last‑minute changes |
-| **Total** | **53,900** |  |
+1. **ICP Definition** – as above.  
+2. **Automated sourcing** – n8n workflow scrapes LinkedIn/Google for unlimited matches.  
+3. **Enrichment** – Airtable stores full name, email, phone, company size, website, LinkedIn metrics.  
+4. **AI Qualification** – Google Gemini model scores each prospect (0‑10) against the ICP; keep only scores ≥ 8.  
+5. **Segmentation** – Split qualified leads into “high‑value (C‑suite)”, “mid‑level”, and “investor” buckets for tailored messaging.  
+6. **Outreach** – Multi‑channel (email + LinkedIn InMail) sequence with personalized variables pulled from the enriched data.  
+7. **Tracking** – Use UTM parameters and Airtable status fields (scraping → enriched → qualified → contacted → converted).  
 
-**Revenue / ROI assumptions**
-
-| Metric | Assumption |
-|--------|------------|
-| Qualified leads generated | 150 |
-| Avg. pipeline value per lead | $12,000 |
-| Expected conversion to closed‑won (20 %) | 30 deals |
-| Forecasted revenue | **$360,000** |
-| **Projected ROI** ≈ **6.7 ×** investment |
-
-*Note*: The financial model is a rough estimate; refine once ad‑spend caps and speaker fees are locked.
+The entire pipeline requires **zero coding** and can be replicated for future events [1].
 
 ---
 
-### Quick‑Start Checklist (by 5 May)
+### Rough Financial Projection (Summit)
 
-- ☐ Draft summit purpose & success metrics (Now‑Next‑Later)【1】  
-- ☐ Approve budget & allocate $53.9k  
-- ☐ Secure 3 product concepts & speaker commitments  
-- ☐ Build landing page & gated playbook (marketing lead)  
-- ☐ Set up CRM lead‑scoring workflow  
+| Item | Assumptions (based on typical AI‑summit pricing) | Estimated Cost | Estimated Revenue |
+|------|--------------------------------------------------|----------------|-------------------|
+| Venue & logistics | 200 attendees × $150 per seat (space, AV, catering) | $30,000 | — |
+| Marketing automation (n8n + Airtable) | SaaS licences $50/mo × 2 months | $100 | — |
+| Paid LinkedIn ads | $2,000 total spend, CPL ≈ $20 | $2,000 | — |
+| Speaker fees / travel | 5 speakers × $2,000 each | $10,000 | — |
+| Production (live‑stream, video) | $3,000 | $3,000 | — |
+| **Total Cost** | — | **$45,100** | — |
+| Ticket price | Early‑bird $250, regular $300 (average $275) | — | 200 × $275 = **$55,000** |
+| Post‑event upsell (consulting package) | 5% conversion × $2,500 avg | — | **$6,250** |
+| **Projected Net** | — | — | **$16,150** profit |
 
-Follow the phased timeline above, keep the focus on **outcomes** (lead count, conversion quality) rather than fixed feature dates, and use the post‑summit debrief to close the loop on performance【3】.
+*These figures are illustrative; exact numbers will depend on actual venue quotes, speaker agreements and conversion rates.*  
+
+---
+
+**Bottom line:**  
+- Build the AI‑lead‑gen pipeline first (ICP → scrape → enrich → qualify).  
+- Run a tightly timed, multi‑channel outreach and social‑media plan that leverages the qualified list.  
+- Use the cost‑revenue sketch above to set ticket pricing and target a modest profit while generating a pipeline of high‑value AI clients for AI Institute Africa.
 
 ## Web sources
-1. [&quot;Asking product teams to deliver specific features by specific dates is like asking a sales rep to close a specific deal on a specific date or a marketing team to get a set number of leads from a… | Teresa Torres](https://www.linkedin.com/posts/teresatorres_asking-product-teams-to-deliver-specific-activity-7283546755311251456--YjN) _(relevance 25, http)_
-2. [The Lead Generation Strategy You Need to Implement in 2026](https://www.youtube.com/watch?v=GL7a9Oa37ZI) _(relevance 10, http)_
-3. [How to run product review debrief meetings - YouTube](https://www.youtube.com/watch?v=-5KtNpIFsSQ) _(relevance 10, http)_
+1. [I built an AI-powered lead generation machine that will transform your business. and, I just released a step-by-step tutorial on Youtube showing you exactly how you can set this system up for… | Luke Clarke | 519 comments](https://www.linkedin.com/posts/luke-clarke-7629a9a3_i-built-an-ai-powered-lead-generation-machine-activity-7358179938799144961-DtvG) _(relevance 25, http)_
+2. [AI in Action Summit](https://www.youtube.com/watch?v=EJcWQfhEHAc) _(relevance 15, http)_
+3. [How to Start a AI Lead Generation Agency (2026)](https://www.youtube.com/watch?v=17IN88G0dOo) _(relevance 10, http)_
 
 ## Vault hits at time of research
 _(none)_
