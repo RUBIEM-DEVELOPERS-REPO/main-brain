@@ -1,46 +1,26 @@
 ---
 type: template
-title: Research the day's completed tasks for the clawbot email bridge. (custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool)
+title: Default research plan for: Give three concise tips for writing a clear project status update (custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool)
 slug: custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool
-created: 2026-05-28T15:10:49.374Z
+created: 2026-05-28T15:29:16.559Z
 templateId: custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool
 role: Custom
-originTask: (You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)  Re: clawbot email bridge — test  Chat, give me a breakdown of the tasks done today  **Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output: - Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items. - Named people, roles, accounts, vendors → reference each by name. - Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim. - Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section. - Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step. - Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.  If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.
+originTask: (You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)  Give three concise tips for writing a clear project status update.  Interpretation: intent=answer, tone=concise.
 ---
 
-# Research the day's completed tasks for the clawbot email bridge. (custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool)
+# Default research plan for: Give three concise tips for writing a clear project status update (custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool)
 
 Saved from chat: "(You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)
 
-Re: clawbot email bridge — test
+Give three concise tips for writing a clear project status update.
 
-Chat, give me a breakdown of the tasks done today
-
-**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:
-- Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items.
-- Named people, roles, accounts, vendors → reference each by name.
-- Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim.
-- Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section.
-- Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step.
-- Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.
-
-If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently."
+Interpretation: intent=answer, tone=concise."
 
 **Origin task:** (You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)
 
-Re: clawbot email bridge — test
+Give three concise tips for writing a clear project status update.
 
-Chat, give me a breakdown of the tasks done today
-
-**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:
-- Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items.
-- Named people, roles, accounts, vendors → reference each by name.
-- Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim.
-- Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section.
-- Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step.
-- Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.
-
-If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.
+Interpretation: intent=answer, tone=concise.
 
 ## Saved plan
 
@@ -50,18 +30,19 @@ If the user asked for N items, produce N items. If they named items A/B/C, the o
     {
       "tool": "research.deep",
       "args": {
-        "query": "clawbot email bridge tasks completed today",
-        "depth": 2,
+        "query": "Give three concise tips for writing a clear project status update",
+        "depth": 3,
         "capture": true
       },
-      "label": "Researching \"clawbot email bridge tasks completed today\" — vault + web"
+      "rationale": "default fallback: search vault + web, synthesise, capture findings to 0-Inbox/",
+      "label": "Researching \"Give three concise tips for writing a clear project status update\" — vault + web"
     },
     {
       "tool": "quality.check",
       "args": {
-        "task": "(You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nRe: clawbot email bridge — test\n\nChat, give me a breakdown of the tasks done today\n\n**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:\n- Named counts (\"5 steps\", \"top 3 risks\", \"4-stage loop\", \"3 social variants\") → produce exactly that many items.\n- Named people, roles, accounts, vendors → reference each by name.\n- Specific dates, deadlines, scale numbers (\"by 2026-06-15\", \"1200 employees\", \"$99/mo\") → echo verbatim.\n- Named sections / deliverable shape (\"Title, Symptoms, Root cause, Resolution, Prevention\" or \"must-haves vs nice-to-haves\") → produce each named section.\n- Named steps in a process (\"paging on-call → scoping impact → status page → comms → escalation → post-mortem\") → cover every step.\n- Output format directives (\"numbered list\", \"table\", \"≤4 bullets\") → honour exactly.\n\nIf the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.",
-        "answer": "**Report – Tasks Completed Today (Clawbot Email Bridge)**  \n\nI could not locate any records or documentation indicating that any tasks related to the Clawbot email bridge were completed today. The available evidence only references work on cron‑job finalisation and testing, with no mention of the email bridge or specific daily completions.\n\n**What is Needed to Provide a Complete Report**\n\n1. **Access to the Clawbot task tracker** (e.g., JIRA, Asana, or internal Kanban board) for the current day.  \n2. **Logs or commit messages** that reference the email bridge module.  \n3. **Any automated status updates** (e.g., Slack messages, email summaries) that were generated today.  \n4. **Confirmation from the developer or team lead** who worked on the email bridge today.  \n\nOnce the above information is available, I can produce a detailed breakdown of the tasks completed, including dates, owners, and outcomes.",
-        "sources": "[1] research.deep (query=\"clawbot email bridge tasks completed today\")\nI’m sorry, but the available evidence does not contain any information about “clawbot email bridge tasks completed today.” The only relevant snippet mentions working on cron‑job finalisation and testing, with no reference to an email bridge or to tasks completed on a specific day. Consequently, I can’t provide a factual answer to that question based on the supplied sources."
+        "task": "(You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nGive three concise tips for writing a clear project status update.\n\nInterpretation: intent=answer, tone=concise.",
+        "answer": "## Three concise tips for a clear project status update\n\n1. **Answer the four core questions** – Where the project stands, what changed, what risks or blockers exist, and what’s next. This structure removes ambiguity and gives stakeholders a complete picture in a single glance. [Plane Blog]  \n2. **Use a consistent, concise format** – Stick to a short paragraph or bullet layout (e.g., “Progress ✔️ X% completed”, “New issues ⚠️ 2 blockers”, “Decisions needed ❓ Budget approval”). Consistency lets readers skim quickly and compare updates over time. [Atlassian]  \n3. **Highlight actionable items** – End with clear next steps and any required decisions or support. Explicit calls‑to‑action prevent the report from being purely retrospective and drive faster decision‑making. [Plane Blog]",
+        "sources": "[1] research.deep (query=\"Give three concise tips for writing a clear project status u\")\n**Three quick tips for a clear project status update**\n\n| Tip | Why it works | How to apply it |\n|-----|--------------|-----------------|\n| **1. Answer the four core questions** – *Where the project stands, what changed since the last update, what risks/blockers exist, and what’s next.* This structure removes ambiguity and gives stakeholders a complete picture in a single glance. [Plane Blog] |\n| **2. Use a consistent, concise format** – Stick to a short‑paragraph or bullet layout (e.g., “Progress ✔️ X% completed”, “New issues ⚠️ 2 blockers”, “Decisions needed ❓ Budget approval”). Consistency lets readers skim quickly and compare updates over time. [Atlassian] |\n| **3. Highlight actionable items** – End with clear next steps and any required decisions or support. Explicit calls‑to‑action prevent the report from being purely retrospective and drives faster decision‑making. [Plane Blog] |\n\nFollow these three steps each time you send a status report, and you’ll give stakeholders a single source of truth that’s easy to read, compare, and act on."
       },
       "rationale": "auto-injected: score factuality, citation coverage, persona fit (evidence-aware)",
       "label": "Quality-checking the draft"
@@ -69,23 +50,14 @@ If the user asked for N items, produce N items. If they named items A/B/C, the o
     {
       "tool": "security.scan",
       "args": {
-        "content": "**Report – Tasks Completed Today (Clawbot Email Bridge)**  \n\nI could not locate any records or documentation indicating that any tasks related to the Clawbot email bridge were completed today. The available evidence only references work on cron‑job finalisation and testing, with no mention of the email bridge or specific daily completions.\n\n**What is Needed to Provide a Complete Report**\n\n1. **Access to the Clawbot task tracker** (e.g., JIRA, Asana, or internal Kanban board) for the current day.  \n2. **Logs or commit messages** that reference the email bridge module.  \n3. **Any automated status updates** (e.g., Slack messages, email summaries) that were generated today.  \n4. **Confirmation from the developer or team lead** who worked on the email bridge today.  \n\nOnce the above information is available, I can produce a detailed breakdown of the tasks completed, including dates, owners, and outcomes.",
+        "content": "## Three concise tips for a clear project status update\n\n1. **Answer the four core questions** – Where the project stands, what changed, what risks or blockers exist, and what’s next. This structure removes ambiguity and gives stakeholders a complete picture in a single glance. [Plane Blog]  \n2. **Use a consistent, concise format** – Stick to a short paragraph or bullet layout (e.g., “Progress ✔️ X% completed”, “New issues ⚠️ 2 blockers”, “Decisions needed ❓ Budget approval”). Consistency lets readers skim quickly and compare updates over time. [Atlassian]  \n3. **Highlight actionable items** – End with clear next steps and any required decisions or support. Explicit calls‑to‑action prevent the report from being purely retrospective and drive faster decision‑making. [Plane Blog]",
         "kind": "note"
       },
       "rationale": "auto-injected: scan answer for secrets, dodgy URLs",
       "label": "Security-scanning the note"
-    },
-    {
-      "tool": "peer.review",
-      "args": {
-        "task": "(You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nRe: clawbot email bridge — test\n\nChat, give me a breakdown of the tasks done today\n\n**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:\n- Named counts (\"5 steps\", \"top 3 risks\", \"4-stage loop\", \"3 social variants\") → produce exactly that many items.\n- Named people, roles, accounts, vendors → reference each by name.\n- Specific dates, deadlines, scale numbers (\"by 2026-06-15\", \"1200 employees\", \"$99/mo\") → echo verbatim.\n- Named sections / deliverable shape (\"Title, Symptoms, Root cause, Resolution, Prevention\" or \"must-haves vs nice-to-haves\") → produce each named section.\n- Named steps in a process (\"paging on-call → scoping impact → status page → comms → escalation → post-mortem\") → cover every step.\n- Output format directives (\"numbered list\", \"table\", \"≤4 bullets\") → honour exactly.\n\nIf the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.",
-        "answer": "**Report – Tasks Completed Today (Clawbot Email Bridge)**  \n\nI could not locate any records or documentation indicating that any tasks related to the Clawbot email bridge were completed today. The available evidence only references work on cron‑job finalisation and testing, with no mention of the email bridge or specific daily completions.\n\n**What is Needed to Provide a Complete Report**\n\n1. **Access to the Clawbot task tracker** (e.g., JIRA, Asana, or internal Kanban board) for the current day.  \n2. **Logs or commit messages** that reference the email bridge module.  \n3. **Any automated status updates** (e.g., Slack messages, email summaries) that were generated today.  \n4. **Confirmation from the developer or team lead** who worked on the email bridge today.  \n\nOnce the above information is available, I can produce a detailed breakdown of the tasks completed, including dates, owners, and outcomes."
-      },
-      "rationale": "auto-injected: quality score=0.41 (pass=false) — peer review for a second opinion",
-      "label": "Asking a peer to review the draft"
     }
   ],
-  "summary": "Research the day's completed tasks for the clawbot email bridge.",
+  "summary": "Default research plan for: Give three concise tips for writing a clear project status update",
   "waves": [
     [
       0
@@ -93,9 +65,6 @@ If the user asked for N items, produce N items. If they named items A/B/C, the o
     [
       1,
       2
-    ],
-    [
-      3
     ]
   ]
 }
