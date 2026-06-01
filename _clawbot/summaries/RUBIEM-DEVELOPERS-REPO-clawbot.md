@@ -1,28 +1,27 @@
 ---
 repo: RUBIEM-DEVELOPERS-REPO/clawbot
-generated: 2026-05-27
+generated: 2026-06-01
 model: qwen2.5:3b
 ---
 
 # RUBIEM-DEVELOPERS-REPO/clawbot
 
 ## Purpose
-A cloud cron worker that feeds Obsidian vault activity into the main brain, along with a local web console for managing and interacting with the system.
+The repository houses two tools: `clawbot`, a cloud cron worker that aggregates and summarizes activity from the user's repositories into an Obsidian vault, and `NeuroWorks`, a local web console for interacting with `clawbot` and managing the vault.
 
 ## Stack
-- Node.js
-- Pnpm
-- GitHub Actions
-- Ollama (LLM)
-- Obsidian Vault
+- **Programming Languages**: JavaScript (using Pnpm)
+- **Frameworks/Tools**: GitHub Actions, Ollama for summarization, Obsidian for vault management.
+- **Database**: Local file system for storing summaries and configurations.
+- **APIs**: GitHub API for fetching repository data.
 
 ## State
-The repository is in active development. It includes both the cloud worker (`clawbot`) that runs as a GitHub Action, and the local web console (`NeuroWorks`), which can be used to manage the system.
+The `clawbot` service is operational and integrates with multiple GitHub repositories. The `NeuroWorks` local console is set up to interact with the cloud worker, allowing users to browse repositories and generate summaries. Configuration files are in place, including environment variables and workflow configurations.
 
 ## Recent direction
-Recent commits have focused on improving the robustness of the system, including better error handling, improved task delegation pipelines, and redesigns for both the cloud worker and the local console. Additionally, there has been work done to ensure that per-repo snapshots are written for every scanned repository, not just active ones.
+Recent commits have focused on improving the reliability of data synchronization between the cloud worker and local vault, enhancing the user interface for managing repositories and tasks, and optimizing the summarization process using different language models like qwen3.5 and llama3.1.
 
 ## Notable open work
-- Implementing a feature where the local console can be used to kick off daily digest runs via GitHub Actions.
-- Improving the configuration setup process and ensuring compatibility with different environments.
-- Enhancing the user interface of the NeuroWorks console to make it more intuitive and user-friendly.
+- Continue refining the Ollama model selection logic to ensure optimal summary quality.
+- Implement more robust error handling in `clawbot` to manage unexpected GitHub API responses.
+- Expand NeuroWorks features, such as adding support for real-time updates of repository activity without manual triggers.
