@@ -2,7 +2,7 @@
 type: template
 title: Status report (custom-operations-coordinator-status-report)
 slug: custom-operations-coordinator-status-report
-created: 2026-06-02T12:51:12.698Z
+created: 2026-06-02T12:51:25.292Z
 templateId: custom-operations-coordinator-status-report
 role: Custom
 originTask: Write a status report on the following work. Output sections: Done (this period) / In progress (with % complete and ETA) / Blocked (with what's blocking and who can unblock) / Next (this coming period). Be honest about slips. Each item is one line; if it needs a paragraph, it's a separate doc.
