@@ -1,3 +1,4 @@
 {"jobId":"smoke-test-001","rating":"up","note":"this looks great","persona":"Sam","ts":"2026-06-01T15:26:56.486Z"}
 {"jobId":"12580018-16d1-4686-8d75-c43b08fc83ef","rating":"down","note":"it didnt search","template":"search-brain","ts":"2026-06-01T19:48:59.646Z"}
 {"jobId":"3ecd2847-8455-4082-ba80-14353bf559ee","rating":"down","note":"too terse — give the working in one line and the result","persona":"Sam","ts":"2026-06-01T20:04:02.315Z"}
+{"jobId":"bcd40baa-5420-4a6e-a56b-d6d4f99f08ce","rating":"up","persona":"Clawbot","template":"general-task","score":0.77,"ts":"2026-06-02T20:09:05.400Z"}
