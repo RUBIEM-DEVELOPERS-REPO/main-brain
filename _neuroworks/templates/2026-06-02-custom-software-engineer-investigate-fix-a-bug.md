@@ -2,7 +2,7 @@
 type: template
 title: Investigate + fix a bug (custom-software-engineer-investigate-fix-a-bug)
 slug: custom-software-engineer-investigate-fix-a-bug
-created: 2026-06-02T12:50:57.122Z
+created: 2026-06-02T12:51:12.710Z
 templateId: custom-software-engineer-investigate-fix-a-bug
 role: Custom
 originTask: Investigate the following bug. Steps: 1) Read the relevant code using vault.search / github.read_repo to find the implicated files. 2) Identify the root cause (cite file paths and line numbers). 3) Propose the smallest correct fix as a diff sketch. 4) Test plan: what to run, what should pass, edge cases to check. 5) Blast radius: what else this might affect.
