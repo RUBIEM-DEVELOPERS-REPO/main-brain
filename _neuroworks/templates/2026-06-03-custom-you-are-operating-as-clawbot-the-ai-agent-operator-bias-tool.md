@@ -1,32 +1,42 @@
 ---
 type: template
-title: Compose and send reflection email via Gmail. (custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool)
+title: Send verification email via Mailjet. (custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool)
 slug: custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool
-created: 2026-06-03T19:56:11.372Z
+created: 2026-06-03T20:03:25.360Z
 templateId: custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool
 role: Custom
-originTask: (You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)  Recent conversation (chronological):   User: "summarize Master Tender on my desktop"   User: "review and summarize the progress made on neuroworks from the vault"   You (assistant): "Hiring **Clawbot** — AI agent operator — for this task. They'll execute on a worker and I'll review their output before anything lands in your vault. Track live progress on the Tasks page."  Current request (treat as a continuation of the conversation above unless it clearly opens a new topic — resolve any implicit references like "it", "that", "the previous one", "make it shorter" against the recent turns): send an email to arthurmagaya29@gmail.com of todays reflection of last 2 weeks
+originTask: (You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)  send an email to arthurmagaya29@gmail.com with subject "clawbot mailjet check" and body saying this is a verification that the email path is wired through Mailjet.  **Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output: - Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items. - Named people, roles, accounts, vendors → reference each by name. - Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim. - Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section. - Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step. - Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.  If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.
 ---
 
-# Compose and send reflection email via Gmail. (custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool)
+# Send verification email via Mailjet. (custom-you-are-operating-as-clawbot-the-ai-agent-operator-bias-tool)
 
 Saved from chat: "(You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)
 
-Recent conversation (chronological):
-  User: "summarize Master Tender on my desktop"
-  User: "review and summarize the progress made on neuroworks from the vault"
-  You (assistant): "Hiring **Clawbot** — AI agent operator — for this task. They'll execute on a worker and I'll review their output before anything lands in your vault. Track live progress on the Tasks page."
+send an email to arthurmagaya29@gmail.com with subject "clawbot mailjet check" and body saying this is a verification that the email path is wired through Mailjet.
 
-Current request (treat as a continuation of the conversation above unless it clearly opens a new topic — resolve any implicit references like "it", "that", "the previous one", "make it shorter" against the recent turns): send an email to arthurmagaya29@gmail.com of todays reflection of last 2 weeks"
+**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:
+- Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items.
+- Named people, roles, accounts, vendors → reference each by name.
+- Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim.
+- Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section.
+- Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step.
+- Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.
+
+If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently."
 
 **Origin task:** (You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)
 
-Recent conversation (chronological):
-  User: "summarize Master Tender on my desktop"
-  User: "review and summarize the progress made on neuroworks from the vault"
-  You (assistant): "Hiring **Clawbot** — AI agent operator — for this task. They'll execute on a worker and I'll review their output before anything lands in your vault. Track live progress on the Tasks page."
+send an email to arthurmagaya29@gmail.com with subject "clawbot mailjet check" and body saying this is a verification that the email path is wired through Mailjet.
 
-Current request (treat as a continuation of the conversation above unless it clearly opens a new topic — resolve any implicit references like "it", "that", "the previous one", "make it shorter" against the recent turns): send an email to arthurmagaya29@gmail.com of todays reflection of last 2 weeks
+**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:
+- Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items.
+- Named people, roles, accounts, vendors → reference each by name.
+- Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim.
+- Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section.
+- Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step.
+- Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.
+
+If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.
 
 ## Saved plan
 
@@ -34,74 +44,19 @@ Current request (treat as a continuation of the conversation above unless it cle
 {
   "steps": [
     {
-      "tool": "web.interact",
+      "tool": "email.send",
       "args": {
-        "url": "https://mail.google.com/mail/u/0/#compose",
-        "steps": [
-          {
-            "action": "click",
-            "selector": "input[name='to']"
-          },
-          {
-            "action": "type",
-            "selector": "input[name='to']",
-            "text": "arthurmagaya29@gmail.com"
-          },
-          {
-            "action": "type",
-            "selector": "input[name='subjectbox']",
-            "text": "Reflection on the last 2 weeks"
-          },
-          {
-            "action": "type",
-            "selector": "div[aria-label='Message Body']",
-            "text": "Hi Arthur,\n\nHere’s a quick reflection on the past two weeks:\n\n- Completed the Master Tender summary and sent it to the team.\n- Reviewed and summarized the progress on Neuroworks from the vault.\n- Initiated the email to you with today’s reflection.\n\nLet me know if you’d like more details or have any feedback.\n\nBest,\nClawbot"
-          }
-        ],
-        "totalTimeoutMs": 60000
+        "to": "arthurmagaya29@gmail.com",
+        "subject": "clawbot mailjet check",
+        "body": "This is a verification that the email path is wired through Mailjet."
       },
-      "label": "web.interact"
-    },
-    {
-      "tool": "quality.check",
-      "args": {
-        "task": "(You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nRecent conversation (chronological):\n  User: \"summarize Master Tender on my desktop\"\n  User: \"review and summarize the progress made on neuroworks from the vault\"\n  You (assistant): \"Hiring **Clawbot** — AI agent operator — for this task. They'll execute on a worker and I'll review their output before anything lands in your vault. Track live progress on the Tasks page.\"\n\nCurrent request (treat as a continuation of the conversation above unless it clearly opens a new topic — resolve any implicit references like \"it\", \"that\", \"the previous one\", \"make it shorter\" against the recent turns): send an email to arthurmagaya29@gmail.com of todays reflection of last 2 weeks",
-        "answer": "## Partial result\n\nThe synthesis step didn't complete cleanly (`OpenRouter 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"openai/g`), so here is the raw evidence we gathered for: **send an email to arthurmagaya29@gmail.com of todays reflection of last 2 weeks**\n\n### What worked\n\n**Step 1 — web.interact**\n1. (item) — \n2. (item) — \n3. (item) — \n4. (item) — \n\n---\n_Auto-generated rescue summary. Try the task again — the next attempt may have the model available._",
-        "sources": "[1] web.interact (url=\"https://mail.google.com/mail/u/0/#compose\")\n? — \n? — \n? — \n? — "
-      },
-      "rationale": "auto-injected: score factuality, citation coverage, persona fit (evidence-aware)",
-      "label": "Quality-checking the draft"
-    },
-    {
-      "tool": "security.scan",
-      "args": {
-        "content": "## Partial result\n\nThe synthesis step didn't complete cleanly (`OpenRouter 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"openai/g`), so here is the raw evidence we gathered for: **send an email to arthurmagaya29@gmail.com of todays reflection of last 2 weeks**\n\n### What worked\n\n**Step 1 — web.interact**\n1. (item) — \n2. (item) — \n3. (item) — \n4. (item) — \n\n---\n_Auto-generated rescue summary. Try the task again — the next attempt may have the model available._",
-        "kind": "note"
-      },
-      "rationale": "auto-injected: scan answer for secrets, dodgy URLs",
-      "label": "Security-scanning the note"
-    },
-    {
-      "tool": "peer.review",
-      "args": {
-        "task": "(You are operating as Clawbot, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nRecent conversation (chronological):\n  User: \"summarize Master Tender on my desktop\"\n  User: \"review and summarize the progress made on neuroworks from the vault\"\n  You (assistant): \"Hiring **Clawbot** — AI agent operator — for this task. They'll execute on a worker and I'll review their output before anything lands in your vault. Track live progress on the Tasks page.\"\n\nCurrent request (treat as a continuation of the conversation above unless it clearly opens a new topic — resolve any implicit references like \"it\", \"that\", \"the previous one\", \"make it shorter\" against the recent turns): send an email to arthurmagaya29@gmail.com of todays reflection of last 2 weeks",
-        "answer": "## Partial result\n\nThe synthesis step didn't complete cleanly (`OpenRouter 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"openai/g`), so here is the raw evidence we gathered for: **send an email to arthurmagaya29@gmail.com of todays reflection of last 2 weeks**\n\n### What worked\n\n**Step 1 — web.interact**\n1. (item) — \n2. (item) — \n3. (item) — \n4. (item) — \n\n---\n_Auto-generated rescue summary. Try the task again — the next attempt may have the model available._"
-      },
-      "rationale": "auto-injected: quality score=0.68 (pass=false) — peer review for a second opinion",
-      "label": "Asking a peer to review the draft"
+      "label": "email.send"
     }
   ],
-  "summary": "Compose and send reflection email via Gmail.",
+  "summary": "Send verification email via Mailjet.",
   "waves": [
     [
       0
-    ],
-    [
-      1,
-      2
-    ],
-    [
-      3
     ]
   ]
 }
