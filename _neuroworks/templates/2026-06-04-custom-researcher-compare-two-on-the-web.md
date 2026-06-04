@@ -2,7 +2,7 @@
 type: template
 title: Compare two on the web (custom-researcher-compare-two-on-the-web)
 slug: custom-researcher-compare-two-on-the-web
-created: 2026-06-04T11:14:03.035Z
+created: 2026-06-04T11:14:35.277Z
 templateId: custom-researcher-compare-two-on-the-web
 role: Custom
 originTask: Compare the following two things side by side using web sources. For each side, run research.multiperspective (mainstream + critical + recent). Then write a balanced comparison: trade-offs, hidden costs, contexts each is best in. Cite every claim with [N] including which side it supports.
