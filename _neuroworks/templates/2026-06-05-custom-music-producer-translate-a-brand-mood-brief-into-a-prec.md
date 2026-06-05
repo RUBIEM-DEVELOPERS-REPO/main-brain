@@ -2,7 +2,7 @@
 type: template
 title: Translate a brand / mood brief into a precise music prompt (genre, tempo, ins… (custom-music-producer-translate-a-brand-mood-brief-into-a-prec)
 slug: custom-music-producer-translate-a-brand-mood-brief-into-a-prec
-created: 2026-06-05T23:03:18.331Z
+created: 2026-06-05T23:03:35.732Z
 templateId: custom-music-producer-translate-a-brand-mood-brief-into-a-prec
 role: Custom
 originTask: As a Music Producer, translate a brand / mood brief into a precise music prompt (genre, tempo, instruments, feel).

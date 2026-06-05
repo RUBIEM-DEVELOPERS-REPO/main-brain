@@ -2,7 +2,7 @@
 type: template
 title: Ask Melody anything (custom-music-producer-ask-anything)
 slug: custom-music-producer-ask-anything
-created: 2026-06-05T23:03:18.405Z
+created: 2026-06-05T23:03:35.842Z
 templateId: custom-music-producer-ask-anything
 role: Custom
 originTask: As a Music Producer, respond to the following task in role:

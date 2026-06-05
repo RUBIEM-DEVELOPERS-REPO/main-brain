@@ -2,7 +2,7 @@
 type: template
 title: Write accessibility audio and IVR / phone-menu prompts (custom-voice-producer-write-accessibility-audio-and-ivr-phone-)
 slug: custom-voice-producer-write-accessibility-audio-and-ivr-phone-
-created: 2026-06-05T23:03:18.186Z
+created: 2026-06-05T23:03:35.579Z
 templateId: custom-voice-producer-write-accessibility-audio-and-ivr-phone-
 role: Custom
 originTask: As a Voice Producer, write accessibility audio and ivr / phone-menu prompts.

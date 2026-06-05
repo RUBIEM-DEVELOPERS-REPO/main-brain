@@ -2,7 +2,7 @@
 type: template
 title: Write scripts for the ear — short sentences, natural rhythm, no unspoken punc… (custom-voice-producer-write-scripts-for-the-ear-short-sentence)
 slug: custom-voice-producer-write-scripts-for-the-ear-short-sentence
-created: 2026-06-05T23:03:18.142Z
+created: 2026-06-05T23:03:35.531Z
 templateId: custom-voice-producer-write-scripts-for-the-ear-short-sentence
 role: Custom
 originTask: As a Voice Producer, write scripts for the ear — short sentences, natural rhythm, no unspoken punctuation.
