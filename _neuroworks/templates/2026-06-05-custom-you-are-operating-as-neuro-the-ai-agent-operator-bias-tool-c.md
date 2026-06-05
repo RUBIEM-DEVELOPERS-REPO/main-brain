@@ -1,48 +1,36 @@
 ---
 type: template
-title: Find "Chat" in downloads, read it, summarise (custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c)
+title: Create a short video of a dog running in the grass. (custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c)
 slug: custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c
-created: 2026-06-05T19:27:28.032Z
+created: 2026-06-05T20:27:11.432Z
 templateId: custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c
 role: Custom
-originTask: (You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)  Chat  Send an email to arthurmagaya29@gmail.com of a summary of the ZMC letter in my downloads  **Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output: - Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items. - Named people, roles, accounts, vendors → reference each by name. - Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim. - Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section. - Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step. - Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.  If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.
+originTask: (You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)  Recent conversation (chronological):   User: "summarize this and send me the summary on email arthurmagaya2@gmail.com"   User: "Give me a daily report about all the tasks done today."   You (assistant): "Hiring **Neuro** — AI agent operator — for this task. They'll execute on a worker and I'll review their output before anything lands in your vault. Track live progress on the Tasks page."  Current request (treat as a continuation of the conversation above unless it clearly opens a new topic — resolve any implicit references like "it", "that", "the previous one", "make it shorter" against the recent turns): Use media.video to generate a short video of: a dog running in the grass  Interpretation: intent=answer, scope=short.
 ---
 
-# Find "Chat" in downloads, read it, summarise (custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c)
+# Create a short video of a dog running in the grass. (custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c)
 
 Saved from chat: "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)
 
-Chat
+Recent conversation (chronological):
+  User: "summarize this and send me the summary on email arthurmagaya2@gmail.com"
+  User: "Give me a daily report about all the tasks done today."
+  You (assistant): "Hiring **Neuro** — AI agent operator — for this task. They'll execute on a worker and I'll review their output before anything lands in your vault. Track live progress on the Tasks page."
 
-Send an email to arthurmagaya29@gmail.com of a summary of the ZMC letter in
-my downloads
+Current request (treat as a continuation of the conversation above unless it clearly opens a new topic — resolve any implicit references like "it", "that", "the previous one", "make it shorter" against the recent turns): Use media.video to generate a short video of: a dog running in the grass
 
-**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:
-- Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items.
-- Named people, roles, accounts, vendors → reference each by name.
-- Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim.
-- Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section.
-- Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step.
-- Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.
-
-If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently."
+Interpretation: intent=answer, scope=short."
 
 **Origin task:** (You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)
 
-Chat
+Recent conversation (chronological):
+  User: "summarize this and send me the summary on email arthurmagaya2@gmail.com"
+  User: "Give me a daily report about all the tasks done today."
+  You (assistant): "Hiring **Neuro** — AI agent operator — for this task. They'll execute on a worker and I'll review their output before anything lands in your vault. Track live progress on the Tasks page."
 
-Send an email to arthurmagaya29@gmail.com of a summary of the ZMC letter in
-my downloads
+Current request (treat as a continuation of the conversation above unless it clearly opens a new topic — resolve any implicit references like "it", "that", "the previous one", "make it shorter" against the recent turns): Use media.video to generate a short video of: a dog running in the grass
 
-**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:
-- Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items.
-- Named people, roles, accounts, vendors → reference each by name.
-- Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim.
-- Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section.
-- Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step.
-- Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.
-
-If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.
+Interpretation: intent=answer, scope=short.
 
 ## Saved plan
 
@@ -50,28 +38,20 @@ If the user asked for N items, produce N items. If they named items A/B/C, the o
 {
   "steps": [
     {
-      "tool": "fs.find_in",
+      "tool": "media.video",
       "args": {
-        "folder": "downloads",
-        "name": "Chat"
+        "prompt": "a dog running in the grass",
+        "first_frame_image": ""
       },
-      "rationale": "default fallback: task mentions downloads — search the user's PC instead of the web",
-      "label": "Looking in your downloads for \"Chat\""
-    },
-    {
-      "tool": "fs.read_external",
-      "args": {
-        "path": "$step_0.matches.0.path"
-      },
-      "rationale": "task asks for content — read the top match",
-      "label": "Reading Chat"
+      "rationale": "Generate the requested short video",
+      "label": "media.video"
     },
     {
       "tool": "quality.check",
       "args": {
-        "task": "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nChat\n\nSend an email to arthurmagaya29@gmail.com of a summary of the ZMC letter in\nmy downloads\n\n**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:\n- Named counts (\"5 steps\", \"top 3 risks\", \"4-stage loop\", \"3 social variants\") → produce exactly that many items.\n- Named people, roles, accounts, vendors → reference each by name.\n- Specific dates, deadlines, scale numbers (\"by 2026-06-15\", \"1200 employees\", \"$99/mo\") → echo verbatim.\n- Named sections / deliverable shape (\"Title, Symptoms, Root cause, Resolution, Prevention\" or \"must-haves vs nice-to-haves\") → produce each named section.\n- Named steps in a process (\"paging on-call → scoping impact → status page → comms → escalation → post-mortem\") → cover every step.\n- Output format directives (\"numbered list\", \"table\", \"≤4 bullets\") → honour exactly.\n\nIf the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.",
-        "answer": "## Partial result\n\nThe synthesis step didn't complete cleanly, so here is the raw evidence we gathered for: **Chat\n\nSend an email to arthurmagaya29@gmail.com of a summary of the ZMC letter in\nmy downloads\n\n**Alignment check — required before responding.** Before producing the final answer, scan the user's req**\n\n### What worked\n\n**Step 1 — Looking in your downloads for \"Chat\"**\n```\n{\"folder\":\"downloads\",\"resolvedRoots\":[\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\"],\"resolvedRoot\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\",\"query\":\"Chat\",\"count\":9,\"matches\":[{\"path\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\\\\~$bsite Content for The Chat Bot.docx\",\"name\":\"~$bsite Content for The Chat Bot.docx\",\"ext\":\".docx\",\"size\":162,\"modified\":\"2026-06-05T09:05:11.035Z\",\"folder\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\",\"type\":\"file\"},{\"path\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\\\\Website Content for The Chat B…\n```\n\n**Step 2 — Reading Chat**\n```\n{\"content\":\"(DOCX extraction failed: Can't find end of central directory : is this a zip file ? If it is, see https://stuk.github.io/jszip/documentation/howto/read_zip.html)\",\"kind\":\"docx\",\"size\":162,\"ext\":\".docx\",\"name\":\"~$bsite Content for The Chat Bot.docx\",\"resolvedFrom\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\\\\~$bsite Content for The Chat Bot.docx\",\"resolvedTo\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\\\\~$bsite Content for The Chat Bot.docx\"}\n```\n\n---\n_Auto-generated rescue summary. Try the task again — the next attempt may have the model available._",
-        "sources": "[1] fs.find_in (name=\"Chat\")\nC:\\Users\\Arthur Magaya\\Downloads\\~$bsite Content for The Chat Bot.docx: \nC:\\Users\\Arthur Magaya\\Downloads\\Website Content for The Chat Bot.docx: \nC:\\Users\\Arthur Magaya\\Downloads\\ZMC WEBSITE DOCS\\Website Content for The Chat Bot.docx: \nC:\\Users\\Arthur Magaya\\Downloads\\ChatGPT Image May 28, 2026, 08_53_13 AM.png: \nC:\\Users\\Arthur Magaya\\Downloads\\ChatGPT Image May 15, 2026, 03_47_47 PM.png: \nC:\\Users\\Arthur Magaya\\Downloads\\ChatGPT Image May 15, 2026, 09_26_41 AM.png: \n\n[2] fs.read_external (path=\"$step_0.matches.0.path\")\n(DOCX extraction failed: Can't find end of central directory : is this a zip file ? If it is, see https://stuk.github.io/jszip/documentation/howto/read_zip.html)"
+        "task": "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nRecent conversation (chronological):\n  User: \"summarize this and send me the summary on email arthurmagaya2@gmail.com\"\n  User: \"Give me a daily report about all the tasks done today.\"\n  You (assistant): \"Hiring **Neuro** — AI agent operator — for this task. They'll execute on a worker and I'll review their output before anything lands in your vault. Track live progress on the Tasks page.\"\n\nCurrent request (treat as a continuation of the conversation above unless it clearly opens a new topic — resolve any implicit references like \"it\", \"that\", \"the previous one\", \"make it shorter\" against the recent turns): Use media.video to generate a short video of: a dog running in the grass\n\nInterpretation: intent=answer, scope=short.",
+        "answer": "## Report – Video Generation Attempt\n\nThe requested short video of a dog running in grass could not be produced because the `media.video` tool is currently disabled. The error message returned was:\n\n> “MiniMax not configured — add MINIMAX_API_KEY to enable video generation.” [1]\n\nTo proceed, please provide a valid MiniMax API key and re‑invoke the request. Once the key is configured, the video can be generated and delivered as requested.",
+        "sources": "[1] media.video\n{\"error\":\"MiniMax not configured — add MINIMAX_API_KEY to enable video generation.\"}"
       },
       "rationale": "auto-injected: score factuality, citation coverage, persona fit (evidence-aware)",
       "label": "Quality-checking the draft"
@@ -79,36 +59,21 @@ If the user asked for N items, produce N items. If they named items A/B/C, the o
     {
       "tool": "security.scan",
       "args": {
-        "content": "## Partial result\n\nThe synthesis step didn't complete cleanly, so here is the raw evidence we gathered for: **Chat\n\nSend an email to arthurmagaya29@gmail.com of a summary of the ZMC letter in\nmy downloads\n\n**Alignment check — required before responding.** Before producing the final answer, scan the user's req**\n\n### What worked\n\n**Step 1 — Looking in your downloads for \"Chat\"**\n```\n{\"folder\":\"downloads\",\"resolvedRoots\":[\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\"],\"resolvedRoot\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\",\"query\":\"Chat\",\"count\":9,\"matches\":[{\"path\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\\\\~$bsite Content for The Chat Bot.docx\",\"name\":\"~$bsite Content for The Chat Bot.docx\",\"ext\":\".docx\",\"size\":162,\"modified\":\"2026-06-05T09:05:11.035Z\",\"folder\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\",\"type\":\"file\"},{\"path\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\\\\Website Content for The Chat B…\n```\n\n**Step 2 — Reading Chat**\n```\n{\"content\":\"(DOCX extraction failed: Can't find end of central directory : is this a zip file ? If it is, see https://stuk.github.io/jszip/documentation/howto/read_zip.html)\",\"kind\":\"docx\",\"size\":162,\"ext\":\".docx\",\"name\":\"~$bsite Content for The Chat Bot.docx\",\"resolvedFrom\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\\\\~$bsite Content for The Chat Bot.docx\",\"resolvedTo\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\\\\~$bsite Content for The Chat Bot.docx\"}\n```\n\n---\n_Auto-generated rescue summary. Try the task again — the next attempt may have the model available._",
+        "content": "## Report – Video Generation Attempt\n\nThe requested short video of a dog running in grass could not be produced because the `media.video` tool is currently disabled. The error message returned was:\n\n> “MiniMax not configured — add MINIMAX_API_KEY to enable video generation.” [1]\n\nTo proceed, please provide a valid MiniMax API key and re‑invoke the request. Once the key is configured, the video can be generated and delivered as requested.",
         "kind": "note"
       },
       "rationale": "auto-injected: scan answer for secrets, dodgy URLs",
       "label": "Security-scanning the note"
-    },
-    {
-      "tool": "peer.review",
-      "args": {
-        "task": "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nChat\n\nSend an email to arthurmagaya29@gmail.com of a summary of the ZMC letter in\nmy downloads\n\n**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:\n- Named counts (\"5 steps\", \"top 3 risks\", \"4-stage loop\", \"3 social variants\") → produce exactly that many items.\n- Named people, roles, accounts, vendors → reference each by name.\n- Specific dates, deadlines, scale numbers (\"by 2026-06-15\", \"1200 employees\", \"$99/mo\") → echo verbatim.\n- Named sections / deliverable shape (\"Title, Symptoms, Root cause, Resolution, Prevention\" or \"must-haves vs nice-to-haves\") → produce each named section.\n- Named steps in a process (\"paging on-call → scoping impact → status page → comms → escalation → post-mortem\") → cover every step.\n- Output format directives (\"numbered list\", \"table\", \"≤4 bullets\") → honour exactly.\n\nIf the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.",
-        "answer": "## Partial result\n\nThe synthesis step didn't complete cleanly, so here is the raw evidence we gathered for: **Chat\n\nSend an email to arthurmagaya29@gmail.com of a summary of the ZMC letter in\nmy downloads\n\n**Alignment check — required before responding.** Before producing the final answer, scan the user's req**\n\n### What worked\n\n**Step 1 — Looking in your downloads for \"Chat\"**\n```\n{\"folder\":\"downloads\",\"resolvedRoots\":[\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\"],\"resolvedRoot\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\",\"query\":\"Chat\",\"count\":9,\"matches\":[{\"path\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\\\\~$bsite Content for The Chat Bot.docx\",\"name\":\"~$bsite Content for The Chat Bot.docx\",\"ext\":\".docx\",\"size\":162,\"modified\":\"2026-06-05T09:05:11.035Z\",\"folder\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\",\"type\":\"file\"},{\"path\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\\\\Website Content for The Chat B…\n```\n\n**Step 2 — Reading Chat**\n```\n{\"content\":\"(DOCX extraction failed: Can't find end of central directory : is this a zip file ? If it is, see https://stuk.github.io/jszip/documentation/howto/read_zip.html)\",\"kind\":\"docx\",\"size\":162,\"ext\":\".docx\",\"name\":\"~$bsite Content for The Chat Bot.docx\",\"resolvedFrom\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\\\\~$bsite Content for The Chat Bot.docx\",\"resolvedTo\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\\\\~$bsite Content for The Chat Bot.docx\"}\n```\n\n---\n_Auto-generated rescue summary. Try the task again — the next attempt may have the model available._"
-      },
-      "rationale": "auto-injected: quality score=0.40 (pass=false) — peer review for a second opinion",
-      "label": "Asking a peer to review the draft"
     }
   ],
-  "summary": "Find \"Chat\" in downloads, read it, summarise",
+  "summary": "Create a short video of a dog running in the grass.",
   "waves": [
     [
       0
     ],
     [
-      1
-    ],
-    [
-      2,
-      3
-    ],
-    [
-      4
+      1,
+      2
     ]
   ]
 }
