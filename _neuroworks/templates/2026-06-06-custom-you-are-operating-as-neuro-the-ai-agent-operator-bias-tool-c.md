@@ -1,24 +1,24 @@
 ---
 type: template
-title: Default research plan for: email to a customer, Dr. Patel, apologizing that their data export was delayed 3 days due to a migration bug. Own it, give a concrete fix date (this Friday), and offer a 1-month credit. Keep it under 150 words, warm but not grovelling (custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c)
+title: Research, generate concise summary, then quality‑check. (custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c)
 slug: custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c
-created: 2026-06-06T13:08:00.493Z
+created: 2026-06-06T13:14:17.499Z
 templateId: custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c
 role: Custom
-originTask: (You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)  Write an email to a customer, Dr. Patel, apologizing that their data export was delayed 3 days due to a migration bug. Own it, give a concrete fix date (this Friday), and offer a 1-month credit. Keep it under 150 words, warm but not grovelling.  Interpretation: intent=draft-email, target="email to a customer, dr. patel, apologizing that their data export was delayed 3 days due to a migration bug. own it, gi", tone=warm.  Deliverable shape: Email format. Start with `Subject:` on its own line, then a blank line, then the body. Include a greeting and a sign-off using the persona's first name (or "Best" if no persona). No preamble like "Here's the email" — output the email itself.  Tone: warm.  **Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output: - Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items. - Named people, roles, accounts, vendors → reference each by name. - Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim. - Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section. - Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step. - Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.  If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.
+originTask: (You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)  Summarize the key tradeoffs of optimistic vs pessimistic locking in databases in 4 bullets max. Be specific — no textbook filler.  Interpretation: intent=summarize, target="key tradeoffs of optimistic vs pessimistic locking in databases in 4 bullets max. Be specific — no textbook filler", scope=in 4 bullets.  Deliverable shape: Summary format. Start with a 1-sentence **Bottom line:** (bold label, then the sentence), then 3-7 short bullets covering the key points, then a `## Sources` block if any sources were used. Do NOT use the literal heading "TL;DR" — say what it actually IS. No preamble.  Scope: in 4 bullets.  **Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output: - Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items. - Named people, roles, accounts, vendors → reference each by name. - Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim. - Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section. - Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step. - Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.  If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.
 ---
 
-# Default research plan for: email to a customer, Dr. Patel, apologizing that their data export was delayed 3 days due to a migration bug. Own it, give a concrete fix date (this Friday), and offer a 1-month credit. Keep it under 150 words, warm but not grovelling (custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c)
+# Research, generate concise summary, then quality‑check. (custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c)
 
 Saved from chat: "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)
 
-Write an email to a customer, Dr. Patel, apologizing that their data export was delayed 3 days due to a migration bug. Own it, give a concrete fix date (this Friday), and offer a 1-month credit. Keep it under 150 words, warm but not grovelling.
+Summarize the key tradeoffs of optimistic vs pessimistic locking in databases in 4 bullets max. Be specific — no textbook filler.
 
-Interpretation: intent=draft-email, target="email to a customer, dr. patel, apologizing that their data export was delayed 3 days due to a migration bug. own it, gi", tone=warm.
+Interpretation: intent=summarize, target="key tradeoffs of optimistic vs pessimistic locking in databases in 4 bullets max. Be specific — no textbook filler", scope=in 4 bullets.
 
-Deliverable shape: Email format. Start with `Subject:` on its own line, then a blank line, then the body. Include a greeting and a sign-off using the persona's first name (or "Best" if no persona). No preamble like "Here's the email" — output the email itself.
+Deliverable shape: Summary format. Start with a 1-sentence **Bottom line:** (bold label, then the sentence), then 3-7 short bullets covering the key points, then a `## Sources` block if any sources were used. Do NOT use the literal heading "TL;DR" — say what it actually IS. No preamble.
 
-Tone: warm.
+Scope: in 4 bullets.
 
 **Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:
 - Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items.
@@ -32,13 +32,13 @@ If the user asked for N items, produce N items. If they named items A/B/C, the o
 
 **Origin task:** (You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)
 
-Write an email to a customer, Dr. Patel, apologizing that their data export was delayed 3 days due to a migration bug. Own it, give a concrete fix date (this Friday), and offer a 1-month credit. Keep it under 150 words, warm but not grovelling.
+Summarize the key tradeoffs of optimistic vs pessimistic locking in databases in 4 bullets max. Be specific — no textbook filler.
 
-Interpretation: intent=draft-email, target="email to a customer, dr. patel, apologizing that their data export was delayed 3 days due to a migration bug. own it, gi", tone=warm.
+Interpretation: intent=summarize, target="key tradeoffs of optimistic vs pessimistic locking in databases in 4 bullets max. Be specific — no textbook filler", scope=in 4 bullets.
 
-Deliverable shape: Email format. Start with `Subject:` on its own line, then a blank line, then the body. Include a greeting and a sign-off using the persona's first name (or "Best" if no persona). No preamble like "Here's the email" — output the email itself.
+Deliverable shape: Summary format. Start with a 1-sentence **Bottom line:** (bold label, then the sentence), then 3-7 short bullets covering the key points, then a `## Sources` block if any sources were used. Do NOT use the literal heading "TL;DR" — say what it actually IS. No preamble.
 
-Tone: warm.
+Scope: in 4 bullets.
 
 **Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:
 - Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items.
@@ -58,19 +58,36 @@ If the user asked for N items, produce N items. If they named items A/B/C, the o
     {
       "tool": "research.deep",
       "args": {
-        "query": "email to a customer, Dr. Patel, apologizing that their data export was delayed 3 days due to a migration bug. Own it, give a concrete fix date (this Friday), and offer a 1-month credit. Keep it under 150 words, warm but not grovelling",
-        "depth": 3,
+        "query": "optimistic vs pessimistic locking tradeoffs in databases",
+        "depth": 2,
         "capture": true
       },
-      "rationale": "default fallback: search vault + web, synthesise, capture findings to 0-Inbox/",
-      "label": "Researching \"email to a customer, Dr. Patel, apologizing that their data export was delayed 3…\" — vault + web"
+      "label": "Researching \"optimistic vs pessimistic locking tradeoffs in databases\" — vault + web"
+    },
+    {
+      "tool": "ollama.generate",
+      "args": {
+        "prompt": "Using the captured research, produce a concise summary with a 1‑sentence Bottom line (bold), 4 bullets, and a ## Sources block if any sources were used. Do not include any preamble or extra text.",
+        "system": "You are a concise technical writer. Output exactly the requested format."
+      },
+      "label": "Thinking about it"
     },
     {
       "tool": "quality.check",
       "args": {
-        "task": "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nWrite an email to a customer, Dr. Patel, apologizing that their data export was delayed 3 days due to a migration bug. Own it, give a concrete fix date (this Friday), and offer a 1-month credit. Keep it under 150 words, warm but not grovelling.\n\nInterpretation: intent=draft-email, target=\"email to a customer, dr. patel, apologizing that their data export was delayed 3 days due to a migration bug. own it, gi\", tone=warm.\n\nDeliverable shape: Email format. Start with `Subject:` on its own line, then a blank line, then the body. Include a greeting and a sign-off using the persona's first name (or \"Best\" if no persona). No preamble like \"Here's the email\" — output the email itself.\n\nTone: warm.\n\n**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:\n- Named counts (\"5 steps\", \"top 3 risks\", \"4-stage loop\", \"3 social variants\") → produce exactly that many items.\n- Named people, roles, accounts, vendors → reference each by name.\n- Specific dates, deadlines, scale numbers (\"by 2026-06-15\", \"1200 employees\", \"$99/mo\") → echo verbatim.\n- Named sections / deliverable shape (\"Title, Symptoms, Root cause, Resolution, Prevention\" or \"must-haves vs nice-to-haves\") → produce each named section.\n- Named steps in a process (\"paging on-call → scoping impact → status page → comms → escalation → post-mortem\") → cover every step.\n- Output format directives (\"numbered list\", \"table\", \"≤4 bullets\") → honour exactly.\n\nIf the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.",
-        "answer": "Subject: Apology & Resolution for Your Data Export  \n\nHi Dr. Patel,\n\nI’m sorry that the export of your data was delayed by three days due to a migration bug on our end. We take full responsibility and have already fixed the issue. The export will be completed and delivered to you by this Friday.\n\nAs a token of our appreciation for your patience, we’d like to credit your account with one month of service at no charge.\n\nPlease let me know if there’s anything else we can do for you.\n\nThank you for your understanding.\n\nBest,  \n[Your Name]  \nCustomer Success, NeuroWorks  \n[Contact Information]",
-        "sources": "[1] research.deep (query=\"email to a customer, Dr. Patel, apologizing that their data \")\nSubject: Apology & Resolution for Your Data Export  \n\nHi Dr. Patel,\n\nI’m sorry that the export of your data was delayed by three days due to a migration bug on our end. We take full responsibility and have already fixed the issue. The export will be completed and delivered to you by this Friday.\n\nAs a token of our appreciation for your patience, we’d like to credit your account with one month of service at no charge.\n\nPlease let me know if there’s anything else we can do for you.\n\nThank you for your understanding.\n\nBest regards,  \n[Your Name]  \nCustomer Success, NeuroWorks  \n[Contact Information]"
+        "task": "Summarize the key tradeoffs of optimistic vs pessimistic locking in databases in 4 bullets max. Be specific — no textbook filler.",
+        "answer": "$step_1.output",
+        "sources": "$step_0.sources",
+        "context": ""
+      },
+      "label": "Quality-checking the draft"
+    },
+    {
+      "tool": "quality.check",
+      "args": {
+        "task": "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nSummarize the key tradeoffs of optimistic vs pessimistic locking in databases in 4 bullets max. Be specific — no textbook filler.\n\nInterpretation: intent=summarize, target=\"key tradeoffs of optimistic vs pessimistic locking in databases in 4 bullets max. Be specific — no textbook filler\", scope=in 4 bullets.\n\nDeliverable shape: Summary format. Start with a 1-sentence **Bottom line:** (bold label, then the sentence), then 3-7 short bullets covering the key points, then a `## Sources` block if any sources were used. Do NOT use the literal heading \"TL;DR\" — say what it actually IS. No preamble.\n\nScope: in 4 bullets.\n\n**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:\n- Named counts (\"5 steps\", \"top 3 risks\", \"4-stage loop\", \"3 social variants\") → produce exactly that many items.\n- Named people, roles, accounts, vendors → reference each by name.\n- Specific dates, deadlines, scale numbers (\"by 2026-06-15\", \"1200 employees\", \"$99/mo\") → echo verbatim.\n- Named sections / deliverable shape (\"Title, Symptoms, Root cause, Resolution, Prevention\" or \"must-haves vs nice-to-haves\") → produce each named section.\n- Named steps in a process (\"paging on-call → scoping impact → status page → comms → escalation → post-mortem\") → cover every step.\n- Output format directives (\"numbered list\", \"table\", \"≤4 bullets\") → honour exactly.\n\nIf the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.",
+        "answer": "**Bottom line:** I could not locate any internal or external material that discusses the tradeoffs between optimistic and pessimistic locking in databases.\n\n- No vault notes, research files, or web sources in the evidence catalog contain relevant information on this topic.\n- The only web source retrieved was a dictionary definition of “optimistic,” which does not address database locking strategies.\n- To provide a grounded summary, I would need either a vault file or a credible external reference that explicitly compares optimistic and pessimistic locking, including performance, concurrency, and conflict‑resolution considerations.\n\n_If you can supply a specific note, article, or URL that covers these tradeoffs, I can synthesize the requested four‑bullet summary._",
+        "sources": "[1] research.deep (query=\"optimistic vs pessimistic locking tradeoffs in databases\")\nI’m sorry, but the supplied evidence does not contain any information about optimistic versus pessimistic locking in databases, so I can’t provide a grounded answer on that topic. If you have relevant vault notes or additional sources, I’d be happy to synthesize them for you.\n\n[2] ollama.generate\n**Bottom line:** The research indicates that integrating real‑time analytics into supply‑chain dashboards significantly improves decision‑making speed and reduces inventory holding costs.\n\n- Real‑time data feeds enable proactive identification of bottlenecks and demand spikes.\n- Dashboards that visualize key performance indicators (KPIs) help cross‑functional teams align on priorities.\n- Automated alerts trigger timely corrective actions, cutting cycle times by up to 15 %.\n- Companies adopting these tools report a 10–20 % reduction in excess stock and associated carrying costs.\n\n## Sources"
       },
       "rationale": "auto-injected: score factuality, citation coverage, persona fit (evidence-aware)",
       "label": "Quality-checking the draft"
@@ -78,7 +95,7 @@ If the user asked for N items, produce N items. If they named items A/B/C, the o
     {
       "tool": "security.scan",
       "args": {
-        "content": "Subject: Apology & Resolution for Your Data Export  \n\nHi Dr. Patel,\n\nI’m sorry that the export of your data was delayed by three days due to a migration bug on our end. We take full responsibility and have already fixed the issue. The export will be completed and delivered to you by this Friday.\n\nAs a token of our appreciation for your patience, we’d like to credit your account with one month of service at no charge.\n\nPlease let me know if there’s anything else we can do for you.\n\nThank you for your understanding.\n\nBest,  \n[Your Name]  \nCustomer Success, NeuroWorks  \n[Contact Information]",
+        "content": "**Bottom line:** I could not locate any internal or external material that discusses the tradeoffs between optimistic and pessimistic locking in databases.\n\n- No vault notes, research files, or web sources in the evidence catalog contain relevant information on this topic.\n- The only web source retrieved was a dictionary definition of “optimistic,” which does not address database locking strategies.\n- To provide a grounded summary, I would need either a vault file or a credible external reference that explicitly compares optimistic and pessimistic locking, including performance, concurrency, and conflict‑resolution considerations.\n\n_If you can supply a specific note, article, or URL that covers these tradeoffs, I can synthesize the requested four‑bullet summary._",
         "kind": "note"
       },
       "rationale": "auto-injected: scan answer for secrets, dodgy URLs",
@@ -87,24 +104,28 @@ If the user asked for N items, produce N items. If they named items A/B/C, the o
     {
       "tool": "peer.review",
       "args": {
-        "task": "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nWrite an email to a customer, Dr. Patel, apologizing that their data export was delayed 3 days due to a migration bug. Own it, give a concrete fix date (this Friday), and offer a 1-month credit. Keep it under 150 words, warm but not grovelling.\n\nInterpretation: intent=draft-email, target=\"email to a customer, dr. patel, apologizing that their data export was delayed 3 days due to a migration bug. own it, gi\", tone=warm.\n\nDeliverable shape: Email format. Start with `Subject:` on its own line, then a blank line, then the body. Include a greeting and a sign-off using the persona's first name (or \"Best\" if no persona). No preamble like \"Here's the email\" — output the email itself.\n\nTone: warm.\n\n**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:\n- Named counts (\"5 steps\", \"top 3 risks\", \"4-stage loop\", \"3 social variants\") → produce exactly that many items.\n- Named people, roles, accounts, vendors → reference each by name.\n- Specific dates, deadlines, scale numbers (\"by 2026-06-15\", \"1200 employees\", \"$99/mo\") → echo verbatim.\n- Named sections / deliverable shape (\"Title, Symptoms, Root cause, Resolution, Prevention\" or \"must-haves vs nice-to-haves\") → produce each named section.\n- Named steps in a process (\"paging on-call → scoping impact → status page → comms → escalation → post-mortem\") → cover every step.\n- Output format directives (\"numbered list\", \"table\", \"≤4 bullets\") → honour exactly.\n\nIf the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.",
-        "answer": "Subject: Apology & Resolution for Your Data Export  \n\nHi Dr. Patel,\n\nI’m sorry that the export of your data was delayed by three days due to a migration bug on our end. We take full responsibility and have already fixed the issue. The export will be completed and delivered to you by this Friday.\n\nAs a token of our appreciation for your patience, we’d like to credit your account with one month of service at no charge.\n\nPlease let me know if there’s anything else we can do for you.\n\nThank you for your understanding.\n\nBest,  \n[Your Name]  \nCustomer Success, NeuroWorks  \n[Contact Information]"
+        "task": "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nSummarize the key tradeoffs of optimistic vs pessimistic locking in databases in 4 bullets max. Be specific — no textbook filler.\n\nInterpretation: intent=summarize, target=\"key tradeoffs of optimistic vs pessimistic locking in databases in 4 bullets max. Be specific — no textbook filler\", scope=in 4 bullets.\n\nDeliverable shape: Summary format. Start with a 1-sentence **Bottom line:** (bold label, then the sentence), then 3-7 short bullets covering the key points, then a `## Sources` block if any sources were used. Do NOT use the literal heading \"TL;DR\" — say what it actually IS. No preamble.\n\nScope: in 4 bullets.\n\n**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:\n- Named counts (\"5 steps\", \"top 3 risks\", \"4-stage loop\", \"3 social variants\") → produce exactly that many items.\n- Named people, roles, accounts, vendors → reference each by name.\n- Specific dates, deadlines, scale numbers (\"by 2026-06-15\", \"1200 employees\", \"$99/mo\") → echo verbatim.\n- Named sections / deliverable shape (\"Title, Symptoms, Root cause, Resolution, Prevention\" or \"must-haves vs nice-to-haves\") → produce each named section.\n- Named steps in a process (\"paging on-call → scoping impact → status page → comms → escalation → post-mortem\") → cover every step.\n- Output format directives (\"numbered list\", \"table\", \"≤4 bullets\") → honour exactly.\n\nIf the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.",
+        "answer": "**Bottom line:** I could not locate any internal or external material that discusses the tradeoffs between optimistic and pessimistic locking in databases.\n\n- No vault notes, research files, or web sources in the evidence catalog contain relevant information on this topic.\n- The only web source retrieved was a dictionary definition of “optimistic,” which does not address database locking strategies.\n- To provide a grounded summary, I would need either a vault file or a credible external reference that explicitly compares optimistic and pessimistic locking, including performance, concurrency, and conflict‑resolution considerations.\n\n_If you can supply a specific note, article, or URL that covers these tradeoffs, I can synthesize the requested four‑bullet summary._"
       },
-      "rationale": "auto-injected: quality score=0.00 (pass=false) — peer review for a second opinion",
+      "rationale": "auto-injected: quality score=0.70 (pass=false) — peer review for a second opinion",
       "label": "Asking a peer to review the draft"
     }
   ],
-  "summary": "Default research plan for: email to a customer, Dr. Patel, apologizing that their data export was delayed 3 days due to a migration bug. Own it, give a concrete fix date (this Friday), and offer a 1-month credit. Keep it under 150 words, warm but not grovelling",
+  "summary": "Research, generate concise summary, then quality‑check.",
   "waves": [
     [
-      0
+      0,
+      1
     ],
     [
-      1,
       2
     ],
     [
-      3
+      3,
+      4
+    ],
+    [
+      5
     ]
   ]
 }
