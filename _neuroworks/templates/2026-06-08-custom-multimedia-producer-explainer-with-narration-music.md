@@ -2,7 +2,7 @@
 type: template
 title: Explainer with narration + music (custom-multimedia-producer-explainer-with-narration-music)
 slug: custom-multimedia-producer-explainer-with-narration-music
-created: 2026-06-08T16:08:06.392Z
+created: 2026-06-08T16:08:36.546Z
 templateId: custom-multimedia-producer-explainer-with-narration-music
 role: Custom
 originTask: Build a short explainer for the following topic. Write a clear spoken script, narrate it with media.tts, and produce a soft instrumental bed with media.music that sits under the voice. Optionally generate a supporting visual with media.video. Return the script, all prompts, all asset paths, and an assembly note on levels (voice over a quiet bed).
