@@ -2,7 +2,7 @@
 type: template
 title: Onboarding 30-60-90 plan (custom-hr-manager-onboarding-30-60-90-plan)
 slug: custom-hr-manager-onboarding-30-60-90-plan
-created: 2026-06-10T17:30:47.467Z
+created: 2026-06-10T17:38:37.373Z
 templateId: custom-hr-manager-onboarding-30-60-90-plan
 role: Custom
 originTask: Build a 30-60-90 day onboarding plan for the role/new hire described. Include concrete checklists (access, training, intros, first deliverables) with an owner and timing for each item.
