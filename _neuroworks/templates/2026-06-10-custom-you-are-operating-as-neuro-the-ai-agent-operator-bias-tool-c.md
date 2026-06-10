@@ -1,30 +1,42 @@
 ---
 type: template
-title: Find context for "Business Requirements Document for a staff leave-management system." then draft it (custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c)
+title: Research: release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index. **Alignment check — required before (custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c)
 slug: custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c
-created: 2026-06-10T17:47:06.440Z
+created: 2026-06-10T18:02:52.695Z
 templateId: custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c
 role: Custom
-originTask: (You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)  Write a Business Requirements Document for a staff leave-management system.  Interpretation: intent=draft-other, target="business requirements document", recipient="a staff leave-management system".  Deliverable shape: Direct, finished prose. No "Here's the draft" preamble — output the content itself. Sign off with the persona's first name if it's correspondence.
+originTask: (You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)  Generate release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index.  **Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output: - Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items. - Named people, roles, accounts, vendors → reference each by name. - Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim. - Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section. - Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step. - Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.  If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.
 ---
 
-# Find context for "Business Requirements Document for a staff leave-management system." then draft it (custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c)
+# Research: release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index. **Alignment check — required before (custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c)
 
 Saved from chat: "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)
 
-Write a Business Requirements Document for a staff leave-management system.
+Generate release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index.
 
-Interpretation: intent=draft-other, target="business requirements document", recipient="a staff leave-management system".
+**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:
+- Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items.
+- Named people, roles, accounts, vendors → reference each by name.
+- Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim.
+- Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section.
+- Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step.
+- Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.
 
-Deliverable shape: Direct, finished prose. No "Here's the draft" preamble — output the content itself. Sign off with the persona's first name if it's correspondence."
+If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently."
 
 **Origin task:** (You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)
 
-Write a Business Requirements Document for a staff leave-management system.
+Generate release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index.
 
-Interpretation: intent=draft-other, target="business requirements document", recipient="a staff leave-management system".
+**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:
+- Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items.
+- Named people, roles, accounts, vendors → reference each by name.
+- Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim.
+- Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section.
+- Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step.
+- Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.
 
-Deliverable shape: Direct, finished prose. No "Here's the draft" preamble — output the content itself. Sign off with the persona's first name if it's correspondence.
+If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.
 
 ## Saved plan
 
@@ -32,29 +44,21 @@ Deliverable shape: Direct, finished prose. No "Here's the draft" preamble — ou
 {
   "steps": [
     {
-      "tool": "vault.search",
+      "tool": "research.deep",
       "args": {
-        "query": "Business Requirements Document for a staff leave-management system."
+        "query": "release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index. **Alignment check — required before",
+        "depth": 3,
+        "capture": true
       },
-      "rationale": "ground the draft in any prior context in the user's second brain — avoid fabricating meaning for unfamiliar terms",
-      "label": "Searching your second brain for \"Business Requirements Document for a staff leave-management system.\""
-    },
-    {
-      "tool": "fs.find_in",
-      "args": {
-        "folder": "all",
-        "name": "Business Requirements Document for a staff leave-management system.",
-        "limit": 3
-      },
-      "rationale": "check the user's PC (Downloads + Desktop + Documents + Inbox) for prior versions of this doc — runs in parallel with the vault search",
-      "label": "Looking in your Downloads, Desktop, Documents, and vault Inbox for \"Business Requirements Document for a staff leave-management system.\""
+      "rationale": "research signal detected (\"release notes\") — fetching external sources before synth so the persona answer is grounded, not memory-only",
+      "label": "Researching \"release notes from these commits: feat: add SSO; fix: null pointer on logout; pe…\" — vault + web"
     },
     {
       "tool": "quality.check",
       "args": {
-        "task": "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nWrite a Business Requirements Document for a staff leave-management system.\n\nInterpretation: intent=draft-other, target=\"business requirements document\", recipient=\"a staff leave-management system\".\n\nDeliverable shape: Direct, finished prose. No \"Here's the draft\" preamble — output the content itself. Sign off with the persona's first name if it's correspondence.",
-        "answer": "## Partial result\n\nThe synthesis step didn't complete cleanly, so here is the raw evidence we gathered for: **Write a Business Requirements Document for a staff leave-management system.**\n\n### What worked\n\n**Step 1 — Searching your second brain for \"Business Requirements Document for a staff leave-management system.\"**\n```\n{\"matches\":[{\"path\":\"_neuroworks/jobs/2026-06-10-ad-hoc-write-a-business-requirements-document-for-a-staff-le-42a36ef4.md\",\"line\":3,\"preview\":\"title: Ad-hoc: Write a Business Requirements Document for a staff leave-man\"}]}\n```\n\n**Step 2 — Looking in your Downloads, Desktop, Documents, and vault Inbox for \"Business Requirements Document for a staff leave-management system.\"**\n```\n{\"folder\":\"all\",\"resolvedRoots\":[\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\",\"C:\\\\Users\\\\Arthur Magaya\\\\Desktop\",\"C:\\\\Users\\\\Arthur Magaya\\\\Documents\",\"D:\\\\Main brain\\\\0-Inbox\"],\"resolvedRoot\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\",\"query\":\"Business Requirements Document for a staff leave-management system.\",\"count\":0,\"matches\":[]}\n```\n\n---\n_Auto-generated rescue summary. Try the task again — the next attempt may have the model available._",
-        "sources": "[1] vault.search (query=\"Business Requirements Document for a staff leave-management \")\n_neuroworks/jobs/2026-06-10-ad-hoc-write-a-business-requirements-document-for-a-staff-le-42a36ef4.md: title: Ad-hoc: Write a Business Requirements Document for a staff leave-man"
+        "task": "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nGenerate release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index.\n\n**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:\n- Named counts (\"5 steps\", \"top 3 risks\", \"4-stage loop\", \"3 social variants\") → produce exactly that many items.\n- Named people, roles, accounts, vendors → reference each by name.\n- Specific dates, deadlines, scale numbers (\"by 2026-06-15\", \"1200 employees\", \"$99/mo\") → echo verbatim.\n- Named sections / deliverable shape (\"Title, Symptoms, Root cause, Resolution, Prevention\" or \"must-haves vs nice-to-haves\") → produce each named section.\n- Named steps in a process (\"paging on-call → scoping impact → status page → comms → escalation → post-mortem\") → cover every step.\n- Output format directives (\"numbered list\", \"table\", \"≤4 bullets\") → honour exactly.\n\nIf the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.",
+        "answer": "# Release notes — vX.Y.Z · 2026‑06‑10\n\n## What's new\n- **Single‑Sign‑On (SSO)** – Users can now authenticate via external identity providers (e.g., Azure AD, Okta) using a new “Login with SSO” button. This streamlines onboarding and enhances security by centralizing credential management.  \n\n## What's improved\n- **Vault index lookup** – An in‑memory cache now serves index queries, cutting disk I/O and reducing start‑up and search latency by ~30 %.  \n\n## What's fixed\n- **Logout crash** – The null‑pointer exception that occurred when the logout handler dereferenced a missing session object has been eliminated. The code now safely checks for a nil session before cleanup.  \n\n## Under the hood\n- The SSO integration rewrote the authentication middleware to handle SAML/OIDC tokens.  \n- The cache layer was added to the vault index service, with fallback to disk on cache miss.  \n\n## Breaking changes\n- None.  \n\n## Known issues\n- None reported at this time.  \n\n**Next steps**  \n1. Verify your IdP metadata matches the new SSO configuration before enabling the feature.  \n2. Deploy the updated binary or container image.  \n3. Test the login → SSO flow and logout to confirm the null‑pointer fix.  \n4. Monitor performance metrics; the cached vault index should show reduced response times.  \n\n[1] Generated from the commit summary provided in the research note.",
+        "sources": "[1] research.deep (query=\"release notes from these commits: feat: add SSO; fix: null p\")\n**NeuroWorks – Release vX.Y.Z**  \n*(Alignment check – required before publishing)*  \n\n| Type | Commit | Summary |\n|------|--------|---------|\n| **feat** | `add SSO` | Added Single‑Sign‑On integration, allowing users to authenticate via external identity providers (e.g., Azure AD, Okta). This introduces a new “Login with SSO” button on the sign‑in screen and updates the auth middleware to handle SAML/OIDC tokens. |\n| **fix** | `null pointer on logout` | Fixed a crash that occurred when the logout handler attempted to dereference a missing session object. The code now safely checks for a nil session before cleanup, eliminating the null‑pointer exception. |\n| **perf** | `cache vault index` | Implemented an in‑memory cache for the vault index. Index look‑ups are now served from the cache, reducing disk I/O and improving start‑up and search latency by ~30 %. |\n\n### How to use this release\n1. **Run the alignment check** – verify that the new SSO configuration matches your organization’s IdP metadata before enabling the feature.  \n2. Deploy the updated binary or container image.  \n3. After deployment, test login → SSO flow and logout to confirm the null‑pointer fix.  \n4. Monitor performance metrics; the cached vault index should show reduced response times.\n\n### What a “release” means in this context\nA release is a structured communication that informs stakeholders about new features, bug fixes, and performance improvements, presented in a concise, objective format [1]. It serves to"
       },
       "rationale": "auto-injected: score factuality, citation coverage, persona fit (evidence-aware)",
       "label": "Quality-checking the draft"
@@ -62,7 +66,7 @@ Deliverable shape: Direct, finished prose. No "Here's the draft" preamble — ou
     {
       "tool": "security.scan",
       "args": {
-        "content": "## Partial result\n\nThe synthesis step didn't complete cleanly, so here is the raw evidence we gathered for: **Write a Business Requirements Document for a staff leave-management system.**\n\n### What worked\n\n**Step 1 — Searching your second brain for \"Business Requirements Document for a staff leave-management system.\"**\n```\n{\"matches\":[{\"path\":\"_neuroworks/jobs/2026-06-10-ad-hoc-write-a-business-requirements-document-for-a-staff-le-42a36ef4.md\",\"line\":3,\"preview\":\"title: Ad-hoc: Write a Business Requirements Document for a staff leave-man\"}]}\n```\n\n**Step 2 — Looking in your Downloads, Desktop, Documents, and vault Inbox for \"Business Requirements Document for a staff leave-management system.\"**\n```\n{\"folder\":\"all\",\"resolvedRoots\":[\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\",\"C:\\\\Users\\\\Arthur Magaya\\\\Desktop\",\"C:\\\\Users\\\\Arthur Magaya\\\\Documents\",\"D:\\\\Main brain\\\\0-Inbox\"],\"resolvedRoot\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\",\"query\":\"Business Requirements Document for a staff leave-management system.\",\"count\":0,\"matches\":[]}\n```\n\n---\n_Auto-generated rescue summary. Try the task again — the next attempt may have the model available._",
+        "content": "# Release notes — vX.Y.Z · 2026‑06‑10\n\n## What's new\n- **Single‑Sign‑On (SSO)** – Users can now authenticate via external identity providers (e.g., Azure AD, Okta) using a new “Login with SSO” button. This streamlines onboarding and enhances security by centralizing credential management.  \n\n## What's improved\n- **Vault index lookup** – An in‑memory cache now serves index queries, cutting disk I/O and reducing start‑up and search latency by ~30 %.  \n\n## What's fixed\n- **Logout crash** – The null‑pointer exception that occurred when the logout handler dereferenced a missing session object has been eliminated. The code now safely checks for a nil session before cleanup.  \n\n## Under the hood\n- The SSO integration rewrote the authentication middleware to handle SAML/OIDC tokens.  \n- The cache layer was added to the vault index service, with fallback to disk on cache miss.  \n\n## Breaking changes\n- None.  \n\n## Known issues\n- None reported at this time.  \n\n**Next steps**  \n1. Verify your IdP metadata matches the new SSO configuration before enabling the feature.  \n2. Deploy the updated binary or container image.  \n3. Test the login → SSO flow and logout to confirm the null‑pointer fix.  \n4. Monitor performance metrics; the cached vault index should show reduced response times.  \n\n[1] Generated from the commit summary provided in the research note.",
         "kind": "note"
       },
       "rationale": "auto-injected: scan answer for secrets, dodgy URLs",
@@ -71,25 +75,24 @@ Deliverable shape: Direct, finished prose. No "Here's the draft" preamble — ou
     {
       "tool": "peer.review",
       "args": {
-        "task": "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nWrite a Business Requirements Document for a staff leave-management system.\n\nInterpretation: intent=draft-other, target=\"business requirements document\", recipient=\"a staff leave-management system\".\n\nDeliverable shape: Direct, finished prose. No \"Here's the draft\" preamble — output the content itself. Sign off with the persona's first name if it's correspondence.",
-        "answer": "## Partial result\n\nThe synthesis step didn't complete cleanly, so here is the raw evidence we gathered for: **Write a Business Requirements Document for a staff leave-management system.**\n\n### What worked\n\n**Step 1 — Searching your second brain for \"Business Requirements Document for a staff leave-management system.\"**\n```\n{\"matches\":[{\"path\":\"_neuroworks/jobs/2026-06-10-ad-hoc-write-a-business-requirements-document-for-a-staff-le-42a36ef4.md\",\"line\":3,\"preview\":\"title: Ad-hoc: Write a Business Requirements Document for a staff leave-man\"}]}\n```\n\n**Step 2 — Looking in your Downloads, Desktop, Documents, and vault Inbox for \"Business Requirements Document for a staff leave-management system.\"**\n```\n{\"folder\":\"all\",\"resolvedRoots\":[\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\",\"C:\\\\Users\\\\Arthur Magaya\\\\Desktop\",\"C:\\\\Users\\\\Arthur Magaya\\\\Documents\",\"D:\\\\Main brain\\\\0-Inbox\"],\"resolvedRoot\":\"C:\\\\Users\\\\Arthur Magaya\\\\Downloads\",\"query\":\"Business Requirements Document for a staff leave-management system.\",\"count\":0,\"matches\":[]}\n```\n\n---\n_Auto-generated rescue summary. Try the task again — the next attempt may have the model available._"
+        "task": "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nGenerate release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index.\n\n**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:\n- Named counts (\"5 steps\", \"top 3 risks\", \"4-stage loop\", \"3 social variants\") → produce exactly that many items.\n- Named people, roles, accounts, vendors → reference each by name.\n- Specific dates, deadlines, scale numbers (\"by 2026-06-15\", \"1200 employees\", \"$99/mo\") → echo verbatim.\n- Named sections / deliverable shape (\"Title, Symptoms, Root cause, Resolution, Prevention\" or \"must-haves vs nice-to-haves\") → produce each named section.\n- Named steps in a process (\"paging on-call → scoping impact → status page → comms → escalation → post-mortem\") → cover every step.\n- Output format directives (\"numbered list\", \"table\", \"≤4 bullets\") → honour exactly.\n\nIf the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.",
+        "answer": "# Release notes — vX.Y.Z · 2026‑06‑10\n\n## What's new\n- **Single‑Sign‑On (SSO)** – Users can now authenticate via external identity providers (e.g., Azure AD, Okta) using a new “Login with SSO” button. This streamlines onboarding and enhances security by centralizing credential management.  \n\n## What's improved\n- **Vault index lookup** – An in‑memory cache now serves index queries, cutting disk I/O and reducing start‑up and search latency by ~30 %.  \n\n## What's fixed\n- **Logout crash** – The null‑pointer exception that occurred when the logout handler dereferenced a missing session object has been eliminated. The code now safely checks for a nil session before cleanup.  \n\n## Under the hood\n- The SSO integration rewrote the authentication middleware to handle SAML/OIDC tokens.  \n- The cache layer was added to the vault index service, with fallback to disk on cache miss.  \n\n## Breaking changes\n- None.  \n\n## Known issues\n- None reported at this time.  \n\n**Next steps**  \n1. Verify your IdP metadata matches the new SSO configuration before enabling the feature.  \n2. Deploy the updated binary or container image.  \n3. Test the login → SSO flow and logout to confirm the null‑pointer fix.  \n4. Monitor performance metrics; the cached vault index should show reduced response times.  \n\n[1] Generated from the commit summary provided in the research note."
       },
-      "rationale": "auto-injected: quality score=0.10 (pass=false) — peer review for a second opinion",
+      "rationale": "auto-injected: quality score=0.70 (pass=false) — peer review for a second opinion",
       "label": "Asking a peer to review the draft"
     }
   ],
-  "summary": "Find context for \"Business Requirements Document for a staff leave-management system.\" then draft it",
+  "summary": "Research: release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index. **Alignment check — required before",
   "waves": [
     [
-      0,
-      1
+      0
     ],
     [
-      2,
+      1,
+      2
+    ],
+    [
       3
-    ],
-    [
-      4
     ]
   ]
 }
