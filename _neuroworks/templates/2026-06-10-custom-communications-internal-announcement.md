@@ -2,7 +2,7 @@
 type: template
 title: Internal announcement (custom-communications-internal-announcement)
 slug: custom-communications-internal-announcement
-created: 2026-06-10T10:33:38.814Z
+created: 2026-06-10T11:56:09.173Z
 templateId: custom-communications-internal-announcement
 role: Custom
 originTask: Draft an internal announcement of the change described — clear and on-message, leading with what it means for the reader, then the detail, then where to get help.
