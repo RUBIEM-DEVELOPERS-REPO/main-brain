@@ -1,42 +1,22 @@
 ---
 type: template
-title: Research: release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index. **Alignment check — required before (custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c)
+title: Find context for "pricing proposal for our enterprise tier at 3 seat bands." then draft it (custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c)
 slug: custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c
-created: 2026-06-10T18:02:52.695Z
+created: 2026-06-10T18:16:42.266Z
 templateId: custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c
 role: Custom
-originTask: (You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)  Generate release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index.  **Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output: - Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items. - Named people, roles, accounts, vendors → reference each by name. - Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim. - Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section. - Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step. - Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.  If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.
+originTask: (You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)  Put together a pricing proposal for our enterprise tier at 3 seat bands.
 ---
 
-# Research: release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index. **Alignment check — required before (custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c)
+# Find context for "pricing proposal for our enterprise tier at 3 seat bands." then draft it (custom-you-are-operating-as-neuro-the-ai-agent-operator-bias-tool-c)
 
 Saved from chat: "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)
 
-Generate release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index.
-
-**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:
-- Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items.
-- Named people, roles, accounts, vendors → reference each by name.
-- Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim.
-- Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section.
-- Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step.
-- Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.
-
-If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently."
+Put together a pricing proposal for our enterprise tier at 3 seat bands."
 
 **Origin task:** (You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)
 
-Generate release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index.
-
-**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:
-- Named counts ("5 steps", "top 3 risks", "4-stage loop", "3 social variants") → produce exactly that many items.
-- Named people, roles, accounts, vendors → reference each by name.
-- Specific dates, deadlines, scale numbers ("by 2026-06-15", "1200 employees", "$99/mo") → echo verbatim.
-- Named sections / deliverable shape ("Title, Symptoms, Root cause, Resolution, Prevention" or "must-haves vs nice-to-haves") → produce each named section.
-- Named steps in a process ("paging on-call → scoping impact → status page → comms → escalation → post-mortem") → cover every step.
-- Output format directives ("numbered list", "table", "≤4 bullets") → honour exactly.
-
-If the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.
+Put together a pricing proposal for our enterprise tier at 3 seat bands.
 
 ## Saved plan
 
@@ -44,21 +24,29 @@ If the user asked for N items, produce N items. If they named items A/B/C, the o
 {
   "steps": [
     {
-      "tool": "research.deep",
+      "tool": "vault.search",
       "args": {
-        "query": "release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index. **Alignment check — required before",
-        "depth": 3,
-        "capture": true
+        "query": "pricing proposal for our enterprise tier at 3 seat bands."
       },
-      "rationale": "research signal detected (\"release notes\") — fetching external sources before synth so the persona answer is grounded, not memory-only",
-      "label": "Researching \"release notes from these commits: feat: add SSO; fix: null pointer on logout; pe…\" — vault + web"
+      "rationale": "ground the draft in any prior context in the user's second brain — avoid fabricating meaning for unfamiliar terms",
+      "label": "Searching your second brain for \"pricing proposal for our enterprise tier at 3 seat bands.\""
+    },
+    {
+      "tool": "fs.find_in",
+      "args": {
+        "folder": "all",
+        "name": "pricing proposal for our enterprise tier at 3 seat bands.",
+        "limit": 3
+      },
+      "rationale": "check the user's PC (Downloads + Desktop + Documents + Inbox) for prior versions of this doc — runs in parallel with the vault search",
+      "label": "Looking in your Downloads, Desktop, Documents, and vault Inbox for \"pricing proposal for our enterprise tier at 3 seat bands.\""
     },
     {
       "tool": "quality.check",
       "args": {
-        "task": "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nGenerate release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index.\n\n**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:\n- Named counts (\"5 steps\", \"top 3 risks\", \"4-stage loop\", \"3 social variants\") → produce exactly that many items.\n- Named people, roles, accounts, vendors → reference each by name.\n- Specific dates, deadlines, scale numbers (\"by 2026-06-15\", \"1200 employees\", \"$99/mo\") → echo verbatim.\n- Named sections / deliverable shape (\"Title, Symptoms, Root cause, Resolution, Prevention\" or \"must-haves vs nice-to-haves\") → produce each named section.\n- Named steps in a process (\"paging on-call → scoping impact → status page → comms → escalation → post-mortem\") → cover every step.\n- Output format directives (\"numbered list\", \"table\", \"≤4 bullets\") → honour exactly.\n\nIf the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.",
-        "answer": "# Release notes — vX.Y.Z · 2026‑06‑10\n\n## What's new\n- **Single‑Sign‑On (SSO)** – Users can now authenticate via external identity providers (e.g., Azure AD, Okta) using a new “Login with SSO” button. This streamlines onboarding and enhances security by centralizing credential management.  \n\n## What's improved\n- **Vault index lookup** – An in‑memory cache now serves index queries, cutting disk I/O and reducing start‑up and search latency by ~30 %.  \n\n## What's fixed\n- **Logout crash** – The null‑pointer exception that occurred when the logout handler dereferenced a missing session object has been eliminated. The code now safely checks for a nil session before cleanup.  \n\n## Under the hood\n- The SSO integration rewrote the authentication middleware to handle SAML/OIDC tokens.  \n- The cache layer was added to the vault index service, with fallback to disk on cache miss.  \n\n## Breaking changes\n- None.  \n\n## Known issues\n- None reported at this time.  \n\n**Next steps**  \n1. Verify your IdP metadata matches the new SSO configuration before enabling the feature.  \n2. Deploy the updated binary or container image.  \n3. Test the login → SSO flow and logout to confirm the null‑pointer fix.  \n4. Monitor performance metrics; the cached vault index should show reduced response times.  \n\n[1] Generated from the commit summary provided in the research note.",
-        "sources": "[1] research.deep (query=\"release notes from these commits: feat: add SSO; fix: null p\")\n**NeuroWorks – Release vX.Y.Z**  \n*(Alignment check – required before publishing)*  \n\n| Type | Commit | Summary |\n|------|--------|---------|\n| **feat** | `add SSO` | Added Single‑Sign‑On integration, allowing users to authenticate via external identity providers (e.g., Azure AD, Okta). This introduces a new “Login with SSO” button on the sign‑in screen and updates the auth middleware to handle SAML/OIDC tokens. |\n| **fix** | `null pointer on logout` | Fixed a crash that occurred when the logout handler attempted to dereference a missing session object. The code now safely checks for a nil session before cleanup, eliminating the null‑pointer exception. |\n| **perf** | `cache vault index` | Implemented an in‑memory cache for the vault index. Index look‑ups are now served from the cache, reducing disk I/O and improving start‑up and search latency by ~30 %. |\n\n### How to use this release\n1. **Run the alignment check** – verify that the new SSO configuration matches your organization’s IdP metadata before enabling the feature.  \n2. Deploy the updated binary or container image.  \n3. After deployment, test login → SSO flow and logout to confirm the null‑pointer fix.  \n4. Monitor performance metrics; the cached vault index should show reduced response times.\n\n### What a “release” means in this context\nA release is a structured communication that informs stakeholders about new features, bug fixes, and performance improvements, presented in a concise, objective format [1]. It serves to"
+        "task": "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nPut together a pricing proposal for our enterprise tier at 3 seat bands.",
+        "answer": "# Pricing proposal — NeuroWorks Enterprise Tier · 2026‑06‑10\n\n## What you told us you need\n- **Enterprise‑level support** for a small team (3 seat bands)\n- **Scalable, secure deployment** on the customer’s local machine\n- **Custom feature set** tailored to the organization’s workflow\n\n## Three ways forward\n\n### Option A — Core Enterprise · $3,000 / month\n**Right for:** Small teams that need a stable, fully‑supported platform with essential enterprise features.\n\n**Included**\n- Deployment on the customer’s local machine (loopback 127.0.0.1)\n- 24/7 on‑call support via email and chat\n- Quarterly security and compliance reviews\n- Access to core AI‑workforce personas (chat, task runner, email bridge)\n\n**Not included**\n- Custom persona development\n- Advanced analytics dashboards\n- Dedicated account manager\n\n**Success in 90 days looks like**\n- Platform running with zero critical incidents\n- 95 % uptime for all core services\n- User adoption rate ≥ 80 % across the 3 seat bands\n\n### Option B — Advanced Enterprise · $5,000 / month\n**Right for:** Teams that require additional customization and proactive monitoring.\n\n**Included**\n- All features of Option A\n- Custom persona creation and integration\n- Real‑time analytics dashboards\n- Dedicated account manager\n\n**Not included**\n- On‑premise hardware procurement\n- External data source integrations beyond the platform\n\n**Success in 90 days looks like**\n- 100 % adoption of custom personas\n- 99 % uptime\n- Monthly performance reports delivered to stakeholders\n\n### Option C — Premium Enterprise · $8,000 / month\n**Right for:** Organizations that need full control, advanced security, and priority service.\n\n**Included**\n- All features of Option B\n- Dedicated security officer review\n- Priority incident response (within 1 hour)\n- SLA of 99.99 % uptime\n\n**Not included**\n- Physical infrastructure maintenance\n- Third‑party integration beyond the platform’s API\n\n**Success in 90 days looks like**\n- Zero critical incidents\n- 99.99 % uptime\n- Executive dashboard with real‑time metrics\n\n## Our recommendation\n> **Option B – Advanced Enterprise** balances cost and capability for a 3‑seat band, providing the necessary customization and support while keeping the investment reasonable.\n\n## Terms\n- Payment: Monthly in advance\n- Term: 12 months\n- Cancellation: 30 days written notice\n- Renewal: Auto‑renew, opt‑in\n\n## Next step\n- Schedule a kickoff call to finalize scope and pricing details\n- Decision needed by: 2026‑07‑15\n- Point of contact your side: <Name>\n\n---\n\n*I could not locate an existing pricing proposal in the vault or file system. The above is a draft based on typical enterprise tiers. Please confirm the desired features, pricing constraints, and any additional requirements so I can refine this proposal.*",
+        "sources": ""
       },
       "rationale": "auto-injected: score factuality, citation coverage, persona fit (evidence-aware)",
       "label": "Quality-checking the draft"
@@ -66,32 +54,21 @@ If the user asked for N items, produce N items. If they named items A/B/C, the o
     {
       "tool": "security.scan",
       "args": {
-        "content": "# Release notes — vX.Y.Z · 2026‑06‑10\n\n## What's new\n- **Single‑Sign‑On (SSO)** – Users can now authenticate via external identity providers (e.g., Azure AD, Okta) using a new “Login with SSO” button. This streamlines onboarding and enhances security by centralizing credential management.  \n\n## What's improved\n- **Vault index lookup** – An in‑memory cache now serves index queries, cutting disk I/O and reducing start‑up and search latency by ~30 %.  \n\n## What's fixed\n- **Logout crash** – The null‑pointer exception that occurred when the logout handler dereferenced a missing session object has been eliminated. The code now safely checks for a nil session before cleanup.  \n\n## Under the hood\n- The SSO integration rewrote the authentication middleware to handle SAML/OIDC tokens.  \n- The cache layer was added to the vault index service, with fallback to disk on cache miss.  \n\n## Breaking changes\n- None.  \n\n## Known issues\n- None reported at this time.  \n\n**Next steps**  \n1. Verify your IdP metadata matches the new SSO configuration before enabling the feature.  \n2. Deploy the updated binary or container image.  \n3. Test the login → SSO flow and logout to confirm the null‑pointer fix.  \n4. Monitor performance metrics; the cached vault index should show reduced response times.  \n\n[1] Generated from the commit summary provided in the research note.",
+        "content": "# Pricing proposal — NeuroWorks Enterprise Tier · 2026‑06‑10\n\n## What you told us you need\n- **Enterprise‑level support** for a small team (3 seat bands)\n- **Scalable, secure deployment** on the customer’s local machine\n- **Custom feature set** tailored to the organization’s workflow\n\n## Three ways forward\n\n### Option A — Core Enterprise · $3,000 / month\n**Right for:** Small teams that need a stable, fully‑supported platform with essential enterprise features.\n\n**Included**\n- Deployment on the customer’s local machine (loopback 127.0.0.1)\n- 24/7 on‑call support via email and chat\n- Quarterly security and compliance reviews\n- Access to core AI‑workforce personas (chat, task runner, email bridge)\n\n**Not included**\n- Custom persona development\n- Advanced analytics dashboards\n- Dedicated account manager\n\n**Success in 90 days looks like**\n- Platform running with zero critical incidents\n- 95 % uptime for all core services\n- User adoption rate ≥ 80 % across the 3 seat bands\n\n### Option B — Advanced Enterprise · $5,000 / month\n**Right for:** Teams that require additional customization and proactive monitoring.\n\n**Included**\n- All features of Option A\n- Custom persona creation and integration\n- Real‑time analytics dashboards\n- Dedicated account manager\n\n**Not included**\n- On‑premise hardware procurement\n- External data source integrations beyond the platform\n\n**Success in 90 days looks like**\n- 100 % adoption of custom personas\n- 99 % uptime\n- Monthly performance reports delivered to stakeholders\n\n### Option C — Premium Enterprise · $8,000 / month\n**Right for:** Organizations that need full control, advanced security, and priority service.\n\n**Included**\n- All features of Option B\n- Dedicated security officer review\n- Priority incident response (within 1 hour)\n- SLA of 99.99 % uptime\n\n**Not included**\n- Physical infrastructure maintenance\n- Third‑party integration beyond the platform’s API\n\n**Success in 90 days looks like**\n- Zero critical incidents\n- 99.99 % uptime\n- Executive dashboard with real‑time metrics\n\n## Our recommendation\n> **Option B – Advanced Enterprise** balances cost and capability for a 3‑seat band, providing the necessary customization and support while keeping the investment reasonable.\n\n## Terms\n- Payment: Monthly in advance\n- Term: 12 months\n- Cancellation: 30 days written notice\n- Renewal: Auto‑renew, opt‑in\n\n## Next step\n- Schedule a kickoff call to finalize scope and pricing details\n- Decision needed by: 2026‑07‑15\n- Point of contact your side: <Name>\n\n---\n\n*I could not locate an existing pricing proposal in the vault or file system. The above is a draft based on typical enterprise tiers. Please confirm the desired features, pricing constraints, and any additional requirements so I can refine this proposal.*",
         "kind": "note"
       },
       "rationale": "auto-injected: scan answer for secrets, dodgy URLs",
       "label": "Security-scanning the note"
-    },
-    {
-      "tool": "peer.review",
-      "args": {
-        "task": "(You are operating as Neuro, the AI agent operator. Bias tool choices, output shape, and depth toward this role's conventions.)\n\nGenerate release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index.\n\n**Alignment check — required before responding.** Before producing the final answer, scan the user's request for CONCRETE elements and make sure each one is addressed in the output:\n- Named counts (\"5 steps\", \"top 3 risks\", \"4-stage loop\", \"3 social variants\") → produce exactly that many items.\n- Named people, roles, accounts, vendors → reference each by name.\n- Specific dates, deadlines, scale numbers (\"by 2026-06-15\", \"1200 employees\", \"$99/mo\") → echo verbatim.\n- Named sections / deliverable shape (\"Title, Symptoms, Root cause, Resolution, Prevention\" or \"must-haves vs nice-to-haves\") → produce each named section.\n- Named steps in a process (\"paging on-call → scoping impact → status page → comms → escalation → post-mortem\") → cover every step.\n- Output format directives (\"numbered list\", \"table\", \"≤4 bullets\") → honour exactly.\n\nIf the user asked for N items, produce N items. If they named items A/B/C, the output must reference A, B, AND C. Do NOT silently drop or substitute. If you cannot address one, say so explicitly with the reason — never omit silently.",
-        "answer": "# Release notes — vX.Y.Z · 2026‑06‑10\n\n## What's new\n- **Single‑Sign‑On (SSO)** – Users can now authenticate via external identity providers (e.g., Azure AD, Okta) using a new “Login with SSO” button. This streamlines onboarding and enhances security by centralizing credential management.  \n\n## What's improved\n- **Vault index lookup** – An in‑memory cache now serves index queries, cutting disk I/O and reducing start‑up and search latency by ~30 %.  \n\n## What's fixed\n- **Logout crash** – The null‑pointer exception that occurred when the logout handler dereferenced a missing session object has been eliminated. The code now safely checks for a nil session before cleanup.  \n\n## Under the hood\n- The SSO integration rewrote the authentication middleware to handle SAML/OIDC tokens.  \n- The cache layer was added to the vault index service, with fallback to disk on cache miss.  \n\n## Breaking changes\n- None.  \n\n## Known issues\n- None reported at this time.  \n\n**Next steps**  \n1. Verify your IdP metadata matches the new SSO configuration before enabling the feature.  \n2. Deploy the updated binary or container image.  \n3. Test the login → SSO flow and logout to confirm the null‑pointer fix.  \n4. Monitor performance metrics; the cached vault index should show reduced response times.  \n\n[1] Generated from the commit summary provided in the research note."
-      },
-      "rationale": "auto-injected: quality score=0.70 (pass=false) — peer review for a second opinion",
-      "label": "Asking a peer to review the draft"
     }
   ],
-  "summary": "Research: release notes from these commits: feat: add SSO; fix: null pointer on logout; perf: cache vault index. **Alignment check — required before",
+  "summary": "Find context for \"pricing proposal for our enterprise tier at 3 seat bands.\" then draft it",
   "waves": [
     [
-      0
+      0,
+      1
     ],
     [
-      1,
-      2
-    ],
-    [
+      2,
       3
     ]
   ]
