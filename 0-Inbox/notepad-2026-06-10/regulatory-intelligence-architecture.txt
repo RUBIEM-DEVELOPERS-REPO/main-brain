@@ -1,0 +1,180 @@
+Regulator Website
+     ↓
+Detect New Regulation
+     ↓
+Download Document
+     ↓
+Trigger API: /api/documents/parse
+     ↓
+Trigger API: /api/ai/extract-rules
+     ↓
+Trigger API: /api/compliance/analyze
+
+
+regulation_detected
+        ↓
+document_downloaded
+        ↓
+document_processed
+        ↓
+rules_extracted
+        ↓
+graph_updated
+        ↓
+compliance_alert_generated
+
+
+                ┌─────────────────────────────┐
+                │        PostgreSQL                                               
+                │─────────────────────────────
+                │ regulations                                                       
+                │ compliance_rules                                             
+                │ authorities                                                        
+                │ companies                                            
+                │ alerts                      
+                └─────────────────────────────┘
+
+                ┌─────────────────────────────┐
+                │         Vector DB           
+                │        (pgvector)           
+                │─────────────────────────────│
+                │ regulation embeddings       
+                │ semantic search             
+                │ regulation similarity       
+                └─────────────────────────────┘
+
+                ┌─────────────────────────────┐
+                │        Knowledge Graph      
+                │            Neo4j            
+                │─────────────────────────────│
+                │ regulatory relationships    
+                │ industry mappings           
+                │ product compliance links    
+                └─────────────────────────────┘
+
+
+
+
+
+                         ┌─────────────────────────────┐
+                         │        Regulatory Sources    │
+                         │─────────────────────────────│
+                         │ Central Banks               │
+                         │ Telecom Regulators          │
+                         │ Insurance Authorities       │
+                         │ Government Gazettes         │
+                         │ Legal Repositories          │
+                         │ RSS / Regulatory APIs       │
+                         └──────────────┬──────────────┘
+                                        │
+                                        │
+                                        ▼
+                        ┌────────────────────────────────┐
+                        │   Regulatory Data Acquisition  │
+                        │           (n8n)                │
+                        │────────────────────────────────│
+                        │ Website monitoring             │
+                        │ Crawlers (Playwright)          │
+                        │ RSS ingestion                  │
+                        │ API connectors                 │
+                        │ Change detection               │
+                        └──────────────┬─────────────────┘
+                                       │
+                          Event: regulation_detected
+                                       │
+                                       ▼
+                     ┌────────────────────────────────────┐
+                     │        Document Storage             │
+                     │────────────────────────────────────│
+                     │ Raw document store                  │
+                     │ (S3 / Azure Blob / MinIO)           │
+                     └──────────────┬─────────────────────┘
+                                    │
+                                    ▼
+                     ┌────────────────────────────────────┐
+                     │     Document Processing Service     │
+                     │────────────────────────────────────│
+                     │ File type detection                 │
+                     │ PDF parsing                         │
+                     │ OCR for scanned docs                │
+                     │ HTML extraction                     │
+                     │ Text normalization                  │
+                     └──────────────┬─────────────────────┘
+                                    │
+                          Event: document_processed
+                                    │
+                                    ▼
+                ┌────────────────────────────────────────────┐
+                │      AI Regulatory Interpretation Service   │
+                │────────────────────────────────────────────│
+                │ Chunk regulatory text                      │
+                │ Generate embeddings                        │
+                │ LLM rule extraction                        │
+                │ Obligation detection                       │
+                │ Deadline extraction                        │
+                │ Industry classification                    │
+                └──────────────┬─────────────────────────────┘
+                               │
+                     Event: rules_extracted
+                               │
+                               ▼
+                  ┌───────────────────────────────────────┐
+                  │        Regulatory Knowledge Graph     │
+                  │───────────────────────────────────────│
+                  │ Entities                              │
+                  │ • regulation                          │
+                  │ • authority                           │
+                  │ • industry                            │
+                  │ • compliance_rule                     │
+                  │ • product                             │
+                  │                                       │
+                  │ Relationships                         │
+                  │ regulation → applies_to → industry    │
+                  │ regulation → issued_by → authority    │
+                  │ rule → affects → product              │
+                  └──────────────┬────────────────────────┘
+                                 │
+                                 ▼
+                ┌─────────────────────────────────────────┐
+                │     Compliance Intelligence Engine      │
+                │─────────────────────────────────────────│
+                │ Company profile ingestion               │
+                │ Product mapping                         │
+                │ Regulatory rule matching                │
+                │ Risk scoring                            │
+                │ Compliance action generation            │
+                └──────────────┬──────────────────────────┘
+                               │
+                     Event: compliance_alert_generated
+                               │
+                               ▼
+                 ┌─────────────────────────────────────────┐
+                 │        Notification & Integration       │
+                 │─────────────────────────────────────────│
+                 │ Alerts                                  │
+                 │ Webhooks                                │
+                 │ Enterprise integrations                 │
+                 │ Email / Slack / Teams                   │
+                 └──────────────┬──────────────────────────┘
+                                │
+                                ▼
+                ┌──────────────────────────────────────────┐
+                │             API Gateway                   │
+                │──────────────────────────────────────────│
+                │ /api/regulations/latest                  │
+                │ /api/regulations/search                  │
+                │ /api/regulation/{id}                     │
+                │ /api/company/profile                     │
+                │ /api/company/alerts                      │
+                │ /api/compliance/analyze                  │
+                └──────────────┬───────────────────────────┘
+                               │
+                               ▼
+              ┌──────────────────────────────────────────────┐
+              │               Applications                    │
+              │──────────────────────────────────────────────│
+              │ Compliance dashboards (React + TS)           │
+              │ Enterprise systems (ERP / Billing / Core)    │
+              │ Regulator analytics                          │
+              │ Compliance consulting tools                  │
+              └──────────────────────────────────────────────┘
