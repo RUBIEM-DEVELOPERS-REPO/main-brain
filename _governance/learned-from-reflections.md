@@ -6,15 +6,25 @@ Auto-generated from `_neuroworks/reflections/*.md`. Each daily reflection's *Wha
 
 ---
 
+## 2026-06-23
+
+### Went wrong
+- No issues reported.
+
+### Try next
+- Monitor `daily-briefing` runtime; if it grows, explore breaking it into smaller sub‑tasks.
+- Add at least one employee to the roster to enable peer review scaling for future tasks.
+- Consider assigning a clerk‑bot to the `research.deep` step to parallelize heavy queries.
+
 ## 2026-06-22
 
 ### Went wrong
 - No failures to report.
 
 ### Try next
-- Consider assigning a dedicated employee to handle deep research steps to free up local resources.
-- Evaluate whether `peer.review` can be parallelized or skipped for low‑risk outputs.
 - Cache or pre‑fetch data for `research.deep` to reduce the 86 s runtime.
+- Evaluate whether `peer.review` can be parallelized or skipped for low‑risk outputs.
+- Consider assigning a dedicated employee to handle deep research steps to free up local resources.
 
 ## 2026-06-21
 
@@ -22,8 +32,8 @@ Auto-generated from `_neuroworks/reflections/*.md`. Each daily reflection's *Wha
 - No issues detected in task execution or reliability.
 
 ### Try next
-- Rotate the employees handling these tasks to ensure even distribution of work.
 - Consider training on additional tools or templates if needed.
+- Rotate the employees handling these tasks to ensure even distribution of work.
 
 ## 2026-06-20
 
@@ -31,8 +41,8 @@ Auto-generated from `_neuroworks/reflections/*.md`. Each daily reflection's *Wha
 - No issues detected in task execution.
 
 ### Try next
-- Review and possibly refine the `peer.review` process.
 - Consider adding a timeout for longer-running tasks like `research.deep`.
+- Review and possibly refine the `peer.review` process.
 
 ## 2026-06-17
 
@@ -40,15 +50,15 @@ Auto-generated from `_neuroworks/reflections/*.md`. Each daily reflection's *Wha
 - No failures or issues reported.
 
 ### Try next
-- Investigate whether `research.deep` can be cached or parallelized to reduce the 45 s runtime.
 - Consider delegating occasional tasks to peers to balance load and test peer‑review workflows.
+- Investigate whether `research.deep` can be cached or parallelized to reduce the 45 s runtime.
 
 ## 2026-06-16
 
 ### Try next
-- Review template execution times; the `daily‑briefing` and `general‑task` templates are already efficient, so keep them as defaults.
-- Consider assigning a second employee to handle research‑intensive tasks if volume increases.
 - Investigate whether `research.deep` can be cached or parallelized to reduce its 45 s runtime.
+- Consider assigning a second employee to handle research‑intensive tasks if volume increases.
+- Review template execution times; the `daily‑briefing` and `general‑task` templates are already efficient, so keep them as defaults.
 
 ## 2026-06-13
 
@@ -60,13 +70,10 @@ Auto-generated from `_neuroworks/reflections/*.md`. Each daily reflection's *Wha
 
 ## 2026-06-12
 
-### Went wrong
-- No issues reported.
-
 ### Try next
-- If future tasks increase, enable peer attribution to distribute load and capture delegation metrics.
-- Review the `research.deep` configuration or data sources to try shaving a few seconds off the 32 s step.
 - Consider assigning an AI employee to the daily briefing to see if parallelism reduces the 122 s runtime.
+- Review the `research.deep` configuration or data sources to try shaving a few seconds off the 32 s step.
+- If future tasks increase, enable peer attribution to distribute load and capture delegation metrics.
 
 ## 2026-06-11
 
@@ -74,17 +81,17 @@ Auto-generated from `_neuroworks/reflections/*.md`. Each daily reflection's *Wha
 - No issues detected.
 
 ### Try next
-- Consider increasing the frequency of tool checks for 'research.deep' if it is being used heavily.
 - Explore reducing peer load on Neuro by assigning more tasks directly.
+- Consider increasing the frequency of tool checks for 'research.deep' if it is being used heavily.
 
 ## 2026-06-08
 
 ### Went wrong
-- `fs.read_external` failed 4 of 4 runs (100% failure rate), halting any external file reads.
 - `email.send` failed 1 of 8 runs (13% failure rate).
+- `fs.read_external` failed 4 of 4 runs (100% failure rate), halting any external file reads.
 
 ### Try next
-- 4. Investigate why `research.deep` spikes to 92 s and explore caching or parallelization for deep research steps.
-- 3. Shift 10–15 low‑complexity tasks from Neuro to underutilized agents (e.g., Dale, Dani) to balance load.
-- 2. Add a retry wrapper around `email.send` to mitigate the 13% failure rate.
 - 1. Replace or reconfigure `fs.read_external` with a more reliable file access method; consider caching needed data locally.
+- 2. Add a retry wrapper around `email.send` to mitigate the 13% failure rate.
+- 3. Shift 10–15 low‑complexity tasks from Neuro to underutilized agents (e.g., Dale, Dani) to balance load.
+- 4. Investigate why `research.deep` spikes to 92 s and explore caching or parallelization for deep research steps.
