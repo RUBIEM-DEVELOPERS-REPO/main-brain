@@ -2,7 +2,7 @@
 type: template
 title: Risk register (custom-compliance-risk-register)
 slug: custom-compliance-risk-register
-created: 2026-06-26T13:20:33.282Z
+created: 2026-06-26T13:21:04.521Z
 templateId: custom-compliance-risk-register
 role: Custom
 originTask: Build a risk register for the area described. For each risk: a clear description, likelihood × impact score, an owner, and a mitigation. No orphan risks.
