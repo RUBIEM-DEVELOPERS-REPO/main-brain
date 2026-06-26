@@ -2,7 +2,7 @@
 type: template
 title: Cold outreach sequence (custom-sdr-cold-outreach-sequence)
 slug: custom-sdr-cold-outreach-sequence
-created: 2026-06-26T13:28:23.530Z
+created: 2026-06-26T13:29:01.681Z
 templateId: custom-sdr-cold-outreach-sequence
 role: Custom
 originTask: Write a 3-5 touch cold outreach sequence (email + LinkedIn) for the prospect/ICP described. Lead with their likely problem, make each touch a fresh angle (not a repeated nag), and keep each message short and easy to reply to.
