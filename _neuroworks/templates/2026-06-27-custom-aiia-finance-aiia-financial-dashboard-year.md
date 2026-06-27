@@ -2,7 +2,7 @@
 type: template
 title: AIIA financial dashboard (year) (custom-aiia-finance-aiia-financial-dashboard-year)
 slug: custom-aiia-finance-aiia-financial-dashboard-year
-created: 2026-06-27T10:25:25.224Z
+created: 2026-06-27T10:25:47.125Z
 templateId: custom-aiia-finance-aiia-financial-dashboard-year
 role: Custom
 originTask: Read the company's AIIA financial dashboard for the requested year (default to the current year if none is given). Use connector.call on the 'AIIA Finance' connector: GET /api/agent/dashboard?year=YYYY. Then explain the headline figures in plain cash terms — lead with the top number, then the breakdown, then what it means. Cite the endpoint + year for every figure. If the connector errors or returns no data, say so and stop rather than estimating.
