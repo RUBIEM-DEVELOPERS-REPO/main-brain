@@ -2,7 +2,7 @@
 type: template
 title: Training curriculum (custom-learning-development-training-curriculum)
 slug: custom-learning-development-training-curriculum
-created: 2026-06-29T13:38:30.458Z
+created: 2026-06-29T16:19:33.839Z
 templateId: custom-learning-development-training-curriculum
 role: Custom
 originTask: Design a training curriculum for the topic/role described: start from the learning outcomes, then modules with examples and practice, and an assessment that tests each outcome. State how you'd measure it worked.
