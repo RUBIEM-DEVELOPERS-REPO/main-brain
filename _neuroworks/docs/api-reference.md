@@ -307,3 +307,25 @@ Host/Origin allow-list because key auth is strictly stronger.
   completion with `X-NeuroWorks-Signature: sha256=<hmac>` (set
   `NW_WEBHOOK_SIGNING_SECRET`). Callback targets are SSRF-guarded — private /
   loopback addresses are blocked unless `NW_WEBHOOK_ALLOW_PRIVATE=1`.
+
+## Omnisignal (data acquisition for ADRS)
+
+Omnisignal gathers raw signal from many source kinds and feeds it into the ADRS
+pipeline. Source spec shape: `{kind, ...}` where kind is `web_search` (query),
+`web_page` (urls[]), `db` (sourceLabel+query), `local_file` (path), or `vault`
+(query).
+
+| Method | Path | Body / Returns |
+|---|---|---|
+| GET | `/api/omnisignal/kinds` | `{ kinds: [{ kind, needs, description }] }` |
+| GET | `/api/omnisignal/sources` | `{ sources: [...] }` — saved source registry |
+| POST | `/api/omnisignal/sources` | `{ name, kind, category?, query?, urls?, sourceLabel?, path? }` → `{ source }` |
+| DELETE | `/api/omnisignal/sources/:id` | `{ ok }` |
+| POST | `/api/omnisignal/acquire` | `{ sources: [spec…] }` → `{ records, report, total }` (read; no publish) |
+| POST | `/api/omnisignal/publish` | `{ name, sources: [spec…], sector?, keyField? }` → `{ acquisition, published }` (acquire → ADRS) |
+
+Each acquired record is tagged with provenance (`_source`, `_category`,
+`_acquiredAt`) that survives the pipeline into the published dataset.
+
+Agent primitives: `omnisignal.acquire` (read), `omnisignal.publish` (acquire →
+publish) — both in the MCP allowlist.
