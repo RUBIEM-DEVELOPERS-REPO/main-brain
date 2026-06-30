@@ -2,7 +2,7 @@
 type: template
 title: Background track / bed (custom-music-producer-background-track-bed)
 slug: custom-music-producer-background-track-bed
-created: 2026-06-30T21:49:13.527Z
+created: 2026-06-30T22:09:18.388Z
 templateId: custom-music-producer-background-track-bed
 role: Custom
 originTask: Produce a loopable instrumental background track for the following placement. Specify genre, tempo, instruments, and energy matched to the use, keep it unobtrusive, then use media.music (instrumental, no lyrics) to generate it. Return the prompt + the audio path.
