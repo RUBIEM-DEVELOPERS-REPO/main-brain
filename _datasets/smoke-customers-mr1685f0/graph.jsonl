@@ -1,0 +1,10 @@
+{"type":"node","id":"smoke-customers-mr1685f0:1","label":"1","props":{"id":1,"name":"Acme","region":"Harare","value":120},"confidence":1,"hash":"475ec3877395322e76da25323265759229d5a411979c00bbf1d0b2b51974e13b"}
+{"type":"edge","from":"smoke-customers-mr1685f0:1","rel":"name","to":"Acme"}
+{"type":"edge","from":"smoke-customers-mr1685f0:1","rel":"region","to":"Harare"}
+{"type":"edge","from":"smoke-customers-mr1685f0:1","rel":"value","to":"120"}
+{"type":"node","id":"smoke-customers-mr1685f0:2","label":"2","props":{"id":2,"name":"Beta Co","region":"Bulawayo","value":80},"confidence":1,"hash":"d14e0ccb17e7984ad83d2de4a741c81da6a4b394c3159c7f2951f8f73de17870"}
+{"type":"edge","from":"smoke-customers-mr1685f0:2","rel":"name","to":"Beta Co"}
+{"type":"edge","from":"smoke-customers-mr1685f0:2","rel":"region","to":"Bulawayo"}
+{"type":"edge","from":"smoke-customers-mr1685f0:2","rel":"value","to":"80"}
+{"type":"node","id":"smoke-customers-mr1685f0:3","label":"3","props":{"id":3,"name":"Sparse"},"confidence":0.5,"hash":"c2b10f84a2c3cd996e9b90d4097e74a3db8675c22a86d6942d72852a2fdbff0b"}
+{"type":"edge","from":"smoke-customers-mr1685f0:3","rel":"name","to":"Sparse"}
