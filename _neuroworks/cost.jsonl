@@ -80,3 +80,12 @@
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"extraction","inputTokens":511,"outputTokens":38,"costUsd":0,"ts":"2026-07-01T13:02:05.913Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"extraction","inputTokens":402,"outputTokens":55,"costUsd":0,"ts":"2026-07-01T13:02:37.151Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"synthesis","inputTokens":9486,"outputTokens":711,"costUsd":0,"ts":"2026-07-01T13:03:35.818Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-01T13:05:02.241Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-01T13:05:50.445Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-01T13:06:18.236Z"}
+{"jobId":"adhoc","model":"openai/gpt-oss-20b:free","backend":"openrouter","profile":"synthesis","inputTokens":612,"outputTokens":230,"costUsd":0,"ts":"2026-07-01T13:06:30.905Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-01T13:06:37.234Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-01T13:06:37.699Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"extraction","inputTokens":513,"outputTokens":31,"costUsd":0,"ts":"2026-07-01T13:11:24.481Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"extraction","inputTokens":511,"outputTokens":36,"costUsd":0,"ts":"2026-07-01T13:11:38.784Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"extraction","inputTokens":359,"outputTokens":42,"costUsd":0,"ts":"2026-07-01T13:11:49.300Z"}
