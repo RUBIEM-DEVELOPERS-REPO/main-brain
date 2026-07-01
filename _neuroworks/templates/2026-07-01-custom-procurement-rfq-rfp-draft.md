@@ -2,7 +2,7 @@
 type: template
 title: RFQ / RFP draft (custom-procurement-rfq-rfp-draft)
 slug: custom-procurement-rfq-rfp-draft
-created: 2026-07-01T06:26:40.384Z
+created: 2026-07-01T06:27:09.341Z
 templateId: custom-procurement-rfq-rfp-draft
 role: Custom
 originTask: Draft an RFQ/RFP for the goods or service described: unambiguous specs, quantities, timeline, delivery terms, and the evaluation criteria so quotes come back comparable.
