@@ -1,0 +1,21 @@
+{
+  "mapped": {
+    "revenue": 2000000,
+    "expenses": 1500000,
+    "netProfit": 500000,
+    "cashBalance": 410000,
+    "outstanding": 123456
+  },
+  "currency": null,
+  "period": "2026-Q2",
+  "source": "sync",
+  "receivedAt": "2026-07-01T12:27:20.553Z",
+  "raw": {
+    "revenue": 2000000,
+    "expenses": 1500000,
+    "netProfit": 500000,
+    "cash": 410000,
+    "outstandingInvoices": 123456,
+    "period": "2026-Q2"
+  }
+}
