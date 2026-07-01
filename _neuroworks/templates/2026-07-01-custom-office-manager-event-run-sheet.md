@@ -2,7 +2,7 @@
 type: template
 title: Event run-sheet (custom-office-manager-event-run-sheet)
 slug: custom-office-manager-event-run-sheet
-created: 2026-07-01T12:12:30.922Z
+created: 2026-07-01T12:12:46.155Z
 templateId: custom-office-manager-event-run-sheet
 role: Custom
 originTask: Plan the event or meeting described end to end: a run-sheet with times, owners, logistics, supplies/catering, AV, and a budget note. Include a contingency for the most likely thing to go wrong.
