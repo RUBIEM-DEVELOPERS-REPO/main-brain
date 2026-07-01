@@ -1,1 +1,2 @@
 {"level":"info","actor":"neuroworks","action":"job.dispatch","target":"Say hi in one word.","detail":"Say hi in one word.","jobId":"9b783d05-1d6c-485a-ae15-3a22d698fe99","result":"success","id":"mr1ufz1c-1","ts":"2026-07-01T08:58:53.088Z"}
+{"level":"info","actor":"neuroworks","action":"job.operations:daily-briefing","target":"daily-briefing","detail":"Daily briefing","jobId":"0de07da7-cd31-407d-8543-97e0c9668b4f","result":"success","id":"mr1vlilw-2","ts":"2026-07-01T09:31:11.348Z"}
