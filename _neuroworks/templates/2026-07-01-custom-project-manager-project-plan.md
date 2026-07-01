@@ -2,7 +2,7 @@
 type: template
 title: Project plan (custom-project-manager-project-plan)
 slug: custom-project-manager-project-plan
-created: 2026-07-01T08:53:04.497Z
+created: 2026-07-01T11:59:24.337Z
 templateId: custom-project-manager-project-plan
 role: Custom
 originTask: Build a project plan for the initiative described: milestones, the dependencies between them, an owner and date for each, and the critical path. No orphan work, no undated TBDs.
