@@ -329,3 +329,24 @@ Each acquired record is tagged with provenance (`_source`, `_category`,
 
 Agent primitives: `omnisignal.acquire` (read), `omnisignal.publish` (acquire →
 publish) — both in the MCP allowlist.
+
+## Models — local pull + bring-your-own APIs
+
+Manage local Ollama models and plug in cloud model APIs you already use.
+
+| Method | Path | Body / Returns |
+|---|---|---|
+| GET | `/api/models` | installed models + per-profile recommendations |
+| POST | `/api/models/default` | `{ name }` — set runtime default |
+| GET | `/api/models/catalog` | curated pullable models + `installed` flags |
+| POST | `/api/models/pull` | `{ name }` → SSE progress (`progress`/`done`/`error`) |
+| DELETE | `/api/models/installed/:name` | remove a local model |
+| GET | `/api/models/providers` | BYO providers (keys redacted) + kinds |
+| POST | `/api/models/providers` | `{ kind, model, apiKey, label?, baseUrl? }` → activates it |
+| POST | `/api/models/providers/:id/activate` | switch active provider |
+| DELETE | `/api/models/providers/:id` | remove (reverts to env config) |
+
+Provider keys are encrypted at rest (`.neuroworks/model-providers.json`) and
+applied to the runtime LLM router immediately (OpenAI-compatible chat API), so
+no restart or `.env` edit is needed. `openai` / `openrouter` / `groq` /
+`together` / `custom` (any OpenAI-compatible base URL) are supported.
