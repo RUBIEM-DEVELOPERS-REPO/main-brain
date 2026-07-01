@@ -1,0 +1,2 @@
+{"jobId":"adhoc","model":"openai/gpt-oss-20b:free","backend":"openrouter","profile":"synthesis","inputTokens":611,"outputTokens":282,"costUsd":0,"ts":"2026-07-01T08:38:18.867Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-01T08:38:20.142Z"}
