@@ -61,3 +61,4 @@
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-01T12:30:41.228Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-01T12:30:41.565Z"}
 {"jobId":"adhoc","model":"openai/gpt-oss-20b:free","backend":"openrouter","profile":"synthesis","inputTokens":612,"outputTokens":244,"costUsd":0,"ts":"2026-07-01T12:30:43.415Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-01T12:31:03.743Z"}
