@@ -14,3 +14,6 @@
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"synthesis","inputTokens":612,"outputTokens":156,"costUsd":0,"ts":"2026-07-01T08:44:58.461Z"}
 {"jobId":"adhoc","model":"openai/gpt-oss-20b:free","backend":"openrouter","profile":"synthesis","inputTokens":10047,"outputTokens":2,"costUsd":0,"ts":"2026-07-01T08:45:17.563Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":124,"outputTokens":2,"costUsd":0,"ts":"2026-07-01T08:51:39.890Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-01T08:52:56.938Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-01T08:53:24.359Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-01T08:53:24.928Z"}
