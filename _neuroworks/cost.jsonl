@@ -70,3 +70,13 @@
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"synthesis","inputTokens":612,"outputTokens":88,"costUsd":0,"ts":"2026-07-01T12:32:53.430Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":315,"outputTokens":68,"costUsd":0,"ts":"2026-07-01T12:46:12.082Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"extraction","inputTokens":498,"outputTokens":101,"costUsd":0,"ts":"2026-07-01T12:47:31.090Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"extraction","inputTokens":520,"outputTokens":57,"costUsd":0,"ts":"2026-07-01T13:00:56.105Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"extraction","inputTokens":442,"outputTokens":67,"costUsd":0,"ts":"2026-07-01T13:00:56.378Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"extraction","inputTokens":443,"outputTokens":62,"costUsd":0,"ts":"2026-07-01T13:00:56.478Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"extraction","inputTokens":511,"outputTokens":38,"costUsd":0,"ts":"2026-07-01T13:01:23.890Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"extraction","inputTokens":442,"outputTokens":85,"costUsd":0,"ts":"2026-07-01T13:01:30.029Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"extraction","inputTokens":406,"outputTokens":55,"costUsd":0,"ts":"2026-07-01T13:01:31.909Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"extraction","inputTokens":402,"outputTokens":20,"costUsd":0,"ts":"2026-07-01T13:01:51.224Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"extraction","inputTokens":511,"outputTokens":38,"costUsd":0,"ts":"2026-07-01T13:02:05.913Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"extraction","inputTokens":402,"outputTokens":55,"costUsd":0,"ts":"2026-07-01T13:02:37.151Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"synthesis","inputTokens":9486,"outputTokens":711,"costUsd":0,"ts":"2026-07-01T13:03:35.818Z"}
