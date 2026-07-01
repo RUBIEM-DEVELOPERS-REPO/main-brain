@@ -350,3 +350,17 @@ Provider keys are encrypted at rest (`.neuroworks/model-providers.json`) and
 applied to the runtime LLM router immediately (OpenAI-compatible chat API), so
 no restart or `.env` edit is needed. `openai` / `openrouter` / `groq` /
 `together` / `custom` (any OpenAI-compatible base URL) are supported.
+
+## Client integration modes (dispatch)
+
+Four ways for other systems to dispatch agents in, all over `/api/v1/dispatch`:
+
+| Mode | Where | Use |
+|---|---|---|
+| REST + webhook | `/api/v1/dispatch` | Any language; poll or receive an HMAC-signed callback. |
+| SDK | `sdk/neuroworks.mjs` (+ `.d.ts`) | Node/browser: `new NeuroWorks({baseUrl,apiKey}).run(task)`. |
+| CLI | `tools/nw.mjs` | `nw dispatch "…" --wait`, `nw result <id>`, `nw keys:create`. |
+| MCP server | `server/mcp/neuroworks-dispatch-mcp.mjs` | Tools `dispatch_task` / `get_dispatch_result` / `wait_for_result` for any MCP host (Claude Desktop, etc.). Env: `NEUROWORKS_API_KEY`, `NEUROWORKS_BASE`. |
+
+All authenticate with an API key (`nw_…`); the MCP/CLI/SDK are thin clients over
+the REST surface, so tenancy, idempotency, and webhooks apply uniformly.

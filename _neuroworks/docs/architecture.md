@@ -201,7 +201,8 @@ sequenceDiagram
 ## Notes
 
 - **Data pipeline:** Omnisignal acquires multi-source signal → ADRS readies it (hash/score/golden-record) → publishes CSV/JSONL/RAG into the vault → the vault index makes it agent-retrievable AND a Knowledge Pack. Agents drive it via `omnisignal.*` / `data.*` primitives.
-- **External dispatch:** other systems run agents via `/api/v1/dispatch` with scoped API keys (sha256-hashed). Async jobs, per-key tenancy, idempotency, and HMAC-signed webhooks. The `/api/v1/` surface is origin-guard-exempt because key auth is stronger; key management (`/api/dispatch-keys`) stays loopback-only.
+- **External dispatch:** other systems run agents via `/api/v1/dispatch` with scoped API keys (sha256-hashed). Async jobs, per-key tenancy, idempotency, and HMAC-signed webhooks. The `/api/v1/` surface is origin-guard-exempt because key auth is stronger; key management (`/api/dispatch-keys`) stays loopback-only. **Four client modes** over this one keystone: REST + webhook, SDK (`sdk/`), CLI (`tools/nw.mjs`), and an MCP server (`server/mcp/neuroworks-dispatch-mcp.mjs`) for MCP hosts.
+- **ADRS is a validation/DPA layer, not a user feature:** it validates the data agents produce/consume (normalize → hash → score → HITL → golden record) and *installs* the result into Knowledge Packs the agents load. Omnisignal is its acquisition front-end. Agents are the consumers of the readied packs.
 - **Executor is a live runtime switch** (`POST /api/executor`) — no restart. Hermes is primary now, with automatic offload to clawbot on failure / thin answer / failed quality gate.
 - **MCP bridge** lets Hermes call clawbot's own tools (16-tool allowlist: vault, connectors → AIIA, integrations, web reads, users directory, payment status). Money-moving (`payment.link`) and writes are excluded.
 - **Secrets** (connector tokens, integration creds, user passwords) are encrypted/hashed at rest under `.neuroworks/` (AES-256-GCM via secret-box; scrypt for passwords).
