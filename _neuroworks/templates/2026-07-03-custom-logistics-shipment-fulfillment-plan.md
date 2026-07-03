@@ -2,7 +2,7 @@
 type: template
 title: Shipment / fulfillment plan (custom-logistics-shipment-fulfillment-plan)
 slug: custom-logistics-shipment-fulfillment-plan
-created: 2026-07-03T16:42:20.499Z
+created: 2026-07-03T16:42:34.631Z
 templateId: custom-logistics-shipment-fulfillment-plan
 role: Custom
 originTask: Plan the shipment or fulfillment described: carrier/route options, the schedule, how it's tracked, and the cost vs time trade-off with a recommendation.
