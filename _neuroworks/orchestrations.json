@@ -1,5 +1,41 @@
 [
   {
+    "id": "916366b1-ca06-4b14-8988-3b0cea2c153d",
+    "label": "Aiia Operations Snapshot",
+    "objective": "Prepare an Aiia operations snapshot: 1) pull the live financial dashboard via the Aiia Finance connector, 2) list current public events from the Aiia Website connector (use its list-events endpoint), 3) check who is in the org directory, then combine everything into a short operations brief.",
+    "decomposition": "The objective naturally splits into three independent data-gathering tasks, each hitting a different source: the Aiia Finance connector for the live financial dashboard, the Aiia Website connector's list-events endpoint for current public events, and the org directory for personnel. Each task requires no input from the others, so all three run in parallel. The synthesizer will then merge the three structured outputs into a short operations brief.",
+    "subTasks": [
+      {
+        "label": "Financial Dashboard Pull",
+        "personaName": "Finance Analyst",
+        "instructions": "Use the Aiia Finance connector to pull the live financial dashboard. Retrieve all available current metrics (e.g., revenue, expenses, cash position, burn rate, outstanding invoices, budget vs. actuals — whatever the dashboard exposes). Output format: a section titled 'Financial Snapshot' containing (1) a bullet list of key metrics with their current values and units, (2) a one-sentence note on any metric that appears anomalous or noteworthy, and (3) the timestamp/date of the data as reported by the connector. If any metric is unavailable, explicitly state 'not available' rather than omitting it. Keep the whole output under ~250 words so it can be dropped into a brief.",
+        "status": "pending",
+        "id": "916366b1-ca06-4b14-8988-3b0cea2c153d-0",
+        "output": ""
+      },
+      {
+        "label": "Public Events Listing",
+        "personaName": "Communications Coordinator",
+        "instructions": "Use the Aiia Website connector and call its list-events endpoint to retrieve all current public events. Output format: a section titled 'Upcoming Public Events' containing a table or bullet list with one line per event: event name, date/time, location (or 'online'), and a one-line description if available. Sort events chronologically (soonest first). If there are no current events, state 'No public events currently listed.' Include a count of total events at the top (e.g., '3 events found'). Keep output concise and factual — no editorializing.",
+        "status": "pending",
+        "id": "916366b1-ca06-4b14-8988-3b0cea2c153d-1",
+        "output": ""
+      },
+      {
+        "label": "Org Directory Check",
+        "personaName": "People Operations Analyst",
+        "instructions": "Query the organization directory to determine who is currently in the org. Output format: a section titled 'Org Directory' containing (1) the total headcount, (2) a bullet list of members with name and role/title (and team/department if available), and (3) a note flagging anything unusual (e.g., missing role information, unexpected entries). If the directory is large (>25 people), summarize by team with headcounts per team and list only leads/key roles by name. Keep output under ~250 words and structured so it can be merged directly into an operations brief.",
+        "status": "pending",
+        "id": "916366b1-ca06-4b14-8988-3b0cea2c153d-2",
+        "output": ""
+      }
+    ],
+    "status": "running",
+    "finalReport": "",
+    "createdAt": "2026-07-04T12:25:59.465Z",
+    "updatedAt": "2026-07-04T12:25:59.467Z"
+  },
+  {
     "id": "715280de-2a1d-43bf-bf49-efaf066d5c61",
     "label": "Prepare an Aiia operations snapshot: 1) pull the live financ",
     "objective": "Prepare an Aiia operations snapshot: 1) pull the live financial dashboard via the Aiia Finance connector, 2) list current public events from the Aiia Website connector, 3) check who is in the org directory, then combine everything into a short operations brief.",
