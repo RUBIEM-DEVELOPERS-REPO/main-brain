@@ -1,18 +1,18 @@
 ---
 type: template
-title: AIIA finance overview (custom-aiia-finance-aiia-finance-overview)
+title: Aiia finance overview (custom-aiia-finance-aiia-finance-overview)
 slug: custom-aiia-finance-aiia-finance-overview
-created: 2026-07-04T11:49:47.165Z
+created: 2026-07-04T11:58:12.309Z
 templateId: custom-aiia-finance-aiia-finance-overview
 role: Custom
-originTask: Fetch the AIIA finance overview via connector.call on the 'AIIA Finance' connector: GET /api/agent. Summarise the current financial position from what AIIA returns — key balances/metrics first, then notable movements. Ground every number in the AIIA response and cite it. If AIIA is unreachable, report that plainly.
+originTask: Fetch the Aiia finance overview via connector.call on the 'Aiia Finance' connector: GET /api/agent. Summarise the current financial position from what Aiia returns — key balances/metrics first, then notable movements. Ground every number in the Aiia response and cite it. If Aiia is unreachable, report that plainly.
 ---
 
-# AIIA finance overview (custom-aiia-finance-aiia-finance-overview)
+# Aiia finance overview (custom-aiia-finance-aiia-finance-overview)
 
-Fetch the AIIA agent/finance overview and summarise the current position.
+Fetch the Aiia agent/finance overview and summarise the current position.
 
-**Origin task:** Fetch the AIIA finance overview via connector.call on the 'AIIA Finance' connector: GET /api/agent. Summarise the current financial position from what AIIA returns — key balances/metrics first, then notable movements. Ground every number in the AIIA response and cite it. If AIIA is unreachable, report that plainly.
+**Origin task:** Fetch the Aiia finance overview via connector.call on the 'Aiia Finance' connector: GET /api/agent. Summarise the current financial position from what Aiia returns — key balances/metrics first, then notable movements. Ground every number in the Aiia response and cite it. If Aiia is unreachable, report that plainly.
 
 ## Saved plan
 
