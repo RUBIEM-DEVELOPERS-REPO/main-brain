@@ -1,0 +1,22 @@
+{"type":"node","id":"reflections-2026-07-03-mr6c53h1:general-task","label":"general-task","props":{"date":"2026-07-03","template":"general-task","total":16,"succeeded":11,"failed":2,"success_rate":0.69,"avg_duration_sec":134.4,"top_failure":"fetch failed"},"confidence":1,"hash":"45f0a74903b52c280202152e922e7385c3871efb3cb47e0c0535e2ba5a89a3b5"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:general-task","rel":"date","to":"2026-07-03"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:general-task","rel":"total","to":"16"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:general-task","rel":"succeeded","to":"11"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:general-task","rel":"failed","to":"2"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:general-task","rel":"success_rate","to":"0.69"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:general-task","rel":"avg_duration_sec","to":"134.4"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:general-task","rel":"top_failure","to":"fetch failed"}
+{"type":"node","id":"reflections-2026-07-03-mr6c53h1:reflection:daily","label":"reflection:daily","props":{"date":"2026-07-03","template":"reflection:daily","total":24,"succeeded":24,"failed":0,"success_rate":1,"avg_duration_sec":-0.1,"top_failure":null},"confidence":0.875,"hash":"6ebccffa7b8b12bace20a6a6f6ac14b5815b17f9ce84a76a5801099145e9c3c0"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:reflection:daily","rel":"date","to":"2026-07-03"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:reflection:daily","rel":"total","to":"24"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:reflection:daily","rel":"succeeded","to":"24"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:reflection:daily","rel":"failed","to":"0"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:reflection:daily","rel":"success_rate","to":"1"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:reflection:daily","rel":"avg_duration_sec","to":"-0.1"}
+{"type":"node","id":"reflections-2026-07-03-mr6c53h1:search-brain","label":"search-brain","props":{"date":"2026-07-03","template":"search-brain","total":1,"succeeded":1,"failed":0,"success_rate":1,"avg_duration_sec":1.6,"top_failure":null},"confidence":0.875,"hash":"9a5fd0be5041d5e5e269611fe6da52340ce4d8cdc6a560e0d542ed7e01cf3759"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:search-brain","rel":"date","to":"2026-07-03"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:search-brain","rel":"total","to":"1"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:search-brain","rel":"succeeded","to":"1"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:search-brain","rel":"failed","to":"0"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:search-brain","rel":"success_rate","to":"1"}
+{"type":"edge","from":"reflections-2026-07-03-mr6c53h1:search-brain","rel":"avg_duration_sec","to":"1.6"}
