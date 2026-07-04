@@ -1,0 +1,25 @@
+[
+  {
+    "id": "715280de-2a1d-43bf-bf49-efaf066d5c61",
+    "label": "Prepare an Aiia operations snapshot: 1) pull the live financ",
+    "objective": "Prepare an Aiia operations snapshot: 1) pull the live financial dashboard via the Aiia Finance connector, 2) list current public events from the Aiia Website connector, 3) check who is in the org directory, then combine everything into a short operations brief.",
+    "decomposition": "Could not decompose — running as a single task.",
+    "subTasks": [
+      {
+        "label": "Prepare an Aiia operations snapshot: 1) pull the live financial dashboard via the Aiia Finance connector, 2) list curren",
+        "personaName": "Assistant",
+        "instructions": "Prepare an Aiia operations snapshot: 1) pull the live financial dashboard via the Aiia Finance connector, 2) list current public events from the Aiia Website connector, 3) check who is in the org directory, then combine everything into a short operations brief.",
+        "status": "done",
+        "id": "715280de-2a1d-43bf-bf49-efaf066d5c61-0",
+        "output": "# Aiia Operations Snapshot\n\n## Financial Dashboard\n\nThe Aiia Finance connector returned a 404 error on the `/dashboard` endpoint [1]. The financial dashboard is currently unavailable. To proceed with live financial reporting, confirm that:\n- The Aiia Finance connector is properly configured on the Connectors page\n- The correct endpoint path is documented in `connector.describe`\n- The Aiia backend service is running and accessible at `http://127.0.0.1:7471`\n\n## Current Events\n\nThe Aiia Website connector successfully retrieved the events page [2], but the response body contains only HTML markup and styling — no structured event data. The page loaded, but extractable event listings are not present in the raw HTML returned. A structured events API endpoint or parsed event calendar would be needed to report upcoming public events.\n\n## Organization Directory\n\nFive active personnel are registered in the system [3]:\n\n| Name | Email | Department | Role | Status |\n|------|-------|-----------|------|--------|\n| Arthur Magaya | admin@rubiem.com | Executive | Admin | Active |\n| Godswill | godswill@aiinstituteafrica.com | AI Institute Africa | Member | Active |\n| Patience | patience@aiinstituteafrica.com | AI Institute Africa | Member | Active |\n| Arthur | arthur@aiinstituteafrica.com | AI Institute Africa | Member | Active |\n| Anesu | anesu@aiinstituteafrica.com | AI Institute Africa | Member | Active |\n\n## Summary\n\nOrganizational structure is intact with a lean 5-person team. Financial metrics and event calendar data are not currently accessible via the configured connectors. To complete this snapshot, restore access to the Finance dashboard endpoint and confirm whether a structured events API is available.",
+        "elapsedMs": 17984,
+        "startedAt": "2026-07-04T12:22:39.073Z",
+        "endedAt": "2026-07-04T12:22:57.057Z"
+      }
+    ],
+    "status": "running",
+    "finalReport": "",
+    "createdAt": "2026-07-04T12:22:39.066Z",
+    "updatedAt": "2026-07-04T12:22:57.057Z"
+  }
+]
