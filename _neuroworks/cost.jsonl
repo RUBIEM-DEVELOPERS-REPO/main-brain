@@ -352,3 +352,5 @@
 {"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"extraction","inputTokens":724,"outputTokens":153,"costUsd":0.001489,"ts":"2026-07-04T12:16:24.780Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-04T12:18:16.767Z"}
 {"jobId":"adhoc","model":"claude-fable-5","backend":"anthropic","profile":"synthesis","inputTokens":743,"outputTokens":459,"costUsd":0.03038,"ts":"2026-07-04T12:18:29.477Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-04T12:18:35.930Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-04T12:18:36.316Z"}
