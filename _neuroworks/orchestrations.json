@@ -9,31 +9,43 @@
         "label": "Financial Dashboard Pull",
         "personaName": "Finance Analyst",
         "instructions": "Use the Aiia Finance connector to pull the live financial dashboard. Retrieve all available current metrics (e.g., revenue, expenses, cash position, burn rate, outstanding invoices, budget vs. actuals — whatever the dashboard exposes). Output format: a section titled 'Financial Snapshot' containing (1) a bullet list of key metrics with their current values and units, (2) a one-sentence note on any metric that appears anomalous or noteworthy, and (3) the timestamp/date of the data as reported by the connector. If any metric is unavailable, explicitly state 'not available' rather than omitting it. Keep the whole output under ~250 words so it can be dropped into a brief.",
-        "status": "pending",
+        "status": "failed",
         "id": "916366b1-ca06-4b14-8988-3b0cea2c153d-0",
-        "output": ""
+        "output": "",
+        "elapsedMs": 300021,
+        "error": "sub-task timed out after 5 minutes",
+        "startedAt": "2026-07-04T12:25:59.473Z",
+        "endedAt": "2026-07-04T12:30:59.494Z"
       },
       {
         "label": "Public Events Listing",
         "personaName": "Communications Coordinator",
         "instructions": "Use the Aiia Website connector and call its list-events endpoint to retrieve all current public events. Output format: a section titled 'Upcoming Public Events' containing a table or bullet list with one line per event: event name, date/time, location (or 'online'), and a one-line description if available. Sort events chronologically (soonest first). If there are no current events, state 'No public events currently listed.' Include a count of total events at the top (e.g., '3 events found'). Keep output concise and factual — no editorializing.",
-        "status": "pending",
+        "status": "failed",
         "id": "916366b1-ca06-4b14-8988-3b0cea2c153d-1",
-        "output": ""
+        "output": "",
+        "elapsedMs": 300014,
+        "error": "sub-task timed out after 5 minutes",
+        "startedAt": "2026-07-04T12:25:59.480Z",
+        "endedAt": "2026-07-04T12:30:59.494Z"
       },
       {
         "label": "Org Directory Check",
         "personaName": "People Operations Analyst",
         "instructions": "Query the organization directory to determine who is currently in the org. Output format: a section titled 'Org Directory' containing (1) the total headcount, (2) a bullet list of members with name and role/title (and team/department if available), and (3) a note flagging anything unusual (e.g., missing role information, unexpected entries). If the directory is large (>25 people), summarize by team with headcounts per team and list only leads/key roles by name. Keep output under ~250 words and structured so it can be merged directly into an operations brief.",
-        "status": "pending",
+        "status": "done",
         "id": "916366b1-ca06-4b14-8988-3b0cea2c153d-2",
-        "output": ""
+        "output": "# Org Directory\n\n**Total Headcount: 17 people**\n\n## By Team\n\n**Engineering (7)** — Sarah, Head of Engineering\n- Sam, Software Engineer\n- Dani, Product Designer\n- Quinn, QA Engineer\n- Devon, DevOps/SRE\n- Tao, Technical Writer\n- Priya, Product Manager\n\n**Sales & Customer Success (2)** — Drew, Account Executive\n- Maya, Marketing Manager\n- Casey, Customer Success\n\n**Operations & Support (5)**\n- Olivia, Operations Lead\n- Riley, Recruiter\n- Fiona, Financial Analyst\n- Dale, Data Analyst\n- Logan, Contracts Reviewer\n\n**Leadership (3)**\n- Arjun, Head of AI\n- Sarah, Head of Engineering\n- Evie, Executive Assistant\n\n## Notes\n\nOne entry lacks full context (unnamed peer in recruiting/ops). Priya's placement under Engineering may indicate product-engineering alignment. Evie's role as Executive Assistant suggests support to executive leadership. No other anomalies detected.",
+        "elapsedMs": 139493,
+        "startedAt": "2026-07-04T12:25:59.484Z",
+        "endedAt": "2026-07-04T12:28:18.977Z"
       }
     ],
-    "status": "running",
-    "finalReport": "",
+    "status": "completed",
+    "finalReport": "# Aiia Operations Snapshot\n\n## Executive Summary\n\nThis operations brief covers the current state of Aiia across finance, public events, and people operations. The org directory check completed successfully; however, the financial dashboard (Aiia Finance connector) and public events listing (Aiia Website connector) did not return data, so those sections are flagged as pending below.\n\n---\n\n## 1. Financial Dashboard (Aiia Finance)\n\n**Status: ⚠️ Data unavailable.** The live financial dashboard could not be retrieved from the Aiia Finance connector during this snapshot. No financial figures should be inferred from this brief. Recommend re-running the connector pull and, if it fails again, verifying connector credentials and endpoint availability with the DevOps/SRE contact (Devon).\n\n## 2. Public Events (Aiia Website — list-events)\n\n**Status: ⚠️ Data unavailable.** The list-events endpoint did not return results for this snapshot. It is unclear whether there are currently zero published events or whether the call failed. Recommend a retry and a manual spot-check of the public website; Maya (Marketing) is the likely owner for confirming the events calendar.\n\n## 3. Org Directory\n\n**Total headcount: 17**\n\n### Engineering (7) — led by Sarah, Head of Engineering\n- Sam — Software Engineer\n- Dani — Product Designer\n- Quinn — QA Engineer\n- Devon — DevOps/SRE\n- Tao — Technical Writer\n- Priya — Product Manager\n\n### Sales & Customer Success (3)\n- Drew — Account Executive\n- Maya — Marketing Manager\n- Casey — Customer Success\n\n### Operations & Support (5)\n- Olivia — Operations Lead\n- Riley — Recruiter\n- Fiona — Financial Analyst\n- Dale — Data Analyst\n- Logan — Contracts Reviewer\n\n### Leadership (3)\n- Arjun — Head of AI\n- Sarah — Head of Engineering (also leads Engineering)\n- Evie — Executive Assistant\n\n**Directory notes:**\n- One directory entry lacks full context (an unnamed peer in recruiting/ops) and should be reconciled.\n- Priya (Product Manager) sits within Engineering, suggesting deliberate product–engineering alignment.\n- No other anomalies detected.\n\n---\n\n## Recommended Next Steps\n\n1. **Re-run the Aiia Finance connector** to obtain the live financial dashboard; escalate to Devon if the connector remains unresponsive.\n2. **Retry the Aiia Website list-events endpoint** and confirm the public events calendar with Maya.\n3. **Clean up the org directory** by resolving the incomplete recruiting/ops entry (Riley or Olivia can own this).\n4. Once finance and events data are retrieved, **reissue this brief** as a complete operations snapshot.\n\n*Snapshot completeness: 1 of 3 data sources f",
     "createdAt": "2026-07-04T12:25:59.465Z",
-    "updatedAt": "2026-07-04T12:25:59.467Z"
+    "updatedAt": "2026-07-04T12:31:16.508Z",
+    "elapsedMs": 333177
   },
   {
     "id": "715280de-2a1d-43bf-bf49-efaf066d5c61",
