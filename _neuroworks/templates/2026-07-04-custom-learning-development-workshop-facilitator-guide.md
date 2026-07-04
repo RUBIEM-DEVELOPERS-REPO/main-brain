@@ -2,7 +2,7 @@
 type: template
 title: Workshop facilitator guide (custom-learning-development-workshop-facilitator-guide)
 slug: custom-learning-development-workshop-facilitator-guide
-created: 2026-07-04T17:49:20.568Z
+created: 2026-07-04T17:49:36.978Z
 templateId: custom-learning-development-workshop-facilitator-guide
 role: Custom
 originTask: Write a workshop facilitator guide for the session described: learning outcomes, a timed agenda, activities with instructions, materials needed, and facilitation notes.
