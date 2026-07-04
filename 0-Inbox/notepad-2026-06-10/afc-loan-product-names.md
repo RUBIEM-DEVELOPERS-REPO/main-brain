@@ -7,4 +7,13 @@ tags: [imported, notepad]
 
 # AFC — loan product names
 
-AFC ServicePlus LoanAFC Civil Elite LoanAFC Guardian Service LoanAFC Prestige Service LoanAFC FleetServe LoanAFC FleetServe LoanAFC RouteReady LoanAFC RouteReady Loan
+AFC ServicePlus Loan
+AFC Civil Elite Loan
+AFC Guardian Service Loan
+AFC Prestige Service Loan
+
+
+AFC FleetServe Loan
+AFC FleetServe Loan
+AFC RouteReady Loan
+AFC RouteReady Loan
