@@ -2,7 +2,7 @@
 type: template
 title: Draft a reply to a customer (custom-customer-success-draft-a-reply-to-a-customer)
 slug: custom-customer-success-draft-a-reply-to-a-customer
-created: 2026-07-07T11:28:02.586Z
+created: 2026-07-07T12:00:36.189Z
 templateId: custom-customer-success-draft-a-reply-to-a-customer
 role: Custom
 originTask: Draft a customer reply. Steps: 1) Read the message and name the tone (frustrated / confused / excited / neutral). 2) Identify the underlying need (often different from the literal ask). 3) Draft a reply that opens with the right acknowledgment, resolves the real need, attaches a date to any commitment. 4) Flag any churn-risk or expansion-signal language separately. No macro-speak.
