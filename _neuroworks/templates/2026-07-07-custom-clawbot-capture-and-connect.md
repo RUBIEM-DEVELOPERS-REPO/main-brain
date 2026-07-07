@@ -2,7 +2,7 @@
 type: template
 title: Capture and connect (custom-clawbot-capture-and-connect)
 slug: custom-clawbot-capture-and-connect
-created: 2026-07-07T12:00:56.444Z
+created: 2026-07-07T15:04:35.546Z
 templateId: custom-clawbot-capture-and-connect
 role: Custom
 originTask: Capture the following thought as a new vault note. Then search the vault for related material and add [[wikilinks]] to the 2-3 most relevant existing notes.

@@ -2,7 +2,7 @@
 type: template
 title: Device setup checklist (custom-it-support-device-setup-checklist)
 slug: custom-it-support-device-setup-checklist
-created: 2026-07-07T12:00:56.080Z
+created: 2026-07-07T15:04:35.172Z
 templateId: custom-it-support-device-setup-checklist
 role: Custom
 originTask: Create a secure device and software setup checklist for the scenario described, with secure defaults (disk encryption, MFA, updates, least-privilege accounts) and a verification step for each.
