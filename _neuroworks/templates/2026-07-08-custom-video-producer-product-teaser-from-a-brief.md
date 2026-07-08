@@ -2,7 +2,7 @@
 type: template
 title: Product teaser from a brief (custom-video-producer-product-teaser-from-a-brief)
 slug: custom-video-producer-product-teaser-from-a-brief
-created: 2026-07-08T12:08:58.222Z
+created: 2026-07-08T12:09:18.176Z
 templateId: custom-video-producer-product-teaser-from-a-brief
 role: Custom
 originTask: Storyboard a product teaser for the following brief: a numbered shot list, each shot with its own concrete visual prompt. Then use media.video to render the single most important shot. Return the full storyboard, the prompt you rendered, and the video URL.
