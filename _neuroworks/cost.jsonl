@@ -600,3 +600,12 @@
 {"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"planning","inputTokens":5477,"outputTokens":166,"costUsd":0.006307,"ts":"2026-07-08T12:43:37.102Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":297,"outputTokens":48,"costUsd":0,"ts":"2026-07-08T12:43:37.673Z"}
 {"jobId":"adhoc","model":"claude-fable-5","backend":"anthropic","profile":"synthesis","inputTokens":4201,"outputTokens":136,"costUsd":0.04881,"ts":"2026-07-08T12:44:21.099Z"}
+{"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"synthesis","inputTokens":5253,"outputTokens":284,"costUsd":0.006673,"ts":"2026-07-08T12:44:29.642Z"}
+{"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"extraction","inputTokens":1131,"outputTokens":230,"costUsd":0.002281,"ts":"2026-07-08T12:44:35.584Z"}
+{"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"extraction","inputTokens":791,"outputTokens":373,"costUsd":0.0026560000000000004,"ts":"2026-07-08T12:44:41.973Z"}
+{"jobId":"adhoc","model":"claude-fable-5","backend":"anthropic","profile":"synthesis","inputTokens":6258,"outputTokens":255,"costUsd":0.07533,"ts":"2026-07-08T12:45:05.954Z"}
+{"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"extraction","inputTokens":1102,"outputTokens":232,"costUsd":0.002262,"ts":"2026-07-08T12:45:10.127Z"}
+{"jobId":"adhoc","model":"claude-fable-5","backend":"anthropic","profile":"synthesis","inputTokens":6613,"outputTokens":235,"costUsd":0.07788,"ts":"2026-07-08T12:45:34.297Z"}
+{"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"extraction","inputTokens":742,"outputTokens":272,"costUsd":0.002102,"ts":"2026-07-08T12:45:39.546Z"}
+{"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"extraction","inputTokens":601,"outputTokens":202,"costUsd":0.001611,"ts":"2026-07-08T12:45:45.393Z"}
+{"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"planning","inputTokens":5037,"outputTokens":289,"costUsd":0.006482,"ts":"2026-07-08T14:20:14.485Z"}
