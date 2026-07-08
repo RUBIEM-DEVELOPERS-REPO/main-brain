@@ -624,3 +624,11 @@
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":144,"outputTokens":2,"costUsd":0,"ts":"2026-07-08T15:19:41.404Z"}
 {"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"planning","inputTokens":5460,"outputTokens":226,"costUsd":0.00659,"ts":"2026-07-08T15:19:46.989Z"}
 {"jobId":"adhoc","model":"claude-fable-5","backend":"anthropic","profile":"synthesis","inputTokens":5075,"outputTokens":0,"costUsd":0.05075,"ts":"2026-07-08T15:20:08.660Z"}
+{"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"synthesis","inputTokens":5033,"outputTokens":315,"costUsd":0.006608,"ts":"2026-07-08T15:20:14.214Z"}
+{"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"extraction","inputTokens":1031,"outputTokens":230,"costUsd":0.0021809999999999998,"ts":"2026-07-08T15:20:17.835Z"}
+{"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"extraction","inputTokens":805,"outputTokens":352,"costUsd":0.002565,"ts":"2026-07-08T15:20:22.768Z"}
+{"jobId":"adhoc","model":"claude-fable-5","backend":"anthropic","profile":"synthesis","inputTokens":6000,"outputTokens":374,"costUsd":0.07869999999999999,"ts":"2026-07-08T15:20:41.848Z"}
+{"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"extraction","inputTokens":1089,"outputTokens":227,"costUsd":0.0022240000000000003,"ts":"2026-07-08T15:20:45.704Z"}
+{"jobId":"adhoc","model":"claude-fable-5","backend":"anthropic","profile":"synthesis","inputTokens":6238,"outputTokens":99,"costUsd":0.06733,"ts":"2026-07-08T15:21:04.445Z"}
+{"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"extraction","inputTokens":589,"outputTokens":240,"costUsd":0.0017889999999999998,"ts":"2026-07-08T15:21:07.994Z"}
+{"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"extraction","inputTokens":498,"outputTokens":173,"costUsd":0.001363,"ts":"2026-07-08T15:21:11.320Z"}
