@@ -2,7 +2,7 @@
 type: template
 title: Audit prep checklist (custom-compliance-audit-prep-checklist)
 slug: custom-compliance-audit-prep-checklist
-created: 2026-07-08T15:55:50.826Z
+created: 2026-07-08T15:56:06.906Z
 templateId: custom-compliance-audit-prep-checklist
 role: Custom
 originTask: Create an audit-prep checklist for the area described: the controls to evidence, the documents/records to gather, who owns each, and the likely gaps to fix before the audit.
