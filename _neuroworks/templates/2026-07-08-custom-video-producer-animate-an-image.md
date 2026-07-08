@@ -2,7 +2,7 @@
 type: template
 title: Animate an image (custom-video-producer-animate-an-image)
 slug: custom-video-producer-animate-an-image
-created: 2026-07-08T07:32:04.409Z
+created: 2026-07-08T07:32:21.287Z
 templateId: custom-video-producer-animate-an-image
 role: Custom
 originTask: Using the supplied image as the first frame, write a motion prompt describing how the scene should move, then use media.video with that image as first_frame_image to generate a short clip. If no image was supplied, ask for one. Return the prompt + the video URL.
