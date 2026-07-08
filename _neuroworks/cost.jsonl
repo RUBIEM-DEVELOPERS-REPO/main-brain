@@ -524,3 +524,4 @@
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-07T15:45:56.809Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-07T15:46:28.374Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-07T15:46:28.463Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"synthesis","inputTokens":733,"outputTokens":186,"costUsd":0,"ts":"2026-07-08T07:29:53.184Z"}

@@ -1,0 +1,22 @@
+{"type":"node","id":"reflections-2026-07-07-mrbrchg8:search-brain","label":"search-brain","props":{"date":"2026-07-07","template":"search-brain","total":1,"succeeded":1,"failed":0,"success_rate":1,"avg_duration_sec":2,"top_failure":null},"confidence":0.875,"hash":"ff93cb0ae0966c4a5617e324441f860fa2094679c575154b26ebff3af89d1e9e"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:search-brain","rel":"date","to":"2026-07-07"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:search-brain","rel":"total","to":"1"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:search-brain","rel":"succeeded","to":"1"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:search-brain","rel":"failed","to":"0"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:search-brain","rel":"success_rate","to":"1"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:search-brain","rel":"avg_duration_sec","to":"2"}
+{"type":"node","id":"reflections-2026-07-07-mrbrchg8:daily-briefing","label":"daily-briefing","props":{"date":"2026-07-07","template":"daily-briefing","total":1,"succeeded":1,"failed":0,"success_rate":1,"avg_duration_sec":38.4,"top_failure":null},"confidence":0.875,"hash":"cb6796e1bbffb086235a08e2f0575d92931f986ec42adeb70025589de7ae92a6"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:daily-briefing","rel":"date","to":"2026-07-07"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:daily-briefing","rel":"total","to":"1"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:daily-briefing","rel":"succeeded","to":"1"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:daily-briefing","rel":"failed","to":"0"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:daily-briefing","rel":"success_rate","to":"1"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:daily-briefing","rel":"avg_duration_sec","to":"38.4"}
+{"type":"node","id":"reflections-2026-07-07-mrbrchg8:general-task","label":"general-task","props":{"date":"2026-07-07","template":"general-task","total":14,"succeeded":12,"failed":2,"success_rate":0.86,"avg_duration_sec":148.1,"top_failure":"peer delegation timed out after Nmin (peer=http://N.N.N.N:N, jobId=cNfN"},"confidence":1,"hash":"c718a23643e2daab0a596324024257c9cb7827df2a7f97c8066fe300a474620d"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:general-task","rel":"date","to":"2026-07-07"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:general-task","rel":"total","to":"14"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:general-task","rel":"succeeded","to":"12"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:general-task","rel":"failed","to":"2"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:general-task","rel":"success_rate","to":"0.86"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:general-task","rel":"avg_duration_sec","to":"148.1"}
+{"type":"edge","from":"reflections-2026-07-07-mrbrchg8:general-task","rel":"top_failure","to":"peer delegation timed out after Nmin (peer=http://N.N.N.N:N, jobId=cNfN"}
