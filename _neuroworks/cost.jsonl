@@ -710,3 +710,4 @@
 {"jobId":"adhoc","model":"claude-fable-5","backend":"anthropic","profile":"synthesis","inputTokens":7655,"outputTokens":241,"costUsd":0.08860000000000001,"ts":"2026-07-09T09:01:32.122Z"}
 {"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"extraction","inputTokens":567,"outputTokens":320,"costUsd":0.002167,"ts":"2026-07-09T09:01:36.436Z"}
 {"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"extraction","inputTokens":1724,"outputTokens":207,"costUsd":0.002759,"ts":"2026-07-09T09:01:40.420Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-09T09:04:39.062Z"}
