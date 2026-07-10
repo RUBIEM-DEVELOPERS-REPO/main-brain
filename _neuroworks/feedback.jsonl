@@ -3,3 +3,5 @@
 {"jobId":"3ecd2847-8455-4082-ba80-14353bf559ee","rating":"down","note":"too terse — give the working in one line and the result","persona":"Sam","ts":"2026-06-01T20:04:02.315Z"}
 {"jobId":"bcd40baa-5420-4a6e-a56b-d6d4f99f08ce","rating":"up","persona":"Clawbot","template":"general-task","score":0.77,"ts":"2026-06-02T20:09:05.400Z"}
 {"jobId":"6851aa50-7cc8-4552-8f05-e1368059e629","rating":"up","persona":"Clawbot","template":"general-task","score":0.85,"ts":"2026-06-02T20:36:32.268Z"}
+{"jobId":"8af3fa6c-0bf2-4736-adc4-3715ffca0265","rating":"down","note":"gave me json","persona":"Aria","ts":"2026-07-10T14:10:00.901Z"}
+{"jobId":"1b168efc-03fa-4897-982e-c2ac9a5b6559","rating":"up","persona":"Neuro","template":"general-task","score":0.65,"ts":"2026-07-10T14:10:11.994Z"}
