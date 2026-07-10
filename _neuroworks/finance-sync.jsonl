@@ -1,2 +1,0 @@
-{"at":"2026-07-01T12:27:20.418Z","source":"dashboard","mapped":{"revenue":1250000,"expenses":840000,"netProfit":410000,"cashBalance":320500,"outstanding":95000},"period":"2026","currency":"ZAR"}
-{"at":"2026-07-01T12:27:20.553Z","source":"sync","mapped":{"revenue":2000000,"expenses":1500000,"netProfit":500000,"cashBalance":410000,"outstanding":123456},"period":"2026-Q2","currency":null}
