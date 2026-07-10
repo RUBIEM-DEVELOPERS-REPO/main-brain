@@ -903,3 +903,4 @@
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":146,"outputTokens":2,"costUsd":0,"ts":"2026-07-10T17:32:50.780Z"}
 {"jobId":"adhoc","model":"claude-fable-5","backend":"anthropic","profile":"synthesis","inputTokens":3699,"outputTokens":264,"costUsd":0.050190000000000005,"ts":"2026-07-10T17:34:58.140Z"}
 {"jobId":"adhoc","model":"claude-haiku-4-5-20251001","backend":"anthropic","profile":"extraction","inputTokens":897,"outputTokens":238,"costUsd":0.002087,"ts":"2026-07-10T17:35:01.714Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-10T17:42:24.928Z"}
