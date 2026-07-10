@@ -2,7 +2,7 @@
 type: template
 title: Invoice / statement (custom-accountant-invoice-statement)
 slug: custom-accountant-invoice-statement
-created: 2026-07-10T17:40:36.893Z
+created: 2026-07-10T18:28:35.192Z
 templateId: custom-accountant-invoice-statement
 role: Custom
 originTask: Draft a professional invoice or account statement from the details provided: line items, quantities, rates, subtotals, tax, terms, and a total that ties out to the cent.
