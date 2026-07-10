@@ -1,4 +1,0 @@
-date,template,total,succeeded,failed,success_rate,avg_duration_sec,top_failure
-2026-07-03,general-task,11,9,2,0.82,181.5,fetch failed
-2026-07-03,reflection:daily,16,16,0,1,0,
-2026-07-03,search-brain,1,1,0,1,1.6,
