@@ -16,6 +16,11 @@
 # doesn't re-action the same reflection twice.
 
 $ErrorActionPreference = "Stop"
+# claude's child-process stdout/stderr is UTF-8; PowerShell 5.1's default
+# console encoding doesn't match, which corrupted the raw log into spaced-out
+# garbage on the first real test run (2026-07-10-raw.log). Force it.
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [System.Text.Encoding]::UTF8
 
 $ReflectionsDir = "D:\Main brain\_neuroworks\reflections"
 $LoopDir        = "D:\Main brain\_neuroworks\reflection-loop"
@@ -62,8 +67,11 @@ try {
     # by CWD (repo root) -- no --add-dir, so tool access doesn't extend beyond
     # what the default working-directory grant already covers.
     # --max-budget-usd: hard financial ceiling so a runaway loop can't rack up
-    # an unbounded bill overnight.
-    & claude -p $prompt --permission-mode bypassPermissions --max-budget-usd 5 --output-format text --no-session-persistence 2>&1 | Tee-Object -FilePath $rawLogPath
+    # an unbounded bill overnight. First real test (2026-07-10 reflection, 4
+    # items) hit a $5 cap after completing only 2 of 4 -- it did real,
+    # correctly-diagnosed, tested, committed, pushed work in that budget, it
+    # just wasn't enough headroom to finish. Raised to $12.
+    & claude -p $prompt --permission-mode bypassPermissions --max-budget-usd 12 --output-format text --no-session-persistence *>&1 | Out-File -FilePath $rawLogPath -Encoding utf8
 
     $exitCode = $LASTEXITCODE
 } finally {
