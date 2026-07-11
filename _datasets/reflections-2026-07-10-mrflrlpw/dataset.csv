@@ -1,0 +1,7 @@
+date,template,total,succeeded,failed,success_rate,avg_duration_sec,top_failure
+2026-07-10,search-brain,1,1,0,1,3.7,
+2026-07-10,reflection:daily,1,1,0,1,24.7,
+2026-07-10,general-task,24,24,0,1,168.1,
+2026-07-10,daily-briefing,1,1,0,1,106.2,
+2026-07-10,insights:plan-approval,1,1,0,1,97.7,
+2026-07-10,custom-aiia-finance-aiia-financial-dashboard-year,1,1,0,1,23.9,
