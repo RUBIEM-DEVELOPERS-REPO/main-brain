@@ -2,7 +2,7 @@
 type: template
 title: Turn a goal into an action plan (custom-operations-coordinator-turn-a-goal-into-an-action-plan)
 slug: custom-operations-coordinator-turn-a-goal-into-an-action-plan
-created: 2026-07-12T03:35:22.765Z
+created: 2026-07-12T03:35:42.843Z
 templateId: custom-operations-coordinator-turn-a-goal-into-an-action-plan
 role: Custom
 originTask: Turn the following goal into an executable action plan. Output a numbered list. Each step has: Step / Owner / By when (specific date or N days from today) / Done means (the verification). End with 'Inputs still needed' — list what's unclear that's blocking execution.
