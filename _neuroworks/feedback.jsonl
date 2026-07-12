@@ -5,3 +5,7 @@
 {"jobId":"6851aa50-7cc8-4552-8f05-e1368059e629","rating":"up","persona":"Clawbot","template":"general-task","score":0.85,"ts":"2026-06-02T20:36:32.268Z"}
 {"jobId":"8af3fa6c-0bf2-4736-adc4-3715ffca0265","rating":"down","note":"gave me json","persona":"Aria","ts":"2026-07-10T14:10:00.901Z"}
 {"jobId":"1b168efc-03fa-4897-982e-c2ac9a5b6559","rating":"up","persona":"Neuro","template":"general-task","score":0.65,"ts":"2026-07-10T14:10:11.994Z"}
+{"jobId":"730d33b9-a75d-4778-8bbb-efe9baf484bd","rating":"down","persona":"Neuro","template":"general-task","score":0.78,"ts":"2026-07-12T14:56:15.567Z"}
+{"jobId":"7f5c84f4-b458-418b-b14f-8628fe16f6cb","rating":"down","template":"general-task","ts":"2026-07-12T14:56:39.824Z"}
+{"jobId":"418a6727-8809-46d6-b19b-3e1563ccbc39","rating":"down","persona":"Neuro","template":"general-task","ts":"2026-07-12T14:57:25.161Z"}
+{"jobId":"0d9e484a-916d-4989-9603-7a82f7d622ab","rating":"up","persona":"Sam","template":"general-task","ts":"2026-07-12T14:57:33.876Z"}
