@@ -2,7 +2,7 @@
 type: template
 title: Quiz / assessment (custom-learning-development-quiz-assessment)
 slug: custom-learning-development-quiz-assessment
-created: 2026-07-12T11:43:11.789Z
+created: 2026-07-12T12:18:04.667Z
 templateId: custom-learning-development-quiz-assessment
 role: Custom
 originTask: Create an assessment for the topic described that tests the stated learning outcome: a mix of question types, the correct answers, and why each distractor is wrong.
