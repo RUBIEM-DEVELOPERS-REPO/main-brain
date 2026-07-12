@@ -2,7 +2,7 @@
 type: template
 title: Narrate this as audio (custom-voice-producer-narrate-this-as-audio)
 slug: custom-voice-producer-narrate-this-as-audio
-created: 2026-07-12T16:10:11.882Z
+created: 2026-07-12T16:12:53.056Z
 templateId: custom-voice-producer-narrate-this-as-audio
 role: Custom
 originTask: Rewrite the following text as a clean SPOKEN script (short sentences, contractions, no markdown read aloud), then use media.tts to synthesise it to audio. Pick a fitting voice and emotion, and state your choice. Return BOTH the script and the audio file path.
