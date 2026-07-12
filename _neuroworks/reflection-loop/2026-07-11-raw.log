@@ -1,0 +1,11 @@
+﻿Done. All 4 items actioned, 3 commits pushed, log written.
+
+**Item 1 (email.send 0s failure)** — not credentials. Mailjet key verified live (200). Real chain: task said "email me" → `users.lookup("me")` → no directory entry named "me" → null → `$step_2.user.email` unresolved → literal placeholder hit email.send. Fixed: `lookupUser` now resolves self-referential queries (me/myself/operator/owner/requester…) to operator (oldest superadmin). 24 new tests. Commit `f9af254`.
+
+**Item 2 (github.list_repos)** — retried manually: token in .env now returns 200; failure was 401 "Bad credentials", operator rotated token same morning (.env mtime 10:53). Reflection's "partial scope" theory wrong — all github.* share one token; `read_repo` only "worked" because its helpers swallow all errors → fake empty success on dead token. Fixed: helpers rethrow 401 loud, 404-shaped cases still degrade to empty. Commit `f8454b5`.
+
+**Item 3 (skill picker score 15)** — confirmed-not-a-bug, no change. Both picks correct (email-writing on task literally asking to email; both succeeded). Descriptions aren't scored, so "better descriptions" = no-op; embeddings = operator architecture decision.
+
+**Item 4 (research.deep 248s)** — premise doubled: one 124s call recorded twice via delegation mirror (delegating job + peer:delegate record, byte-identical runs arrays). Fixed reflection `aggregate()` to skip mirror records. Commit `5c134ef`. Call itself was the GitHub-misroute already fixed in `1aa0b74` — landed 42 min after that run. Result caching left to operator (staleness trade-off).
+
+Baseline was clean before changes; after: tsc clean, 142/142 tests, pushed to origin/main. Summary log at `D:\Main brain\_neuroworks\reflection-loop\2026-07-11.log`. Leftover for operator noted in log: reflections still count delegated tasks on both sides in totalTasks (5 was really 4) — only per-tool run double-count fixed, task-counting semantics left alone.

@@ -1,0 +1,72 @@
+Reflection-action run for 2026-07-11 (executed 2026-07-12, unattended).
+Baseline before touching anything: working tree clean, tsc clean, 118/118 tests passing.
+After: 142/142 tests passing (24 new), typecheck clean, 3 commits pushed to origin/main.
+
+ITEM 1 — "Check email.send credentials/config — 0s failure means it never reached the provider."
+Credentials are fine: verified the Mailjet API key/secret from .env against
+api.mailjet.com (read-only /v3/REST/sender call → HTTP 200). The failure was
+not config. Job 6b8b5adf ("summarize recent commits across my repos and email
+me") failed email.send at 9ms with: invalid 'to' address "$step_2.user.email".
+Chain: the task said "email me" → the planner called users.lookup with a
+self-referential query → nothing in the directory is literally named "me" →
+lookupUser returned null → $step_2.user.email couldn't resolve → the literal
+placeholder string reached email.send as the recipient. Note this run
+(06:52 UTC) predates the unresolved-reference gate committed in 453a14d
+(09:47 UTC same day), which now fails such steps with a diagnosis. FIXED the
+root cause a layer deeper: lookupUser now resolves self-referential queries
+(me / myself / my email / the operator / owner / the requester / current
+user…) to the operator — the oldest superadmin — and users.lookup's
+description tells the planner so. New regression tests cover the query
+classifier. Commit f9af254.
+
+ITEM 2 — "Retry github.list_repos manually — auth, rate limit, or transient? read_repo worked, token likely has partial scope."
+Retried manually: the GITHUB_TOKEN currently in .env returns 200 on both
+/user and /user/repos — the exact call list_repos makes. The failure was
+auth ("Bad credentials", 401): the token was invalid at 06:52 UTC and the
+operator rotated it at 10:53 (+0200) the same morning (.env mtime), so
+nothing more to fix on the config side. The "partial scope" inference was
+wrong though, and pointed at a real code bug: all github.* calls share one
+Octokit client and one token — read_repo only "worked" because its four
+helpers (readme/recentCommits/openPRs/openIssues) catch ALL errors and
+return empty, so on the dead token it returned {readme:null, commits:[],
+prs:[], issues:[]} as a fake success and the job summarized commits from no
+data. FIXED: those helpers now rethrow 401 with the actual cause; 404-shaped
+cases (missing README, empty repo) still degrade to empty as intended.
+Commit f8454b5.
+
+ITEM 3 — "Improve skill picker matching: both picks scored 15 (keyword-only) — add better descriptions or embeddings."
+CONFIRMED-NOT-A-BUG, no change made. Score 15 means the keyword leg fired
+without intent corroboration, but both picks were correct, not coin flips:
+email-writing matched a task that literally asked to email a summary
+(intent was "summarize" — the primary deliverable — so the draft-email
+intent leg correctly didn't fire; the keyword leg exists precisely for this
+secondary-action case), and both tasks succeeded with quality.check passing.
+The suggested remedies also don't fit: skill descriptions are never scored
+(they only feed the planner's catalog listing), so "better descriptions"
+would change nothing, and switching to embeddings is an architecture
+decision the operator should make deliberately — two successful picks are
+no evidence for it. The keyword patterns are curated routing rules with
+regression guards (see the 2026-07-08/09 pattern-tightening history in
+skills.ts), which is the opposite of guessing.
+
+ITEM 4 — "If research latency matters, consider caching or scoping research.deep — 124s per call, every call."
+The premise was doubled: the "2 runs, 248s" were ONE 124s call recorded
+twice — a delegated task persists two job records (the delegating job
+mirrors the peer's runs back; the peer writes its own peer:delegate record)
+and reflection's aggregate() counted both (jobs b8678f0d/d6dd5900 carry
+byte-identical runs arrays). FIXED the double-count: aggregate() now skips
+run aggregation for mirror records (result.peer set), counting runs where
+they executed. Commit 5c134ef. On the call itself: that task ("summarize
+recent commits…") should never have used research.deep — that misroute was
+already fixed in 1aa0b74, which landed 42 minutes AFTER this run, so it
+can't recur. research.deep already has a depth cap (NEUROWORKS_RESEARCH_MAX_DEPTH,
+default 3), parallel vault+web search, per-URL fetch cache, and a 512-token
+synth cap from earlier optimization passes. Query-level result caching is a
+staleness-vs-latency trade-off left to the operator; not taken unilaterally.
+
+NOT DONE / FOR THE OPERATOR
+- Nothing outstanding from this reflection's items. One observation worth
+  knowing: totalTasks/byKind in reflections still count a delegated task on
+  both sides (5 tasks on 2026-07-11 was really 4); only the per-tool run
+  double-count was fixed, since changing task counting semantics felt beyond
+  this item's scope.
