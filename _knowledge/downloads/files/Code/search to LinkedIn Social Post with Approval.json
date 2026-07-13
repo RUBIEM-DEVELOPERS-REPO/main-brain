@@ -1,0 +1,315 @@
+{
+  "name": "Audio to LinkedIn Social Post with Approval",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "id": "f8829109-8cf5-4ecd-86c6-bc35f7e5a72b",
+      "name": "Daily Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        256,
+        624
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "id-1",
+              "name": "searchQuery",
+              "value": "latest AI news artificial intelligence developments",
+              "type": "string"
+            },
+            {
+              "id": "id-2",
+              "name": "emailRecipient",
+              "value": "user@example.com",
+              "type": "string"
+            },
+            {
+              "id": "id-3",
+              "name": "emailSubject",
+              "value": "=Daily AI News Digest - {{ $now.format(\"MMMM d, yyyy\") }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1a8e63a2-70a9-4456-96ad-039ffd7f84e7",
+      "name": "Workflow Configuration",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        480,
+        624
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.searchQuery }}",
+        "options": {
+          "systemMessage": "You are an AI news researcher. Search for the latest AI news and developments from today using SerpAPI for Google search results and Reddit for community discussions. Focus on: breakthrough AI technologies, major AI company announcements, new AI models and tools, AI regulation and policy updates, and trending AI topics. Gather at least 5-10 significant news items with their sources. Provide a structured summary with headlines, brief descriptions, and source URLs."
+        }
+      },
+      "id": "0f4e06b9-46da-439b-b781-5dbaa5be0536",
+      "name": "AI News Search Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        704,
+        624
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "504eb5c8-5091-4f49-b7f1-96c142104dfa",
+      "name": "OpenAI Chat Model 1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        688,
+        880
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "d6pb61EXgeNhmP12",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        864,
+        864
+      ],
+      "id": "034c23f5-6aaa-4d2d-b45c-98d9d154ce04",
+      "name": "SerpAPI",
+      "credentials": {
+        "serpApi": {
+          "id": "PBn9oS4G42xN366j",
+          "name": "SerpAPI account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "options": {
+          "systemMessage": "You are AiiA’s Professional Social Media Content Writer Agent for AI Institute Africa (AIIA). Your job is to transform raw inputs into high-quality LinkedIn articles that reflect AIIA’s brand, strategy, and voice.\n\nBrand & Identity (AiiA) \n\nOrganization: AI Institute Africa (AIIA) — a non-profit advancing responsible AI to benefit humanity. \n\nAiia Portfolio\n\nValues: Innovation, Inclusivity, Ethics. \n\nAiia Portfolio\n\nMotto: AI for Better Lives. \n\nAiia Portfolio\n\n2026 strategic positioning: Sovereign AI Infrastructure Builder for governments, regulators, and Tier-1 enterprises; flagship systems include RIFTS-X, Data Readiness System, Virtual Worker Platform, AI Financial Optimization Platform, Hallo Teller, Cognify. \n\nAiia 2026 Strategic Plan\n\nVoice & Tone\n\nProfessional, confident, African-forward, optimistic but grounded.\n\nInsightful, clear, and action-oriented (no fluff).\n\nAlign with AiiA’s responsible AI stance: ethical, inclusive, human-centered.\n\nAvoid hype, fearmongering, or exaggerated claims. If uncertain, state it carefully.\n\nLinkedIn Optimization Rules\n\nCreate a strong hook in the first 2–3 lines.\n\nUse short paragraphs, scannable structure, and occasional bullet points.\n\nInclude:\n\nPractical takeaways (3–7)\n\nA clear “why it matters for Africa” angle when relevant\n\nA short CTA (comment, share, register, partner, learn more)\n\nMaintain readability: avoid jargon; explain terms briefly.\n\nHashtags: include 8–15 total; always include AiiA hashtags.\n\nOutput Requirements\n\nReturn ONLY:\n\nLinkedIn Article Title\n\nLinkedIn Article Body (ready to post)\n\nHashtags (single line)\n\nAiiA Hashtag Set (always include a subset)\n\nUse relevant ones each time (don’t spam all):\n#AiiA #AIInstituteAfrica #AIForBetterLives #AIinAfrica #ResponsibleAI #AfricaInnovation #DigitalTransformation #SovereignAI #AIInfrastructure #DataReadiness #RIFTSX #VirtualWorker #Cognify #AIGovernance\n\nSafety & Compliance\n\nDo not invent names, dates, numbers, partners, or quotes not present in the input.\n\nIf the transcript lacks event specifics, keep details general and avoid placeholders like “TBD”.\n\nKeep it respectful and non-political unless the input explicitly includes official references."
+        }
+      },
+      "id": "bcc5c6fe-6d5b-43e4-8d48-d06da792f344",
+      "name": "Create Social Article",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1056,
+        624
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "0c86c009-c857-4c77-8b0f-f0703cb15905",
+      "name": "GPT Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        1136,
+        848
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "d6pb61EXgeNhmP12",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "person": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "text": "={{ $('Create Social Article').item.json.output }}",
+        "additionalFields": {}
+      },
+      "id": "7a155b9a-360f-4768-b2e5-f90df7256f8e",
+      "name": "Post to LinkedIn",
+      "type": "n8n-nodes-base.linkedIn",
+      "typeVersion": 1,
+      "position": [
+        1632,
+        624
+      ],
+      "credentials": {
+        "linkedInOAuth2Api": {
+          "id": "7PNU3xnU9WRMxY4G",
+          "name": "LinkedIn account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "8399953107",
+        "message": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1408,
+        624
+      ],
+      "id": "94942690-0fb5-4eb7-8053-4d07427a881c",
+      "name": "Send message and wait for response",
+      "webhookId": "27017ab3-e21e-46af-971a-b3afcde63c00",
+      "credentials": {
+        "telegramApi": {
+          "id": "hcHgK9IFlCAqdZoR",
+          "name": "Telegram account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Daily Trigger": {
+      "main": [
+        [
+          {
+            "node": "Workflow Configuration",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Workflow Configuration": {
+      "main": [
+        [
+          {
+            "node": "AI News Search Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model 1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI News Search Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI News Search Agent": {
+      "main": [
+        [
+          {
+            "node": "Create Social Article",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI News Search Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Create Social Article",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Social Article": {
+      "main": [
+        [
+          {
+            "node": "Send message and wait for response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send message and wait for response": {
+      "main": [
+        [
+          {
+            "node": "Post to LinkedIn",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "dab8df4e-7eee-4c53-a9ee-0de90556edd3",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b55e1a0d9c010772199ae1a01398904cd885f7a7e426fc86b390e6166d33133e"
+  },
+  "id": "78hn3tPyR2uPki3_W7Ule",
+  "tags": []
+}

@@ -1,0 +1,369 @@
+{
+  "name": "Revenue Assurance - Main Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "value": 5
+            }
+          ]
+        }
+      },
+      "id": "scheduler_node",
+      "name": "Every 5 Minutes",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [240, 400]
+    },
+    {
+      "parameters": {
+        "path": "revenue-assurance",
+        "options": {},
+        "responseMode": "responseNode"
+      },
+      "id": "webhook_node",
+      "name": "Webhook - Revenue Assurance",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 200],
+      "webhookId": "revenue-assurance-trigger"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "resource": "database",
+        "operation": "executeQuery",
+        "projectId": "",
+        "query": "SELECT \n  revenue_line,\n  currency,\n  account_type,\n  minimum_fee_mean,\n  minimum_fee_median,\n  maximum_fee_mean,\n  maximum_fee_median,\n  percentage_fee_mean,\n  percentage_fee_median,\n  flat_fee_mean,\n  flat_fee_median,\n  competitors_count,\n  last_updated\nFROM pricing_analysis \nWHERE active = true\nORDER BY revenue_line, currency"
+      },
+      "id": "get_pricing",
+      "name": "Get Pricing Rules",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.4,
+      "position": [480, 300],
+      "credentials": {
+        "postgres": {
+          "id": "{{ $credentials.neon_postgres }}",
+          "name": "Neon PostgreSQL"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "resource": "database",
+        "operation": "executeQuery",
+        "query": "-- NOTE: This queries your TRANSACTION database (not Neon)\n-- Configure the second database credential for this node\nSELECT \n  transaction_id,\n  revenue_line,\n  currency,\n  COALESCE(account_type, 'N/A') as account_type,\n  transaction_amount,\n  applied_fee,\n  fee_type,\n  transaction_timestamp,\n  customer_id,\n  channel\nFROM transactions \nWHERE \n  processed_for_revenue_assurance = false \n  AND transaction_timestamp >= NOW() - INTERVAL '1 hour'\nORDER BY transaction_timestamp DESC\nLIMIT 1000"
+      },
+      "id": "get_transactions",
+      "name": "Get Unprocessed Transactions",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.4,
+      "position": [480, 500],
+      "credentials": {
+        "postgres": {
+          "id": "{{ $credentials.transaction_db }}",
+          "name": "Transaction Database"
+        }
+      },
+      "notes": "Configure your transaction database credentials here"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Revenue Assurance Validation Engine\nconst pricingRulesRaw = $input.first().json;\nconst transactionsRaw = $input.last().json;\n\n// Handle single object vs array\nconst pricingRules = Array.isArray(pricingRulesRaw) ? pricingRulesRaw : [pricingRulesRaw];\nconst transactions = Array.isArray(transactionsRaw) ? transactionsRaw : [transactionsRaw];\n\nconst results = [];\nconst discrepancies = [];\n\n// Create pricing lookup map for O(1) access\nconst pricingMap = new Map();\npricingRules.forEach(rule => {\n  const key = `${rule.revenue_line}|${rule.currency}|${rule.account_type || 'N/A'}`;\n  pricingMap.set(key, rule);\n});\n\nconsole.log(`Processing ${transactions.length} transactions against ${pricingRules.length} pricing rules`);\n\n// Validate each transaction\ntransactions.forEach((transaction, index) => {\n  const key = `${transaction.revenue_line}|${transaction.currency}|${transaction.account_type || 'N/A'}`;\n  const pricing = pricingMap.get(key);\n  \n  // No pricing rule found\n  if (!pricing) {\n    const discrepancy = {\n      ...transaction,\n      expected_fee: 0,\n      actual_fee: parseFloat(transaction.applied_fee) || 0,\n      variance: parseFloat(transaction.applied_fee) || 0,\n      variance_percentage: 100,\n      is_valid: false,\n      discrepancy_type: 'NO_PRICING_RULE',\n      severity: 'HIGH',\n      description: `No pricing rule found for ${transaction.revenue_line} (${transaction.currency})`,\n      revenue_impact: parseFloat(transaction.applied_fee) || 0,\n      pricing_rule_used: key,\n      validation_timestamp: new Date().toISOString()\n    };\n    results.push(discrepancy);\n    discrepancies.push(discrepancy);\n    return;\n  }\n  \n  let expectedFee = 0;\n  let isValid = false;\n  const actualFee = parseFloat(transaction.applied_fee) || 0;\n  const txAmount = parseFloat(transaction.transaction_amount) || 0;\n  \n  // Calculate expected fee based on fee type\n  switch(transaction.fee_type?.toUpperCase()) {\n    case 'FLAT':\n      expectedFee = parseFloat(pricing.flat_fee_mean || pricing.flat_fee_median || 0);\n      isValid = Math.abs(actualFee - expectedFee) <= Math.max(0.01, expectedFee * 0.05);\n      break;\n      \n    case 'PERCENTAGE':\n      const percentageRate = parseFloat(pricing.percentage_fee_mean || pricing.percentage_fee_median || 0);\n      expectedFee = (txAmount * percentageRate) / 100;\n      isValid = Math.abs(actualFee - expectedFee) <= Math.max(0.01, expectedFee * 0.05);\n      break;\n      \n    case 'MINIMUM':\n      expectedFee = parseFloat(pricing.minimum_fee_mean || pricing.minimum_fee_median || 0);\n      isValid = actualFee >= (expectedFee * 0.95);\n      break;\n      \n    case 'MAXIMUM':\n      expectedFee = parseFloat(pricing.maximum_fee_mean || pricing.maximum_fee_median || 999999);\n      isValid = actualFee <= (expectedFee * 1.05);\n      break;\n      \n    default:\n      // Complex fee calculation: min(max, max(min, percentage + flat))\n      const minFee = parseFloat(pricing.minimum_fee_mean || 0);\n      const maxFee = parseFloat(pricing.maximum_fee_mean || 999999);\n      const pctFee = (txAmount * parseFloat(pricing.percentage_fee_mean || 0)) / 100;\n      const flatFee = parseFloat(pricing.flat_fee_mean || 0);\n      \n      expectedFee = Math.max(minFee, Math.min(maxFee, pctFee + flatFee));\n      isValid = Math.abs(actualFee - expectedFee) <= Math.max(0.01, expectedFee * 0.05);\n  }\n  \n  const variance = actualFee - expectedFee;\n  const variancePercentage = expectedFee > 0 ? (variance / expectedFee) * 100 : 0;\n  \n  const result = {\n    ...transaction,\n    expected_fee: parseFloat(expectedFee.toFixed(4)),\n    actual_fee: actualFee,\n    variance: parseFloat(variance.toFixed(4)),\n    variance_percentage: parseFloat(variancePercentage.toFixed(2)),\n    is_valid: isValid,\n    pricing_rule_used: key,\n    validation_timestamp: new Date().toISOString()\n  };\n  \n  results.push(result);\n  \n  // Flag discrepancies\n  if (!isValid) {\n    const absVariance = Math.abs(variance);\n    const severity = absVariance > expectedFee * 0.2 ? 'HIGH' : \n                    absVariance > expectedFee * 0.1 ? 'MEDIUM' : 'LOW';\n    \n    discrepancies.push({\n      ...result,\n      discrepancy_type: 'PRICING_VARIANCE',\n      severity: severity,\n      description: `Fee variance detected: Expected ${expectedFee.toFixed(2)}, Applied ${actualFee.toFixed(2)} (${variancePercentage.toFixed(1)}% difference)`,\n      revenue_impact: variance\n    });\n  }\n});\n\n// Calculate summary statistics\nconst summary = {\n  total_transactions: transactions.length,\n  valid_transactions: results.filter(r => r.is_valid).length,\n  total_discrepancies: discrepancies.length,\n  high_severity_count: discrepancies.filter(d => d.severity === 'HIGH').length,\n  medium_severity_count: discrepancies.filter(d => d.severity === 'MEDIUM').length,\n  low_severity_count: discrepancies.filter(d => d.severity === 'LOW').length,\n  total_revenue_impact: discrepancies.reduce((sum, d) => sum + (d.revenue_impact || 0), 0),\n  processing_timestamp: new Date().toISOString(),\n  batch_id: $input.first().json.batch_id || `batch_${Date.now()}`\n};\n\nconsole.log(`Validation complete: ${summary.valid_transactions}/${summary.total_transactions} valid, ${summary.total_discrepancies} discrepancies found`);\n\nreturn [{\n  json: {\n    results: results,\n    discrepancies: discrepancies,\n    summary: summary\n  }\n}];"
+      },
+      "id": "validate_node",
+      "name": "Validate Transactions",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [720, 400]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "has_discrepancies",
+              "leftValue": "={{ $json.discrepancies.length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "if_node",
+      "name": "Has Discrepancies?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [960, 400]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Prepare discrepancies for batch insert\nconst data = $json;\nconst discrepancies = data.discrepancies || [];\n\nif (discrepancies.length === 0) {\n  return [];\n}\n\n// Format each discrepancy for SQL insertion\nconst sqlValues = discrepancies.map(d => {\n  // Escape single quotes in strings\n  const escapeStr = (str) => String(str || '').replace(/'/g, \"''\");\n  \n  return `(\n    '${escapeStr(d.transaction_id)}',\n    '${escapeStr(d.revenue_line)}',\n    '${escapeStr(d.currency)}',\n    ${d.expected_fee || 0},\n    ${d.actual_fee || 0},\n    ${d.variance || 0},\n    ${d.variance_percentage || 0},\n    '${escapeStr(d.discrepancy_type)}',\n    '${escapeStr(d.severity)}',\n    '${escapeStr(d.description)}',\n    ${d.revenue_impact || 0},\n    'PENDING_REVIEW',\n    NOW()\n  )`;\n}).join(',\\n');\n\nreturn [{\n  json: {\n    sql_values: sqlValues,\n    discrepancy_count: discrepancies.length,\n    transaction_ids: discrepancies.map(d => d.transaction_id)\n  }\n}];"
+      },
+      "id": "prepare_insert",
+      "name": "Prepare Discrepancy Insert",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1200, 300]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "=INSERT INTO revenue_discrepancies (\n  transaction_id,\n  revenue_line,\n  currency,\n  expected_fee,\n  actual_fee,\n  variance,\n  variance_percentage,\n  discrepancy_type,\n  severity,\n  description,\n  revenue_impact,\n  status,\n  created_at\n) VALUES\n{{ $json.sql_values }}\nON CONFLICT (transaction_id) DO UPDATE SET\n  severity = EXCLUDED.severity,\n  revenue_impact = EXCLUDED.revenue_impact,\n  variance = EXCLUDED.variance,\n  variance_percentage = EXCLUDED.variance_percentage,\n  updated_at = NOW()\nRETURNING id, transaction_id, severity;"
+      },
+      "id": "log_discrepancies",
+      "name": "Log Discrepancies to DB",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.4,
+      "position": [1440, 300],
+      "credentials": {
+        "postgres": {
+          "id": "{{ $credentials.neon_postgres }}",
+          "name": "Neon PostgreSQL"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Prepare transaction IDs for update\nconst data = $node['Validate Transactions'].json;\nconst results = data.results || [];\nconst discrepancies = data.discrepancies || [];\n\nif (results.length === 0) {\n  return [];\n}\n\nconst allTxIds = results.map(r => `'${r.transaction_id}'`).join(',');\nconst discrepancyTxIds = discrepancies.map(d => `'${d.transaction_id}'`).join(',');\n\nreturn [{\n  json: {\n    all_transaction_ids: allTxIds,\n    discrepancy_transaction_ids: discrepancyTxIds || \"''\",\n    total_processed: results.length\n  }\n}];"
+      },
+      "id": "prepare_update",
+      "name": "Prepare Status Update",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [960, 600]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "=UPDATE transactions \nSET \n  processed_for_revenue_assurance = true,\n  revenue_assurance_processed_at = NOW(),\n  revenue_assurance_status = CASE \n    WHEN transaction_id IN ({{ $json.discrepancy_transaction_ids }}) \n    THEN 'DISCREPANCY_FOUND' \n    ELSE 'VALIDATED' \n  END\nWHERE transaction_id IN ({{ $json.all_transaction_ids }});"
+      },
+      "id": "update_status",
+      "name": "Update Transaction Status",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.4,
+      "position": [1200, 600],
+      "credentials": {
+        "postgres": {
+          "id": "{{ $credentials.transaction_db }}",
+          "name": "Transaction Database"
+        }
+      },
+      "notes": "Updates your transaction database"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "high_severity_check",
+              "leftValue": "={{ $node['Validate Transactions'].json.summary.high_severity_count }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "check_high_severity",
+      "name": "High Severity?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1440, 500]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.slack.com/services/YOUR_SLACK_WEBHOOK_HERE",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  \"text\": `🚨 *HIGH SEVERITY Revenue Discrepancies Detected*\\n\\n*Summary:*\\n• Total Transactions: ${$node['Validate Transactions'].json.summary.total_transactions}\\n• Discrepancies Found: ${$node['Validate Transactions'].json.summary.total_discrepancies}\\n• High Severity Issues: ${$node['Validate Transactions'].json.summary.high_severity_count}\\n• Revenue Impact: $${Math.abs($node['Validate Transactions'].json.summary.total_revenue_impact).toFixed(2)}\\n\\n*Action Required:* Please review the revenue assurance dashboard immediately.`\n} }}"
+      },
+      "id": "slack_alert",
+      "name": "Slack Alert - High Severity",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1680, 400],
+      "notes": "Update with your Slack webhook URL"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {\n  \"success\": true,\n  \"message\": \"Revenue assurance processing complete\",\n  \"summary\": $node['Validate Transactions'].json.summary\n} }}"
+      },
+      "id": "webhook_response",
+      "name": "Webhook Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [480, 200]
+    }
+  ],
+  "connections": {
+    "Every 5 Minutes": {
+      "main": [
+        [
+          {
+            "node": "Get Pricing Rules",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Unprocessed Transactions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook - Revenue Assurance": {
+      "main": [
+        [
+          {
+            "node": "Webhook Response",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Pricing Rules",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Unprocessed Transactions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Pricing Rules": {
+      "main": [
+        [
+          {
+            "node": "Validate Transactions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Unprocessed Transactions": {
+      "main": [
+        [
+          {
+            "node": "Validate Transactions",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Validate Transactions": {
+      "main": [
+        [
+          {
+            "node": "Has Discrepancies?",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Prepare Status Update",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Discrepancies?": {
+      "main": [
+        [
+          {
+            "node": "Prepare Discrepancy Insert",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "High Severity?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Discrepancy Insert": {
+      "main": [
+        [
+          {
+            "node": "Log Discrepancies to DB",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Status Update": {
+      "main": [
+        [
+          {
+            "node": "Update Transaction Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "High Severity?": {
+      "main": [
+        [
+          {
+            "node": "Slack Alert - High Severity",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2025-01-15T12:00:00.000Z",
+  "versionId": "1.0.0"
+}

@@ -1,0 +1,336 @@
+{
+  "name": "virtual-workforce-routing-map",
+  "source_workflow": "The Virtual Workforce (7).json",
+  "description": "Backend routing map for sending department, sub-department, and worker integer tags to n8n.",
+  "tag_schema": {
+    "department": "integer",
+    "sub_department": "integer",
+    "worker": "integer"
+  },
+  "departments": [
+    {
+      "department_name": "Finance",
+      "department_tag": 0,
+      "sub_departments": [
+        {
+          "sub_department_name": "Financial Reporting And Accounting",
+          "sub_department_tag": 0,
+          "workers": [
+            {
+              "worker_name": "Financial Reporting Worker",
+              "worker_tag": 0
+            },
+            {
+              "worker_name": "General Ledger Worker",
+              "worker_tag": 1
+            },
+            {
+              "worker_name": "Reconciliation Worker",
+              "worker_tag": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "department_name": "Sales",
+      "department_tag": 1,
+      "sub_departments": [
+        {
+          "sub_department_name": "Sales Operations",
+          "sub_department_tag": 0,
+          "workers": [
+            {
+              "worker_name": "Lead Capture Worker",
+              "worker_tag": 0
+            },
+            {
+              "worker_name": "Sales Pipeline Worker",
+              "worker_tag": 1
+            },
+            {
+              "worker_name": "Deal Summary Worker",
+              "worker_tag": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "department_name": "Marketing",
+      "department_tag": 2,
+      "sub_departments": [
+        {
+          "sub_department_name": "Campaign Management",
+          "sub_department_tag": 0,
+          "workers": [
+            {
+              "worker_name": "Campaign Performance Worker",
+              "worker_tag": 0
+            },
+            {
+              "worker_name": "Lead Qualification Worker",
+              "worker_tag": 1
+            },
+            {
+              "worker_name": "Marketing Analytics Worker",
+              "worker_tag": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "department_name": "Customer Support",
+      "department_tag": 3,
+      "sub_departments": [
+        {
+          "sub_department_name": "Support Operations",
+          "sub_department_tag": 0,
+          "workers": [
+            {
+              "worker_name": "Ticket Management Worker",
+              "worker_tag": 0
+            },
+            {
+              "worker_name": "Customer Issue Summary Worker",
+              "worker_tag": 1
+            },
+            {
+              "worker_name": "Knowledge Base Worker",
+              "worker_tag": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "department_name": "Product Development",
+      "department_tag": 4,
+      "sub_departments": [
+        {
+          "sub_department_name": "Engineering Operations",
+          "sub_department_tag": 0,
+          "workers": [
+            {
+              "worker_name": "Pull Request Summary Worker",
+              "worker_tag": 0
+            },
+            {
+              "worker_name": "Commit Digest Worker",
+              "worker_tag": 1
+            },
+            {
+              "worker_name": "CI/CD Status Worker",
+              "worker_tag": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "department_name": "HR",
+      "department_tag": 5,
+      "sub_departments": [
+        {
+          "sub_department_name": "Employee",
+          "sub_department_tag": 0,
+          "workers": [
+            {
+              "worker_name": "Employee Onboarding Worker",
+              "worker_tag": 0
+            },
+            {
+              "worker_name": "Payroll Processing Worker",
+              "worker_tag": 1
+            },
+            {
+              "worker_name": "Benefits Administration Worker",
+              "worker_tag": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "department_name": "IT",
+      "department_tag": 6,
+      "sub_departments": [
+        {
+          "sub_department_name": "Infrastructure",
+          "sub_department_tag": 0,
+          "workers": [
+            {
+              "worker_name": "Server Management Worker",
+              "worker_tag": 0
+            },
+            {
+              "worker_name": "Network Administration Worker",
+              "worker_tag": 1
+            },
+            {
+              "worker_name": "Security Operations Worker",
+              "worker_tag": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "department_name": "Operations",
+      "department_tag": 7,
+      "sub_departments": [
+        {
+          "sub_department_name": "Process",
+          "sub_department_tag": 0,
+          "workers": [
+            {
+              "worker_name": "Workflow Optimization Worker",
+              "worker_tag": 0
+            },
+            {
+              "worker_name": "Quality Assurance Worker",
+              "worker_tag": 1
+            },
+            {
+              "worker_name": "Compliance Monitoring Worker",
+              "worker_tag": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "use_case": "Send a request to General Ledger Worker in Finance",
+      "tags": {
+        "department": 0,
+        "sub_department": 0,
+        "worker": 1
+      }
+    },
+    {
+      "use_case": "Send a request to Lead Qualification Worker in Marketing",
+      "tags": {
+        "department": 2,
+        "sub_department": 0,
+        "worker": 1
+      }
+    },
+    {
+      "use_case": "Send a request to Server Management Worker in IT",
+      "tags": {
+        "department": 6,
+        "sub_department": 0,
+        "worker": 0
+      }
+    }
+  ],
+  "lookup": {
+    "0": {
+      "department_name": "Finance",
+      "sub_departments": {
+        "0": {
+          "sub_department_name": "Financial Reporting And Accounting",
+          "workers": {
+            "0": "Financial Reporting Worker",
+            "1": "General Ledger Worker",
+            "2": "Reconciliation Worker"
+          }
+        }
+      }
+    },
+    "1": {
+      "department_name": "Sales",
+      "sub_departments": {
+        "0": {
+          "sub_department_name": "Sales Operations",
+          "workers": {
+            "0": "Lead Capture Worker",
+            "1": "Sales Pipeline Worker",
+            "2": "Deal Summary Worker"
+          }
+        }
+      }
+    },
+    "2": {
+      "department_name": "Marketing",
+      "sub_departments": {
+        "0": {
+          "sub_department_name": "Campaign Management",
+          "workers": {
+            "0": "Campaign Performance Worker",
+            "1": "Lead Qualification Worker",
+            "2": "Marketing Analytics Worker"
+          }
+        }
+      }
+    },
+    "3": {
+      "department_name": "Customer Support",
+      "sub_departments": {
+        "0": {
+          "sub_department_name": "Support Operations",
+          "workers": {
+            "0": "Ticket Management Worker",
+            "1": "Customer Issue Summary Worker",
+            "2": "Knowledge Base Worker"
+          }
+        }
+      }
+    },
+    "4": {
+      "department_name": "Product Development",
+      "sub_departments": {
+        "0": {
+          "sub_department_name": "Engineering Operations",
+          "workers": {
+            "0": "Pull Request Summary Worker",
+            "1": "Commit Digest Worker",
+            "2": "CI/CD Status Worker"
+          }
+        }
+      }
+    },
+    "5": {
+      "department_name": "HR",
+      "sub_departments": {
+        "0": {
+          "sub_department_name": "Employee",
+          "workers": {
+            "0": "Employee Onboarding Worker",
+            "1": "Payroll Processing Worker",
+            "2": "Benefits Administration Worker"
+          }
+        }
+      }
+    },
+    "6": {
+      "department_name": "IT",
+      "sub_departments": {
+        "0": {
+          "sub_department_name": "Infrastructure",
+          "workers": {
+            "0": "Server Management Worker",
+            "1": "Network Administration Worker",
+            "2": "Security Operations Worker"
+          }
+        }
+      }
+    },
+    "7": {
+      "department_name": "Operations",
+      "sub_departments": {
+        "0": {
+          "sub_department_name": "Process",
+          "workers": {
+            "0": "Workflow Optimization Worker",
+            "1": "Quality Assurance Worker",
+            "2": "Compliance Monitoring Worker"
+          }
+        }
+      }
+    }
+  }
+}

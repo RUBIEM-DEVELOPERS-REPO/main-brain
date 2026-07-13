@@ -1,0 +1,271 @@
+{
+  "name": "Social Media Analytics Webhook Aggregator",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "social-metrics",
+        "options": {}
+      },
+      "id": "6e5e6e13-6877-4fcd-92dd-e41b30709baf",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        256,
+        784
+      ],
+      "webhookId": "82f10791-21fe-42c9-ba3d-53e84fdb1798"
+    },
+    {
+      "parameters": {
+        "url": "https://zernio.com/api/v1/linkedin/69d435fb7dea335c2bbe6335/metrics",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "ce27e8bc-01d2-493b-90a4-c22d52e8c9d9",
+      "name": "Fetch LinkedIn Metrics",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://zernio.com/api/v1/tiktok/69d435fb7dea335c2bbe6335/metrics",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "4db06fbc-ceb6-43ef-bf00-601fc2d0d288",
+      "name": "Fetch TikTok Metrics",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        1072
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://zernio.com/api/v1/x/69d521107dea335c2bc1ef7e/metrics",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "de63b1b6-6984-4242-bd9b-8039da247a8b",
+      "name": "Fetch X Metrics",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        1264
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://zernio.com/api/v1/youtube/69d521c77dea335c2bc1f325/metrics",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "f01e9da5-9375-464f-9540-fa6bea716e6e",
+      "name": "Fetch YouTube Metrics",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        496
+      ]
+    },
+    {
+      "parameters": {
+        "url": "<__PLACEHOLDER_VALUE__instagram_api_endpoint__>",
+        "options": {}
+      },
+      "id": "6a81f31e-7314-459c-ab4b-87a1d0e3e428",
+      "name": "Fetch Instagram Metrics",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        688
+      ]
+    },
+    {
+      "parameters": {
+        "url": "<__PLACEHOLDER_VALUE__facebook_api_endpoint__>",
+        "options": {}
+      },
+      "id": "b03a2be9-717e-4737-8c9e-623fdf7d2783",
+      "name": "Fetch Facebook Metrics",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "numberInputs": 6
+      },
+      "id": "f7ac7435-3964-4cfe-a5c6-9801517e49a5",
+      "name": "Merge All Metrics",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        704,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "<__PLACEHOLDER_VALUE__your_platform_endpoint__>",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "a4123ac8-9a06-47fd-a1ec-abb12abac7e5",
+      "name": "Send to Your Platform",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        928,
+        784
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Fetch LinkedIn Metrics",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch TikTok Metrics",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch X Metrics",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch YouTube Metrics",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch Instagram Metrics",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch Facebook Metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch LinkedIn Metrics": {
+      "main": [
+        [
+          {
+            "node": "Merge All Metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch TikTok Metrics": {
+      "main": [
+        [
+          {
+            "node": "Merge All Metrics",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Fetch X Metrics": {
+      "main": [
+        [
+          {
+            "node": "Merge All Metrics",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Fetch YouTube Metrics": {
+      "main": [
+        [
+          {
+            "node": "Merge All Metrics",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Fetch Instagram Metrics": {
+      "main": [
+        [
+          {
+            "node": "Merge All Metrics",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "Fetch Facebook Metrics": {
+      "main": [
+        [
+          {
+            "node": "Merge All Metrics",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    },
+    "Merge All Metrics": {
+      "main": [
+        [
+          {
+            "node": "Send to Your Platform",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "c2a3bbd2-44e2-4bd1-9cc3-01512347c753",
+  "meta": {
+    "instanceId": "a4b5031d61d30985b8ce403f3e4aa4b2f8d32084cdd4fdec4c32bb5d29ce2ca4"
+  },
+  "id": "dkZWJ07cgs7Wlebf",
+  "tags": []
+}

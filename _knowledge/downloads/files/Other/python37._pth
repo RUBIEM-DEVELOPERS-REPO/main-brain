@@ -1,0 +1,9 @@
+Lib.zip
+.
+# Uncomment to run site.main() automatically
+#import site
+lib
+lib/site-packages
+lib/site-packages/win32
+lib/site-packages/win32\lib
+lib/site-packages/Pythonwin

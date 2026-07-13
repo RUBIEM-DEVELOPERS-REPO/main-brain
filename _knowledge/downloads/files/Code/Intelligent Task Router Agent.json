@@ -1,0 +1,166 @@
+{
+  "name": "Intelligent Task Router Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "workflow-router",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "06195614-534e-4c1b-b8bf-b730b1d97c0a",
+      "name": "Receive Request from UI",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        256,
+        304
+      ],
+      "webhookId": "6376dd9c-4ad7-4bde-afff-f3ab34a92e96"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "You are a Workflow Decision Agent. Your role is to analyze incoming task requests and determine which workflow to execute. You have access to multiple workflow tools, each representing a different workflow that can perform specific tasks. Analyze the user's request carefully and invoke the appropriate workflow tool that best matches their needs. If no workflow matches the request, respond with a clear message stating: \"I currently don't have a workflow available to handle this type of request. Please contact support to add this capability.\""
+        }
+      },
+      "id": "0f8a1546-6554-48a8-a4f4-958a793948fb",
+      "name": "Workflow Decision Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        480,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "gpt-4o"
+        },
+        "builtInTools": {},
+        "options": {
+          "temperature": 0.2
+        }
+      },
+      "id": "348d4682-c3da-405d-9564-6c2c0738b530",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        496,
+        528
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "allIncomingItems",
+        "options": {}
+      },
+      "id": "545bfbc2-37ef-4d5b-8c6b-9a363e3cfef9",
+      "name": "Send Response to UI",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        832,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Calls to LinkedIn Post Agent",
+        "workflowId": {
+          "__rl": true,
+          "value": "tBLWEGQZ58Fljy4f",
+          "mode": "id",
+          "cachedResultUrl": "/workflow/tBLWEGQZ58Fljy4f"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "id": "8c8225cb-986a-41bd-9f7f-57ebccedd350",
+      "name": "Automated LinkedIn Agent",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        624,
+        528
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Receive Request from UI": {
+      "main": [
+        [
+          {
+            "node": "Workflow Decision Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Workflow Decision Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Workflow Decision Agent": {
+      "main": [
+        [
+          {
+            "node": "Send Response to UI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Automated LinkedIn Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Workflow Decision Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "7b2fcd6f-857a-498e-93b8-8fa2ec08ff3d",
+  "meta": {
+    "instanceId": "aea56f37631ae09cf0902a488b22b389ad8a85450c27b94deeea6c7144493d2b"
+  },
+  "id": "bDShMgPHGLb9SJfZ",
+  "tags": []
+}

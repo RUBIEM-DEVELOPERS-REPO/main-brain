@@ -1,0 +1,348 @@
+{
+  "name": "Dropbox Script to Video with Gemini Veo 3",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours"
+            }
+          ]
+        }
+      },
+      "id": "9764365f-6312-4a00-a477-d4d30c6de3e0",
+      "name": "Check Dropbox Periodically",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        256,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "id-1",
+              "name": "dropboxScriptFolder",
+              "value": "/scripts",
+              "type": "string"
+            },
+            {
+              "id": "id-2",
+              "name": "dropboxOutputFolder",
+              "value": "/generated-videos",
+              "type": "string"
+            },
+            {
+              "id": "id-3",
+              "name": "scriptFileExtension",
+              "value": ".txt",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "021518d9-59ad-446f-92fb-5eba5bc43821",
+      "name": "Workflow Configuration",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        480,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "download",
+        "path": "={{ $('Workflow Configuration').item.json.dropboxScriptFolder + '/' + $json.fileName }}"
+      },
+      "id": "d27958e0-9aa8-4c8b-a30a-a4486720be3b",
+      "name": "Download Script Files",
+      "type": "n8n-nodes-base.dropbox",
+      "typeVersion": 1,
+      "position": [
+        704,
+        304
+      ],
+      "credentials": {
+        "dropboxOAuth2Api": {
+          "id": "QEwA7PlEC46NHlhn",
+          "name": "Dropbox account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "text"
+      },
+      "id": "5c6dc0ba-305e-4670-a4a2-808c5ebdf977",
+      "name": "Extract Script Text",
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        928,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "modelId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "veo-003"
+        },
+        "prompt": "={{ $('Extract Script Text').item.json.text }}",
+        "options": {}
+      },
+      "id": "0cc95345-1c4c-40b9-aa8d-5c70a8652837",
+      "name": "Generate Video with Gemini Veo 3",
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        1152,
+        304
+      ],
+      "credentials": {
+        "googlePalmApi": {
+          "id": "4qFxQSaEeFDF0Xs5",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "path": "={{ $('Workflow Configuration').item.json.dropboxOutputFolder + '/' + $('Download Script Files').item.json.fileName.replace('.txt', '.mp4') }}",
+        "binaryData": true
+      },
+      "id": "f195b7bb-9116-456b-ac8a-336268cf20f2",
+      "name": "Upload Video to Dropbox",
+      "type": "n8n-nodes-base.dropbox",
+      "typeVersion": 1,
+      "position": [
+        1376,
+        304
+      ],
+      "credentials": {
+        "dropboxOAuth2Api": {
+          "id": "QEwA7PlEC46NHlhn",
+          "name": "Dropbox account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ 'Analyze this video generated from the script: ' + $('Extract Script Text').item.json.text + '. The video has been successfully generated. Provide comprehensive enhancement recommendations.' }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are a video enhancement specialist AI. Your role is to analyze generated videos and provide detailed, actionable recommendations for improvements. Consider visual quality, pacing, content clarity, technical aspects, and alignment with the original script. Be specific and constructive in your feedback."
+        }
+      },
+      "id": "b7e22810-a0d2-40b0-80c3-219ce20b02db",
+      "name": "Assess Video for Enhancements",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1136,
+        576
+      ]
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"visualQuality\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"description\": \"Assessment of visual quality\"\n\t\t},\n\t\t\"pacingAndTiming\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"description\": \"Evaluation of video pacing\"\n\t\t},\n\t\t\"contentClarity\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"description\": \"Analysis of content clarity\"\n\t\t},\n\t\t\"technicalImprovements\": {\n\t\t\t\"type\": \"array\",\n\t\t\t\"items\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t},\n\t\t\t\"description\": \"List of technical suggestions\"\n\t\t},\n\t\t\"priorityLevel\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"description\": \"Overall priority: high, medium, or low\"\n\t\t},\n\t\t\"specificEnhancements\": {\n\t\t\t\"type\": \"array\",\n\t\t\t\"items\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t},\n\t\t\t\"description\": \"Actionable enhancement recommendations\"\n\t\t}\n\t}\n}",
+        "autoFix": true
+      },
+      "id": "5eb89bcc-44da-4af3-b308-bb42e2b0aea6",
+      "name": "Format Enhancement Recommendations",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1232,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        1056,
+        800
+      ],
+      "id": "9c3b492c-c2ca-4b33-9e47-ced3871ad353",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "d6pb61EXgeNhmP12",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        1168,
+        1008
+      ],
+      "id": "d1649204-5931-4b3a-af87-6e978186ce9d",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "d6pb61EXgeNhmP12",
+          "name": "OpenAi account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Check Dropbox Periodically": {
+      "main": [
+        [
+          {
+            "node": "Workflow Configuration",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Workflow Configuration": {
+      "main": [
+        [
+          {
+            "node": "Download Script Files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Script Files": {
+      "main": [
+        [
+          {
+            "node": "Extract Script Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Script Text": {
+      "main": [
+        [
+          {
+            "node": "Generate Video with Gemini Veo 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video with Gemini Veo 3": {
+      "main": [
+        [
+          {
+            "node": "Upload Video to Dropbox",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Assess Video for Enhancements",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Video to Dropbox": {
+      "main": [
+        []
+      ]
+    },
+    "Format Enhancement Recommendations": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Assess Video for Enhancements",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Assess Video for Enhancements": {
+      "main": [
+        [
+          {
+            "node": "Upload Video to Dropbox",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Assess Video for Enhancements",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Format Enhancement Recommendations",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "16e08bb8-0025-46b7-947c-11425ec27ee0",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b55e1a0d9c010772199ae1a01398904cd885f7a7e426fc86b390e6166d33133e"
+  },
+  "id": "rGJ6UYgE4LTqbxRHi-GAN",
+  "tags": []
+}

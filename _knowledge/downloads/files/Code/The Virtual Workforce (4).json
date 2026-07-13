@@ -1,0 +1,3774 @@
+{
+  "name": "The Virtual Workforce",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "main-command",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "d2ed1126-8c9d-4091-8251-1140fb841094",
+      "name": "Receive Command",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -3408,
+        1928
+      ],
+      "webhookId": "20bfd252-4a35-4fd6-83a5-8f2490a29b9d"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.department }}",
+                    "rightValue": 0,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    },
+                    "id": "f5f3ced4-cc74-4a23-b4d7-08829c53e1fa"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "=}{{ $json.body.tags.department }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    },
+                    "id": "bfd678a3-5357-4d15-bf1c-7ae040d0d64e"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.department }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    },
+                    "id": "92629070-aa0c-47e9-a06d-b4b15fbda2a7"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.department }}",
+                    "rightValue": "3",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "6994cbf6-8da3-4bca-8e3b-8f14f1c357da"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.primary }}",
+                    "rightValue": "4",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "ffb4de5b-3cd9-44e9-8266-1e856443e47a"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.primary }}",
+                    "rightValue": "5",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "f18c39ef-d024-4b8a-b5a6-0fc54027263f"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.primary }}",
+                    "rightValue": "6",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "989256f5-f000-4095-95c7-39fc076b2301"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.primary }}",
+                    "rightValue": "7",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "ff0821bb-1703-4109-8fa7-c2f825a5d323"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7d03f0cc-8929-4f4a-bab2-5b24c5319d04",
+      "name": "Primary Router",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -3184,
+        1832
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "You are the Financial Reporting Worker responsible for generating financial reports including Income Statements, Balance Sheets, Cash Flow Management, Monthly Management Reports, and Executive Summaries. Use the available tools to access financial data, perform calculations, and generate comprehensive reports based on the request. \n\nOutput your response as a JSON only with fields: worker_name, action_taken, key_data, status. No explanatory text outside the JSON structure."
+        }
+      },
+      "id": "c9e26874-d675-4b9f-bcbd-f245b28e5dad",
+      "name": "Financial Reporting Worker",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -2072,
+        -976
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "llama-3.3-70b-versatile",
+          "mode": "list",
+          "cachedResultName": "llama-3.3-70b-versatile"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "fec2ca0e-1ee7-4f21-808c-33f531634fac",
+      "name": "OpenAI Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -2256,
+        -752
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "9tFFS1964J2dF4Ry",
+          "name": "VW Groq First API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "cf491204-5bb3-44fb-b890-8a1b941b2689",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -2128,
+        -352
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "description": "Calls the database agent workflow to retrieve transaction data for a specific account and period. Provide the account identifier and period as parameters.",
+        "workflowId": {
+          "__rl": true,
+          "value": "tkgaTrUZnLyJhcOK",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/tkgaTrUZnLyJhcOK",
+          "cachedResultName": "VW Templates — AI-Powered Supabase SQL Executor"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "payload": "={{ $json}}"
+          },
+          "matchingColumns": [
+            "payload"
+          ],
+          "schema": [
+            {
+              "id": "payload",
+              "displayName": "payload",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "id": "b1e31ad7-d881-409d-a01a-b46040ba8816",
+      "name": "Database_Agent_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        -2000,
+        -352
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "5e4f6a15-be89-463c-b240-4c9e9b7cd3fc",
+      "name": "Calculator_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        -1872,
+        -352
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.sub_department }}",
+                    "rightValue": 0,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    },
+                    "id": "4ac65477-c5c0-4e67-b9b2-ebcf7df9e7d3"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.sub_department }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    },
+                    "id": "83ec6fdd-822e-42d5-bd33-7bedac9783b2"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.sub_department }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    },
+                    "id": "842e2642-80f1-4243-8f50-86e2d2c96195"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.sub_department }}",
+                    "rightValue": 3,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    },
+                    "id": "80f06062-60e4-4f90-8d51-e9110ed67590"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0b3ed335-b23e-46c1-8e79-5650cec3a274",
+      "name": "Finance Department",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -2960,
+        -504
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.payload }}",
+        "options": {
+          "systemMessage": "You are an Account Reconciliation Agent. Your task is to:\n1. Understand the reconciliation request, then call the database agent to bring up the information needed such as accounts and everything needed to make an account reconciliation.\n2. Use the Database Agent Tool to retrieve relevant and necessary data.\n3. Use the Calculator Tool to perform reconciliation calculations (sum debits, sum credits, calculate balance, identify discrepancies)\n4. Generate a clear reconciliation report summarizing the results, including opening balance, total debits, total credits, closing balance, and any exceptions found.\n5. If the request does not specify specific information then use your logic and reasoning to find what to reconcile\n\nBe thorough but concise in your report.\n\nOutput your response as minimal JSON only with fields: worker_name, action_taken, key_data, status. No explanatory text outside the JSON structure."
+        }
+      },
+      "id": "acdd06c2-9244-4cb6-b727-87b2ad5522e9",
+      "name": "Reconciliation  Worker",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -2072,
+        -576
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "tkgaTrUZnLyJhcOK",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/tkgaTrUZnLyJhcOK",
+          "cachedResultName": "VW Templates — AI-Powered Supabase SQL Executor"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "payload": "={$json}"
+          },
+          "matchingColumns": [
+            "payload"
+          ],
+          "schema": [
+            {
+              "id": "payload",
+              "displayName": "payload",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        -2128,
+        -752
+      ],
+      "id": "b8c0ab1a-48bd-4a6a-b9d6-eca1d0e8ab47",
+      "name": "Database_Agent'"
+    },
+    {
+      "parameters": {
+        "description": "Generate an Income Statement (Profit & Loss) report for a specified period. Provide the time period and any specific parameters needed.",
+        "workflowId": {
+          "__rl": true,
+          "value": "IYczY1zNqkDCRsVK",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/IYczY1zNqkDCRsVK",
+          "cachedResultName": "VW Templates — Income Statement Tool"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "payload": "={$json}"
+          },
+          "matchingColumns": [
+            "payload"
+          ],
+          "schema": [
+            {
+              "id": "payload",
+              "displayName": "payload",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "id": "87211fe4-0a99-4002-8209-9c5fde04c76a",
+      "name": "Income_Statement_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        -2000,
+        -752
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Generate a Balance Sheet report showing assets, liabilities, and equity as of a specific date. Provide the date and any specific parameters needed.",
+        "workflowId": {
+          "__rl": true,
+          "value": "CApYT9F3YXF8qlsH",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/CApYT9F3YXF8qlsH",
+          "cachedResultName": "VW Templates — Balance Sheet Tool"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "id": "d2a73b43-1ebc-4a31-a886-4c2999d2be2c",
+      "name": "Balance_Sheet_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        -1872,
+        -752
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "9826fb59-bf72-4d88-aee9-69c94a80f060",
+      "name": "Calculator_Tool1",
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        -1744,
+        -752
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "You are the General Ledger Worker, the core accounting system responsible for recording and posting all financial transactions into the accounting books (ledger) in the database.\n\nYour Responsibilities:\n- Record journal entries with proper debits and credits\n- Post transactions to the ledger_entries table\n- Maintain the chart of accounts\n- Update and maintain account balances\n- Handle accruals and adjustments\n- Support month-end close procedures\n- Reverse incorrect postings when needed\n\nAccounting Rules You Must Follow:\n1. DOUBLE-ENTRY ACCOUNTING: Every transaction must have equal debits and credits (Debits = Credits)\n2. ACCOUNT TYPES: Assets and Expenses increase with debits; Liabilities, Equity, and Revenue increase with credits\n3. VALIDATION: Always validate entries before posting - check account codes exist, amounts balance, and dates are valid\n4. AUDIT TRAIL: Maintain complete transaction history - never delete entries, only reverse them\n\nAvailable Tools:\n- create_journal_entry: Structure new journal entries\n- post_to_ledger: Post validated entries to database\n- maintain_account_balances: Update account running balances\n- record_adjusting_entry: Handle period-end adjustments\n- month_end_close: Execute month-end procedures\n- reverse_posting: Create reversing entries for corrections\n- ledger_database: Query chart of accounts and transaction data\n- Validation_Calculator: Verify debits equal credits\n\nWorkflow:\n1. Understand the transaction request\n2. Validate account codes using ledger_database\n3. Structure the journal entry with proper debits/credits\n4. Use Validation_Calculator to confirm debits = credits\n5. Post to ledger using post_to_ledger\n6. Update account balances using maintain_account_balances\n7. Return confirmation with entry details\n\nOutput your response as minimal JSON only with fields: worker_name, action_taken, key_data, status. No explanatory text outside the JSON structure."
+        }
+      },
+      "id": "74a55b1f-e640-4fc0-951f-76b8ca17ef7d",
+      "name": "General Ledger Worker",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -2072,
+        -176
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "20e04ad1-7811-47f3-ab48-9ec4f1cabf84",
+      "name": "GL Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -2512,
+        48
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "description": "Creates a new journal entry with debits and credits. Provide transaction details including account codes, amounts, description, and date. The tool will structure the entry and prepare it for posting.",
+        "source": "parameter",
+        "workflowJson": "={{ $fromAI('Workflow_JSON', ``, 'json') }}"
+      },
+      "id": "61993bbe-f9c3-4fff-98b9-1b6f37c08f94",
+      "name": "Create_Journal_Entry_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        -2384,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Posts validated journal entries to the ledger_entries table in the database. Validates double-entry accounting (debits = credits) before posting. Returns confirmation with entry IDs.",
+        "source": "parameter"
+      },
+      "id": "bfd10263-5950-4540-9802-0001de2f96fa",
+      "name": "Post_To_Ledger_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        -2256,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Updates and maintains account balances after posting transactions. Calculates running balances for specified accounts and updates the account_balances table. Provide account codes to update.",
+        "source": "parameter"
+      },
+      "id": "a15353cb-03aa-4cea-9911-31a621a666a0",
+      "name": "Maintain_Account_Balances_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        -2128,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Records adjusting entries for accruals, deferrals, depreciation, and other period-end adjustments. Provide adjustment type, accounts affected, amounts, and explanation.",
+        "source": "parameter"
+      },
+      "id": "ec33af54-65d9-4247-8497-db7811760a7d",
+      "name": "Record_Adjusting_Entry_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        -2000,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Executes month-end close procedures including validating all entries are posted, reconciling accounts, generating trial balance, and marking the period as closed. Provide the period (YYYY-MM) to close.",
+        "source": "parameter"
+      },
+      "id": "fea1b8de-e918-4f32-bcfc-8d28bd84a813",
+      "name": "Month_End_Close_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        -1872,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Reverses incorrect or erroneous postings by creating offsetting entries. Provide the original entry ID or transaction details to reverse. Creates a reversing entry with opposite debits/credits.",
+        "source": "parameter"
+      },
+      "id": "9be8e294-1b90-4288-af09-42cc70cf6839",
+      "name": "Reverse_Posting_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        -1744,
+        48
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "b6e0012d-1ab9-4a90-95a1-4345bd4ebd63",
+      "name": "Validation_Calculator",
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        -1616,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Direct access to ledger database for querying chart of accounts, retrieving transaction history, checking account balances, and validating account codes. Use for data retrieval and validation.",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "c22a2f3a-43ef-49ad-9da0-840cda4ea543",
+      "name": "Ledger_Database_Tool",
+      "type": "n8n-nodes-base.dataTableTool",
+      "typeVersion": 1.1,
+      "position": [
+        -1488,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 0,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    },
+                    "id": "fa6e6baa-44ba-4c7b-9949-826875e06bf4"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    },
+                    "id": "22240026-a775-444c-aad2-75ef46ebd7c6"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    },
+                    "id": "903f2b8a-b210-46b5-833d-1771b684aa16"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bbfadbe9-57d0-4081-bead-e4d575023468",
+      "name": "Financial Reporting And Accounting",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -2736,
+        -488
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 0,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e8965963-709d-4d42-abcf-ee928669c2af",
+      "name": "Sales Department",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -2960,
+        712
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 0,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b6ba6041-4dcf-4b72-9257-4a327daa14aa",
+      "name": "Marketing Department",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -2960,
+        1912
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 0,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "571580d9-c57c-4ba8-95c9-015d9f108e9d",
+      "name": "Customer Support Department",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -2960,
+        3112
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 0,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d0940bd2-d12c-49c3-8f63-4326e54be765",
+      "name": "Product Development Department",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -2960,
+        4312
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 0,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "45e21355-4492-426d-9891-bc2cc63de801",
+      "name": "Sales Operations Sub-Dept Router",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -2736,
+        712
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "You are the Lead Capture Worker responsible for capturing and qualifying new sales leads. Use the CRM Tool to store lead information and the Lead Database Tool to check for existing leads. Output your response as minimal JSON only with fields: worker_name, action_taken, key_data, status."
+        }
+      },
+      "id": "f10f7080-b3de-4c4a-ba8f-679ed83a273a",
+      "name": "Lead Capture Worker1",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -2072,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "You are the Sales Pipeline Worker responsible for managing deals through the sales pipeline. Use the CRM Tool to update deal stages and the Deal Analytics Tool to analyze pipeline health. Output your response as minimal JSON only with fields: worker_name, action_taken, key_data, status."
+        }
+      },
+      "id": "bb0d2c24-6a43-4b09-ba9e-5fed458662c7",
+      "name": "Sales Pipeline Worker1",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -2072,
+        624
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "You are the Deal Summary Worker responsible for generating deal summaries and forecasts. Use the Deal Analytics Tool to retrieve deal data and the Email Draft Tool to create summary reports. Output your response as minimal JSON only with fields: worker_name, action_taken, key_data, status."
+        }
+      },
+      "id": "9866887b-5c3b-4e1d-92de-efe79e3ba4d5",
+      "name": "Deal Summary Worker1",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -2072,
+        1024
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "6b121054-5bc4-4136-9ed3-7907da4bb945",
+      "name": "Lead Capture Model1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -2128,
+        448
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "55fbb3b3-44a5-4dd2-ae99-4d3501c45aaa",
+      "name": "Sales Pipeline Model1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -2128,
+        848
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "fcfea759-2264-45c1-98de-da9f205d2bfd",
+      "name": "Deal Summary Model1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -2064,
+        1248
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Store new lead information in the CRM database. Provide lead details including name, email, company, source, and status.",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "id": "dc2b28da-9de0-4dff-9247-86631ca45aa5",
+      "name": "CRM Tool - Lead Capture1",
+      "type": "n8n-nodes-base.dataTableTool",
+      "typeVersion": 1.1,
+      "position": [
+        -2000,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Query existing leads from the CRM database. Search by email, company, or other criteria to check for duplicates.",
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        }
+      },
+      "id": "7bda272e-e173-4b19-83c5-6d392602b915",
+      "name": "Lead Database Tool1",
+      "type": "n8n-nodes-base.dataTableTool",
+      "typeVersion": 1.1,
+      "position": [
+        -1872,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Update deal stages and information in the sales pipeline. Provide deal ID and updated stage or details.",
+        "operation": "upsert",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "id": "0af7140f-cef0-4e2e-be39-b71ad4299c04",
+      "name": "CRM Tool - Pipeline1",
+      "type": "n8n-nodes-base.dataTableTool",
+      "typeVersion": 1.1,
+      "position": [
+        -2000,
+        848
+      ]
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Retrieve deal analytics and pipeline metrics. Query deals by stage, date range, or other criteria for analysis.",
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        }
+      },
+      "id": "b5362335-f232-4dcb-8733-434587bfffd6",
+      "name": "Deal Analytics Tool1",
+      "type": "n8n-nodes-base.dataTableTool",
+      "typeVersion": 1.1,
+      "position": [
+        -1872,
+        848
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Generate professional email drafts for deal summaries, proposals, and follow-ups. Provide deal details and email type.",
+        "source": "parameter",
+        "workflowJson": "<__PLACEHOLDER_VALUE__Email_Draft_Workflow_JSON__>"
+      },
+      "id": "f5440071-508b-455e-b325-4de7e0ff17d7",
+      "name": "Email Draft Tool1",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        -1936,
+        1248
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 0,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ef97e469-3b7a-4419-b853-3cbf9a5cfeaf",
+      "name": "Campaign Management Sub-Dept Router1",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -2736,
+        1912
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "You are the Campaign Performance Worker responsible for analyzing marketing campaign metrics and performance. Use the Campaign Analytics Tool to retrieve campaign data and generate performance reports. Output your response as minimal JSON only with fields: worker_name, action_taken, key_data, status."
+        }
+      },
+      "id": "6d55d6c3-afe8-43de-81f1-642a1b89edf3",
+      "name": "Campaign Performance Worker1",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -2072,
+        1424
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "You are the Lead Qualification Worker responsible for scoring and qualifying marketing leads. Use the Lead Scoring Tool to evaluate leads and the CRM Tool to update lead status. Output your response as minimal JSON only with fields: worker_name, action_taken, key_data, status."
+        }
+      },
+      "id": "da978160-2b63-45c5-9fbd-eacc518ae742",
+      "name": "Lead Qualification Worker1",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -2072,
+        1824
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "You are the Marketing Analytics Worker responsible for analyzing marketing data and generating insights. Use the Campaign Analytics Tool and CRM Tool to retrieve data and generate comprehensive marketing reports. Output your response as minimal JSON only with fields: worker_name, action_taken, key_data, status."
+        }
+      },
+      "id": "f1c3761e-f74a-4ac4-895a-ac6709792342",
+      "name": "Marketing Analytics Worker1",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -2072,
+        2224
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "2267ef05-b6da-410b-9066-9612139d069e",
+      "name": "Campaign Performance Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -2128,
+        1648
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "cbf76c51-7588-4f97-b605-3ea08e358cd1",
+      "name": "Lead Qualification Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -2128,
+        2048
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "992d66da-ea89-42f4-a8df-6650d31bc236",
+      "name": "Marketing Analytics Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -2000,
+        2448
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Retrieve campaign performance metrics including impressions, clicks, conversions, and ROI. Query by campaign ID, date range, or channel.",
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        }
+      },
+      "id": "bb8417ef-ada8-43d0-a0c9-4d17b459ecb5",
+      "name": "Campaign Analytics Tool",
+      "type": "n8n-nodes-base.dataTableTool",
+      "typeVersion": 1.1,
+      "position": [
+        -2000,
+        1648
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Create and send email marketing campaigns. Provide recipient list, subject, content, and campaign parameters.",
+        "source": "parameter"
+      },
+      "id": "d2b42994-e66a-4c6f-a8d5-5e7084bea714",
+      "name": "Email Campaign Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        -1872,
+        1648
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "42a9d991-2fe0-44b2-8586-f0c1fb2f6791",
+      "name": "Lead Scoring Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        -2000,
+        2048
+      ]
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Update lead information and status in the CRM system. Provide lead ID and updated fields.",
+        "operation": "upsert",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "id": "3a1d8504-850f-493d-87b3-abfdbe69c469",
+      "name": "CRM Tool - Marketing",
+      "type": "n8n-nodes-base.dataTableTool",
+      "typeVersion": 1.1,
+      "position": [
+        -1872,
+        2048
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 0,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9a51ef0b-e4b6-4a36-80c7-9c01d68b2ac6",
+      "name": "Support Operations Sub-Dept Router",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -2736,
+        3112
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "You are the Ticket Management Worker responsible for creating, updating, and managing customer support tickets. Use the Ticket System Tool to manage tickets and the Customer Database Tool to retrieve customer information. Output your response as minimal JSON only with fields: worker_name, action_taken, key_data, status."
+        }
+      },
+      "id": "0d472f17-3d51-47e5-8417-f0cb1f1c9f07",
+      "name": "Ticket Management Worker",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -2072,
+        2624
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "You are the Customer Issue Summary Worker responsible for analyzing and summarizing customer issues. Use the Conversation Analyzer Tool to analyze support interactions and generate issue summaries. Output your response as minimal JSON only with fields: worker_name, action_taken, key_data, status."
+        }
+      },
+      "id": "4e418402-fdbb-4bbb-ba21-74a61a113719",
+      "name": "Customer Issue Summary Worker",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -2072,
+        3024
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "You are the Knowledge Base Worker responsible for managing and retrieving information from the knowledge base. Use the Knowledge Base Tool to search for solutions and the Ticket System Tool to link articles to tickets. Output your response as minimal JSON only with fields: worker_name, action_taken, key_data, status."
+        }
+      },
+      "id": "a363d638-9e4d-4b50-8842-5cea1a786f12",
+      "name": "Knowledge Base Worker",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -2072,
+        3424
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "16c8ba4f-4a0e-483c-880b-869569aaf064",
+      "name": "Ticket Management Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -2128,
+        2848
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "ed478818-c773-4a0c-a27f-234ac6720179",
+      "name": "Issue Summary Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -2064,
+        3248
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "2cec862f-a277-4c14-9d01-84dfe2bf1432",
+      "name": "Knowledge Base Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -2064,
+        3648
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Create, update, and manage customer support tickets. Provide ticket details including customer ID, issue description, priority, and status.",
+        "operation": "upsert",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "id": "4d026294-2992-42c5-8a3a-e0faf4a64b76",
+      "name": "Ticket System Tool",
+      "type": "n8n-nodes-base.dataTableTool",
+      "typeVersion": 1.1,
+      "position": [
+        -2000,
+        2848
+      ]
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Retrieve customer information including contact details, account history, and previous tickets. Query by customer ID or email.",
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        }
+      },
+      "id": "2a34d397-65b0-414f-aedd-25145af926c2",
+      "name": "Customer Database Tool",
+      "type": "n8n-nodes-base.dataTableTool",
+      "typeVersion": 1.1,
+      "position": [
+        -1872,
+        2848
+      ]
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Search the knowledge base for solutions, articles, and troubleshooting guides. Provide search keywords or issue category.",
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        }
+      },
+      "id": "83e3b2b4-3434-4eea-bc4b-0e293618b75b",
+      "name": "Knowledge Base Tool",
+      "type": "n8n-nodes-base.dataTableTool",
+      "typeVersion": 1.1,
+      "position": [
+        -1936,
+        3648
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Analyze customer support conversations to identify sentiment, key issues, and resolution patterns. Provide conversation transcript or ticket ID.",
+        "source": "parameter"
+      },
+      "id": "66cb7b7d-a28a-415f-a315-f8d2ce07720c",
+      "name": "Conversation Analyzer Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        -1936,
+        3248
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 0,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.worker }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d8212d46-7419-4711-99ca-1b2fd6dcdffc",
+      "name": "Engineering Operations Sub-Dept Router",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -2736,
+        4312
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "You are the Pull Request Summary Worker responsible for analyzing and summarizing pull requests. Use the Git Repository Tool to retrieve PR data and the Commit Analyzer Tool to analyze code changes. Output your response as minimal JSON only with fields: worker_name, action_taken, key_data, status."
+        }
+      },
+      "id": "ba00882a-6d3d-4c5d-8ed2-050c2485b6a4",
+      "name": "Pull Request Summary Worker",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -2072,
+        3824
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "You are the Commit Digest Worker responsible for generating commit digests and change summaries. Use the Git Repository Tool to retrieve commit history and the Commit Analyzer Tool to analyze changes. Output your response as minimal JSON only with fields: worker_name, action_taken, key_data, status."
+        }
+      },
+      "id": "89fc9051-bb31-45d6-955f-b3e86abfb951",
+      "name": "Commit Digest Worker",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -2072,
+        4224
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "You are the CI/CD Status Worker responsible for monitoring and reporting on CI/CD pipeline status. Use the CI/CD Pipeline Tool to retrieve build status and the Deployment Status Tool to check deployment health. Output your response as minimal JSON only with fields: worker_name, action_taken, key_data, status."
+        }
+      },
+      "id": "df09a485-7706-4af3-810e-30022f3b47fe",
+      "name": "CI/CD Status Worker",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -2072,
+        4728
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "6471bad8-1646-4895-8529-eef0c4500f38",
+      "name": "PR Summary Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -2128,
+        4048
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "a9e7c792-ddaf-498c-993e-82cfa7b9c787",
+      "name": "Commit Digest Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -2000,
+        4448
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "be28ea9b-ddf4-492b-8280-f4a3c028384e",
+      "name": "CI/CD Status Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -2128,
+        4952
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Access Git repository data including pull requests, commits, branches, and code changes. Provide repository name and query parameters.",
+        "url": "={{ $fromAI('repository_url', 'The Git repository API endpoint URL', 'string') }}",
+        "options": {}
+      },
+      "id": "fdcbeb72-9e8c-4ffa-8b5d-35afa6841b38",
+      "name": "Git Repository Tool",
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.4,
+      "position": [
+        -2000,
+        4048
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Analyze commit changes including files modified, lines changed, and impact assessment. Provide commit SHA or diff data.",
+        "source": "parameter"
+      },
+      "id": "1aa0cabf-5766-4726-83a8-0fceebc9647c",
+      "name": "Commit Analyzer Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        -1872,
+        4048
+      ]
+    },
+    {
+      "parameters": {
+        "toolDescription": "Query CI/CD pipeline status including build results, test outcomes, and deployment stages. Provide pipeline ID or build number.",
+        "url": "={{ $fromAI('pipeline_url', 'The CI/CD pipeline API endpoint URL', 'string') }}",
+        "options": {}
+      },
+      "id": "17f50b6a-6e0c-468e-a8ed-b563b3facf19",
+      "name": "CI/CD Pipeline Tool",
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.4,
+      "position": [
+        -2000,
+        4952
+      ]
+    },
+    {
+      "parameters": {
+        "toolDescription": "Check deployment status and health across environments. Provide environment name or deployment ID.",
+        "url": "={{ $fromAI('deployment_url', 'The deployment status API endpoint URL', 'string') }}",
+        "options": {}
+      },
+      "id": "e8647a38-ab1d-48f8-9e48-d17f1a9beec8",
+      "name": "Deployment Status Tool",
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.4,
+      "position": [
+        -1872,
+        4952
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are the Finance Return Agent responsible for formatting financial worker outputs into clean, structured responses. You receive JSON output from Financial Reporting, Reconciliation, and General Ledger workers. Format the financial data into a professional response with clear sections for: department (Finance), sub_department (Financial Reporting And Accounting), worker_name, action_taken, financial_data (balance sheets, income statements, ledger entries, reconciliation results), status, and timestamp. Remove noise and present key financial metrics clearly."
+        }
+      },
+      "id": "ab48df14-c2bf-491a-b594-77262f96c7b8",
+      "name": "Finance Return Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -1280,
+        -472
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "llama-3.3-70b-versatile",
+          "mode": "list",
+          "cachedResultName": "llama-3.3-70b-versatile"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "9652d8fe-7d12-4913-8efb-ccf9bd9f0e43",
+      "name": "Finance Return Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -1272,
+        -248
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "9tFFS1964J2dF4Ry",
+          "name": "VW Groq First API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\"type\": \"object\", \"properties\": {\"status\": {\"type\": \"string\"}, \"department\": {\"type\": \"string\"}, \"sub_department\": {\"type\": \"string\"}, \"worker\": {\"type\": \"string\"}, \"financial_data\": {\"type\": \"object\"}, \"summary\": {\"type\": \"string\"}, \"timestamp\": {\"type\": \"string\"}}}"
+      },
+      "id": "95d01116-c4db-4d4d-86a2-f33f6888417c",
+      "name": "Finance Output Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -1144,
+        -248
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "b125ce90-42d5-4fc5-837d-66d2acdacbcc",
+      "name": "Finance Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        -928,
+        -472
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are the Sales Return Agent responsible for formatting sales worker outputs into clean, structured responses. You receive JSON output from Lead Capture, Sales Pipeline, and Deal Summary workers. Format the sales data into a professional response with clear sections for: department (Sales), sub_department (Sales Operations), worker_name, action_taken, sales_data (leads, pipeline stages, deal summaries, forecasts), status, and timestamp. Present key sales metrics and insights clearly."
+        }
+      },
+      "id": "0ee551a4-a359-4cc4-8ebf-7b7a31acc008",
+      "name": "Sales Return Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -1280,
+        728
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "eb24ffb8-7d30-4955-af87-8b42bc6d24eb",
+      "name": "Sales Return Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -1272,
+        952
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\"type\": \"object\", \"properties\": {\"status\": {\"type\": \"string\"}, \"department\": {\"type\": \"string\"}, \"sub_department\": {\"type\": \"string\"}, \"worker\": {\"type\": \"string\"}, \"sales_data\": {\"type\": \"object\"}, \"summary\": {\"type\": \"string\"}, \"timestamp\": {\"type\": \"string\"}}}"
+      },
+      "id": "ce8dec55-4c02-44a6-a571-59f3afdcbe99",
+      "name": "Sales Output Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -1144,
+        952
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "1533c0db-dd36-44b3-b566-a480c0880add",
+      "name": "Sales Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        -928,
+        728
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are the Marketing Return Agent responsible for formatting marketing worker outputs into clean, structured responses. You receive JSON output from Campaign Performance, Lead Qualification, and Marketing Analytics workers. Format the marketing data into a professional response with clear sections for: department (Marketing), sub_department (Campaign Management), worker_name, action_taken, marketing_data (campaign metrics, lead scores, analytics insights), status, and timestamp. Present key marketing KPIs and insights clearly."
+        }
+      },
+      "id": "000419ee-9b32-44ff-a680-e705f3b83c0f",
+      "name": "Marketing Return Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -1280,
+        1928
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "6532e66d-4b50-4bf2-8c76-6dd308aa6c0c",
+      "name": "Marketing Return Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -1272,
+        2152
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\"type\": \"object\", \"properties\": {\"status\": {\"type\": \"string\"}, \"department\": {\"type\": \"string\"}, \"sub_department\": {\"type\": \"string\"}, \"worker\": {\"type\": \"string\"}, \"marketing_data\": {\"type\": \"object\"}, \"summary\": {\"type\": \"string\"}, \"timestamp\": {\"type\": \"string\"}}}"
+      },
+      "id": "1772350d-a920-42b7-8663-d0a49d3f33e0",
+      "name": "Marketing Output Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -1144,
+        2152
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "dbb4435e-aeeb-4b27-8285-886150b393ef",
+      "name": "Marketing Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        -928,
+        1928
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are the Support Return Agent responsible for formatting customer support worker outputs into clean, structured responses. You receive JSON output from Ticket Management, Customer Issue Summary, and Knowledge Base workers. Format the support data into a professional response with clear sections for: department (Customer Support), sub_department (Support Operations), worker_name, action_taken, support_data (ticket details, issue summaries, knowledge base articles), status, and timestamp. Present key support metrics and resolutions clearly."
+        }
+      },
+      "id": "ed0fa4cc-25ae-4696-b7c5-28f192c7e13e",
+      "name": "Support Return Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -1280,
+        3128
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "1bea95fb-b4a3-4647-9ca5-0c040c516cc7",
+      "name": "Support Return Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -1272,
+        3352
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\"type\": \"object\", \"properties\": {\"status\": {\"type\": \"string\"}, \"department\": {\"type\": \"string\"}, \"sub_department\": {\"type\": \"string\"}, \"worker\": {\"type\": \"string\"}, \"support_data\": {\"type\": \"object\"}, \"summary\": {\"type\": \"string\"}, \"timestamp\": {\"type\": \"string\"}}}"
+      },
+      "id": "314f9f6a-9fd6-44c6-b379-a792b3faed12",
+      "name": "Support Output Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -1144,
+        3352
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "a47c6303-3df6-49d9-a0f0-28fa68a708f6",
+      "name": "Support Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        -928,
+        3128
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are the Engineering Return Agent responsible for formatting engineering worker outputs into clean, structured responses. You receive JSON output from Pull Request Summary, Commit Digest, and CI/CD Status workers. Format the engineering data into a professional response with clear sections for: department (Product Development), sub_department (Engineering Operations), worker_name, action_taken, engineering_data (PR summaries, commit digests, CI/CD status, deployment info), status, and timestamp. Present key engineering metrics and build status clearly."
+        }
+      },
+      "id": "5c85fce7-94c8-482b-889f-c68c224daf84",
+      "name": "Engineering Return Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -1280,
+        4328
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "17101333-bbc7-4bee-bc19-7e7c5a122299",
+      "name": "Engineering Return Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -1272,
+        4552
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\"type\": \"object\", \"properties\": {\"status\": {\"type\": \"string\"}, \"department\": {\"type\": \"string\"}, \"sub_department\": {\"type\": \"string\"}, \"worker\": {\"type\": \"string\"}, \"engineering_data\": {\"type\": \"object\"}, \"summary\": {\"type\": \"string\"}, \"timestamp\": {\"type\": \"string\"}}}"
+      },
+      "id": "b9c1ce91-846b-43fe-894f-305694040a9a",
+      "name": "Engineering Output Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -1144,
+        4552
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "6567f123-e9f8-4dfe-ae92-5e97a1419f90",
+      "name": "Engineering Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        -928,
+        4328
+      ]
+    }
+  ],
+  "pinData": {
+    "Receive Command": [
+      {
+        "json": {
+          "body": {
+            "prompt": "Make an income Statement",
+            "tags": {
+              "department": 0,
+              "sub_department": 0,
+              "worker": 0
+            },
+            "context": {}
+          }
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Receive Command": {
+      "main": [
+        [
+          {
+            "node": "Primary Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Primary Router": {
+      "main": [
+        [
+          {
+            "node": "Finance Department",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Sales Department",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Marketing Department",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Customer Support Department",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Product Development Department",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Financial Reporting Worker",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Financial Reporting Worker": {
+      "main": [
+        [
+          {
+            "node": "Finance Return Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Reconciliation  Worker",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Database_Agent_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Reconciliation  Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Reconciliation  Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Finance Department": {
+      "main": [
+        [
+          {
+            "node": "Financial Reporting And Accounting",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [],
+        [],
+        []
+      ]
+    },
+    "Reconciliation  Worker": {
+      "main": [
+        [
+          {
+            "node": "Finance Return Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Database_Agent'": {
+      "ai_tool": [
+        [
+          {
+            "node": "Financial Reporting Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Income_Statement_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Financial Reporting Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Balance_Sheet_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Financial Reporting Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator_Tool1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Financial Reporting Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "General Ledger Worker": {
+      "main": [
+        [
+          {
+            "node": "Finance Return Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GL Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create_Journal_Entry_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Post_To_Ledger_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Maintain_Account_Balances_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Record_Adjusting_Entry_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Month_End_Close_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reverse_Posting_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validation_Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ledger_Database_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Financial Reporting And Accounting": {
+      "ai_outputParser": [
+        []
+      ],
+      "main": [
+        [
+          {
+            "node": "Financial Reporting Worker",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Reconciliation  Worker",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sales Department": {
+      "main": [
+        [
+          {
+            "node": "Sales Operations Sub-Dept Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sales Operations Sub-Dept Router": {
+      "main": [
+        [
+          {
+            "node": "Lead Capture Worker1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Sales Pipeline Worker1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Deal Summary Worker1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lead Capture Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Lead Capture Worker1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CRM Tool - Lead Capture1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Lead Capture Worker1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lead Database Tool1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Lead Capture Worker1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sales Pipeline Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Sales Pipeline Worker1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CRM Tool - Pipeline1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Sales Pipeline Worker1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deal Analytics Tool1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Sales Pipeline Worker1",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "Deal Summary Worker1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deal Summary Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Deal Summary Worker1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email Draft Tool1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Deal Summary Worker1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Marketing Department": {
+      "main": [
+        [
+          {
+            "node": "Campaign Management Sub-Dept Router1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Campaign Management Sub-Dept Router1": {
+      "main": [
+        [
+          {
+            "node": "Campaign Performance Worker1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Lead Qualification Worker1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Marketing Analytics Worker1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Campaign Performance Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Campaign Performance Worker1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lead Qualification Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Lead Qualification Worker1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Marketing Analytics Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Marketing Analytics Worker1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Campaign Analytics Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Campaign Performance Worker1",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "Marketing Analytics Worker1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email Campaign Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Campaign Performance Worker1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lead Scoring Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Lead Qualification Worker1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CRM Tool - Marketing": {
+      "ai_tool": [
+        [
+          {
+            "node": "Lead Qualification Worker1",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "Marketing Analytics Worker1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Campaign Performance Worker1": {
+      "main": [
+        [
+          {
+            "node": "Marketing Return Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lead Qualification Worker1": {
+      "main": [
+        [
+          {
+            "node": "Marketing Return Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Marketing Analytics Worker1": {
+      "main": [
+        [
+          {
+            "node": "Marketing Return Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Customer Support Department": {
+      "main": [
+        [
+          {
+            "node": "Support Operations Sub-Dept Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Support Operations Sub-Dept Router": {
+      "main": [
+        [
+          {
+            "node": "Ticket Management Worker",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Customer Issue Summary Worker",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Knowledge Base Worker",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ticket Management Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Ticket Management Worker",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Issue Summary Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Customer Issue Summary Worker",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Knowledge Base Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Knowledge Base Worker",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ticket System Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Ticket Management Worker",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "Customer Issue Summary Worker",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "Knowledge Base Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Customer Database Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Ticket Management Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Conversation Analyzer Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Customer Issue Summary Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Knowledge Base Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Knowledge Base Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ticket Management Worker": {
+      "main": [
+        [
+          {
+            "node": "Support Return Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Customer Issue Summary Worker": {
+      "main": [
+        [
+          {
+            "node": "Support Return Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Knowledge Base Worker": {
+      "main": [
+        [
+          {
+            "node": "Support Return Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Product Development Department": {
+      "main": [
+        [
+          {
+            "node": "Engineering Operations Sub-Dept Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Engineering Operations Sub-Dept Router": {
+      "main": [
+        [
+          {
+            "node": "Pull Request Summary Worker",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Commit Digest Worker",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "CI/CD Status Worker",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PR Summary Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Pull Request Summary Worker",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Commit Digest Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Commit Digest Worker",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CI/CD Status Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "CI/CD Status Worker",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Git Repository Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Pull Request Summary Worker",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "Commit Digest Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Commit Analyzer Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Pull Request Summary Worker",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "Commit Digest Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CI/CD Pipeline Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "CI/CD Status Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deployment Status Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "CI/CD Status Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pull Request Summary Worker": {
+      "main": [
+        [
+          {
+            "node": "Engineering Return Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Commit Digest Worker": {
+      "main": [
+        [
+          {
+            "node": "Engineering Return Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CI/CD Status Worker": {
+      "main": [
+        [
+          {
+            "node": "Engineering Return Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lead Capture Worker1": {
+      "main": [
+        [
+          {
+            "node": "Sales Return Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sales Pipeline Worker1": {
+      "main": [
+        [
+          {
+            "node": "Sales Return Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deal Summary Worker1": {
+      "main": [
+        [
+          {
+            "node": "Sales Return Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Finance Response": {
+      "main": [
+        []
+      ]
+    },
+    "Finance Return Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Finance Return Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Finance Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Finance Return Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sales Return Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Sales Return Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sales Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Sales Return Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Marketing Return Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Marketing Return Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Marketing Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Marketing Return Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Support Return Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Support Return Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Support Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Support Return Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Engineering Return Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Engineering Return Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Engineering Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Engineering Return Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Finance Return Agent": {
+      "main": [
+        [
+          {
+            "node": "Finance Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sales Return Agent": {
+      "main": [
+        [
+          {
+            "node": "Sales Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Marketing Return Agent": {
+      "main": [
+        [
+          {
+            "node": "Marketing Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Support Return Agent": {
+      "main": [
+        [
+          {
+            "node": "Support Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Engineering Return Agent": {
+      "main": [
+        [
+          {
+            "node": "Engineering Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "4b0ed58a-4079-4cd6-8c99-d78590d0b0d3",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "aea56f37631ae09cf0902a488b22b389ad8a85450c27b94deeea6c7144493d2b"
+  },
+  "id": "VvFmMri3ITR0KXCb",
+  "tags": []
+}

@@ -1,0 +1,127 @@
+BEGIN:VCALENDAR
+METHOD:REQUEST
+PRODID:Microsoft Exchange Server 2010
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:South Africa Standard Time
+BEGIN:STANDARD
+DTSTART:16010101T000000
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0200
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010101T000000
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0200
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+ORGANIZER;CN=Lloyd Sondayi:mailto:lloyds@fidelitylife.co.zw
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Blessing M
+ ushori:mailto:blessingm@fidelitylife.co.zw
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Takaedza M
+ atambo:mailto:takaedzam@fidelitylife.co.zw
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=David C. C
+ arter:mailto:davidc@fidelitylife.co.zw
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=David Humu
+ re:mailto:davidh@fidelitylife.co.zw
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Patience M
+ ushauri:mailto:patiencem@fidelitylife.co.zw
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Patience K
+ aseke:mailto:patiencek@fidelitylife.co.zw
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Godwishes 
+ Chiheya:mailto:godwishesc@fidelitylife.co.zw
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Tinaye Sam
+ udzi:mailto:tinayes@fidelitylife.co.zw
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Sikhumbuzo
+  Mpala:mailto:sikhumbuzom@flimas.co.zw
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Munyaradzi
+  Muzanenhamo:mailto:munyaradzim@flimas.co.zw
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Stellah Ch
+ isvo:mailto:stellahc@flimas.co.zw
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Takudzwa M
+ pofu:mailto:takudzwam@flimas.co.zw
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Ngoni Chat
+ iza:mailto:ngonic@flimas.co.zw
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Dennis:mai
+ lto:dennis@rubiem.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Arthur Mag
+ aya:mailto:arthur@rubiem.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Patiencem:
+ mailto:patiencem@rubiem.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=takudzwac@
+ rubiem.com:mailto:takudzwac@rubiem.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=godwill@ru
+ biem.com:mailto:godwill@rubiem.com
+DESCRIPTION;LANGUAGE=en-US:\n______________________________________________
+ __________________________________\nMicrosoft Teams meeting\nJoin: https:/
+ /teams.microsoft.com/meet/355779887085040?p=wf0klsfbkjZwa4FHx3\nMeeting ID
+ : 355 779 887 085 040\nPasscode: Fe3Us3hy\n_______________________________
+ _\nNeed help?<https://aka.ms/JoinTeamsMeeting?omkt=en-US> | System referen
+ ce<https://teams.microsoft.com/l/meetup-join/19%3ameeting_NDk0M2VjNTYtMTc5
+ OC00Y2M3LWJiOWQtYmUwYWQyMDNhYjc5%40thread.v2/0?context=%7b%22Tid%22%3a%222
+ 7baeefa-c523-4124-8be2-61b8c2658387%22%2c%22Oid%22%3a%2295fa5278-c502-45c7
+ -97cf-6c46b8625379%22%7d>\nFor organizers: Meeting options<https://teams.m
+ icrosoft.com/meetingOptions/?organizerId=95fa5278-c502-45c7-97cf-6c46b8625
+ 379&tenantId=27baeefa-c523-4124-8be2-61b8c2658387&threadId=19_meeting_NDk0
+ M2VjNTYtMTc5OC00Y2M3LWJiOWQtYmUwYWQyMDNhYjc5@thread.v2&messageId=0&languag
+ e=en-US>\n________________________________________________________________
+ ________________\n\n\n\nLloyd Sondayi |\nMobile: (242)750927-34 | Phone: +
+ 263 242 750927-34\nEmail: lloyds@fidelitylife.co.zw | Address:Fidelity Hou
+ se\, 66 Julius Nyerere Way\, Harare\,\n[http://www.fidelitylife.co.zw/wp-c
+ ontent/uploads/2026/05/banners-cover-page-green.jpg-scaled.jpeg]<https://w
+ ww.fidelitylife.co.zw>\nThe content of this email is confidential and inte
+ nded for the recipient specified in message only. It is strictly forbidden
+  to share any part of this message with any third party\, without a writte
+ n consent of the sender. If you received this message by mistake\, please 
+ reply to this message and follow with its deletion\, so that we can ensure
+  such a mistake does not occur in the future.\n
+UID:040000008200E00074C5B7101A82E00800000000B92C775D9CE6DC01000000000000000
+ 010000000B80127B10C1D1B4C9CF56FE019916B32
+SUMMARY;LANGUAGE=en-US:AI Training
+DTSTART;TZID=South Africa Standard Time:20260519T090000
+DTEND;TZID=South Africa Standard Time:20260519T130000
+CLASS:PUBLIC
+PRIORITY:5
+DTSTAMP:20260518T080019Z
+TRANSP:OPAQUE
+STATUS:CONFIRMED
+SEQUENCE:1
+LOCATION;LANGUAGE=en-US:Microsoft Teams Meeting
+X-MICROSOFT-CDO-APPT-SEQUENCE:1
+X-MICROSOFT-CDO-OWNERAPPTID:2124779961
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-ONLINEMEETINGINFORMATION:{"OnlineMeetingChannelId":null\,"Onlin
+ eMeetingProvider":3}
+X-MICROSOFT-SKYPETEAMSMEETINGURL:https://teams.microsoft.com/l/meetup-join/
+ 19%3ameeting_NDk0M2VjNTYtMTc5OC00Y2M3LWJiOWQtYmUwYWQyMDNhYjc5%40thread.v2/
+ 0?context=%7b%22Tid%22%3a%2227baeefa-c523-4124-8be2-61b8c2658387%22%2c%22O
+ id%22%3a%2295fa5278-c502-45c7-97cf-6c46b8625379%22%7d
+X-MICROSOFT-SCHEDULINGSERVICEUPDATEURL:https://api.scheduler.teams.microsof
+ t.com/teams/27baeefa-c523-4124-8be2-61b8c2658387/95fa5278-c502-45c7-97cf-6
+ c46b8625379/19_meeting_NDk0M2VjNTYtMTc5OC00Y2M3LWJiOWQtYmUwYWQyMDNhYjc5@th
+ read.v2/0
+X-MICROSOFT-SKYPETEAMSPROPERTIES:{"cid":"19:meeting_NDk0M2VjNTYtMTc5OC00Y2M
+ 3LWJiOWQtYmUwYWQyMDNhYjc5@thread.v2"\,"rid":0\,"mid":0\,"uid":null\,"priva
+ te":true\,"type":0}
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MICROSOFT-REQUESTEDATTENDANCEMODE:DEFAULT
+X-MICROSOFT-ISRESPONSEREQUESTED:TRUE
+X-MICROSOFT-LOCATIONDISPLAYNAME:Microsoft Teams Meeting
+X-MICROSOFT-LOCATIONSOURCE:None
+X-MICROSOFT-LOCATIONS:[{"DisplayName":"Microsoft Teams Meeting"\,"LocationA
+ nnotation":""\,"LocationUri":""\,"LocationStreet":""\,"LocationCity":""\,"
+ LocationState":""\,"LocationCountry":""\,"LocationPostalCode":""\,"Locatio
+ nFullAddress":""}]
+BEGIN:VALARM
+DESCRIPTION:REMINDER
+TRIGGER;RELATED=START:-PT15M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,1508 @@
+{
+  "name": "The Virtual Workforce",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "main-command",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "d2ed1126-8c9d-4091-8251-1140fb841094",
+      "name": "Receive Command",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1344,
+        944
+      ],
+      "webhookId": "20bfd252-4a35-4fd6-83a5-8f2490a29b9d"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.primary }}",
+                    "rightValue": "Finance Department",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "f5f3ced4-cc74-4a23-b4d7-08829c53e1fa"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.primary }}",
+                    "rightValue": "Human Resources Department",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "bfd678a3-5357-4d15-bf1c-7ae040d0d64e"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.primary }}",
+                    "rightValue": "Sales Department",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "92629070-aa0c-47e9-a06d-b4b15fbda2a7"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.primary }}",
+                    "rightValue": "Marketing Department",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "6994cbf6-8da3-4bca-8e3b-8f14f1c357da"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.primary }}",
+                    "rightValue": "Operations Department",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "ffb4de5b-3cd9-44e9-8266-1e856443e47a"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.primary }}",
+                    "rightValue": "Risk and Compliance Department",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "f18c39ef-d024-4b8a-b5a6-0fc54027263f"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.primary }}",
+                    "rightValue": "IT Department",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "989256f5-f000-4095-95c7-39fc076b2301"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.primary }}",
+                    "rightValue": "Strategy And Executive Department",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "ff0821bb-1703-4109-8fa7-c2f825a5d323"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7d03f0cc-8929-4f4a-bab2-5b24c5319d04",
+      "name": "Primary Router",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -848,
+        832
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "You are the Financial Reporting Worker responsible for generating financial reports including Income Statements, Balance Sheets, Cash Flow Management, Monthly Management Reports, and Executive Summaries. Use the available tools to access financial data, perform calculations, and generate comprehensive reports based on the request. \n\nOutput your response as minimal JSON only with fields: worker_name, action_taken, key_data, status. No explanatory text outside the JSON structure."
+        }
+      },
+      "id": "c9e26874-d675-4b9f-bcbd-f245b28e5dad",
+      "name": "Financial Reporting Worker",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1120,
+        -992
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "fec2ca0e-1ee7-4f21-808c-33f531634fac",
+      "name": "OpenAI Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        896,
+        -800
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "cf491204-5bb3-44fb-b890-8a1b941b2689",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        1040,
+        -304
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "description": "Calls the database agent workflow to retrieve transaction data for a specific account and period. Provide the account identifier and period as parameters.",
+        "workflowId": {
+          "__rl": true,
+          "value": "tkgaTrUZnLyJhcOK",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/tkgaTrUZnLyJhcOK",
+          "cachedResultName": "VW Templates — AI-Powered Supabase SQL Executor"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "payload": "={{ $json}}"
+          },
+          "matchingColumns": [
+            "payload"
+          ],
+          "schema": [
+            {
+              "id": "payload",
+              "displayName": "payload",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "id": "b1e31ad7-d881-409d-a01a-b46040ba8816",
+      "name": "Database_Agent_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1168,
+        -304
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "5e4f6a15-be89-463c-b240-4c9e9b7cd3fc",
+      "name": "Calculator_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        1296,
+        -304
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.secondary }}",
+                    "rightValue": "Financial Reporting Worker",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "4ac65477-c5c0-4e67-b9b2-ebcf7df9e7d3"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.secondary }}",
+                    "rightValue": "General Ledger Worker",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "83ec6fdd-822e-42d5-bd33-7bedac9783b2"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.secondary }}",
+                    "rightValue": "Accounts Receivable Worker",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "842e2642-80f1-4243-8f50-86e2d2c96195"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.secondary }}",
+                    "rightValue": "Reconciliation Worker",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "80f06062-60e4-4f90-8d51-e9110ed67590"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0b3ed335-b23e-46c1-8e79-5650cec3a274",
+      "name": "Finance Department",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -48,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "a67582fe-2c9e-4be3-86dd-4fa6a06886bd",
+      "name": "Send Response2",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        2144,
+        -512
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.payload }}",
+        "options": {
+          "systemMessage": "You are an Account Reconciliation Agent. Your task is to:\n1. Understand the reconciliation request, then call the database agent to bring up the information needed such as accounts and everything needed to make an account reconciliation.\n2. Use the Database Agent Tool to retrieve relevant and necessary data.\n3. Use the Calculator Tool to perform reconciliation calculations (sum debits, sum credits, calculate balance, identify discrepancies)\n4. Generate a clear reconciliation report summarizing the results, including opening balance, total debits, total credits, closing balance, and any exceptions found.\n5. If the request does not specify specific information then use your logic and reasoning to find what to reconcile\n\nBe thorough but concise in your report.\n\nOutput your response as minimal JSON only with fields: worker_name, action_taken, key_data, status. No explanatory text outside the JSON structure."
+        }
+      },
+      "id": "acdd06c2-9244-4cb6-b727-87b2ad5522e9",
+      "name": "Reconciliation  Worker",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1104,
+        -528
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "tkgaTrUZnLyJhcOK",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/tkgaTrUZnLyJhcOK",
+          "cachedResultName": "VW Templates — AI-Powered Supabase SQL Executor"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "payload": "={$json}"
+          },
+          "matchingColumns": [
+            "payload"
+          ],
+          "schema": [
+            {
+              "id": "payload",
+              "displayName": "payload",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1152,
+        -784
+      ],
+      "id": "b8c0ab1a-48bd-4a6a-b9d6-eca1d0e8ab47",
+      "name": "Database_Agent'"
+    },
+    {
+      "parameters": {
+        "description": "Generate an Income Statement (Profit & Loss) report for a specified period. Provide the time period and any specific parameters needed.",
+        "workflowId": {
+          "__rl": true,
+          "value": "IYczY1zNqkDCRsVK",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/IYczY1zNqkDCRsVK",
+          "cachedResultName": "VW Templates — Monthly Income Statement Generator with AI Agent"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "payload": "={$json}"
+          },
+          "matchingColumns": [
+            "payload"
+          ],
+          "schema": [
+            {
+              "id": "payload",
+              "displayName": "payload",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "id": "87211fe4-0a99-4002-8209-9c5fde04c76a",
+      "name": "Income_Statement_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1280,
+        -800
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Generate a Balance Sheet report showing assets, liabilities, and equity as of a specific date. Provide the date and any specific parameters needed.",
+        "workflowId": {
+          "__rl": true,
+          "value": "CApYT9F3YXF8qlsH",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/CApYT9F3YXF8qlsH",
+          "cachedResultName": "VW Templates — Balance Sheet Tool"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "id": "d2a73b43-1ebc-4a31-a886-4c2999d2be2c",
+      "name": "Balance_Sheet_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1392,
+        -784
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "9826fb59-bf72-4d88-aee9-69c94a80f060",
+      "name": "Calculator_Tool1",
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        1024,
+        -800
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are the Return Structure Agent responsible for formatting worker outputs into clean, structured responses. You receive JSON output from specialized workers and must format it into a noise-reduced, professional response. Extract key information, remove unnecessary details, and present the results clearly. Focus on the essential data and insights while maintaining accuracy."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1696,
+        -512
+      ],
+      "id": "37a4b677-c463-4574-b735-c8b193459e37",
+      "name": "Return Structure Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        1664,
+        -288
+      ],
+      "id": "d0e79f14-9411-4b0d-b9bd-329da23b0a9e",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"status\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"department\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"worker\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"result\": {\n\t\t\t\"type\": \"object\"\n\t\t},\n\t\t\"summary\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"timestamp\": {\n\t\t\t\"type\": \"string\"\n\t\t}\n\t}\n}"
+      },
+      "id": "41266fb8-d6a1-4f59-9e69-8eeca49fed42",
+      "name": "JSON Output Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        2000,
+        -240
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "189629c4-6b35-4a1b-b960-09dc64d6104c",
+      "name": "Conversation Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1840,
+        -224
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "You are the General Ledger Worker, the core accounting system responsible for recording and posting all financial transactions into the accounting books (ledger) in the database.\n\nYour Responsibilities:\n- Record journal entries with proper debits and credits\n- Post transactions to the ledger_entries table\n- Maintain the chart of accounts\n- Update and maintain account balances\n- Handle accruals and adjustments\n- Support month-end close procedures\n- Reverse incorrect postings when needed\n\nAccounting Rules You Must Follow:\n1. DOUBLE-ENTRY ACCOUNTING: Every transaction must have equal debits and credits (Debits = Credits)\n2. ACCOUNT TYPES: Assets and Expenses increase with debits; Liabilities, Equity, and Revenue increase with credits\n3. VALIDATION: Always validate entries before posting - check account codes exist, amounts balance, and dates are valid\n4. AUDIT TRAIL: Maintain complete transaction history - never delete entries, only reverse them\n\nAvailable Tools:\n- create_journal_entry: Structure new journal entries\n- post_to_ledger: Post validated entries to database\n- maintain_account_balances: Update account running balances\n- record_adjusting_entry: Handle period-end adjustments\n- month_end_close: Execute month-end procedures\n- reverse_posting: Create reversing entries for corrections\n- ledger_database: Query chart of accounts and transaction data\n- Validation_Calculator: Verify debits equal credits\n\nWorkflow:\n1. Understand the transaction request\n2. Validate account codes using ledger_database\n3. Structure the journal entry with proper debits/credits\n4. Use Validation_Calculator to confirm debits = credits\n5. Post to ledger using post_to_ledger\n6. Update account balances using maintain_account_balances\n7. Return confirmation with entry details\n\nOutput your response as minimal JSON only with fields: worker_name, action_taken, key_data, status. No explanatory text outside the JSON structure."
+        }
+      },
+      "id": "74a55b1f-e640-4fc0-951f-76b8ca17ef7d",
+      "name": "General Ledger Worker",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1136,
+        -64
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "20e04ad1-7811-47f3-ab48-9ec4f1cabf84",
+      "name": "GL Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        688,
+        224
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "description": "Creates a new journal entry with debits and credits. Provide transaction details including account codes, amounts, description, and date. The tool will structure the entry and prepare it for posting.",
+        "source": "parameter",
+        "workflowJson": "={{ $fromAI('Workflow_JSON', ``, 'json') }}"
+      },
+      "id": "61993bbe-f9c3-4fff-98b9-1b6f37c08f94",
+      "name": "Create_Journal_Entry_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        816,
+        208
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Posts validated journal entries to the ledger_entries table in the database. Validates double-entry accounting (debits = credits) before posting. Returns confirmation with entry IDs.",
+        "source": "parameter"
+      },
+      "id": "bfd10263-5950-4540-9802-0001de2f96fa",
+      "name": "Post_To_Ledger_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1632,
+        208
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Updates and maintains account balances after posting transactions. Calculates running balances for specified accounts and updates the account_balances table. Provide account codes to update.",
+        "source": "parameter"
+      },
+      "id": "a15353cb-03aa-4cea-9911-31a621a666a0",
+      "name": "Maintain_Account_Balances_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1520,
+        288
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Records adjusting entries for accruals, deferrals, depreciation, and other period-end adjustments. Provide adjustment type, accounts affected, amounts, and explanation.",
+        "source": "parameter"
+      },
+      "id": "ec33af54-65d9-4247-8497-db7811760a7d",
+      "name": "Record_Adjusting_Entry_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1424,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Executes month-end close procedures including validating all entries are posted, reconciling accounts, generating trial balance, and marking the period as closed. Provide the period (YYYY-MM) to close.",
+        "source": "parameter"
+      },
+      "id": "fea1b8de-e918-4f32-bcfc-8d28bd84a813",
+      "name": "Month_End_Close_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1312,
+        208
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Reverses incorrect or erroneous postings by creating offsetting entries. Provide the original entry ID or transaction details to reverse. Creates a reversing entry with opposite debits/credits.",
+        "source": "parameter"
+      },
+      "id": "9be8e294-1b90-4288-af09-42cc70cf6839",
+      "name": "Reverse_Posting_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1200,
+        192
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "b6e0012d-1ab9-4a90-95a1-4345bd4ebd63",
+      "name": "Validation_Calculator",
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        1088,
+        208
+      ]
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Direct access to ledger database for querying chart of accounts, retrieving transaction history, checking account balances, and validating account codes. Use for data retrieval and validation.",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {}
+        },
+        "options": {}
+      },
+      "id": "c22a2f3a-43ef-49ad-9da0-840cda4ea543",
+      "name": "Ledger_Database_Tool",
+      "type": "n8n-nodes-base.dataTableTool",
+      "typeVersion": 1.1,
+      "position": [
+        976,
+        208
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.secondary }}",
+                    "rightValue": "Financial Reporting Worker",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "4ac65477-c5c0-4e67-b9b2-ebcf7df9e7d3"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.secondary }}",
+                    "rightValue": "General Ledger Worker",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "83ec6fdd-822e-42d5-bd33-7bedac9783b2"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.secondary }}",
+                    "rightValue": "Accounts Receivable Worker",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "842e2642-80f1-4243-8f50-86e2d2c96195"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.secondary }}",
+                    "rightValue": "Reconciliation Worker",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "80f06062-60e4-4f90-8d51-e9110ed67590"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "36496776-10a2-4a41-9971-fe1b1682e756",
+      "name": "Financial Reporting And Accounting",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        704,
+        -544
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.secondary }}",
+                    "rightValue": "Financial Reporting Worker",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "4ac65477-c5c0-4e67-b9b2-ebcf7df9e7d3"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.secondary }}",
+                    "rightValue": "General Ledger Worker",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "83ec6fdd-822e-42d5-bd33-7bedac9783b2"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.secondary }}",
+                    "rightValue": "Accounts Receivable Worker",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "842e2642-80f1-4243-8f50-86e2d2c96195"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.secondary }}",
+                    "rightValue": "Reconciliation Worker",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "80f06062-60e4-4f90-8d51-e9110ed67590"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4a55c221-988d-4c9e-872c-cbbc83c2e2d5",
+      "name": "Accounts Payable",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        768,
+        592
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.secondary }}",
+                    "rightValue": "Financial Reporting Worker",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "4ac65477-c5c0-4e67-b9b2-ebcf7df9e7d3"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.secondary }}",
+                    "rightValue": "General Ledger Worker",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "83ec6fdd-822e-42d5-bd33-7bedac9783b2"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.secondary }}",
+                    "rightValue": "Accounts Receivable Worker",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "842e2642-80f1-4243-8f50-86e2d2c96195"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.tags.secondary }}",
+                    "rightValue": "Reconciliation Worker",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "80f06062-60e4-4f90-8d51-e9110ed67590"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5c72af8f-fc26-45ae-a524-9b20e05aaec5",
+      "name": "Budget Planning",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        752,
+        816
+      ]
+    }
+  ],
+  "pinData": {
+    "Receive Command": [
+      {
+        "json": {
+          "body": {
+            "tags": {
+              "primary": "Finance Department",
+              "secondary": "Financial Reporting Worker"
+            },
+            "prompt": "Generate a monthly management report for February 2026 including income statement highlights and a short executive summary.",
+            "context": {}
+          }
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Receive Command": {
+      "main": [
+        [
+          {
+            "node": "Primary Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Primary Router": {
+      "main": [
+        [
+          {
+            "node": "Finance Department",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Financial Reporting Worker",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Financial Reporting Worker": {
+      "main": [
+        [
+          {
+            "node": "Return Structure Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Reconciliation  Worker",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Database_Agent_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Reconciliation  Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Reconciliation  Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Finance Department": {
+      "main": [
+        [
+          {
+            "node": "Financial Reporting And Accounting",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Accounts Payable",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Budget Planning",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Reconciliation  Worker": {
+      "main": [
+        [
+          {
+            "node": "Return Structure Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Database_Agent'": {
+      "ai_tool": [
+        [
+          {
+            "node": "Financial Reporting Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Income_Statement_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Financial Reporting Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Balance_Sheet_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Financial Reporting Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator_Tool1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Financial Reporting Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Return Structure Agent": {
+      "main": [
+        [
+          {
+            "node": "Send Response2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Return Structure Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JSON Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Return Structure Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Conversation Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Return Structure Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "General Ledger Worker": {
+      "main": [
+        [
+          {
+            "node": "Return Structure Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GL Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create_Journal_Entry_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Post_To_Ledger_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Maintain_Account_Balances_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Record_Adjusting_Entry_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Month_End_Close_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reverse_Posting_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validation_Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ledger_Database_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Financial Reporting And Accounting": {
+      "main": [
+        [
+          {
+            "node": "Financial Reporting Worker",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Reconciliation  Worker",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "General Ledger Worker",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "f00f315b-2c7a-4b5f-aa17-cc7aaf35317e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "aea56f37631ae09cf0902a488b22b389ad8a85450c27b94deeea6c7144493d2b"
+  },
+  "id": "VvFmMri3ITR0KXCb",
+  "tags": []
+}

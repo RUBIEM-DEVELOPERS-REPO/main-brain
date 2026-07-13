@@ -1,0 +1,426 @@
+{
+  "name": "Revenue Assurance - Pricing Updates",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "pricing-update",
+        "options": {},
+        "responseMode": "responseNode"
+      },
+      "id": "pricing_webhook",
+      "name": "Webhook - Pricing Update",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 400],
+      "webhookId": "pricing-update-trigger"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Validate and process pricing update data\nconst incomingData = $json;\n\n// Required fields validation\nconst requiredFields = ['revenue_line', 'currency'];\nconst missingFields = requiredFields.filter(field => !incomingData[field]);\n\nif (missingFields.length > 0) {\n  return [{\n    json: {\n      error: true,\n      message: `Missing required fields: ${missingFields.join(', ')}`,\n      data: incomingData\n    }\n  }];\n}\n\n// Data type validation and conversion\nconst processedData = {\n  revenue_line: String(incomingData.revenue_line).trim(),\n  currency: String(incomingData.currency).toUpperCase().trim(),\n  account_type: incomingData.account_type ? String(incomingData.account_type).trim() : 'N/A',\n  competitors_count: incomingData.competitors_count ? parseInt(incomingData.competitors_count) : 0,\n  \n  // Fee statistics with proper decimal handling\n  minimum_fee_mean: incomingData.minimum_fee_mean !== undefined && incomingData.minimum_fee_mean !== null ? parseFloat(incomingData.minimum_fee_mean) : null,\n  minimum_fee_median: incomingData.minimum_fee_median !== undefined && incomingData.minimum_fee_median !== null ? parseFloat(incomingData.minimum_fee_median) : null,\n  maximum_fee_mean: incomingData.maximum_fee_mean !== undefined && incomingData.maximum_fee_mean !== null ? parseFloat(incomingData.maximum_fee_mean) : null,\n  maximum_fee_median: incomingData.maximum_fee_median !== undefined && incomingData.maximum_fee_median !== null ? parseFloat(incomingData.maximum_fee_median) : null,\n  percentage_fee_mean: incomingData.percentage_fee_mean !== undefined && incomingData.percentage_fee_mean !== null ? parseFloat(incomingData.percentage_fee_mean) : null,\n  percentage_fee_median: incomingData.percentage_fee_median !== undefined && incomingData.percentage_fee_median !== null ? parseFloat(incomingData.percentage_fee_median) : null,\n  flat_fee_mean: incomingData.flat_fee_mean !== undefined && incomingData.flat_fee_mean !== null ? parseFloat(incomingData.flat_fee_mean) : null,\n  flat_fee_median: incomingData.flat_fee_median !== undefined && incomingData.flat_fee_median !== null ? parseFloat(incomingData.flat_fee_median) : null,\n  \n  // Metadata\n  updated_by: incomingData.updated_by || 'system',\n  update_reason: incomingData.update_reason || 'Competitive analysis update',\n  batch_id: incomingData.batch_id || null\n};\n\n// Business validation\nif (processedData.minimum_fee_mean && processedData.maximum_fee_mean && \n    processedData.minimum_fee_mean > processedData.maximum_fee_mean) {\n  return [{\n    json: {\n      error: true,\n      message: 'Minimum fee cannot be greater than maximum fee',\n      data: processedData\n    }\n  }];\n}\n\nif (processedData.percentage_fee_mean !== null && \n    (processedData.percentage_fee_mean < 0 || processedData.percentage_fee_mean > 100)) {\n  return [{\n    json: {\n      error: true,\n      message: 'Percentage fee must be between 0 and 100',\n      data: processedData\n    }\n  }];\n}\n\n// Check for negative values in fee fields\nconst feeFields = ['minimum_fee_mean', 'minimum_fee_median', 'maximum_fee_mean', 'maximum_fee_median', 'flat_fee_mean', 'flat_fee_median'];\nfor (const field of feeFields) {\n  if (processedData[field] !== null && processedData[field] < 0) {\n    return [{\n      json: {\n        error: true,\n        message: `${field} cannot be negative`,\n        data: processedData\n      }\n    }];\n  }\n}\n\nreturn [{\n  json: {\n    error: false,\n    message: 'Data validation successful',\n    data: processedData\n  }\n}];"
+      },
+      "id": "validate_data",
+      "name": "Validate Pricing Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [480, 400]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "validation_ok",
+              "leftValue": "={{ $json.error }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "equal"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "check_validation",
+      "name": "Validation OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [720, 400]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "=SELECT \n  id,\n  revenue_line,\n  currency,\n  account_type,\n  minimum_fee_mean,\n  minimum_fee_median,\n  maximum_fee_mean,\n  maximum_fee_median,\n  percentage_fee_mean,\n  percentage_fee_median,\n  flat_fee_mean,\n  flat_fee_median,\n  competitors_count,\n  last_updated\nFROM pricing_analysis \nWHERE revenue_line = '{{ $json.data.revenue_line }}' \n  AND currency = '{{ $json.data.currency }}' \n  AND account_type = '{{ $json.data.account_type }}';"
+      },
+      "id": "get_existing",
+      "name": "Get Existing Rule",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.4,
+      "position": [960, 300],
+      "credentials": {
+        "postgres": {
+          "id": "{{ $credentials.neon_postgres }}",
+          "name": "Neon PostgreSQL"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Prepare SQL for upsert operation\nconst data = $json.data;\n\n// Helper function to format SQL values\nconst formatValue = (value) => {\n  if (value === null || value === undefined) return 'NULL';\n  if (typeof value === 'number') return value;\n  return `'${String(value).replace(/'/g, \"''\")}'`;\n};\n\nconst sqlInsert = `\nINSERT INTO pricing_analysis (\n  revenue_line,\n  currency,\n  account_type,\n  competitors_count,\n  minimum_fee_mean,\n  minimum_fee_median,\n  maximum_fee_mean,\n  maximum_fee_median,\n  percentage_fee_mean,\n  percentage_fee_median,\n  flat_fee_mean,\n  flat_fee_median,\n  active,\n  last_updated,\n  created_at,\n  updated_at\n) VALUES (\n  ${formatValue(data.revenue_line)},\n  ${formatValue(data.currency)},\n  ${formatValue(data.account_type)},\n  ${data.competitors_count || 0},\n  ${formatValue(data.minimum_fee_mean)},\n  ${formatValue(data.minimum_fee_median)},\n  ${formatValue(data.maximum_fee_mean)},\n  ${formatValue(data.maximum_fee_median)},\n  ${formatValue(data.percentage_fee_mean)},\n  ${formatValue(data.percentage_fee_median)},\n  ${formatValue(data.flat_fee_mean)},\n  ${formatValue(data.flat_fee_median)},\n  true,\n  NOW(),\n  NOW(),\n  NOW()\n)\nON CONFLICT (revenue_line, currency, account_type) \nDO UPDATE SET\n  competitors_count = EXCLUDED.competitors_count,\n  minimum_fee_mean = EXCLUDED.minimum_fee_mean,\n  minimum_fee_median = EXCLUDED.minimum_fee_median,\n  maximum_fee_mean = EXCLUDED.maximum_fee_mean,\n  maximum_fee_median = EXCLUDED.maximum_fee_median,\n  percentage_fee_mean = EXCLUDED.percentage_fee_mean,\n  percentage_fee_median = EXCLUDED.percentage_fee_median,\n  flat_fee_mean = EXCLUDED.flat_fee_mean,\n  flat_fee_median = EXCLUDED.flat_fee_median,\n  last_updated = NOW(),\n  updated_at = NOW()\nRETURNING id, revenue_line, currency, account_type, last_updated;`;\n\nreturn [{\n  json: {\n    sql_query: sqlInsert,\n    data: data\n  }\n}];"
+      },
+      "id": "prepare_upsert",
+      "name": "Prepare Upsert Query",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [960, 500]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "={{ $json.sql_query }}"
+      },
+      "id": "upsert_pricing",
+      "name": "Upsert Pricing Rule",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.4,
+      "position": [1200, 400],
+      "credentials": {
+        "postgres": {
+          "id": "{{ $credentials.neon_postgres }}",
+          "name": "Neon PostgreSQL"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Create history record for audit trail\nconst existingRuleData = $input.first().json;\nconst newRuleData = $input.last().json;\nconst updateData = $node['Validate Pricing Data'].json.data;\n\n// Handle array vs single object\nconst existingRule = Array.isArray(existingRuleData) ? existingRuleData[0] : existingRuleData;\nconst newRule = Array.isArray(newRuleData) ? newRuleData[0] : newRuleData;\n\nif (!existingRule || Object.keys(existingRule).length === 0) {\n  // New rule created\n  return [{\n    json: {\n      change_type: 'CREATE',\n      pricing_analysis_id: newRule.id,\n      old_values: null,\n      new_values: updateData,\n      changed_by: updateData.updated_by,\n      change_reason: `New pricing rule created: ${updateData.update_reason}`,\n      revenue_line: newRule.revenue_line,\n      currency: newRule.currency,\n      account_type: newRule.account_type,\n      changes: {}\n    }\n  }];\n}\n\n// Rule updated - compare changes\nconst changes = {};\nconst fields = [\n  'competitors_count', 'minimum_fee_mean', 'minimum_fee_median',\n  'maximum_fee_mean', 'maximum_fee_median', 'percentage_fee_mean',\n  'percentage_fee_median', 'flat_fee_mean', 'flat_fee_median'\n];\n\nfields.forEach(field => {\n  const oldVal = existingRule[field];\n  const newVal = updateData[field];\n  \n  // Compare considering null values\n  if (oldVal !== newVal && !(oldVal == null && newVal == null)) {\n    changes[field] = {\n      from: oldVal,\n      to: newVal\n    };\n  }\n});\n\nreturn [{\n  json: {\n    change_type: Object.keys(changes).length > 0 ? 'UPDATE' : 'NO_CHANGE',\n    pricing_analysis_id: existingRule.id,\n    old_values: existingRule,\n    new_values: updateData,\n    changes: changes,\n    changed_by: updateData.updated_by,\n    change_reason: updateData.update_reason,\n    revenue_line: existingRule.revenue_line,\n    currency: existingRule.currency,\n    account_type: existingRule.account_type\n  }\n}];"
+      },
+      "id": "prepare_history",
+      "name": "Prepare History Record",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1440, 400]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "change_made",
+              "leftValue": "={{ $json.change_type }}",
+              "rightValue": "NO_CHANGE",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "check_changes",
+      "name": "Changes Made?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1680, 400]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Prepare history insert\nconst historyData = $json;\n\nconst escapeStr = (str) => String(str || '').replace(/'/g, \"''\");\n\nconst sqlInsert = `\nINSERT INTO pricing_rules_history (\n  pricing_analysis_id,\n  old_values,\n  new_values,\n  changed_by,\n  change_reason,\n  change_type,\n  changed_at\n) VALUES (\n  ${historyData.pricing_analysis_id},\n  '${JSON.stringify(historyData.old_values).replace(/'/g, \"''\")}'::jsonb,\n  '${JSON.stringify(historyData.new_values).replace(/'/g, \"''\")}'::jsonb,\n  '${escapeStr(historyData.changed_by)}',\n  '${escapeStr(historyData.change_reason)}',\n  '${historyData.change_type}',\n  NOW()\n);`;\n\nreturn [{\n  json: {\n    sql_query: sqlInsert,\n    history_data: historyData\n  }\n}];"
+      },
+      "id": "prepare_history_sql",
+      "name": "Prepare History SQL",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1920, 300]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "={{ $json.sql_query }}"
+      },
+      "id": "log_history",
+      "name": "Log to History",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.4,
+      "position": [2160, 300],
+      "credentials": {
+        "postgres": {
+          "id": "{{ $credentials.neon_postgres }}",
+          "name": "Neon PostgreSQL"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "significant_changes",
+              "leftValue": "={{ Object.keys($json.changes || {}).length }}",
+              "rightValue": 3,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "or"
+        }
+      },
+      "id": "check_significant",
+      "name": "Significant Changes?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1920, 500]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.slack.com/services/YOUR_SLACK_WEBHOOK_HERE",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  \"text\": `💰 *Pricing Rule Update Alert*\\n\\n*Service:* ${$json.revenue_line} (${$json.currency})\\n*Change Type:* ${$json.change_type}\\n*Updated By:* ${$json.changed_by}\\n*Reason:* ${$json.change_reason}\\n\\n*Key Changes:*\\n${Object.keys($json.changes || {}).map(key => `• ${key}: ${$json.changes[key].from} → ${$json.changes[key].to}`).join('\\n')}\\n\\n⚠️ *Action Required:* Review impact on existing transactions and update validation thresholds if needed.`\n} }}"
+      },
+      "id": "notify_changes",
+      "name": "Notify Significant Changes",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2160, 500],
+      "notes": "Update with your Slack webhook URL"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Prepare success response\nconst historyData = $node['Prepare History Record'].json;\nconst validationData = $node['Validate Pricing Data'].json;\n\nreturn [{\n  json: {\n    success: true,\n    message: `Pricing rule ${historyData.change_type.toLowerCase()}d successfully`,\n    data: {\n      revenue_line: historyData.revenue_line,\n      currency: historyData.currency,\n      account_type: historyData.account_type,\n      change_type: historyData.change_type,\n      changes_made: Object.keys(historyData.changes || {}).length,\n      timestamp: new Date().toISOString()\n    }\n  }\n}];"
+      },
+      "id": "success_response",
+      "name": "Success Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1680, 600]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Prepare error response\nconst errorData = $json;\n\nreturn [{\n  json: {\n    success: false,\n    error: errorData.message,\n    data: errorData.data,\n    timestamp: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "error_response",
+      "name": "Error Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [720, 600]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}"
+      },
+      "id": "send_response",
+      "name": "Send Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1920, 700]
+    }
+  ],
+  "connections": {
+    "Webhook - Pricing Update": {
+      "main": [
+        [
+          {
+            "node": "Validate Pricing Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Pricing Data": {
+      "main": [
+        [
+          {
+            "node": "Validation OK?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validation OK?": {
+      "main": [
+        [
+          {
+            "node": "Get Existing Rule",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Prepare Upsert Query",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Existing Rule": {
+      "main": [
+        [
+          {
+            "node": "Prepare History Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Upsert Query": {
+      "main": [
+        [
+          {
+            "node": "Upsert Pricing Rule",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upsert Pricing Rule": {
+      "main": [
+        [
+          {
+            "node": "Prepare History Record",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Prepare History Record": {
+      "main": [
+        [
+          {
+            "node": "Changes Made?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Changes Made?": {
+      "main": [
+        [
+          {
+            "node": "Prepare History SQL",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Significant Changes?",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Success Response",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Success Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare History SQL": {
+      "main": [
+        [
+          {
+            "node": "Log to History",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Significant Changes?": {
+      "main": [
+        [
+          {
+            "node": "Notify Significant Changes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Success Response": {
+      "main": [
+        [
+          {
+            "node": "Send Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Response": {
+      "main": [
+        [
+          {
+            "node": "Send Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-15T12:00:00.000Z",
+  "versionId": "1.0.0"
+}

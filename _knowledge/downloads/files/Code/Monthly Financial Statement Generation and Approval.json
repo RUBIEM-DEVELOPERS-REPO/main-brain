@@ -1,0 +1,566 @@
+{
+  "name": "Monthly Financial Statement Generation and Approval",
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "id-1",
+              "name": "month",
+              "value": "={{ $now.format('MMMM yyyy') }}",
+              "type": "string"
+            },
+            {
+              "id": "id-2",
+              "name": "external_use",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "id": "id-3",
+              "name": "workflow_start_time",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f6c23615-cc5b-4915-8938-11d2f35cfaf1",
+      "name": "Workflow Configuration",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        480,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "source": "parameter",
+        "workflowJson": "={{ $workflow.id }}"
+      },
+      "id": "525a9be7-c7fb-41d3-b696-68ee703e6d24",
+      "name": "Execute WF_FIN_MONTHLY_STATEMENT",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        704,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "fin-monthly-statement-callback",
+        "options": {}
+      },
+      "id": "4a1dd2d2-5595-4a37-8318-f1b55a7df98c",
+      "name": "Callback Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        256,
+        528
+      ],
+      "webhookId": "4da3eddb-328d-449b-bc8e-761d82d77833"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"status\": \"received\",\n  \"message\": \"Callback acknowledged\"\n}"
+      },
+      "id": "55463b17-fccf-494f-b27d-3eb01fd20671",
+      "name": "Respond to Callback",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        480,
+        528
+      ]
+    },
+    {
+      "parameters": {
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "<__PLACEHOLDER_VALUE__financial_audit_log__>"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": null
+        }
+      },
+      "id": "39a7e391-1058-4fbe-a3a1-2812dd54aafb",
+      "name": "Audit Log",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1152,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "id-1",
+              "name": "workflow_name",
+              "value": "FIN_MONTHLY_STATEMENT",
+              "type": "string"
+            },
+            {
+              "id": "id-2",
+              "name": "execution_id",
+              "value": "={{ $execution.id }}",
+              "type": "string"
+            },
+            {
+              "id": "id-3",
+              "name": "period",
+              "value": "={{ $('Workflow Configuration').item.json.month }}",
+              "type": "string"
+            },
+            {
+              "id": "id-4",
+              "name": "status",
+              "value": "completed",
+              "type": "string"
+            },
+            {
+              "id": "id-5",
+              "name": "timestamp",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            },
+            {
+              "id": "id-6",
+              "name": "external_use",
+              "value": "={{ $('Workflow Configuration').item.json.external_use }}",
+              "type": "boolean"
+            },
+            {
+              "id": "id-7",
+              "name": "pdf_generated",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7c31a799-7503-4090-8ba9-5d6c292b3fb0",
+      "name": "Prepare Audit Log Entry",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        928,
+        304
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "1f5fbe4a-41ed-4ac1-a73f-d2b4451a3c4b",
+      "name": "When Executed by Another Workflow",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        256,
+        848
+      ]
+    },
+    {
+      "parameters": {
+        "url": "<__PLACEHOLDER_VALUE__accounting_api_endpoint__>",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a5eb9d78-e833-4d6d-a9a1-1b7066f65245",
+      "name": "Pull Trial Balance",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        480,
+        848
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "id-1",
+              "name": "statement_type",
+              "value": "P&L",
+              "type": "string"
+            },
+            {
+              "id": "id-2",
+              "name": "revenue",
+              "value": "={{ $json.revenue || 0 }}",
+              "type": "number"
+            },
+            {
+              "id": "id-3",
+              "name": "expenses",
+              "value": "={{ $json.expenses || 0 }}",
+              "type": "number"
+            },
+            {
+              "id": "id-4",
+              "name": "net_income",
+              "value": "={{ ($json.revenue || 0) - ($json.expenses || 0) }}",
+              "type": "number"
+            },
+            {
+              "id": "id-5",
+              "name": "period",
+              "value": "={{ $('Workflow Configuration').item.json.month }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "23a9ea9d-575c-4b7d-b5b2-2470065dc6f5",
+      "name": "Build P&L",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        704,
+        752
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "id-1",
+              "name": "statement_type",
+              "value": "Balance Sheet",
+              "type": "string"
+            },
+            {
+              "id": "id-2",
+              "name": "assets",
+              "value": "={{ $json.assets || 0 }}",
+              "type": "number"
+            },
+            {
+              "id": "id-3",
+              "name": "liabilities",
+              "value": "={{ $json.liabilities || 0 }}",
+              "type": "number"
+            },
+            {
+              "id": "id-4",
+              "name": "equity",
+              "value": "={{ $json.equity || 0 }}",
+              "type": "number"
+            },
+            {
+              "id": "id-5",
+              "name": "period",
+              "value": "={{ $('Workflow Configuration').item.json.month }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d1305296-a69f-45f3-87e9-b9fbb6b65cbb",
+      "name": "Build Balance Sheet",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        704,
+        944
+      ]
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "eecb521d-c06b-48a4-8dd7-95622091476e",
+      "name": "Combine Financial Statements",
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        928,
+        848
+      ]
+    },
+    {
+      "parameters": {
+        "html": "=<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\" />\n  <title>Monthly Financial Statement</title>\n</head>\n<body>\n  <div class=\"container\">\n    <h1>Monthly Financial Statement</h1>\n    \n    <div class=\"section\">\n      <h2>Profit & Loss Statement</h2>\n      <div class=\"financial-data\">\n        {{ $json.pl }}\n      </div>\n    </div>\n    \n    <div class=\"section\">\n      <h2>Balance Sheet</h2>\n      <div class=\"financial-data\">\n        {{ $json.balanceSheet }}\n      </div>\n    </div>\n  </div>\n</body>\n</html>\n\n<style>\n.container {\n  background-color: #ffffff;\n  padding: 24px;\n  font-family: Arial, sans-serif;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n\nh1 {\n  color: #2c3e50;\n  font-size: 28px;\n  font-weight: bold;\n  text-align: center;\n  padding: 16px;\n  border-bottom: 2px solid #3498db;\n  margin-bottom: 24px;\n}\n\n.section {\n  margin-bottom: 32px;\n  padding: 16px;\n  background-color: #f8f9fa;\n  border-radius: 8px;\n}\n\nh2 {\n  color: #34495e;\n  font-size: 22px;\n  font-weight: bold;\n  padding: 8px 0;\n  margin-bottom: 16px;\n  border-bottom: 1px solid #bdc3c7;\n}\n\n.financial-data {\n  padding: 12px;\n  background-color: #ffffff;\n  border-radius: 4px;\n  line-height: 1.6;\n}\n</style>"
+      },
+      "id": "b6f680f0-0d23-420c-afe7-28a0739872d6",
+      "name": "Format as HTML",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        1152,
+        848
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "html",
+        "options": {
+          "fileName": "={{ 'Financial_Statement_' + $('Workflow Configuration').item.json.month.replace(' ', '_') + '.pdf' }}"
+        }
+      },
+      "id": "ec1505e4-4c51-46b1-932a-e00b2aa81659",
+      "name": "Generate Draft PDF",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1376,
+        848
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "id-1",
+              "leftValue": "={{ $('Workflow Configuration').item.json.external_use }}",
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "f6534483-fbaf-4a76-be95-62110a9497dc",
+      "name": "Check if External Use",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1600,
+        848
+      ]
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "limitWaitTime": true,
+        "resumeAmount": 7,
+        "resumeUnit": "days",
+        "options": {}
+      },
+      "id": "8dd1c8f4-66d6-4e57-bdcb-49263a97b486",
+      "name": "Approval Gate",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1824,
+        848
+      ],
+      "webhookId": "8a9b51e1-3efd-4ab8-9d3d-98ad29b5254d"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "months",
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "id": "6d4e28ed-7381-40a4-bf28-7135f8e02bf9",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        256,
+        304
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Workflow Configuration",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Workflow Configuration": {
+      "main": [
+        [
+          {
+            "node": "Execute WF_FIN_MONTHLY_STATEMENT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute WF_FIN_MONTHLY_STATEMENT": {
+      "main": [
+        [
+          {
+            "node": "Prepare Audit Log Entry",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Audit Log Entry": {
+      "main": [
+        [
+          {
+            "node": "Audit Log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Callback Webhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Callback",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Pull Trial Balance",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pull Trial Balance": {
+      "main": [
+        [
+          {
+            "node": "Build P&L",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Build Balance Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build P&L": {
+      "main": [
+        [
+          {
+            "node": "Combine Financial Statements",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Balance Sheet": {
+      "main": [
+        [
+          {
+            "node": "Combine Financial Statements",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Combine Financial Statements": {
+      "main": [
+        [
+          {
+            "node": "Format as HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format as HTML": {
+      "main": [
+        [
+          {
+            "node": "Generate Draft PDF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Draft PDF": {
+      "main": [
+        [
+          {
+            "node": "Check if External Use",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check if External Use": {
+      "main": [
+        [
+          {
+            "node": "Approval Gate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "8f2e06f0-0f08-45e4-b3b9-2c420b28d1c1",
+  "meta": {
+    "instanceId": "b55e1a0d9c010772199ae1a01398904cd885f7a7e426fc86b390e6166d33133e"
+  },
+  "id": "ZGWxI4qiFRUdQWS9R2iFW",
+  "tags": []
+}

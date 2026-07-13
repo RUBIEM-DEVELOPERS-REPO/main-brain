@@ -1,0 +1,583 @@
+{
+  "name": "Daily AI News Script Generator",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "id": "ae199962-f3d7-4378-b0c7-eddebb1cc29b",
+      "name": "Daily 7:00 AM Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        256,
+        608
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "id-1",
+              "name": "currentDate",
+              "value": "={{ $now.toFormat('yyyy-MM-dd') }}",
+              "type": "string"
+            },
+            {
+              "id": "id-2",
+              "name": "searchQuery",
+              "value": "AI news artificial intelligence machine learning",
+              "type": "string"
+            },
+            {
+              "id": "id-3",
+              "name": "dateFilter",
+              "value": "={{ 'published today ' + $now.toFormat('yyyy-MM-dd') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d81c242a-965d-49a3-8084-d863566e5265",
+      "name": "Workflow Configuration",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        480,
+        608
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Search for AI news published TODAY ({{ $('Workflow Configuration').item.json.currentDate }}).\n\nSearch for:\n- AI breakthroughs and research announcements\n- New AI product launches and updates\n- Industry developments and partnerships\n- AI policy and regulation news\n- Notable AI applications and use cases\n\n\nFor each news item found, extract:\n- Title\n- Source\n- Publication date/time\n- Brief summary (2-3 sentences)\n- Significance/impact\n- URL\n\nReturn your findings in the structured format with newsItems array, totalFound count, and searchDate.",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are an AI news research agent. Your task is to search for and gather the most significant AI news published TODAY with as minimal searches possible. Focus on reputable sources like TechCrunch, VentureBeat, MIT Technology Review, The Verge, Ars Technica, AI research labs, and major tech companies. Prioritize the top 3 most significant stories. If multiple sources report the same story, consolidate them into one entry with multiple source citations.",
+          "maxIterations": 100
+        }
+      },
+      "id": "23a7d701-f2be-4aa0-84ef-aefedc74a3a4",
+      "name": "AI News Research Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        832,
+        608
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "709d7b00-679b-4535-8d76-1c7d5eb072e7",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        640,
+        848
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "d6pb61EXgeNhmP12",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "1be14f95-d630-41bb-b63c-12751923c8f9",
+      "name": "SerpAPI Search Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        816,
+        832
+      ],
+      "credentials": {
+        "serpApi": {
+          "id": "6Ab0Yg4JaWOZosoq",
+          "name": "SerpAPI account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"newsItems\": {\n\t\t\t\"type\": \"array\",\n\t\t\t\"items\": {\n\t\t\t\t\"type\": \"object\",\n\t\t\t\t\"properties\": {\n\t\t\t\t\t\"title\": {\n\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t},\n\t\t\t\t\t\"sources\": {\n\t\t\t\t\t\t\"type\": \"array\",\n\t\t\t\t\t\t\"items\": {\n\t\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t\t}\n\t\t\t\t\t},\n\t\t\t\t\t\"publishedDate\": {\n\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t},\n\t\t\t\t\t\"summary\": {\n\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t},\n\t\t\t\t\t\"significance\": {\n\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t},\n\t\t\t\t\t\"url\": {\n\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t},\n\t\t\t\t\t\"priority\": {\n\t\t\t\t\t\t\"type\": \"number\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"totalFound\": {\n\t\t\t\"type\": \"number\"\n\t\t},\n\t\t\"searchDate\": {\n\t\t\t\"type\": \"string\"\n\t\t}\n\t},\n\t\"required\": [\"newsItems\", \"totalFound\", \"searchDate\"]\n}",
+        "autoFix": true
+      },
+      "id": "4966aad5-2935-40c4-9e09-02238cf66ca0",
+      "name": "Structured Output Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1136,
+        832
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "4e30da9c-36e3-49ae-ab50-9697e36c97d1",
+      "name": "OpenAI Chat Model for Fallback",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        1408,
+        944
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "d6pb61EXgeNhmP12",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\"type\": \"object\", \"properties\": {\"scriptTitle\": {\"type\": \"string\"}, \"scriptDate\": {\"type\": \"string\"}, \"estimatedDuration\": {\"type\": \"string\"}, \"introduction\": {\"type\": \"string\"}, \"trendSegments\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"segmentNumber\": {\"type\": \"number\"}, \"trendTopic\": {\"type\": \"string\"}, \"content\": {\"type\": \"string\"}, \"timingCue\": {\"type\": \"string\"}, \"speakerNotes\": {\"type\": \"string\"}, \"visualCues\": {\"type\": \"string\"}}}}, \"conclusion\": {\"type\": \"string\"}, \"fullScript\": {\"type\": \"string\"}}, \"required\": [\"scriptTitle\", \"scriptDate\", \"introduction\", \"trendSegments\", \"conclusion\", \"fullScript\"]}",
+        "autoFix": true
+      },
+      "id": "101bed34-e50c-46ec-a0a0-ed34f3ec3fa4",
+      "name": "Fallback Script Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1520,
+        816
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "38e36c99-2101-49d2-b6e6-c235e2e20d91",
+              "name": "output.scriptTitle",
+              "value": "={{ $json.output.scriptTitle }}",
+              "type": "string"
+            },
+            {
+              "id": "0b7657ee-f02e-47f7-96ee-514594979097",
+              "name": "output.introduction",
+              "value": "={{ $json.output.introduction }}",
+              "type": "string"
+            },
+            {
+              "id": "1bb9feb3-32e2-4cf8-adfa-f21bda954dfe",
+              "name": "output.trendSegments[0].trendTopic",
+              "value": "={{ $json.output.trendSegments[0].trendTopic }}",
+              "type": "string"
+            },
+            {
+              "id": "099c66c1-c2a6-421f-a94c-f0fd20bec6d8",
+              "name": "output.trendSegments[0].content",
+              "value": "={{ $json.output.trendSegments[0].content }}",
+              "type": "string"
+            },
+            {
+              "id": "66da9e27-37e3-4e8b-843c-7f9b46a69ffb",
+              "name": "output.trendSegments[1].trendTopic",
+              "value": "={{ $json.output.trendSegments[1].trendTopic }}",
+              "type": "string"
+            },
+            {
+              "id": "fee5c476-1bb6-4f11-b730-02ede35fdceb",
+              "name": "output.trendSegments[1].content",
+              "value": "={{ $json.output.trendSegments[1].content }}",
+              "type": "string"
+            },
+            {
+              "id": "4251c915-5b78-4e55-93db-b09d820869d8",
+              "name": "output.trendSegments[2].trendTopic",
+              "value": "={{ $json.output.trendSegments[2].trendTopic }}",
+              "type": "string"
+            },
+            {
+              "id": "c277e775-a31a-422d-8597-e3aaf0a6f1fe",
+              "name": "output.trendSegments[2].content",
+              "value": "={{ $json.output.trendSegments[2].content }}",
+              "type": "string"
+            },
+            {
+              "id": "3a825fa4-2af6-4c8e-99df-5225cb793dbe",
+              "name": "output.trendSegments[3].trendTopic",
+              "value": "={{ $json.output.trendSegments[3].trendTopic }}",
+              "type": "string"
+            },
+            {
+              "id": "71bdd249-0bbe-4c30-8459-bba641d5e5bb",
+              "name": "output.trendSegments[3].content",
+              "value": "={{ $json.output.trendSegments[3].content }}",
+              "type": "string"
+            },
+            {
+              "id": "33c92c95-9281-4f13-bfdc-3fa73743a2c3",
+              "name": "output.trendSegments[4].trendTopic",
+              "value": "={{ $json.output.trendSegments[4].trendTopic }}",
+              "type": "string"
+            },
+            {
+              "id": "202193c7-9bcd-4701-9af4-d51ee46bc81d",
+              "name": "output.trendSegments[4].content",
+              "value": "={{ $json.output.trendSegments[4].content }}",
+              "type": "string"
+            },
+            {
+              "id": "8e3ed1e7-386f-42d8-a2ed-acaf0e30f1e7",
+              "name": "output.conclusion",
+              "value": "={{ $json.output.conclusion }}",
+              "type": "string"
+            },
+            {
+              "id": "19062d2c-dfd1-4a2a-a280-6169a956b908",
+              "name": "output.fullScript",
+              "value": "={{ $json.output.fullScript }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "76007d6a-f615-4ce4-9d9f-3dbdd8212991",
+      "name": "Format Script for Storage",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1888,
+        608
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "<__PLACEHOLDER_VALUE__admin@rubiem.com__>",
+        "toEmail": "<__PLACEHOLDER_VALUE__arthur@rubiem.com__>",
+        "subject": "={{ 'AI News Script Ready - ' + $now.toFormat('MMMM dd, yyyy') }}",
+        "emailFormat": "text",
+        "text": "={{ 'Your daily AI news script has been generated and saved to Google Drive.\\n\\nScript Details:\\n- Title: ' + $('Format Script for Storage').item.json.scriptTitle + '\\n- Date: ' + $('Format Script for Storage').item.json.scriptDate + '\\n- Duration: ' + ($('Format Script for Storage').item.json.estimatedDuration || 'N/A') + '\\n- File: ' + $('Format Script for Storage').item.json.fileName + '\\n\\nThe script is ready for conversion into a presentation or video.\\n\\nGenerated at: ' + $now.toFormat('HH:mm:ss') + ' UTC' }}",
+        "options": {}
+      },
+      "id": "92c6aa21-7033-4272-89b0-1c7ce48c307f",
+      "name": "Send Notification Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        2528,
+        608
+      ],
+      "webhookId": "0e5d08b3-0944-483d-aa2b-159f6f9af6d6",
+      "credentials": {
+        "smtp": {
+          "id": "VY285lMtQbWvzSCM",
+          "name": "SMTP account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        1072,
+        1040
+      ],
+      "id": "dfd02f9b-458f-4f5b-a624-c40a871de17d",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "d6pb61EXgeNhmP12",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "messages": {
+          "message": [
+            {}
+          ]
+        },
+        "options": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.perplexityTool",
+      "typeVersion": 1,
+      "position": [
+        976,
+        848
+      ],
+      "id": "51e59c67-0125-4b51-a3c2-6ae0e7f31f3a",
+      "name": "Message a model in Perplexity"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        1520,
+        1040
+      ],
+      "id": "38885393-34fa-44d5-8e29-35952ed83e39",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "d6pb61EXgeNhmP12",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "path": "={{ '/path/to/folder/' + $json.fileName }}",
+        "fileContent": "={{ $json.output.fullScript }}"
+      },
+      "type": "n8n-nodes-base.dropbox",
+      "typeVersion": 1,
+      "position": [
+        2224,
+        608
+      ],
+      "id": "b58aedd5-352f-4888-bf00-3f9458beeb25",
+      "name": "Upload a file",
+      "credentials": {
+        "dropboxOAuth2Api": {
+          "id": "QEwA7PlEC46NHlhn",
+          "name": "Dropbox account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Today ({{ $('Workflow Configuration').item.json.currentDate }}), there are no major AI news updates to report.\n\nCreate a fallback script that:\n\n1. INTRODUCTION (30-45 seconds)\n- Acknowledge the quiet news day\n- Set positive, informative tone\n- Preview the content approach\n\n2. MAIN CONTENT (6-8 minutes)\n- Provide overview of ongoing AI trends:\n  * Current developments in large language models\n  * AI adoption in various industries\n  * Regulatory landscape updates\n  * Notable ongoing research areas\n  * AI ethics and safety discussions\n- For each trend:\n  * Brief explanation\n  * Recent context (past week/month)\n  * Why it remains relevant\n  * [TIMING CUES] for pacing\n\n3. CONCLUSION (30-45 seconds)\n- Summarize key ongoing themes\n- Encourage staying informed\n- Positive closing\n\nFormatting requirements:\n- Use clear section headers\n- Include [TIMING CUES] in brackets\n- Add [SPEAKER NOTES] for tone guidance\n- Mark [TRANSITION] points\n- Suggest [VISUAL CUES] where relevant\n\nReturn the complete script in structured format.",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are a professional script writer creating daily AI news briefing scripts. When there are no major news updates, you create informative fallback scripts covering ongoing AI trends and developments. Your scripts are well-structured with clear sections, timing cues, speaker notes, transitions, and visual cues. Target length is 8-10 minutes."
+        }
+      },
+      "id": "0aa632ae-3370-4500-b783-5a0b60150c7f",
+      "name": "Script Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1408,
+        608
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Daily 7:00 AM Trigger": {
+      "main": [
+        [
+          {
+            "node": "Workflow Configuration",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Workflow Configuration": {
+      "main": [
+        [
+          {
+            "node": "AI News Research Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI News Research Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI Search Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI News Research Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI News Research Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI News Research Agent": {
+      "main": [
+        [
+          {
+            "node": "Script Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model for Fallback": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Script Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fallback Script Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Script Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Script for Storage": {
+      "main": [
+        [
+          {
+            "node": "Upload a file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Structured Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model in Perplexity": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI News Research Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Fallback Script Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload a file": {
+      "main": [
+        [
+          {
+            "node": "Send Notification Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Script Agent": {
+      "main": [
+        [
+          {
+            "node": "Format Script for Storage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false,
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "executionTimeout": -1
+  },
+  "versionId": "3643266a-11ea-42fd-98dc-49863c2dd39d",
+  "meta": {
+    "instanceId": "b55e1a0d9c010772199ae1a01398904cd885f7a7e426fc86b390e6166d33133e"
+  },
+  "id": "esX_CdyutWu3wy3Oar08O",
+  "tags": []
+}

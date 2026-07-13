@@ -1,0 +1,232 @@
+{
+  "name": "Account Reconciliation Tool",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "payload",
+              "type": "object"
+            }
+          ]
+        }
+      },
+      "id": "4745a8b3-4235-41a6-b7f2-466f4309e8ac",
+      "name": "Receive Reconciliation Request",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        256,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.payload }}",
+        "options": {
+          "systemMessage": "You are an Account Reconciliation Agent. Your task is to:\n1. Understand the reconciliation request, then call the database agent to bring up the information needed such as accounts and everything needed to make an account reconciliation.\n2. Use the Database Agent Tool to retrieve relevant and necessary data.\n3. Use the Calculator Tool to perform reconciliation calculations (sum debits, sum credits, calculate balance, identify discrepancies)\n4. Generate a clear reconciliation report summarizing the results, including opening balance, total debits, total credits, closing balance, and any exceptions found.\n5. If the request does not specify specific information then use your logic and reasoning to find what to reconcile\n\nBe thorough but concise in your report."
+        }
+      },
+      "id": "3c46291d-1727-4ad3-9801-26ec3fabe2b9",
+      "name": "Reconciliation Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        544,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "f774fb3f-ddb2-40f8-bbf4-4899d9deedf6",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        480,
+        528
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "description": "Calls the database agent workflow to retrieve transaction data for a specific account and period. Provide the account identifier and period as parameters.",
+        "workflowId": {
+          "__rl": true,
+          "value": "tkgaTrUZnLyJhcOK",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/tkgaTrUZnLyJhcOK",
+          "cachedResultName": "VW Templates — AI-Powered Supabase SQL Executor"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "payload": "={{ $json}}"
+          },
+          "matchingColumns": [
+            "payload"
+          ],
+          "schema": [
+            {
+              "id": "payload",
+              "displayName": "payload",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "id": "850ce5b5-5f4e-49ae-8f74-82e3b71c3aa4",
+      "name": "Database_Agent_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        608,
+        592
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "0575f224-d90a-45b6-9f1a-7c8838f0a317",
+      "name": "Calculator_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        736,
+        528
+      ]
+    }
+  ],
+  "pinData": {
+    "Receive Reconciliation Request": [
+      {
+        "json": {
+          "payload": {
+            "headers": {
+              "host": "royalchrisking.app.n8n.cloud",
+              "user-agent": "node",
+              "content-length": "190",
+              "accept": "*/*",
+              "accept-encoding": "gzip, br",
+              "accept-language": "*",
+              "cdn-loop": "cloudflare; loops=1; subreqs=1",
+              "cf-connecting-ip": "2600:1900:0:2d08::600",
+              "cf-ew-via": "15",
+              "cf-ipcountry": "US",
+              "cf-ray": "9d486c8d4b905d07-ORD",
+              "cf-visitor": "{\"scheme\":\"https\"}",
+              "cf-worker": "n8n.cloud",
+              "content-type": "application/json",
+              "sec-fetch-mode": "cors",
+              "x-forwarded-for": "2600:1900:0:2d08::600, 172.70.127.225",
+              "x-forwarded-host": "royalchrisking.app.n8n.cloud",
+              "x-forwarded-port": "443",
+              "x-forwarded-proto": "https",
+              "x-forwarded-server": "traefik-prod-users-gwc-105-84f9ff7989-658zk",
+              "x-is-trusted": "yes",
+              "x-real-ip": "2600:1900:0:2d08::600"
+            },
+            "params": {},
+            "query": {},
+            "body": {
+              "prompt": "Make an account reconciliation of any account of any month in the database",
+              "domain": "General",
+              "timestamp": "2026-02-27T14:38:06.015Z",
+              "source": "vwp-platform",
+              "contentType": "text"
+            },
+            "webhookUrl": "https://royalchrisking.app.n8n.cloud/webhook-test/workflow-router",
+            "executionMode": "test",
+            "session_id": "12345678",
+            "input": "Make an account reconciliation of any account of any month in the database",
+            "toolCallId": "call_Yqvdm4uw9hQuxi12uAf6gzFT"
+          }
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Receive Reconciliation Request": {
+      "main": [
+        [
+          {
+            "node": "Reconciliation Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Reconciliation Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Database_Agent_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Reconciliation Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Reconciliation Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false,
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "9f5f847e-5304-4ea9-97bf-c3cea4265eb0",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "aea56f37631ae09cf0902a488b22b389ad8a85450c27b94deeea6c7144493d2b"
+  },
+  "id": "AU1ckTpIiwd31Qcs",
+  "tags": []
+}

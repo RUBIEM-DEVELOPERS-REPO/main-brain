@@ -1,0 +1,229 @@
+{
+  "name": "Balance Sheet Tool",
+  "nodes": [
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "66bd8fe9-a327-48a2-b10b-1774d7925a0c",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        672,
+        224
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ao8wEZNz0xUB8jYK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "aee81771-2a61-4346-8645-1fda344aaf68",
+      "name": "Calculator_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        928,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "description": "Calls the database agent workflow to retrieve financial data needed for the income statement. Provide the month and year for which data is needed.",
+        "workflowId": {
+          "__rl": true,
+          "value": "tkgaTrUZnLyJhcOK",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/tkgaTrUZnLyJhcOK",
+          "cachedResultName": "VW Templates — AI-Powered Supabase SQL Executor"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "payload": "={{ $json }}"
+          },
+          "matchingColumns": [
+            "payload"
+          ],
+          "schema": [
+            {
+              "id": "payload",
+              "displayName": "payload",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "id": "9702b64d-41ac-41de-85c4-9372b8f1fadc",
+      "name": "Database_Agent_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        800,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "payload",
+              "type": "any"
+            }
+          ]
+        }
+      },
+      "id": "7d98549e-2b03-4e20-8bcd-b914863b7b91",
+      "name": "Receive Balance Sheet Request",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        448,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.payload }}",
+        "options": {
+          "systemMessage": "You are a Balance Sheet generator. Your task is to:\n1. Use the database_agent tool to retrieve the necessary financial data for the request\n2. Use the calculator tool to compute balance  values.\n3. Create a clear, formatted balance sheet report\n\nBe thorough and ensure all calculations are accurate.\nBe thorough but concise in your report.\n\nOutput your response as minimal JSON only with fields: worker_name, action_taken, key_data, status. No explanatory text outside the JSON structure."
+        }
+      },
+      "id": "a6239af4-d7b2-4cbe-b88f-2f1afe167d50",
+      "name": "Balance Sheet Tool",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        736,
+        0
+      ]
+    }
+  ],
+  "pinData": {
+    "Receive Balance Sheet Request": [
+      {
+        "json": {
+          "payload": {
+            "headers": {
+              "host": "royalchrisking.app.n8n.cloud",
+              "user-agent": "node",
+              "content-length": "184",
+              "accept": "*/*",
+              "accept-encoding": "gzip, br",
+              "accept-language": "*",
+              "cdn-loop": "cloudflare; loops=1; subreqs=1",
+              "cf-connecting-ip": "2600:1900:0:2d08::600",
+              "cf-ew-via": "15",
+              "cf-ipcountry": "US",
+              "cf-ray": "9d482d11bd66f157-ORD",
+              "cf-visitor": "{\"scheme\":\"https\"}",
+              "cf-worker": "n8n.cloud",
+              "content-type": "application/json",
+              "sec-fetch-mode": "cors",
+              "x-forwarded-for": "2600:1900:0:2d08::600, 172.70.131.125",
+              "x-forwarded-host": "royalchrisking.app.n8n.cloud",
+              "x-forwarded-port": "443",
+              "x-forwarded-proto": "https",
+              "x-forwarded-server": "traefik-prod-users-gwc-105-84f9ff7989-tg5nn",
+              "x-is-trusted": "yes",
+              "x-real-ip": "2600:1900:0:2d08::600"
+            },
+            "params": {},
+            "query": {},
+            "body": {
+              "prompt": "Make an income statement of any month using the data in the database",
+              "domain": "General",
+              "timestamp": "2026-02-27T13:54:45.778Z",
+              "source": "vwp-platform",
+              "contentType": "text"
+            },
+            "webhookUrl": "https://royalchrisking.app.n8n.cloud/webhook-test/workflow-router",
+            "executionMode": "test",
+            "session_id": "92865dea-4800-4af4-a0dd-3700cffa65c2",
+            "input": "Generate an income statement for any month using the data in the database.",
+            "toolCallId": "call_FlMqzOMoZiSLOz4SpHs92UtM"
+          }
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ]
+  },
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Balance Sheet Tool",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Balance Sheet Tool",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Database_Agent_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Balance Sheet Tool",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Receive Balance Sheet Request": {
+      "main": [
+        [
+          {
+            "node": "Balance Sheet Tool",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "ea8dbcb5-d0c3-4237-8809-808c5d717f6e",
+  "meta": {
+    "instanceId": "aea56f37631ae09cf0902a488b22b389ad8a85450c27b94deeea6c7144493d2b"
+  },
+  "id": "CApYT9F3YXF8qlsH",
+  "tags": []
+}

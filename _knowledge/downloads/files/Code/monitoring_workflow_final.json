@@ -1,0 +1,314 @@
+{
+  "name": "Revenue Assurance - Monitoring & Reporting",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "value": 6
+            }
+          ]
+        }
+      },
+      "id": "monitoring_schedule",
+      "name": "Every 6 Hours",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [240, 400]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "value": "0 8 * * *"
+            }
+          ]
+        }
+      },
+      "id": "daily_report_schedule",
+      "name": "Daily at 8AM",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [240, 700]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT \n  DATE(created_at) as report_date,\n  COUNT(*) as total_discrepancies,\n  COUNT(CASE WHEN severity = 'HIGH' THEN 1 END) as high_severity,\n  COUNT(CASE WHEN severity = 'MEDIUM' THEN 1 END) as medium_severity,\n  COUNT(CASE WHEN severity = 'LOW' THEN 1 END) as low_severity,\n  COALESCE(SUM(revenue_impact), 0) as total_revenue_impact,\n  COALESCE(SUM(CASE WHEN revenue_impact > 0 THEN revenue_impact ELSE 0 END), 0) as revenue_overcharge,\n  COALESCE(SUM(CASE WHEN revenue_impact < 0 THEN ABS(revenue_impact) ELSE 0 END), 0) as revenue_undercharge,\n  COUNT(CASE WHEN status = 'RESOLVED' THEN 1 END) as resolved_count,\n  COUNT(CASE WHEN status = 'PENDING_REVIEW' THEN 1 END) as pending_review\nFROM revenue_discrepancies \nWHERE created_at >= CURRENT_DATE - INTERVAL '7 days'\nGROUP BY DATE(created_at)\nORDER BY report_date DESC;"
+      },
+      "id": "daily_summary",
+      "name": "Get Daily Summary",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.4,
+      "position": [480, 300],
+      "credentials": {
+        "postgres": {
+          "id": "{{ $credentials.neon_postgres }}",
+          "name": "Neon PostgreSQL"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT \n  revenue_line,\n  currency,\n  COUNT(*) as discrepancy_count,\n  AVG(variance_percentage) as avg_variance_pct,\n  SUM(revenue_impact) as total_impact,\n  COUNT(CASE WHEN severity = 'HIGH' THEN 1 END) as high_severity_count\nFROM revenue_discrepancies \nWHERE created_at >= CURRENT_DATE - INTERVAL '7 days'\nGROUP BY revenue_line, currency\nHAVING COUNT(*) > 5\nORDER BY discrepancy_count DESC, ABS(SUM(revenue_impact)) DESC\nLIMIT 10;"
+      },
+      "id": "problem_areas",
+      "name": "Get Problem Areas",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.4,
+      "position": [480, 450],
+      "credentials": {
+        "postgres": {
+          "id": "{{ $credentials.neon_postgres }}",
+          "name": "Neon PostgreSQL"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT \n  'current_hour' as time_period,\n  COUNT(*) as discrepancies_last_hour,\n  COUNT(CASE WHEN severity = 'HIGH' THEN 1 END) as high_severity_last_hour,\n  COALESCE(SUM(ABS(revenue_impact)), 0) as revenue_impact_last_hour\nFROM revenue_discrepancies \nWHERE created_at >= CURRENT_TIMESTAMP - INTERVAL '1 hour'\n\nUNION ALL\n\nSELECT \n  'current_day' as time_period,\n  COUNT(*) as discrepancies_today,\n  COUNT(CASE WHEN severity = 'HIGH' THEN 1 END) as high_severity_today,\n  COALESCE(SUM(ABS(revenue_impact)), 0) as revenue_impact_today\nFROM revenue_discrepancies \nWHERE created_at >= CURRENT_DATE\n\nUNION ALL\n\nSELECT \n  'pending_review' as time_period,\n  COUNT(*) as pending_items,\n  COUNT(CASE WHEN severity = 'HIGH' THEN 1 END) as high_severity_pending,\n  COALESCE(SUM(ABS(revenue_impact)), 0) as pending_revenue_impact\nFROM revenue_discrepancies \nWHERE status = 'PENDING_REVIEW';"
+      },
+      "id": "realtime_metrics",
+      "name": "Get Realtime Metrics",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.4,
+      "position": [480, 600],
+      "credentials": {
+        "postgres": {
+          "id": "{{ $credentials.neon_postgres }}",
+          "name": "Neon PostgreSQL"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Format comprehensive monitoring report\nconst dailySummaryRaw = $input.first().json;\nconst problemAreasRaw = $input.item(1).json;\nconst realtimeMetricsRaw = $input.last().json;\n\n// Handle single object vs array\nconst dailySummary = Array.isArray(dailySummaryRaw) ? dailySummaryRaw : [dailySummaryRaw];\nconst problemAreas = Array.isArray(problemAreasRaw) ? problemAreasRaw : [problemAreasRaw];\nconst realtimeMetrics = Array.isArray(realtimeMetricsRaw) ? realtimeMetricsRaw : [realtimeMetricsRaw];\n\n// Process real-time metrics\nconst metrics = {};\nrealtimeMetrics.forEach(metric => {\n  metrics[metric.time_period] = {\n    discrepancies: metric.discrepancies_last_hour || metric.discrepancies_today || metric.pending_items || 0,\n    high_severity: metric.high_severity_last_hour || metric.high_severity_today || metric.high_severity_pending || 0,\n    revenue_impact: parseFloat(metric.revenue_impact_last_hour || metric.revenue_impact_today || metric.pending_revenue_impact || 0)\n  };\n});\n\n// Calculate trends\nconst today = dailySummary.find(d => d.report_date === new Date().toISOString().split('T')[0]);\nconst yesterday = dailySummary.find(d => {\n  const yesterdayDate = new Date();\n  yesterdayDate.setDate(yesterdayDate.getDate() - 1);\n  return d.report_date === yesterdayDate.toISOString().split('T')[0];\n});\n\nconst trend = {\n  discrepancy_change: today && yesterday && yesterday.total_discrepancies > 0 ? \n    ((today.total_discrepancies - yesterday.total_discrepancies) / yesterday.total_discrepancies * 100).toFixed(1) : 'N/A',\n  revenue_impact_change: today && yesterday && Math.abs(yesterday.total_revenue_impact) > 0 ? \n    ((today.total_revenue_impact - yesterday.total_revenue_impact) / Math.abs(yesterday.total_revenue_impact) * 100).toFixed(1) : 'N/A'\n};\n\n// Determine alert level\nlet alertLevel = 'GREEN';\nlet alertMessages = [];\n\nif (metrics.current_hour?.high_severity > 0) {\n  alertLevel = 'RED';\n  alertMessages.push(`🚨 ${metrics.current_hour.high_severity} high severity issues in the last hour`);\n}\n\nif (metrics.current_hour?.discrepancies > 50) {\n  alertLevel = alertLevel === 'RED' ? 'RED' : 'ORANGE';\n  alertMessages.push(`⚠️ High volume: ${metrics.current_hour.discrepancies} discrepancies in the last hour`);\n}\n\nif (metrics.pending_review?.high_severity > 10) {\n  alertLevel = alertLevel === 'RED' ? 'RED' : 'ORANGE';\n  alertMessages.push(`📋 ${metrics.pending_review.high_severity} high severity items pending review`);\n}\n\nif (metrics.pending_review?.discrepancies > 100) {\n  alertLevel = alertLevel === 'RED' ? 'RED' : 'ORANGE';\n  alertMessages.push(`⚠️ Large backlog: ${metrics.pending_review.discrepancies} items pending review`);\n}\n\n// Format currency values\nconst formatCurrency = (amount) => {\n  return new Intl.NumberFormat('en-US', {\n    style: 'currency',\n    currency: 'USD',\n    minimumFractionDigits: 2\n  }).format(amount || 0);\n};\n\n// Create comprehensive report\nconst report = {\n  timestamp: new Date().toISOString(),\n  alert_level: alertLevel,\n  alert_messages: alertMessages,\n  \n  executive_summary: {\n    last_hour: {\n      total_discrepancies: metrics.current_hour?.discrepancies || 0,\n      high_severity: metrics.current_hour?.high_severity || 0,\n      revenue_impact: formatCurrency(metrics.current_hour?.revenue_impact)\n    },\n    today: {\n      total_discrepancies: metrics.current_day?.discrepancies || 0,\n      high_severity: metrics.current_day?.high_severity || 0,\n      revenue_impact: formatCurrency(metrics.current_day?.revenue_impact)\n    },\n    pending_review: {\n      total_items: metrics.pending_review?.discrepancies || 0,\n      high_severity: metrics.pending_review?.high_severity || 0,\n      revenue_impact: formatCurrency(metrics.pending_review?.revenue_impact)\n    },\n    trends: trend\n  },\n  \n  daily_breakdown: dailySummary.map(day => ({\n    date: day.report_date,\n    total_discrepancies: day.total_discrepancies || 0,\n    severity_breakdown: {\n      high: day.high_severity || 0,\n      medium: day.medium_severity || 0,\n      low: day.low_severity || 0\n    },\n    revenue_impact: {\n      total: formatCurrency(day.total_revenue_impact),\n      overcharge: formatCurrency(day.revenue_overcharge),\n      undercharge: formatCurrency(day.revenue_undercharge)\n    },\n    resolution_status: {\n      resolved: day.resolved_count || 0,\n      pending: day.pending_review || 0\n    }\n  })),\n  \n  problem_areas: problemAreas.map(area => ({\n    service: `${area.revenue_line} (${area.currency})`,\n    discrepancy_count: area.discrepancy_count || 0,\n    avg_variance_percentage: `${(area.avg_variance_pct || 0).toFixed(2)}%`,\n    total_impact: formatCurrency(area.total_impact),\n    high_severity_count: area.high_severity_count || 0,\n    priority: (area.high_severity_count || 0) > 0 ? 'HIGH' : \n             (area.discrepancy_count || 0) > 20 ? 'MEDIUM' : 'LOW'\n  })),\n  \n  recommendations: []\n};\n\n// Generate actionable recommendations\nif (problemAreas.length > 0) {\n  const topProblem = problemAreas[0];\n  report.recommendations.push(\n    `📊 Focus on \"${topProblem.revenue_line}\" - ${topProblem.discrepancy_count} discrepancies with ${formatCurrency(topProblem.total_impact)} impact`\n  );\n}\n\nif (metrics.pending_review?.discrepancies > 20) {\n  report.recommendations.push(\n    `⏰ Priority: Review ${metrics.pending_review.discrepancies} pending discrepancies (${formatCurrency(metrics.pending_review.revenue_impact)} at risk)`\n  );\n}\n\nif (trend.discrepancy_change !== 'N/A' && parseFloat(trend.discrepancy_change) > 25) {\n  report.recommendations.push(\n    `📈 Investigate ${trend.discrepancy_change}% increase in discrepancies compared to yesterday`\n  );\n}\n\nif (trend.discrepancy_change !== 'N/A' && parseFloat(trend.discrepancy_change) < -25) {\n  report.recommendations.push(\n    `✅ Positive trend: ${Math.abs(parseFloat(trend.discrepancy_change))}% decrease in discrepancies`\n  );\n}\n\nreturn [{ json: { report } }];"
+      },
+      "id": "format_report",
+      "name": "Format Monitoring Report",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [720, 450]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "alert_check",
+              "leftValue": "={{ $json.report.alert_level }}",
+              "rightValue": "GREEN",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "check_alerts",
+      "name": "Should Alert?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [960, 450]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.slack.com/services/YOUR_SLACK_WEBHOOK_HERE",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  \"text\": ($json.report.alert_level === 'RED' ? '🚨' : '⚠️') + ` *Revenue Assurance Alert - ${$json.report.alert_level} Level*\\n\\n${$json.report.alert_messages.join('\\n')}\\n\\n*Current Status:*\\n• Last Hour: ${$json.report.executive_summary.last_hour.total_discrepancies} discrepancies (${$json.report.executive_summary.last_hour.high_severity} high severity)\\n• Today: ${$json.report.executive_summary.today.total_discrepancies} discrepancies\\n• Revenue Impact Today: ${$json.report.executive_summary.today.revenue_impact}\\n• Pending Review: ${$json.report.executive_summary.pending_review.total_items} items\\n\\n*Top Recommendations:*\\n${$json.report.recommendations.slice(0, 3).join('\\n')}`\n} }}"
+      },
+      "id": "slack_alert",
+      "name": "Send Slack Alert",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1200, 350],
+      "notes": "Update with your Slack webhook URL"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.slack.com/services/YOUR_SLACK_WEBHOOK_HERE",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  \"text\": `📊 *Daily Revenue Assurance Executive Report*\\n\\n*📈 Executive Summary*\\n• Today's Discrepancies: ${$json.report.executive_summary.today.total_discrepancies}\\n• High Severity Issues: ${$json.report.executive_summary.today.high_severity}\\n• Revenue Impact: ${$json.report.executive_summary.today.revenue_impact}\\n• Trend vs Yesterday: ${$json.report.executive_summary.trends.discrepancy_change}% change\\n\\n*🎯 Top Problem Areas*\\n${$json.report.problem_areas.slice(0, 3).map(area => `• ${area.service}: ${area.discrepancy_count} issues (${area.total_impact})`).join('\\n')}\\n\\n*✅ Action Items*\\n${$json.report.recommendations.join('\\n')}\\n\\n*📋 Pending Review: ${$json.report.executive_summary.pending_review.total_items} items*`\n} }}"
+      },
+      "id": "daily_report",
+      "name": "Send Daily Report",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [960, 700],
+      "notes": "Update with your Slack webhook URL"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "=INSERT INTO revenue_assurance_audit (\n  total_transactions_processed,\n  valid_transactions,\n  discrepancies_found,\n  high_severity_issues,\n  total_revenue_impact,\n  started_at,\n  completed_at\n) \nSELECT \n  COALESCE(SUM(total_discrepancies), 0) as total_transactions_processed,\n  0 as valid_transactions,\n  COALESCE(SUM(total_discrepancies), 0) as discrepancies_found,\n  COALESCE(SUM(high_severity), 0) as high_severity_issues,\n  COALESCE(SUM(total_revenue_impact), 0) as total_revenue_impact,\n  CURRENT_DATE as started_at,\n  CURRENT_TIMESTAMP as completed_at\nFROM (\n  SELECT \n    COUNT(*) as total_discrepancies,\n    COUNT(CASE WHEN severity = 'HIGH' THEN 1 END) as high_severity,\n    SUM(revenue_impact) as total_revenue_impact\n  FROM revenue_discrepancies \n  WHERE DATE(created_at) = CURRENT_DATE\n) daily_stats;"
+      },
+      "id": "log_audit",
+      "name": "Log Audit Trail",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.4,
+      "position": [1200, 550],
+      "credentials": {
+        "postgres": {
+          "id": "{{ $credentials.neon_postgres }}",
+          "name": "Neon PostgreSQL"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Every 6 Hours": {
+      "main": [
+        [
+          {
+            "node": "Get Daily Summary",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Problem Areas",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Realtime Metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Daily at 8AM": {
+      "main": [
+        [
+          {
+            "node": "Get Daily Summary",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Problem Areas",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Realtime Metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Daily Summary": {
+      "main": [
+        [
+          {
+            "node": "Format Monitoring Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Problem Areas": {
+      "main": [
+        [
+          {
+            "node": "Format Monitoring Report",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Get Realtime Metrics": {
+      "main": [
+        [
+          {
+            "node": "Format Monitoring Report",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Format Monitoring Report": {
+      "main": [
+        [
+          {
+            "node": "Should Alert?",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log Audit Trail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Should Alert?": {
+      "main": [
+        [
+          {
+            "node": "Send Slack Alert",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Daily Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2025-01-15T12:00:00.000Z",
+  "versionId": "1.0.0"
+}
