@@ -2,7 +2,7 @@
 type: template
 title: Logistics exception resolution (custom-logistics-logistics-exception-resolution)
 slug: custom-logistics-logistics-exception-resolution
-created: 2026-07-13T13:42:49.819Z
+created: 2026-07-13T13:43:17.242Z
 templateId: custom-logistics-logistics-exception-resolution
 role: Custom
 originTask: Resolve the logistics exception described (delay, damage, or shortage): state the impact, the options, a recommended action, and the comms to send affected parties.
