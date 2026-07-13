@@ -1,0 +1,4 @@
+date,template,total,succeeded,failed,success_rate,avg_duration_sec,top_failure
+2026-07-12,reflection:daily,1,1,0,1,15.4,
+2026-07-12,search-brain,1,1,0,1,1.1,
+2026-07-12,general-task,26,26,0,1,103.6,
