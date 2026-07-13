@@ -2,7 +2,7 @@
 type: template
 title: HR policy draft (custom-hr-manager-hr-policy-draft)
 slug: custom-hr-manager-hr-policy-draft
-created: 2026-07-13T07:41:39.965Z
+created: 2026-07-13T07:46:19.422Z
 templateId: custom-hr-manager-hr-policy-draft
 role: Custom
 originTask: Draft a clear HR policy for the topic described (e.g. leave, remote work, code of conduct). Cover purpose, scope (who it applies to), the policy itself, and how it's applied/enforced. Flag anything that needs legal sign-off.
