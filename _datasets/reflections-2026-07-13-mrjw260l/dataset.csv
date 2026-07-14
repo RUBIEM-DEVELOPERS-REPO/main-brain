@@ -1,0 +1,6 @@
+date,template,total,succeeded,failed,success_rate,avg_duration_sec,top_failure
+2026-07-13,search-brain,1,1,0,1,2.1,
+2026-07-13,general-task,30,30,0,1,99.1,
+2026-07-13,daily-briefing,1,1,0,1,159,
+2026-07-13,custom-project-manager-project-plan,1,1,0,1,156.6,
+2026-07-13,sync-downloads,1,1,0,1,568.6,
