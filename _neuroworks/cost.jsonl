@@ -1490,3 +1490,11 @@
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"synthesis","inputTokens":638,"outputTokens":188,"costUsd":0,"ts":"2026-07-14T00:04:54.916Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"planning","inputTokens":6339,"outputTokens":356,"costUsd":0.0027917,"ts":"2026-07-14T09:00:21.292Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":2679,"outputTokens":110,"costUsd":0.0010787,"ts":"2026-07-14T09:01:05.569Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"synthesis","inputTokens":5068,"outputTokens":512,"costUsd":0,"ts":"2026-07-14T09:01:15.547Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1182,"outputTokens":256,"costUsd":0,"ts":"2026-07-14T09:01:21.072Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":868,"outputTokens":528,"costUsd":0,"ts":"2026-07-14T09:01:28.995Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":6190,"outputTokens":165,"costUsd":0.0022695,"ts":"2026-07-14T09:01:32.402Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":835,"outputTokens":256,"costUsd":0,"ts":"2026-07-14T09:01:36.265Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":6319,"outputTokens":175,"costUsd":0.0023331999999999997,"ts":"2026-07-14T09:01:39.055Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":531,"outputTokens":1024,"costUsd":0,"ts":"2026-07-14T09:02:56.747Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":844,"outputTokens":256,"costUsd":0,"ts":"2026-07-14T09:03:06.392Z"}
