@@ -11,3 +11,6 @@
 {"jobId":"0d9e484a-916d-4989-9603-7a82f7d622ab","rating":"up","persona":"Sam","template":"general-task","ts":"2026-07-12T14:57:33.876Z"}
 {"jobId":"1a48d17c-a105-4470-8104-3fa14bca5d0c","rating":"up","persona":"Neuro","template":"general-task","score":0.91,"ts":"2026-07-12T15:04:05.269Z"}
 {"jobId":"f88636bc-f158-47f5-b3bf-6f04e87e49fd","rating":"down","persona":"Neuro","template":"general-task","ts":"2026-07-12T15:15:01.183Z"}
+{"jobId":"4a367cb4-4301-4a0f-b2fe-ad965202b090","rating":"up","template":"general-task","ts":"2026-07-15T18:55:56.146Z"}
+{"jobId":"fb051534-0038-43f4-8f33-b473d74bb9e1","rating":"up","persona":"Priya","template":"general-task","ts":"2026-07-15T18:56:07.307Z"}
+{"jobId":"7ee372e9-4bb0-4267-8ce1-66fd41be1be9","rating":"down","note":"doc cut out text","template":"general-task","ts":"2026-07-15T18:56:34.444Z"}
