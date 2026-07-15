@@ -1533,3 +1533,7 @@
 {"jobId":"adhoc","model":"gpt-5.4-mini-2026-03-17","backend":"ollama","profile":"extraction","inputTokens":2074,"outputTokens":101,"costUsd":0,"ts":"2026-07-15T07:24:30.992Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":149,"outputTokens":2,"costUsd":0,"ts":"2026-07-15T07:49:16.192Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":20050,"outputTokens":764,"costUsd":0.007925,"ts":"2026-07-15T07:50:24.171Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":15001,"outputTokens":508,"costUsd":0.0057703,"ts":"2026-07-15T07:50:29.556Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"extraction","inputTokens":9199,"outputTokens":33,"costUsd":0.0028422,"ts":"2026-07-15T07:50:31.772Z"}
+{"jobId":"adhoc","model":"claude-fable-5","backend":"anthropic","profile":"planning","inputTokens":9252,"outputTokens":773,"costUsd":0.13117,"ts":"2026-07-15T10:51:06.009Z"}
+{"jobId":"adhoc","model":"claude-fable-5","backend":"anthropic","profile":"synthesis","inputTokens":7574,"outputTokens":512,"costUsd":0.10134,"ts":"2026-07-15T10:51:10.477Z"}
