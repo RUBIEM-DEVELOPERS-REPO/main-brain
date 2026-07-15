@@ -1537,3 +1537,11 @@
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"extraction","inputTokens":9199,"outputTokens":33,"costUsd":0.0028422,"ts":"2026-07-15T07:50:31.772Z"}
 {"jobId":"adhoc","model":"claude-fable-5","backend":"anthropic","profile":"planning","inputTokens":9252,"outputTokens":773,"costUsd":0.13117,"ts":"2026-07-15T10:51:06.009Z"}
 {"jobId":"adhoc","model":"claude-fable-5","backend":"anthropic","profile":"synthesis","inputTokens":7574,"outputTokens":512,"costUsd":0.10134,"ts":"2026-07-15T10:51:10.477Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"synthesis","inputTokens":5976,"outputTokens":509,"costUsd":0,"ts":"2026-07-15T10:51:55.498Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":949,"outputTokens":256,"costUsd":0,"ts":"2026-07-15T10:53:10.134Z"}
+{"jobId":"adhoc","model":"gpt-5.4-mini-2026-03-17","backend":"ollama","profile":"extraction","inputTokens":467,"outputTokens":202,"costUsd":0,"ts":"2026-07-15T10:53:16.857Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":6905,"outputTokens":322,"costUsd":0.0028765,"ts":"2026-07-15T10:53:20.869Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1126,"outputTokens":256,"costUsd":0,"ts":"2026-07-15T10:53:24.948Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7052,"outputTokens":69,"costUsd":0.0022880999999999995,"ts":"2026-07-15T10:53:28.272Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":432,"outputTokens":374,"costUsd":0,"ts":"2026-07-15T10:53:37.166Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":877,"outputTokens":256,"costUsd":0,"ts":"2026-07-15T10:53:41.570Z"}
