@@ -1,0 +1,36 @@
+{"type":"node","id":"reflections-2026-07-14-mrlbg118:reflection:daily","label":"reflection:daily","props":{"date":"2026-07-14","template":"reflection:daily","total":1,"succeeded":1,"failed":0,"success_rate":1,"avg_duration_sec":99.9,"top_failure":null},"confidence":0.875,"hash":"6bb56cc5398a63bb326fc133e145e8c7cb90ce943b3901e5c8dbaab81028064e"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:reflection:daily","rel":"date","to":"2026-07-14"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:reflection:daily","rel":"total","to":"1"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:reflection:daily","rel":"succeeded","to":"1"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:reflection:daily","rel":"failed","to":"0"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:reflection:daily","rel":"success_rate","to":"1"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:reflection:daily","rel":"avg_duration_sec","to":"99.9"}
+{"type":"node","id":"reflections-2026-07-14-mrlbg118:search-brain","label":"search-brain","props":{"date":"2026-07-14","template":"search-brain","total":1,"succeeded":1,"failed":0,"success_rate":1,"avg_duration_sec":1.6,"top_failure":null},"confidence":0.875,"hash":"490e38855806f18323fa1c06add9f5637a98ef307d6c5d218d7abbaf1321e1c8"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:search-brain","rel":"date","to":"2026-07-14"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:search-brain","rel":"total","to":"1"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:search-brain","rel":"succeeded","to":"1"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:search-brain","rel":"failed","to":"0"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:search-brain","rel":"success_rate","to":"1"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:search-brain","rel":"avg_duration_sec","to":"1.6"}
+{"type":"node","id":"reflections-2026-07-14-mrlbg118:daily-briefing","label":"daily-briefing","props":{"date":"2026-07-14","template":"daily-briefing","total":1,"succeeded":1,"failed":0,"success_rate":1,"avg_duration_sec":190.2,"top_failure":null},"confidence":0.875,"hash":"b755cc9f18ec81546869081259bb8a5fc2fc22ab4e06c2607587bd7e59ef942c"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:daily-briefing","rel":"date","to":"2026-07-14"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:daily-briefing","rel":"total","to":"1"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:daily-briefing","rel":"succeeded","to":"1"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:daily-briefing","rel":"failed","to":"0"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:daily-briefing","rel":"success_rate","to":"1"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:daily-briefing","rel":"avg_duration_sec","to":"190.2"}
+{"type":"node","id":"reflections-2026-07-14-mrlbg118:run-digest","label":"run-digest","props":{"date":"2026-07-14","template":"run-digest","total":1,"succeeded":1,"failed":0,"success_rate":1,"avg_duration_sec":2.3,"top_failure":null},"confidence":0.875,"hash":"de0c06a755cf0f59123ef62925c64e7d068472e83a6dd5e34c5f1ad32b02ea30"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:run-digest","rel":"date","to":"2026-07-14"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:run-digest","rel":"total","to":"1"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:run-digest","rel":"succeeded","to":"1"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:run-digest","rel":"failed","to":"0"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:run-digest","rel":"success_rate","to":"1"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:run-digest","rel":"avg_duration_sec","to":"2.3"}
+{"type":"node","id":"reflections-2026-07-14-mrlbg118:general-task","label":"general-task","props":{"date":"2026-07-14","template":"general-task","total":4,"succeeded":3,"failed":1,"success_rate":0.75,"avg_duration_sec":787,"top_failure":"peer delegation timed out after Nmin (peer=http://N.N.N.N:N, jobId=N"},"confidence":1,"hash":"b21cc88f23f284e3f8a62dedfe897d4de259faa511486f89e1c63b4eac1fa735"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:general-task","rel":"date","to":"2026-07-14"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:general-task","rel":"total","to":"4"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:general-task","rel":"succeeded","to":"3"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:general-task","rel":"failed","to":"1"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:general-task","rel":"success_rate","to":"0.75"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:general-task","rel":"avg_duration_sec","to":"787"}
+{"type":"edge","from":"reflections-2026-07-14-mrlbg118:general-task","rel":"top_failure","to":"peer delegation timed out after Nmin (peer=http://N.N.N.N:N, jobId=N"}
