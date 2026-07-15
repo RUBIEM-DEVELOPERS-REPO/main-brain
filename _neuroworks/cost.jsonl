@@ -1585,3 +1585,4 @@
 {"jobId":"adhoc","model":"gpt-5.4-mini-2026-03-17","backend":"ollama","profile":"extraction","inputTokens":1322,"outputTokens":749,"costUsd":0,"ts":"2026-07-15T18:44:13.059Z"}
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1800,"outputTokens":256,"costUsd":0,"ts":"2026-07-15T18:44:26.393Z"}
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":560,"outputTokens":256,"costUsd":0,"ts":"2026-07-15T18:44:40.939Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"planning","inputTokens":9015,"outputTokens":52,"costUsd":0.0028344999999999998,"ts":"2026-07-15T18:46:26.726Z"}
