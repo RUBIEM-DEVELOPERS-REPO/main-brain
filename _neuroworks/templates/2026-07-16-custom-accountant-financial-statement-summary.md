@@ -2,7 +2,7 @@
 type: template
 title: Financial statement summary (custom-accountant-financial-statement-summary)
 slug: custom-accountant-financial-statement-summary
-created: 2026-07-16T14:25:53.301Z
+created: 2026-07-16T14:28:59.783Z
 templateId: custom-accountant-financial-statement-summary
 role: Custom
 originTask: Prepare a P&L or cash-position summary from the figures provided. Lead with the headline number, then the make-up by line, then anything unusual. Tie out to the cent and state assumptions about the chart of accounts.
