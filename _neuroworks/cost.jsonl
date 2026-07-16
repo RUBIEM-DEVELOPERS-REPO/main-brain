@@ -1904,3 +1904,4 @@
 {"jobId":"adhoc","model":"gpt-5.4-mini-2026-03-17","backend":"ollama","profile":"extraction","inputTokens":724,"outputTokens":422,"costUsd":0,"ts":"2026-07-16T21:02:33.525Z"}
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1197,"outputTokens":256,"costUsd":0,"ts":"2026-07-16T21:02:36.906Z"}
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":550,"outputTokens":256,"costUsd":0,"ts":"2026-07-16T21:02:41.238Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"synthesis","inputTokens":1037,"outputTokens":1024,"costUsd":0,"ts":"2026-07-16T21:04:00.758Z"}
