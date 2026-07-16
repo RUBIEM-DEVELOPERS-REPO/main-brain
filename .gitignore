@@ -38,3 +38,7 @@ _imports/**/*.odp
 
 # Office lockfiles (~$foo.docx) sometimes get swept in by bulk copies.
 ~$*
+
+# >100MB — GitHub hard limit; kept on disk only
+_knowledge/downloads/files/Archives/net8.0-windows.zip
+_knowledge/downloads/files/Video/Showcase Your AI Skills_ Join Our Summit!.mp4
