@@ -2,7 +2,7 @@
 type: template
 title: Run the daily innovation scan across agent-AI techniques, AI innovations, API… (custom-nova-run-the-daily-innovation-scan-across-age)
 slug: custom-nova-run-the-daily-innovation-scan-across-age
-created: 2026-07-16T09:30:29.298Z
+created: 2026-07-16T17:07:35.520Z
 templateId: custom-nova-run-the-daily-innovation-scan-across-age
 role: Custom
 originTask: As a Innovation Research Analyst, run the daily innovation scan across agent-ai techniques, ai innovations, apis, and github repos.
