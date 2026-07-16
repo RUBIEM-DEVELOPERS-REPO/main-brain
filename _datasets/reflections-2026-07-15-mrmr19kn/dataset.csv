@@ -1,0 +1,5 @@
+date,template,total,succeeded,failed,success_rate,avg_duration_sec,top_failure
+2026-07-15,search-brain,1,1,0,1,2.4,
+2026-07-15,general-task,12,12,0,1,209.4,
+2026-07-15,daily-briefing,1,1,0,1,1611.7,
+2026-07-15,retry:peer:delegate,1,1,0,1,239.9,
