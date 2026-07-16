@@ -2,7 +2,7 @@
 type: template
 title: Business requirements doc (BRD) (custom-business-analyst-business-requirements-doc-brd)
 slug: custom-business-analyst-business-requirements-doc-brd
-created: 2026-07-16T16:28:46.261Z
+created: 2026-07-16T17:07:08.772Z
 templateId: custom-business-analyst-business-requirements-doc-brd
 role: Custom
 originTask: Write a business requirements document for the need described: the business need (why), scope, functional and non-functional requirements — each specific and testable — plus assumptions and open questions.
