@@ -1608,3 +1608,12 @@
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"synthesis","inputTokens":984,"outputTokens":182,"costUsd":0,"ts":"2026-07-16T00:06:37.691Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"synthesis","inputTokens":643,"outputTokens":72,"costUsd":0,"ts":"2026-07-16T00:07:15.173Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"synthesis","inputTokens":643,"outputTokens":62,"costUsd":0,"ts":"2026-07-16T00:07:48.671Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":141,"outputTokens":2,"costUsd":0,"ts":"2026-07-16T07:16:43.519Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"planning","inputTokens":14119,"outputTokens":204,"costUsd":0.004745699999999999,"ts":"2026-07-16T07:16:48.532Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":278,"outputTokens":36,"costUsd":0,"ts":"2026-07-16T07:16:54.501Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":156,"outputTokens":2,"costUsd":0,"ts":"2026-07-16T07:17:03.892Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":159,"outputTokens":2,"costUsd":0,"ts":"2026-07-16T07:17:04.178Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"synthesis","inputTokens":156,"outputTokens":1024,"costUsd":0,"ts":"2026-07-16T07:17:12.129Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":13487,"outputTokens":508,"costUsd":0.0053161,"ts":"2026-07-16T07:17:17.526Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":9388,"outputTokens":256,"costUsd":0,"ts":"2026-07-16T07:17:28.216Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7494,"outputTokens":343,"costUsd":0.0031057,"ts":"2026-07-16T07:17:46.076Z"}
