@@ -1947,3 +1947,11 @@
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"synthesis","inputTokens":6389,"outputTokens":400,"costUsd":0,"ts":"2026-07-17T04:46:00.402Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"extraction","inputTokens":870,"outputTokens":368,"costUsd":0,"ts":"2026-07-17T04:47:18.505Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"extraction","inputTokens":1233,"outputTokens":178,"costUsd":0,"ts":"2026-07-17T04:48:11.000Z"}
+{"jobId":"voice-call","model":"gpt-realtime","backend":"openrouter","profile":"realtime-voice","inputTokens":1048,"outputTokens":18,"costUsd":0.034688000000000004,"ts":"2026-07-17T08:43:30.347Z"}
+{"jobId":"voice-call","model":"gpt-realtime","backend":"openrouter","profile":"realtime-voice","inputTokens":1083,"outputTokens":217,"costUsd":0.048544000000000004,"ts":"2026-07-17T08:43:32.778Z"}
+{"jobId":"voice-call","model":"gpt-realtime","backend":"openrouter","profile":"realtime-voice","inputTokens":1354,"outputTokens":31,"costUsd":0.045312000000000005,"ts":"2026-07-17T08:43:46.865Z"}
+{"jobId":"voice-call","model":"gpt-realtime","backend":"openrouter","profile":"realtime-voice","inputTokens":1225,"outputTokens":32,"costUsd":0.04124800000000001,"ts":"2026-07-17T08:43:48.817Z"}
+{"jobId":"voice-call","model":"gpt-realtime","backend":"openrouter","profile":"realtime-voice","inputTokens":1277,"outputTokens":335,"costUsd":0.062304,"ts":"2026-07-17T08:43:54.381Z"}
+{"jobId":"voice-call","model":"gpt-realtime","backend":"openrouter","profile":"realtime-voice","inputTokens":1449,"outputTokens":254,"costUsd":0.06262400000000001,"ts":"2026-07-17T08:44:03.850Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"planning","inputTokens":7654,"outputTokens":526,"costUsd":0.0036112,"ts":"2026-07-17T09:00:13.712Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7598,"outputTokens":112,"costUsd":0.0025593999999999994,"ts":"2026-07-17T09:00:54.919Z"}
