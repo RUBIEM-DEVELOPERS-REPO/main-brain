@@ -1955,3 +1955,11 @@
 {"jobId":"voice-call","model":"gpt-realtime","backend":"openrouter","profile":"realtime-voice","inputTokens":1449,"outputTokens":254,"costUsd":0.06262400000000001,"ts":"2026-07-17T08:44:03.850Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"planning","inputTokens":7654,"outputTokens":526,"costUsd":0.0036112,"ts":"2026-07-17T09:00:13.712Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7598,"outputTokens":112,"costUsd":0.0025593999999999994,"ts":"2026-07-17T09:00:54.919Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"synthesis","inputTokens":5685,"outputTokens":512,"costUsd":0,"ts":"2026-07-17T09:01:20.616Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1863,"outputTokens":256,"costUsd":0,"ts":"2026-07-17T09:01:27.962Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1549,"outputTokens":1024,"costUsd":0,"ts":"2026-07-17T09:01:43.843Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7074,"outputTokens":103,"costUsd":0.0023797,"ts":"2026-07-17T09:01:46.514Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1473,"outputTokens":256,"costUsd":0,"ts":"2026-07-17T09:01:50.408Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7174,"outputTokens":339,"costUsd":0.0029997,"ts":"2026-07-17T09:01:54.426Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1374,"outputTokens":1024,"costUsd":0,"ts":"2026-07-17T09:02:08.412Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1703,"outputTokens":256,"costUsd":0,"ts":"2026-07-17T09:02:11.450Z"}
