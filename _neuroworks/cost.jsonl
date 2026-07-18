@@ -1981,3 +1981,4 @@
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-18T16:27:41.374Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-18T16:27:41.633Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-18T16:27:42.383Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":146,"outputTokens":2,"costUsd":0,"ts":"2026-07-18T16:38:28.299Z"}
