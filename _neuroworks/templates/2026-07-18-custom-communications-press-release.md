@@ -2,7 +2,7 @@
 type: template
 title: Press release (custom-communications-press-release)
 slug: custom-communications-press-release
-created: 2026-07-18T16:57:07.727Z
+created: 2026-07-18T17:46:31.110Z
 templateId: custom-communications-press-release
 role: Custom
 originTask: Write a press release for the announcement described: inverted pyramid (most important first), a real quotable executive line, a boilerplate, and only verifiable claims.
