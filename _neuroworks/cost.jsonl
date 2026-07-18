@@ -1970,3 +1970,4 @@
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-17T20:57:48.416Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":1008,"outputTokens":993,"costUsd":0.0027849,"ts":"2026-07-18T00:02:32.957Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":4050,"outputTokens":508,"costUsd":0.0024850000000000002,"ts":"2026-07-18T04:30:43.354Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"synthesis","inputTokens":5809,"outputTokens":512,"costUsd":0,"ts":"2026-07-18T04:30:50.351Z"}
