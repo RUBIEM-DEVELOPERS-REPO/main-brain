@@ -1,0 +1,43 @@
+Reflection-action run for 2026-07-17 (executed 2026-07-18, unattended).
+No commits made this run. Two reasons, both explained below.
+
+STOP CONDITION — uncommitted changes not from this run.
+git status at start showed an untracked directory not created by me:
+tools/always-on/ (neuroworks-always-on.ps1, stop-always-on.ps1). Per the
+hard limits in action-prompt.md, I did not commit, discard, or touch it,
+and made no repo changes of my own so its work can't get mixed into an
+unattended commit. Investigation below was read-only.
+
+NO ACTIONABLE ITEMS — the reflection has no "What to try next" section.
+The 2026-07-17 reflection's entire narrative body is the single line
+"An error occurred during input processing. Please try again." — a
+provider soft-error string from google/gemini-3.5-flash persisted as if
+it were the reflection. Only the frontmatter and raw stats snapshot are
+real. Zero bullets to action, so nothing was fixed or flagged from the
+reflection content itself.
+
+ROOT CAUSE (read-only, for the operator — this is a real bug worth a fix):
+server/src/lib/reflection.ts, synthesizeReflection(), lines ~375-396.
+The retry-then-fallback logic only triggers when llmGenerateWithMeta()
+THROWS. Here the provider returned HTTP 200 whose generated text was
+itself the error message ("An error occurred during input processing.
+Please try again." is a known Gemini soft-failure response). Since
+nothing threw, the retry never fired, the stat-only fallback (which
+would have included a "What to try next" section) never rendered, and
+the error string was written to the vault as the day's narrative.
+Worse, reflection:daily was recorded ok:1 in the stats — a silent
+failure counted as success. Suggested fix when the tree is clean: after
+the LLM call, sanity-check meta.text (e.g. reject responses under some
+length or matching known provider soft-error phrases) and treat a
+failed check like a thrown error so the existing retry + fallback path
+handles it. Re-run /api/reflection/run for 2026-07-17 after fixing if
+the narrative for that day matters.
+
+BASELINE NOTE: tsc/vitest were not run since no changes were made.
+Stats for the day were healthy: 4/4 tasks succeeded, 0 retries,
+0 continuations, no failing tools.
+
+PREVIOUS RUNS: the 2026-07-16 and 2026-07-17 raw logs both contain only
+"API Error: Unable to connect to API (ConnectionRefused)" — the two
+prior scheduled runs of this loop died before doing anything. This is
+the first run to complete since 2026-07-11.

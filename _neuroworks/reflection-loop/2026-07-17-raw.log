@@ -1,0 +1,11 @@
+﻿Run complete. No commits. Log written to `D:\Main brain\_neuroworks\reflection-loop\2026-07-17.log`.
+
+Findings:
+
+1. **Zero items to action.** Reflection's whole narrative = `"An error occurred during input processing. Please try again."` — Gemini soft-error string persisted as body. No "What to try next" section exists. Stats otherwise healthy: 4/4 tasks, 0 retries.
+
+2. **Root cause (read-only, not fixed):** `server/src/lib/reflection.ts:376-396` — retry + stat-only fallback only fire when LLM call *throws*. Gemini returned HTTP 200 with error text as content, so nothing threw, error string passed straight through, and `reflection:daily` counted as ok. Silent failure logged as success. Fix candidate: sanity-check `meta.text` (length floor + known soft-error phrases), treat failure as thrown error so existing retry/fallback handles it.
+
+3. **Why no fix committed:** hard limit hit. `git status` at start showed untracked `tools/always-on/` (two ps1 scripts) not from me — action-prompt says stop and log, not proceed. Left untouched.
+
+4. Prior two scheduled runs (07-16, 07-17-raw) died with `API Error: Unable to connect to API (ConnectionRefused)` — first completed run since 07-11.
