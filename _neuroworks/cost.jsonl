@@ -2476,3 +2476,11 @@
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":715,"outputTokens":1290,"costUsd":0,"ts":"2026-07-19T16:28:34.649Z"}
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1084,"outputTokens":762,"costUsd":0,"ts":"2026-07-19T16:28:46.515Z"}
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":711,"outputTokens":557,"costUsd":0,"ts":"2026-07-19T16:29:04.376Z"}
+{"jobId":"adhoc","model":"google/gemini-2.5-flash-image","backend":"openrouter","profile":"image:openrouter","inputTokens":0,"outputTokens":0,"costUsd":0.04,"units":1,"ts":"2026-07-19T19:43:50.106Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":295,"outputTokens":26,"costUsd":0,"ts":"2026-07-19T19:44:01.762Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":743,"outputTokens":1112,"costUsd":0,"ts":"2026-07-19T19:44:18.596Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":395,"outputTokens":678,"costUsd":0,"ts":"2026-07-19T19:44:37.486Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":760,"outputTokens":883,"costUsd":0,"ts":"2026-07-19T19:44:55.876Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":395,"outputTokens":936,"costUsd":0,"ts":"2026-07-19T19:45:02.764Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":760,"outputTokens":1296,"costUsd":0,"ts":"2026-07-19T19:45:34.930Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":536,"outputTokens":1410,"costUsd":0,"ts":"2026-07-19T19:45:47.580Z"}
