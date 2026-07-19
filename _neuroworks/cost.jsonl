@@ -2031,3 +2031,11 @@
 {"jobId":"adhoc","model":"claude-fable-5","backend":"anthropic","profile":"synthesis","inputTokens":1313,"outputTokens":498,"costUsd":0.03803,"ts":"2026-07-19T02:26:37.514Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":828,"outputTokens":1020,"costUsd":0.0027984000000000004,"ts":"2026-07-19T02:26:44.919Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":795,"outputTokens":1020,"costUsd":0.0027885,"ts":"2026-07-19T02:26:47.116Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":133,"outputTokens":2,"costUsd":0,"ts":"2026-07-19T02:28:36.112Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":146,"outputTokens":2,"costUsd":0,"ts":"2026-07-19T02:28:36.236Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":274,"outputTokens":35,"costUsd":0,"ts":"2026-07-19T02:28:51.199Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":287,"outputTokens":36,"costUsd":0,"ts":"2026-07-19T02:28:52.437Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"planning","inputTokens":6894,"outputTokens":827,"costUsd":0.0041357,"ts":"2026-07-19T02:28:55.097Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"synthesis","inputTokens":380,"outputTokens":1024,"costUsd":0,"ts":"2026-07-19T02:29:05.980Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7006,"outputTokens":508,"costUsd":0.0033718000000000003,"ts":"2026-07-19T02:29:13.743Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":2606,"outputTokens":73,"costUsd":0,"ts":"2026-07-19T02:32:02.775Z"}
