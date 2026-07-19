@@ -1,0 +1,4 @@
+date,template,total,succeeded,failed,success_rate,avg_duration_sec,top_failure
+2026-07-18,innovation-scan,1,1,0,1,44.6,
+2026-07-18,search-brain,1,1,0,1,1.1,
+2026-07-18,general-task,2,2,0,1,101.4,

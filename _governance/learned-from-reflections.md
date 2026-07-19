@@ -6,6 +6,23 @@ Auto-generated from `_neuroworks/reflections/*.md`. Each daily reflection's *Wha
 
 ---
 
+## 2026-07-18
+
+### Went wrong
+- Nothing failed yesterday. Genuinely clean day — no error patterns to report.
+- Nothing failed yesterday. Genuinely clean day — no errors, no retries, no rejections.
+- Only caveat: 4 tasks is a thin sample, so "100%" doesn't say much about reliability under load.
+
+### Try next
+- Hana is the only active employee; either assign more work to idle personas or retire them to reduce config noise.
+- With only 1 task each across most templates, sample size is too small for tuning — run more volume before drawing reliability conclusions.
+- If `general-task` keeps averaging ~100s, split research-heavy work into the `innovation-scan` template (44.6s avg) where deep research is scoped.
+- Add explicit trigger phrases or examples to the `human-handoff` skill so the picker scores it above keyword-only matches (score 15 is a coin flip).
+- Tighten the human-handoff skill trigger: add stronger keywords or an embedding match so picker scores rise above weak keyword-only territory (score 15 today).
+- If innovation-scan latency matters, cap research.deep depth or run it async — it's 76% of that template's runtime.
+- Load is low enough to safely test one more scheduled recurring task (e.g., a daily knowledge:search-brain sweep) without capacity risk.
+- Keep managed-worker-7473 in rotation — 1/1 delegation succeeded; give it 2-3 more before judging.
+
 ## 2026-07-16
 
 ### Went wrong
@@ -602,9 +619,3 @@ Auto-generated from `_neuroworks/reflections/*.md`. Each daily reflection's *Wha
 ### Try next
 - Consider adding a timeout for longer-running tasks like `research.deep`.
 - Review and possibly refine the `peer.review` process.
-
-## 2026-06-17
-
-### Try next
-- Consider delegating occasional tasks to peers to balance load and test peer‑review workflows.
-- Investigate whether `research.deep` can be cached or parallelized to reduce the 45 s runtime.
