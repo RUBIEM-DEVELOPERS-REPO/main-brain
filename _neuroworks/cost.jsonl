@@ -2419,3 +2419,4 @@
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":5126,"outputTokens":2006,"costUsd":0.006552799999999999,"ts":"2026-07-19T15:45:11.005Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":377,"outputTokens":33,"costUsd":0,"ts":"2026-07-19T15:45:22.352Z"}
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":3532,"outputTokens":1199,"costUsd":0,"ts":"2026-07-19T15:45:30.283Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":140,"outputTokens":2,"costUsd":0,"ts":"2026-07-19T15:48:09.044Z"}
