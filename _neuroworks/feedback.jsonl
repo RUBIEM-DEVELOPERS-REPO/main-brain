@@ -21,3 +21,4 @@
 {"jobId":"0f3ddba8-e5f2-47cc-8b1c-83354655dc0e","rating":"up","persona":"Hana","template":"general-task","ts":"2026-07-19T08:21:52.217Z"}
 {"jobId":"5ef617dd-daab-4097-b141-85c16f89d7a4","rating":"up","persona":"Milo","template":"general-task","ts":"2026-07-19T09:38:51.598Z"}
 {"jobId":"26f5d757-d3dc-4af4-81f7-c230b0442b8f","rating":"up","persona":"Milo","template":"general-task","score":0.69,"ts":"2026-07-19T16:20:56.041Z"}
+{"jobId":"dbdaf232-9614-4c39-a9cc-ae858587d334","rating":"down","note":"you gave me json not a doc","persona":"Cora","template":"general-task","ts":"2026-07-19T22:49:38.995Z"}
