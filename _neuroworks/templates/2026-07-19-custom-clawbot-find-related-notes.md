@@ -2,7 +2,7 @@
 type: template
 title: Find related notes (custom-clawbot-find-related-notes)
 slug: custom-clawbot-find-related-notes
-created: 2026-07-19T07:44:58.828Z
+created: 2026-07-19T07:45:21.876Z
 templateId: custom-clawbot-find-related-notes
 role: Custom
 originTask: Find notes related to the following topic across the vault. For each, summarise the connection in one sentence. Return the most relevant 5-10 with paths.
