@@ -2,7 +2,7 @@
 type: template
 title: Vendor comparison (custom-procurement-vendor-comparison)
 slug: custom-procurement-vendor-comparison
-created: 2026-07-19T03:02:05.472Z
+created: 2026-07-19T03:04:19.856Z
 templateId: custom-procurement-vendor-comparison
 role: Custom
 originTask: Compare the vendors/quotes provided on total cost of ownership (price + terms + support + switching cost + risk) as a table, then recommend one with the reasoning. Flag any single-source risk.
