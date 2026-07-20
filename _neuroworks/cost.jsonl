@@ -2708,3 +2708,10 @@
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":602,"outputTokens":940,"costUsd":0,"ts":"2026-07-20T07:12:14.406Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7467,"outputTokens":1251,"costUsd":0.005367599999999999,"ts":"2026-07-20T07:12:22.246Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":150,"outputTokens":2,"costUsd":0,"ts":"2026-07-20T07:12:27.874Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1788,"outputTokens":1008,"costUsd":0,"ts":"2026-07-20T07:12:33.393Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"extraction","inputTokens":630,"outputTokens":1716,"costUsd":0.004479,"ts":"2026-07-20T07:12:44.595Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7605,"outputTokens":2534,"costUsd":0.0086165,"ts":"2026-07-20T07:12:48.741Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":720,"outputTokens":1760,"costUsd":0,"ts":"2026-07-20T07:13:11.062Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"synthesis","inputTokens":6058,"outputTokens":963,"costUsd":0,"ts":"2026-07-20T07:13:11.441Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1650,"outputTokens":728,"costUsd":0,"ts":"2026-07-20T07:13:33.474Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1894,"outputTokens":1051,"costUsd":0,"ts":"2026-07-20T07:13:37.443Z"}
