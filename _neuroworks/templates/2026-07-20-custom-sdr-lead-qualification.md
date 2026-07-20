@@ -2,7 +2,7 @@
 type: template
 title: Lead qualification (custom-sdr-lead-qualification)
 slug: custom-sdr-lead-qualification
-created: 2026-07-20T17:06:59.342Z
+created: 2026-07-20T17:42:58.174Z
 templateId: custom-sdr-lead-qualification
 role: Custom
 originTask: Qualify the lead described against BANT/MEDDIC-light (budget, authority, need, timing/metrics). State the fit, what's missing, and either the recommended next step or an honest disqualify with the reason.
