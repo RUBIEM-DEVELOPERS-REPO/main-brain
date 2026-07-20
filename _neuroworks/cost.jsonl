@@ -2700,3 +2700,11 @@
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-20T07:10:13.420Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-20T07:10:13.579Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-20T07:10:14.207Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":157,"outputTokens":2,"costUsd":0,"ts":"2026-07-20T07:11:05.605Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":309,"outputTokens":40,"costUsd":0,"ts":"2026-07-20T07:11:06.270Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"planning","inputTokens":7272,"outputTokens":2542,"costUsd":0.008536599999999998,"ts":"2026-07-20T07:11:21.893Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"synthesis","inputTokens":1694,"outputTokens":2832,"costUsd":0,"ts":"2026-07-20T07:11:50.475Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":6840,"outputTokens":1540,"costUsd":0.005901999999999999,"ts":"2026-07-20T07:12:02.484Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":602,"outputTokens":940,"costUsd":0,"ts":"2026-07-20T07:12:14.406Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7467,"outputTokens":1251,"costUsd":0.005367599999999999,"ts":"2026-07-20T07:12:22.246Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":150,"outputTokens":2,"costUsd":0,"ts":"2026-07-20T07:12:27.874Z"}
