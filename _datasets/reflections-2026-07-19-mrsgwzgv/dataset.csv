@@ -1,0 +1,8 @@
+date,template,total,succeeded,failed,success_rate,avg_duration_sec,top_failure
+2026-07-19,reflection:daily,2,2,0,1,4075.7,
+2026-07-19,general-task,63,63,0,1,102.7,
+2026-07-19,daily-briefing,4,4,0,1,126.6,
+2026-07-19,innovation-scan,1,1,0,1,161,
+2026-07-19,search-brain,1,1,0,1,0.3,
+2026-07-19,custom-learning-development-training-curriculum,1,0,0,0,9.5,
+2026-07-19,retry:peer:delegate,1,1,0,1,135,
