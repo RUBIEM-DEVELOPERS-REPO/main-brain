@@ -2668,3 +2668,11 @@
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":959,"outputTokens":1462,"costUsd":0.0039426999999999995,"ts":"2026-07-20T00:10:37.144Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":1036,"outputTokens":1919,"costUsd":0.0051083000000000005,"ts":"2026-07-20T00:10:47.228Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":3922,"outputTokens":2034,"costUsd":0.006261599999999999,"ts":"2026-07-20T04:30:59.286Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":6412,"outputTokens":4092,"costUsd":0.012153599999999999,"ts":"2026-07-20T04:31:26.916Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1427,"outputTokens":691,"costUsd":0,"ts":"2026-07-20T04:31:33.118Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":964,"outputTokens":670,"costUsd":0,"ts":"2026-07-20T04:31:40.939Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7361,"outputTokens":4092,"costUsd":0.0124383,"ts":"2026-07-20T04:32:05.829Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1250,"outputTokens":1460,"costUsd":0,"ts":"2026-07-20T04:32:16.952Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7512,"outputTokens":4092,"costUsd":0.0124836,"ts":"2026-07-20T04:32:40.621Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":622,"outputTokens":295,"costUsd":0,"ts":"2026-07-20T04:32:52.737Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1100,"outputTokens":538,"costUsd":0,"ts":"2026-07-20T04:33:01.057Z"}
