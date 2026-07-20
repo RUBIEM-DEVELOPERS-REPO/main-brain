@@ -2716,3 +2716,4 @@
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1650,"outputTokens":728,"costUsd":0,"ts":"2026-07-20T07:13:33.474Z"}
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1894,"outputTokens":1051,"costUsd":0,"ts":"2026-07-20T07:13:37.443Z"}
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":757,"outputTokens":1516,"costUsd":0,"ts":"2026-07-20T07:13:59.314Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":147,"outputTokens":2,"costUsd":0,"ts":"2026-07-20T07:14:42.639Z"}
