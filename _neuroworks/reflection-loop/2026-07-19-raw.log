@@ -1,0 +1,11 @@
+﻿Run complete. No commits — hard limit hit: 23 modified + 2 untracked files in repo, not mine. Investigation read-only. Log written to `D:\Main brain\_neuroworks\reflection-loop\2026-07-19.log`, `.last-actioned` bumped to 2026-07-19.
+
+Findings per item:
+
+1. **Peer delegation skew (22/25 to worker-7473)** — real code cause, flagged-not-fixed. All three pickers in `server/src/lib/peers.ts:53-117` sort by inflightJobs, take first. Stable sort → both peers idle (inflight 0) means registration order breaks tie, same peer wins every pick. Fix later: random/round-robin tie-break in all three pickers + test.
+
+2. **Milo over-allocated (30/50 tasks)** — not bug. Milo = multimedia-producer; day was media-heavy (media.image ×11, multimedia-package top skill). Auto-router has confidence floor, no dogpile bug. Redistribution = operator schedule/template choice. No action.
+
+3. **Weak skill matches (score 15)** — real metadata gap, flagged-not-fixed. Score 15 = one keyword hit, zero intent match (intent adds 20+). `send-attachment`, `vault-organization`, `human-handoff` applies_to lists miss the intents classifier emitted. Fix later: add those intents to skill frontmatter. All 3 runs succeeded anyway — routing robustness issue, not failure.
+
+Also logged: 2026-07-17 Gemini soft-error reflection bug in `reflection.ts` still latent. Latency spikes left alone — outside item cap, all runs succeeded.

@@ -1,0 +1,71 @@
+Reflection-action run for 2026-07-19 (executed 2026-07-20, unattended).
+No commits made this run.
+
+STOP CONDITION — uncommitted changes not from this run.
+git status at start showed 23 modified files (server/src/lib/agent.ts,
+email.ts, peers.ts, primitives.ts, schedules.ts, studio-image.ts, voice.ts;
+server/src/routes/calendar.ts, chat.ts, peers.ts, primitives.ts, tasks.ts,
+templates.ts; plus 10 web/src files) and 2 untracked files
+(server/src/lib/job-visibility.ts, web/src/components/LoadMore.tsx) — none
+created by me. Per the hard limits in action-prompt.md I made no changes,
+committed nothing, and touched nothing; everything below is read-only
+investigation so the operator still gets the analysis the run would have
+produced. tsc/vitest were not run (nothing of mine to validate, and running
+them against someone's in-progress tree would report their state, not mine).
+
+ITEM 1 — "Balance peer delegation" (managed-worker-7473 got 22 of 25
+delegated tasks). Real code-level cause found, flagged-not-fixed. All three
+peer pickers (pickLightestIdlePeer, pickPeerByRole, pickExecutor in
+server/src/lib/peers.ts, lines ~53-117) sort candidates by inflightJobs
+ascending and take index 0. Array.prototype.sort is stable, so whenever both
+workers are idle (inflight 0 — the common case for a lightly loaded fleet),
+the tie is always broken by pollPeers() registration order, and the same
+peer (7473) wins every time. 7474's 3 tasks likely landed only while 7473
+was mid-job. This is not a config knob; there are no delegation rules to
+"configure" as the reflection suggests. Suggested fix when the tree is
+clean: break inflight ties with rotation or random choice (e.g. sort key
+(inflight, jitter) or a module-level round-robin cursor) in all three
+pickers, plus a unit test that two idle peers each receive work across
+repeated picks. Small, contained change.
+
+ITEM 2 — "Redistribute employee tasks from Milo" (30 of 50
+employee-attributed tasks). Confirmed real skew but it is a workload/config
+decision, not a bug — no code change appropriate. Milo is the
+multimedia-producer persona (server/src/lib/personas.ts:676). Persona
+selection is either explicit (operator/schedule names the persona) or
+auto-routed by pickPersonaForTask (server/src/lib/persona-router.ts:344),
+which only fires above a confidence floor of 2 and falls through to clawbot
+on ties — it does not dogpile one persona by accident. The day's work was
+genuinely media-heavy (media.image ran 11 times; multimedia-package was the
+top skill at 5 runs), so Milo's share reflects what was asked, and Cora/
+Bram/Aria are different specialists — silently reassigning media work to
+them would change output quality. If the operator wants routine general
+tasks spread out, that's a schedule/template authoring choice (which persona
+each scheduled task names), not something an unattended run should decide.
+No action taken.
+
+ITEM 3 — "Refine skill metadata for send-attachment / vault-organization"
+(and human-handoff, all matched at score 15). Genuine metadata gap,
+flagged-not-fixed because of the stop condition. Score 15 in the picker
+(server/src/lib/skills.ts, scoring at ~lines 341-377) means exactly one
+keyword pattern hit and ZERO intent match — an intent match adds 20+
+specificity, so these skills were selected on keywords alone because the
+task's classified intent isn't in their applies_to lists:
+send-attachment has [draft-email, draft-other], vault-organization has
+[research, summarize, draft-other], human-handoff has [plan, draft-other].
+All three runs still succeeded (successRate 1.0), so this is routing
+robustness, not a failure. Suggested fix when the tree is clean: check what
+intents the classifier actually emitted for those jobs and add them to the
+respective applies_to frontmatter (server/src/skills/send-attachment.md,
+vault-organization.md, human-handoff.md); note the keyword patterns
+themselves were already sharpened on 2026-07-08 and 2026-07-09 per comments
+in skills.ts, so the remaining gap is the intent side, not more regexes.
+
+CARRY-OVER NOTE: the 2026-07-17 log's root-cause writeup (Gemini soft-error
+string persisted as the reflection narrative because synthesizeReflection
+only retries on throw) remains unfixed — today's reflection generated fine,
+but the bug is still latent in server/src/lib/reflection.ts.
+
+Latency spikes from "What went wrong" (email.send 139s, quality.check 120s
+x2, db.query 90s) were not in "What to try next" and were left alone per
+the item cap; all affected runs succeeded.
