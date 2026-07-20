@@ -2,7 +2,7 @@
 type: template
 title: Brand jingle (custom-music-producer-brand-jingle)
 slug: custom-music-producer-brand-jingle
-created: 2026-07-20T09:44:41.142Z
+created: 2026-07-20T09:45:04.389Z
 templateId: custom-music-producer-brand-jingle
 role: Custom
 originTask: Compose a short brand jingle for the following brief. Write a concrete music prompt (genre, tempo/bpm, instruments, mood), add short singable lyrics if the brief wants vocals, then use media.music to generate it. Return the prompt (and lyrics) + the audio path.
