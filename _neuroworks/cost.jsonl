@@ -2792,3 +2792,4 @@
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":813,"outputTokens":1392,"costUsd":0.0037239,"ts":"2026-07-21T06:39:59.651Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":876,"outputTokens":1314,"costUsd":0.0035478000000000003,"ts":"2026-07-21T06:40:08.774Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":4934,"outputTokens":1983,"costUsd":0.0064377,"ts":"2026-07-21T06:40:09.155Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":6527,"outputTokens":4092,"costUsd":0.0121881,"ts":"2026-07-21T06:40:43.704Z"}
