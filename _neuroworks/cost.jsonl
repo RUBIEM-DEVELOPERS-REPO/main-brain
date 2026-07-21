@@ -2977,3 +2977,10 @@
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":129,"outputTokens":2,"costUsd":0,"ts":"2026-07-21T16:11:58.111Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":2818,"outputTokens":1952,"costUsd":0.005725399999999999,"ts":"2026-07-21T16:12:15.964Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-21T16:33:52.502Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-21T16:34:57.606Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-21T16:34:57.901Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-21T16:34:57.904Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-21T16:34:57.912Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":158,"outputTokens":2,"costUsd":0,"ts":"2026-07-21T16:35:50.294Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"planning","inputTokens":7139,"outputTokens":738,"costUsd":0.0039867,"ts":"2026-07-21T16:36:15.751Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":6179,"outputTokens":1551,"costUsd":0.0057312,"ts":"2026-07-21T16:36:38.530Z"}
