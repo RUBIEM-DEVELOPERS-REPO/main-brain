@@ -2,7 +2,7 @@
 type: template
 title: Compare proposed terms against industry-typical positions (custom-contracts-reviewer-compare-proposed-terms-against-industry-)
 slug: custom-contracts-reviewer-compare-proposed-terms-against-industry-
-created: 2026-07-21T07:50:58.964Z
+created: 2026-07-21T17:01:37.862Z
 templateId: custom-contracts-reviewer-compare-proposed-terms-against-industry-
 role: Custom
 originTask: As a Contracts Reviewer, compare proposed terms against industry-typical positions.

@@ -2,7 +2,7 @@
 type: template
 title: Build forecasts and models with assumptions stated upfront (custom-financial-analyst-build-forecasts-and-models-with-assumpti)
 slug: custom-financial-analyst-build-forecasts-and-models-with-assumpti
-created: 2026-07-21T07:50:59.094Z
+created: 2026-07-21T17:01:37.943Z
 templateId: custom-financial-analyst-build-forecasts-and-models-with-assumpti
 role: Custom
 originTask: As a Financial Analyst, build forecasts and models with assumptions stated upfront.

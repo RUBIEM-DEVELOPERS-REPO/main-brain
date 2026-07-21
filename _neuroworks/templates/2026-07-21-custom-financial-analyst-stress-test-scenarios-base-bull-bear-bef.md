@@ -2,7 +2,7 @@
 type: template
 title: Stress-test scenarios (base / bull / bear) before presenting a recommendation (custom-financial-analyst-stress-test-scenarios-base-bull-bear-bef)
 slug: custom-financial-analyst-stress-test-scenarios-base-bull-bear-bef
-created: 2026-07-21T07:50:59.110Z
+created: 2026-07-21T17:01:37.978Z
 templateId: custom-financial-analyst-stress-test-scenarios-base-bull-bear-bef
 role: Custom
 originTask: As a Financial Analyst, stress-test scenarios (base / bull / bear) before presenting a recommendation.

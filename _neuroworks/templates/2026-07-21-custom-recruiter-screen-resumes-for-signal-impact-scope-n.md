@@ -2,7 +2,7 @@
 type: template
 title: Screen resumes for signal (impact + scope), not pedigree (custom-recruiter-screen-resumes-for-signal-impact-scope-n)
 slug: custom-recruiter-screen-resumes-for-signal-impact-scope-n
-created: 2026-07-21T07:50:59.094Z
+created: 2026-07-21T17:01:37.996Z
 templateId: custom-recruiter-screen-resumes-for-signal-impact-scope-n
 role: Custom
 originTask: As a Talent Recruiter, screen resumes for signal (impact + scope), not pedigree.

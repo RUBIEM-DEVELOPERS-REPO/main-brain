@@ -2,7 +2,7 @@
 type: template
 title: Rank findings by concrete benefit to NeuroWorks with effort estimates (custom-nova-rank-findings-by-concrete-benefit-to-neu)
 slug: custom-nova-rank-findings-by-concrete-benefit-to-neu
-created: 2026-07-21T07:50:59.590Z
+created: 2026-07-21T17:01:38.569Z
 templateId: custom-nova-rank-findings-by-concrete-benefit-to-neu
 role: Custom
 originTask: As a Innovation Research Analyst, rank findings by concrete benefit to neuroworks with effort estimates.

@@ -2,7 +2,7 @@
 type: template
 title: Draft SQL that's readable, correct, and explained (custom-data-analyst-draft-sql-that-s-readable-correct-and-ex)
 slug: custom-data-analyst-draft-sql-that-s-readable-correct-and-ex
-created: 2026-07-21T07:50:58.999Z
+created: 2026-07-21T17:01:37.865Z
 templateId: custom-data-analyst-draft-sql-that-s-readable-correct-and-ex
 role: Custom
 originTask: As a Data Analyst, draft sql that's readable, correct, and explained.

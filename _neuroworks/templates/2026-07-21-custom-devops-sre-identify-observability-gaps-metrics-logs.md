@@ -2,7 +2,7 @@
 type: template
 title: Identify observability gaps — metrics, logs, traces, SLOs (custom-devops-sre-identify-observability-gaps-metrics-logs)
 slug: custom-devops-sre-identify-observability-gaps-metrics-logs
-created: 2026-07-21T07:50:58.880Z
+created: 2026-07-21T17:01:37.743Z
 templateId: custom-devops-sre-identify-observability-gaps-metrics-logs
 role: Custom
 originTask: As a DevOps / SRE, identify observability gaps — metrics, logs, traces, slos.

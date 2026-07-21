@@ -2,7 +2,7 @@
 type: template
 title: Write design rationale that survives the review meeting (custom-product-designer-write-design-rationale-that-survives-the)
 slug: custom-product-designer-write-design-rationale-that-survives-the
-created: 2026-07-21T07:50:59.038Z
+created: 2026-07-21T17:01:37.928Z
 templateId: custom-product-designer-write-design-rationale-that-survives-the
 role: Custom
 originTask: As a Product Designer, write design rationale that survives the review meeting.

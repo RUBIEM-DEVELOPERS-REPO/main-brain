@@ -2,7 +2,7 @@
 type: template
 title: Adopt that role's signature output shape and voice for the response (custom-knowitall-adopt-that-role-s-signature-output-shape)
 slug: custom-knowitall-adopt-that-role-s-signature-output-shape
-created: 2026-07-21T07:50:58.828Z
+created: 2026-07-21T17:01:37.679Z
 templateId: custom-knowitall-adopt-that-role-s-signature-output-shape
 role: Custom
 originTask: As a Polymath, any-persona adapter, adopt that role's signature output shape and voice for the response.

@@ -2,7 +2,7 @@
 type: template
 title: Sketch flows that minimise cognitive load and decision points (custom-product-designer-sketch-flows-that-minimise-cognitive-loa)
 slug: custom-product-designer-sketch-flows-that-minimise-cognitive-loa
-created: 2026-07-21T07:50:59.011Z
+created: 2026-07-21T17:01:37.899Z
 templateId: custom-product-designer-sketch-flows-that-minimise-cognitive-loa
 role: Custom
 originTask: As a Product Designer, sketch flows that minimise cognitive load and decision points.

@@ -2,7 +2,7 @@
 type: template
 title: Design regression strategy that catches what unit tests miss (custom-qa-engineer-design-regression-strategy-that-catches-)
 slug: custom-qa-engineer-design-regression-strategy-that-catches-
-created: 2026-07-21T07:50:58.937Z
+created: 2026-07-21T17:01:37.763Z
 templateId: custom-qa-engineer-design-regression-strategy-that-catches-
 role: Custom
 originTask: As a QA Engineer, design regression strategy that catches what unit tests miss.

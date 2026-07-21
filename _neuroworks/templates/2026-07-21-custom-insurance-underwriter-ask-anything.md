@@ -2,7 +2,7 @@
 type: template
 title: Ask Insurance Underwriter anything (custom-insurance-underwriter-ask-anything)
 slug: custom-insurance-underwriter-ask-anything
-created: 2026-07-21T07:50:59.523Z
+created: 2026-07-21T17:01:38.463Z
 templateId: custom-insurance-underwriter-ask-anything
 role: Custom
 originTask: As a Job Summary, respond to the following task in role:

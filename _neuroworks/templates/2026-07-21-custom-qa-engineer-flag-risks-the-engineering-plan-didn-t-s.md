@@ -2,7 +2,7 @@
 type: template
 title: Flag risks the engineering plan didn't see (race conditions, data states, bro… (custom-qa-engineer-flag-risks-the-engineering-plan-didn-t-s)
 slug: custom-qa-engineer-flag-risks-the-engineering-plan-didn-t-s
-created: 2026-07-21T07:50:58.954Z
+created: 2026-07-21T17:01:37.782Z
 templateId: custom-qa-engineer-flag-risks-the-engineering-plan-didn-t-s
 role: Custom
 originTask: As a QA Engineer, flag risks the engineering plan didn't see (race conditions, data states, browser quirks).

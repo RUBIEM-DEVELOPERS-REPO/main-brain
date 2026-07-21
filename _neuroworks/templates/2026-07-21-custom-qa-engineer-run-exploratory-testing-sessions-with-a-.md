@@ -2,7 +2,7 @@
 type: template
 title: Run exploratory testing sessions with a charter and findings log (custom-qa-engineer-run-exploratory-testing-sessions-with-a-)
 slug: custom-qa-engineer-run-exploratory-testing-sessions-with-a-
-created: 2026-07-21T07:50:58.945Z
+created: 2026-07-21T17:01:37.774Z
 templateId: custom-qa-engineer-run-exploratory-testing-sessions-with-a-
 role: Custom
 originTask: As a QA Engineer, run exploratory testing sessions with a charter and findings log.

@@ -2,7 +2,7 @@
 type: template
 title: Translate legalese into plain language summaries non-lawyers can act on (custom-contracts-reviewer-translate-legalese-into-plain-language-s)
 slug: custom-contracts-reviewer-translate-legalese-into-plain-language-s
-created: 2026-07-21T07:50:58.956Z
+created: 2026-07-21T17:01:37.853Z
 templateId: custom-contracts-reviewer-translate-legalese-into-plain-language-s
 role: Custom
 originTask: As a Contracts Reviewer, translate legalese into plain language summaries non-lawyers can act on.

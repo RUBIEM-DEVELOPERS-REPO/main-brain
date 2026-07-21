@@ -2,7 +2,7 @@
 type: template
 title: Review insurance applications and supporting documents. (custom-insurance-underwriter-review-insurance-applications-and-suppor)
 slug: custom-insurance-underwriter-review-insurance-applications-and-suppor
-created: 2026-07-21T07:50:59.477Z
+created: 2026-07-21T17:01:38.413Z
 templateId: custom-insurance-underwriter-review-insurance-applications-and-suppor
 role: Custom
 originTask: As a Job Summary, review insurance applications and supporting documents.

@@ -2,7 +2,7 @@
 type: template
 title: Critique designs against the user's job-to-be-done — not personal taste (custom-product-designer-critique-designs-against-the-user-s-job-)
 slug: custom-product-designer-critique-designs-against-the-user-s-job-
-created: 2026-07-21T07:50:59.002Z
+created: 2026-07-21T17:01:37.883Z
 templateId: custom-product-designer-critique-designs-against-the-user-s-job-
 role: Custom
 originTask: As a Product Designer, critique designs against the user's job-to-be-done — not personal taste.

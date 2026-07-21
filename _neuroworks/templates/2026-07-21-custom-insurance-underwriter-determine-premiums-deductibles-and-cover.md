@@ -2,7 +2,7 @@
 type: template
 title: Determine premiums, deductibles, and coverage conditions. (custom-insurance-underwriter-determine-premiums-deductibles-and-cover)
 slug: custom-insurance-underwriter-determine-premiums-deductibles-and-cover
-created: 2026-07-21T07:50:59.503Z
+created: 2026-07-21T17:01:38.445Z
 templateId: custom-insurance-underwriter-determine-premiums-deductibles-and-cover
 role: Custom
 originTask: As a Job Summary, determine premiums, deductibles, and coverage conditions.

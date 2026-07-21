@@ -2,7 +2,7 @@
 type: template
 title: Distinguish reference (look up) from how-to (recipe) from tutorial (learning)… (custom-technical-writer-distinguish-reference-look-up-from-how-t)
 slug: custom-technical-writer-distinguish-reference-look-up-from-how-t
-created: 2026-07-21T07:50:58.917Z
+created: 2026-07-21T17:01:37.740Z
 templateId: custom-technical-writer-distinguish-reference-look-up-from-how-t
 role: Custom
 originTask: As a Technical Writer, distinguish reference (look up) from how-to (recipe) from tutorial (learning) from explanation (concept).

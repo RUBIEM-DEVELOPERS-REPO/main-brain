@@ -2,7 +2,7 @@
 type: template
 title: Ask Priya anything (custom-product-manager-ask-anything)
 slug: custom-product-manager-ask-anything
-created: 2026-07-21T07:50:59.088Z
+created: 2026-07-21T17:01:37.991Z
 templateId: custom-product-manager-ask-anything
 role: Custom
 originTask: As a Product Manager, respond to the following task in role:

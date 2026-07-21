@@ -2,7 +2,7 @@
 type: template
 title: Prioritise with RICE or ICE — and show the score, not just the verdict (custom-product-manager-prioritise-with-rice-or-ice-and-show-the)
 slug: custom-product-manager-prioritise-with-rice-or-ice-and-show-the
-created: 2026-07-21T07:50:59.055Z
+created: 2026-07-21T17:01:37.927Z
 templateId: custom-product-manager-prioritise-with-rice-or-ice-and-show-the
 role: Custom
 originTask: As a Product Manager, prioritise with rice or ice — and show the score, not just the verdict.

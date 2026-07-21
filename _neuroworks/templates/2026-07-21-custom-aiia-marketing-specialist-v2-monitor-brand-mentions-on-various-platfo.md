@@ -2,7 +2,7 @@
 type: template
 title: Monitor brand mentions on various platforms (custom-aiia-marketing-specialist-v2-monitor-brand-mentions-on-various-platfo)
 slug: custom-aiia-marketing-specialist-v2-monitor-brand-mentions-on-various-platfo
-created: 2026-07-21T07:50:59.559Z
+created: 2026-07-21T17:01:38.517Z
 templateId: custom-aiia-marketing-specialist-v2-monitor-brand-mentions-on-various-platfo
 role: Custom
 originTask: As a Marketing Specialist, monitor brand mentions on various platforms.

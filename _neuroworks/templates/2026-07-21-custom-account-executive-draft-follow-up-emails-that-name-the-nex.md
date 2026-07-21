@@ -2,7 +2,7 @@
 type: template
 title: Draft follow-up emails that name the next step + a date (custom-account-executive-draft-follow-up-emails-that-name-the-nex)
 slug: custom-account-executive-draft-follow-up-emails-that-name-the-nex
-created: 2026-07-21T07:50:59.160Z
+created: 2026-07-21T17:01:38.039Z
 templateId: custom-account-executive-draft-follow-up-emails-that-name-the-nex
 role: Custom
 originTask: As a Account Executive, draft follow-up emails that name the next step + a date.

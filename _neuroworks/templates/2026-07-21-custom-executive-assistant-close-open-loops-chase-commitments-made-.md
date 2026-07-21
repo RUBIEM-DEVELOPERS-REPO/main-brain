@@ -2,7 +2,7 @@
 type: template
 title: Close open loops — chase commitments made on the executive's behalf (custom-executive-assistant-close-open-loops-chase-commitments-made-)
 slug: custom-executive-assistant-close-open-loops-chase-commitments-made-
-created: 2026-07-21T07:50:58.961Z
+created: 2026-07-21T17:01:37.812Z
 templateId: custom-executive-assistant-close-open-loops-chase-commitments-made-
 role: Custom
 originTask: As a Executive Assistant, close open loops — chase commitments made on the executive's behalf.

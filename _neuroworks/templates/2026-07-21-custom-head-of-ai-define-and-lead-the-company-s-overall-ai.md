@@ -2,7 +2,7 @@
 type: template
 title: Define and lead the company’s overall AI strategy. (custom-head-of-ai-define-and-lead-the-company-s-overall-ai)
 slug: custom-head-of-ai-define-and-lead-the-company-s-overall-ai
-created: 2026-07-21T07:50:59.514Z
+created: 2026-07-21T17:01:38.468Z
 templateId: custom-head-of-ai-define-and-lead-the-company-s-overall-ai
 role: Custom
 originTask: As a Head of AI, define and lead the company’s overall ai strategy.

@@ -2,7 +2,7 @@
 type: template
 title: Ask Aiia Marketing Specialist v2 anything (custom-aiia-marketing-specialist-v2-ask-anything)
 slug: custom-aiia-marketing-specialist-v2-ask-anything
-created: 2026-07-21T07:50:59.586Z
+created: 2026-07-21T17:01:38.546Z
 templateId: custom-aiia-marketing-specialist-v2-ask-anything
 role: Custom
 originTask: As a Marketing Specialist, respond to the following task in role:

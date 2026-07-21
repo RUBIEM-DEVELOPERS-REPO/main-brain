@@ -2,7 +2,7 @@
 type: template
 title: Assess risk based on client history, financial data, property details, or hea… (custom-insurance-underwriter-assess-risk-based-on-client-history-fina)
 slug: custom-insurance-underwriter-assess-risk-based-on-client-history-fina
-created: 2026-07-21T07:50:59.485Z
+created: 2026-07-21T17:01:38.423Z
 templateId: custom-insurance-underwriter-assess-risk-based-on-client-history-fina
 role: Custom
 originTask: As a Job Summary, assess risk based on client history, financial data, property details, or health information.

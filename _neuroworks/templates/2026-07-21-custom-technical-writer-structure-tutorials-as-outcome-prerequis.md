@@ -2,7 +2,7 @@
 type: template
 title: Structure tutorials as outcome → prerequisites → steps → verification → troub… (custom-technical-writer-structure-tutorials-as-outcome-prerequis)
 slug: custom-technical-writer-structure-tutorials-as-outcome-prerequis
-created: 2026-07-21T07:50:58.890Z
+created: 2026-07-21T17:01:37.712Z
 templateId: custom-technical-writer-structure-tutorials-as-outcome-prerequis
 role: Custom
 originTask: As a Technical Writer, structure tutorials as outcome → prerequisites → steps → verification → troubleshooting.

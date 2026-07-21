@@ -2,7 +2,7 @@
 type: template
 title: Ask Insurance Sales Agent anything (custom-insurance-sales-agent-ask-anything)
 slug: custom-insurance-sales-agent-ask-anything
-created: 2026-07-21T07:50:59.525Z
+created: 2026-07-21T17:01:38.430Z
 templateId: custom-insurance-sales-agent-ask-anything
 role: Custom
 originTask: As a Insurance Sales Agent, respond to the following task in role:

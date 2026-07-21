@@ -2,7 +2,7 @@
 type: template
 title: Surface unit economics (CAC, LTV, payback, gross margin) honestly (custom-financial-analyst-surface-unit-economics-cac-ltv-payback-g)
 slug: custom-financial-analyst-surface-unit-economics-cac-ltv-payback-g
-created: 2026-07-21T07:50:59.127Z
+created: 2026-07-21T17:01:38.001Z
 templateId: custom-financial-analyst-surface-unit-economics-cac-ltv-payback-g
 role: Custom
 originTask: As a Financial Analyst, surface unit economics (cac, ltv, payback, gross margin) honestly.

@@ -2,7 +2,7 @@
 type: template
 title: Ask Dani anything (custom-product-designer-ask-anything)
 slug: custom-product-designer-ask-anything
-created: 2026-07-21T07:50:59.047Z
+created: 2026-07-21T17:01:37.940Z
 templateId: custom-product-designer-ask-anything
 role: Custom
 originTask: As a Product Designer, respond to the following task in role:

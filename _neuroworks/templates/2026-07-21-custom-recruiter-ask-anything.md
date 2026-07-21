@@ -2,7 +2,7 @@
 type: template
 title: Ask Riley anything (custom-recruiter-ask-anything)
 slug: custom-recruiter-ask-anything
-created: 2026-07-21T07:50:59.133Z
+created: 2026-07-21T17:01:38.046Z
 templateId: custom-recruiter-ask-anything
 role: Custom
 originTask: As a Talent Recruiter, respond to the following task in role:

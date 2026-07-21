@@ -2,7 +2,7 @@
 type: template
 title: Ask Logan anything (custom-contracts-reviewer-ask-anything)
 slug: custom-contracts-reviewer-ask-anything
-created: 2026-07-21T07:50:58.983Z
+created: 2026-07-21T17:01:37.885Z
 templateId: custom-contracts-reviewer-ask-anything
 role: Custom
 originTask: As a Contracts Reviewer, respond to the following task in role:

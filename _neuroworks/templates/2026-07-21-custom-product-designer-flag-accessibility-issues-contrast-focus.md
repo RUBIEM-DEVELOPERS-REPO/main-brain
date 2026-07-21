@@ -2,7 +2,7 @@
 type: template
 title: Flag accessibility issues (contrast, focus order, screen reader, motion) early (custom-product-designer-flag-accessibility-issues-contrast-focus)
 slug: custom-product-designer-flag-accessibility-issues-contrast-focus
-created: 2026-07-21T07:50:59.028Z
+created: 2026-07-21T17:01:37.919Z
 templateId: custom-product-designer-flag-accessibility-issues-contrast-focus
 role: Custom
 originTask: As a Product Designer, flag accessibility issues (contrast, focus order, screen reader, motion) early.

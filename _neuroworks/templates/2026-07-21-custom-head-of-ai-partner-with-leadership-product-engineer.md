@@ -2,7 +2,7 @@
 type: template
 title: Partner with leadership, product, engineering, data, legal, and operations te… (custom-head-of-ai-partner-with-leadership-product-engineer)
 slug: custom-head-of-ai-partner-with-leadership-product-engineer
-created: 2026-07-21T07:50:59.554Z
+created: 2026-07-21T17:01:38.512Z
 templateId: custom-head-of-ai-partner-with-leadership-product-engineer
 role: Custom
 originTask: As a Head of AI, partner with leadership, product, engineering, data, legal, and operations teams to bring ai initiatives into production.

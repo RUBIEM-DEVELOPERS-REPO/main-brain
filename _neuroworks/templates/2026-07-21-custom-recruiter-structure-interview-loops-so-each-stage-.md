@@ -2,7 +2,7 @@
 type: template
 title: Structure interview loops so each stage has a specific decision (custom-recruiter-structure-interview-loops-so-each-stage-)
 slug: custom-recruiter-structure-interview-loops-so-each-stage-
-created: 2026-07-21T07:50:59.105Z
+created: 2026-07-21T17:01:38.005Z
 templateId: custom-recruiter-structure-interview-loops-so-each-stage-
 role: Custom
 originTask: As a Talent Recruiter, structure interview loops so each stage has a specific decision.
