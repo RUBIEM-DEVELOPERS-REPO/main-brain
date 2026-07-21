@@ -1,0 +1,15 @@
+﻿Done. Log written to `2026-07-20.log`.
+
+**Outcome: STOP CONDITION — no commits.** Same uncommitted tree as 07-19 (25 modified + 2 untracked, none mine). Read-only investigation only.
+
+Three "try next" items:
+
+1. **Peer delegation timeout** → already fixed in operator's uncommitted tree. `peers.ts:224` bumped 12→20 min, comment cites "2026-07-20 journal." **Loose end flagged:** second path `delegateToBestPeer` (`peers.ts:325`) still hard-codes 12-min fallback — two defaults now disagree. Align before commit.
+
+2. **db.query 31.5s** → already fixed, and reflection's diagnosis wrong. Not schema/indexing — was `describeSource()` running full `information_schema` scan on every question. Operator staged a `SCHEMA_CACHE` (5-min TTL) in `data-sources.ts:408-435`. Correct fix.
+
+3. **Rebalance Aria/Piers** → real skew, not a bug. Router (`persona-router.ts:344`) scores by task content, no load-balancing notion by design. Forcing work to wrong specialists degrades output. Schedule-authoring decision, not code. No action.
+
+Two carry-over latent bugs re-noted: peer-picker tie-break skew (7473 wins every idle tie), and `reflection.ts` soft-error-persistence. Both need a clean-tree run.
+
+Nothing to commit — operator already mid-work on exactly items 1 and 2.

@@ -1,0 +1,81 @@
+Reflection-action run for 2026-07-20 (executed 2026-07-21, unattended).
+No commits made this run.
+
+STOP CONDITION — uncommitted changes not from this run.
+git status at start showed 25 modified files (server/src/lib/agent.ts,
+data-sources.ts, email.ts, lane.ts, peers.ts, primitives.ts, schedules.ts,
+studio-image.ts, voice.ts; server/src/routes/calendar.ts, chat.ts, peers.ts,
+primitives.ts, tasks.ts, templates.ts; plus 10 web/src files) and 2 untracked
+files (server/src/lib/job-visibility.ts, web/src/components/LoadMore.tsx) —
+none created by me. Per the hard limits in action-prompt.md I made no changes,
+committed nothing, and discarded nothing; everything below is read-only
+investigation so the operator still gets the analysis the run would have
+produced. tsc/vitest were not run (nothing of mine to validate, and running
+them against an in-progress tree would report the operator's state, not mine).
+
+NOTABLE: two of the three "try next" items are ALREADY FIXED in the operator's
+uncommitted working tree — the two files carrying those fixes (peers.ts,
+data-sources.ts) are among the 25 modified-but-uncommitted files, and both
+fixes comment-cite the "2026-07-20 journal" by name. So this run would have
+been duplicating in-progress work even without the stop condition. Details per
+item below.
+
+ITEM 1 — "Increase the timeout threshold for peer delegation to prevent
+timeouts on delegated general-task runs." ALREADY FIXED in the uncommitted
+tree (confirm-not-a-bug for me to act on; the operator's edit is correct).
+server/src/lib/peers.ts:224 (delegateToPeer) now reads
+NEUROWORKS_PEER_DELEGATE_TIMEOUT_MS ?? 20*60_000 — bumped from 12 min to 20,
+with a comment (lines 217-223) referencing exactly today's failure: "12 min
+still timed out real delegated general-task runs (2026-07-20 journal: a
+multi-source run hit the ceiling at 12min)." That matches the day's one
+failure ("peer delegation timed out after Nmin", general-task template). One
+loose end the operator should close while in there: the SECOND delegation path,
+delegateToBestPeer (peers.ts:325), still defaults to 12*60_000 and was NOT
+raised. Both read the same env var, so setting NEUROWORKS_PEER_DELEGATE_TIMEOUT_MS
+overrides both — but the two hard-coded fallbacks now disagree (20 vs 12). If
+the timed-out job routed through delegateToBestPeer rather than delegateToPeer,
+the fix as staged wouldn't cover it. Worth aligning the two fallbacks (or
+hoisting the 20-min default into one shared const) before committing.
+
+ITEM 2 — "Investigate the schema or indexing for db.query to address the
+31.5-second execution bottleneck." ALREADY FIXED in the uncommitted tree, and
+the reflection's diagnosis was off. The 31.5s was NOT a DB schema/indexing
+problem — the operator's edit in server/src/lib/data-sources.ts (lines 408-435)
+identifies the real cause: question-mode db.query calls describeSource() on
+EVERY question, which runs a full information_schema scan (a network round-trip;
+a Neon serverless cold start alone adds several seconds) for a schema that
+rarely changes. Fix staged: a per-source SCHEMA_CACHE with a 5-min TTL
+(NEUROWORKS_DB_SCHEMA_CACHE_MS), keyed by source id, plus an
+invalidateSchemaCache() export so editing a source's connection string doesn't
+serve stale schema. Comment (line 415) cites the same "31–90s (2026-07-20
+journal)" figure. This removes one of the two round-trips per question; the
+other (LLM SQL generation) is inherent. No indexing change is warranted — the
+bottleneck was app-level round-trips, not query planning. Nothing for me to add;
+the staged fix is the right call.
+
+ITEM 3 — "Rebalance task routing to utilize Aria and Piers more heavily, as
+they only handled 2 tasks each." Confirmed real skew but NOT a bug — no code
+change appropriate (same conclusion as the 2026-07-19 run's persona item). The
+day's spread was Nova 6 / Neuro 5 / Aria 2 / Piers 2 over 18 tasks, which is a
+mild content-driven distribution, not a routing pathology. Persona selection is
+either explicit (operator/schedule names the persona) or auto-routed by
+pickPersonaForTask (server/src/lib/persona-router.ts:344), which scores personas
+by how well the TASK TEXT matches their patterns and only fires above a
+confidence floor of 2 (persona-router.ts:342); genuine ties return null and
+fall through to clawbot rather than dogpiling. It has no notion of "who's had
+fewer tasks today" and deliberately shouldn't — forcing general work onto Aria
+or Piers when the content matched Nova/Neuro would route tasks to the wrong
+specialists and degrade output. If the operator genuinely wants routine work
+spread across more personas, that's a schedule/template authoring choice (which
+persona each scheduled task names), not something an unattended run should
+decide by editing the router. No action taken.
+
+CARRY-OVER NOTES (unchanged, still latent — not acted on, outside today's item
+cap): (a) the peer-picker tie-break skew from the 2026-07-19 log
+(pickLightestIdlePeer/pickPeerByRole/pickExecutor in peers.ts break inflight=0
+ties by stable-sort registration order, so one worker always wins — today's
+byPeer 7473:6 / 7474:1 is the same pattern) remains unfixed. (b) the 2026-07-17
+soft-error-persisted-as-reflection bug in server/src/lib/reflection.ts
+(synthesizeReflection only retries on throw) remains latent; today's reflection
+generated cleanly, so it did not bite this run. Both should be picked up on a
+run that starts from a clean tree.
