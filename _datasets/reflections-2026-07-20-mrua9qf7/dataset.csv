@@ -1,0 +1,5 @@
+date,template,total,succeeded,failed,success_rate,avg_duration_sec,top_failure
+2026-07-20,search-brain,1,1,0,1,0.2,
+2026-07-20,general-task,15,14,1,0.93,187.5,"peer delegation timed out after Nmin (peer=http://N.N.N.N:N, jobId=bNbNeN"
+2026-07-20,daily-briefing,1,1,0,1,253.6,
+2026-07-20,summarize-repo,1,1,0,1,90.9,
