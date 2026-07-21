@@ -2789,3 +2789,4 @@
 {"jobId":"voice-call","model":"gpt-realtime","backend":"openrouter","profile":"realtime-voice","inputTokens":1065,"outputTokens":214,"costUsd":0.047776,"ts":"2026-07-20T17:45:51.099Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":1246,"outputTokens":1847,"costUsd":0.0049913,"ts":"2026-07-21T06:39:28.377Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":853,"outputTokens":1281,"costUsd":0.0034584,"ts":"2026-07-21T06:39:49.216Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":813,"outputTokens":1392,"costUsd":0.0037239,"ts":"2026-07-21T06:39:59.651Z"}
