@@ -2965,3 +2965,11 @@
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":7,"outputTokens":1,"costUsd":0,"ts":"2026-07-21T14:57:18.127Z"}
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"synthesis","inputTokens":1251,"outputTokens":881,"costUsd":0,"ts":"2026-07-21T15:02:53.746Z"}
 {"jobId":"voice-call","model":"gpt-realtime","backend":"openrouter","profile":"realtime-voice","inputTokens":654,"outputTokens":217,"costUsd":0.034816,"ts":"2026-07-21T15:38:18.565Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"none","inputTokens":427,"outputTokens":67,"costUsd":0,"ts":"2026-07-21T16:06:06.997Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7279,"outputTokens":2051,"costUsd":0.0073112,"ts":"2026-07-21T16:06:28.093Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1634,"outputTokens":1636,"costUsd":0,"ts":"2026-07-21T16:07:08.193Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":643,"outputTokens":1524,"costUsd":0,"ts":"2026-07-21T16:07:39.219Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":8236,"outputTokens":2824,"costUsd":0.009530799999999999,"ts":"2026-07-21T16:07:54.465Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1688,"outputTokens":1402,"costUsd":0,"ts":"2026-07-21T16:08:31.919Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":8381,"outputTokens":3793,"costUsd":0.011996800000000002,"ts":"2026-07-21T16:08:54.684Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":860,"outputTokens":400,"costUsd":0,"ts":"2026-07-21T16:09:08.914Z"}
