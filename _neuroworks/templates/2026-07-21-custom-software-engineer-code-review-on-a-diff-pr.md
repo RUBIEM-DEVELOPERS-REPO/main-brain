@@ -2,7 +2,7 @@
 type: template
 title: Code review on a diff/PR (custom-software-engineer-code-review-on-a-diff-pr)
 slug: custom-software-engineer-code-review-on-a-diff-pr
-created: 2026-07-21T07:24:37.255Z
+created: 2026-07-21T07:25:11.672Z
 templateId: custom-software-engineer-code-review-on-a-diff-pr
 role: Custom
 originTask: Review the following diff/PR. Use github.read_repo if a PR number is given. Output sections (only if you have something to say): Correctness / Maintainability / Security / Performance. For each finding, cite the file + line and propose the change. End with a verdict: APPROVE / APPROVE-WITH-CHANGES / REQUEST-CHANGES.
