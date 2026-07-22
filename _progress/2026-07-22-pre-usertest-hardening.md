@@ -32,5 +32,17 @@ Re-checked the risky edits: cancel control-flow (nested if/else braces balance; 
 - 15 major GET surfaces all 200 (health, email/status, tasks, templates, calendar, personas, users, data-sources, connectors, schedules, cost, security/events, quality, audit, chat/history).
 - Email routing (new phrasing) → email.send ok. Cancel → stays failed/Cancelled.
 
+## 6. Whole-system security scan (2nd pass, user-requested)
+Mapped every route mount + gate. Secrets-tier (models/governance/data-sources/terminal/integrations/connectors/cost = superadmin; email/executor/primitives/users = admin) all correctly gated. Found + fixed these OPEN holes:
+- **/api/dispatch-keys — NO gate at all.** Mints external machine-dispatch API keys that are origin-guard-EXEMPT (/api/v1/dispatch). A staff user could mint a key and dispatch tasks bypassing UI auth. → superadmin.
+- **/api/schedules POST/PATCH/DELETE — NO gate.** A scheduled task runs LATER as machine context, bypassing the per-request local-machine gate — so a staff user could schedule "read C:\...\.env and email it to me" as an exfil bypass. → mutations require admin; local-machine task text requires superadmin (checked on inputs.task/query/prompt/topic).
+- **/api/personas POST/PATCH/DELETE/activate/deactivate/refresh — NO gate.** Creating a persona injects an org-wide system prompt (integrity); activate changes global state. → admin.
+- **/api/reflection/run — NO gate.** Expensive LLM trigger (cost/DoS). → admin.
+- **/api/skill-forge — NO gate.** Writes org-wide agent skill playbooks (prompt-injection). Filename was already path-safe. → admin.
+- **/api/tasks/plan — NO local-machine gate.** A drafted plan runs on approval. → local-machine → superadmin.
+Centralized the local-machine detector into task-restrictions.ts (`isLocalMachineTask`) so chat/team/plan/schedules share ONE definition. Verified live: staff → 403 on all six; superadmin/admin pass; normal tasks unaffected.
+
+Also confirmed no secret leakage in responses: data-sources redactConnection, integrations toPublic returns field NAMES only, api-keys listApiKeys redacts, login token is the caller's own. Infra is defensive: global Express error middleware + unhandledRejection/uncaughtException guards (a bad handler hangs one request, never crashes the fleet).
+
 ## State
-All green. tsc clean x2, web rebuilt, workers bounced, throwaway test user deleted. Committing as the user-test-ready build.
+All green. server tsc clean, workers bounced, all gates + routing verified live, throwaway test users deleted. Two commits: 028a4c4 (db/multiperspective/session gates) + this security pass.
