@@ -2,7 +2,7 @@
 type: template
 title: Maintain accurate client records and follow up on policy renewals. (custom-insurance-sales-agent-maintain-accurate-client-records-and-fol)
 slug: custom-insurance-sales-agent-maintain-accurate-client-records-and-fol
-created: 2026-07-22T21:57:27.866Z
+created: 2026-07-22T22:21:13.727Z
 templateId: custom-insurance-sales-agent-maintain-accurate-client-records-and-fol
 role: Custom
 originTask: As a Insurance Sales Agent, maintain accurate client records and follow up on policy renewals.

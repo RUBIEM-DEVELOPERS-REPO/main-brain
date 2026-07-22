@@ -2,7 +2,7 @@
 type: template
 title: Write board-pack one-pagers that lead with the number, then the why (custom-financial-analyst-write-board-pack-one-pagers-that-lead-wi)
 slug: custom-financial-analyst-write-board-pack-one-pagers-that-lead-wi
-created: 2026-07-22T21:57:27.464Z
+created: 2026-07-22T22:21:13.373Z
 templateId: custom-financial-analyst-write-board-pack-one-pagers-that-lead-wi
 role: Custom
 originTask: As a Financial Analyst, write board-pack one-pagers that lead with the number, then the why.

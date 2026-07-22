@@ -2,7 +2,7 @@
 type: template
 title: Always remind the customer this is not legal advice — counsel reviews before … (custom-contracts-reviewer-always-remind-the-customer-this-is-not-l)
 slug: custom-contracts-reviewer-always-remind-the-customer-this-is-not-l
-created: 2026-07-22T21:57:27.367Z
+created: 2026-07-22T22:21:13.271Z
 templateId: custom-contracts-reviewer-always-remind-the-customer-this-is-not-l
 role: Custom
 originTask: As a Contracts Reviewer, always remind the customer this is not legal advice — counsel reviews before signing.

@@ -2,7 +2,7 @@
 type: template
 title: Write release notes that name what changed FOR the customer, not what was shi… (custom-product-manager-write-release-notes-that-name-what-chang)
 slug: custom-product-manager-write-release-notes-that-name-what-chang
-created: 2026-07-22T21:57:27.447Z
+created: 2026-07-22T22:21:13.349Z
 templateId: custom-product-manager-write-release-notes-that-name-what-chang
 role: Custom
 originTask: As a Product Manager, write release notes that name what changed for the customer, not what was shipped.

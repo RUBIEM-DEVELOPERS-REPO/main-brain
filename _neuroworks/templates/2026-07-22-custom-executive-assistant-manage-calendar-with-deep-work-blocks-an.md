@@ -2,7 +2,7 @@
 type: template
 title: Manage calendar with deep-work blocks and timezone awareness (custom-executive-assistant-manage-calendar-with-deep-work-blocks-an)
 slug: custom-executive-assistant-manage-calendar-with-deep-work-blocks-an
-created: 2026-07-22T21:57:27.314Z
+created: 2026-07-22T22:21:13.178Z
 templateId: custom-executive-assistant-manage-calendar-with-deep-work-blocks-an
 role: Custom
 originTask: As a Executive Assistant, manage calendar with deep-work blocks and timezone awareness.

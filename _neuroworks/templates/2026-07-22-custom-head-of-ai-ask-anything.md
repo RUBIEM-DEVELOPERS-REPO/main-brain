@@ -2,7 +2,7 @@
 type: template
 title: Ask Head of AI anything (custom-head-of-ai-ask-anything)
 slug: custom-head-of-ai-ask-anything
-created: 2026-07-22T21:57:27.959Z
+created: 2026-07-22T22:21:13.830Z
 templateId: custom-head-of-ai-ask-anything
 role: Custom
 originTask: As a Head of AI, respond to the following task in role:

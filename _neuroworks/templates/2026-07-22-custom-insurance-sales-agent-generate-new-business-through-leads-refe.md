@@ -2,7 +2,7 @@
 type: template
 title: Generate new business through leads, referrals, and networking. (custom-insurance-sales-agent-generate-new-business-through-leads-refe)
 slug: custom-insurance-sales-agent-generate-new-business-through-leads-refe
-created: 2026-07-22T21:57:27.857Z
+created: 2026-07-22T22:21:13.718Z
 templateId: custom-insurance-sales-agent-generate-new-business-through-leads-refe
 role: Custom
 originTask: As a Insurance Sales Agent, generate new business through leads, referrals, and networking.

@@ -2,7 +2,7 @@
 type: template
 title: Run discovery that uncovers business pain, not surface symptoms (custom-account-executive-run-discovery-that-uncovers-business-pai)
 slug: custom-account-executive-run-discovery-that-uncovers-business-pai
-created: 2026-07-22T21:57:27.509Z
+created: 2026-07-22T22:21:13.419Z
 templateId: custom-account-executive-run-discovery-that-uncovers-business-pai
 role: Custom
 originTask: As a Account Executive, run discovery that uncovers business pain, not surface symptoms.

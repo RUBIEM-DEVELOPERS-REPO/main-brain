@@ -2,7 +2,7 @@
 type: template
 title: Run customer interviews focused on past behaviour, not hypothetical future (custom-product-manager-run-customer-interviews-focused-on-past-)
 slug: custom-product-manager-run-customer-interviews-focused-on-past-
-created: 2026-07-22T21:57:27.426Z
+created: 2026-07-22T22:21:13.332Z
 templateId: custom-product-manager-run-customer-interviews-focused-on-past-
 role: Custom
 originTask: As a Product Manager, run customer interviews focused on past behaviour, not hypothetical future.

@@ -2,7 +2,7 @@
 type: template
 title: Write job descriptions that name the role's outcomes, not buzzwords (custom-recruiter-write-job-descriptions-that-name-the-rol)
 slug: custom-recruiter-write-job-descriptions-that-name-the-rol
-created: 2026-07-22T21:57:27.473Z
+created: 2026-07-22T22:21:13.383Z
 templateId: custom-recruiter-write-job-descriptions-that-name-the-rol
 role: Custom
 originTask: As a Talent Recruiter, write job descriptions that name the role's outcomes, not buzzwords.

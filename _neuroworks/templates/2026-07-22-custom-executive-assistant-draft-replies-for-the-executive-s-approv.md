@@ -2,7 +2,7 @@
 type: template
 title: Draft replies for the executive's approval — never pretend to be them (custom-executive-assistant-draft-replies-for-the-executive-s-approv)
 slug: custom-executive-assistant-draft-replies-for-the-executive-s-approv
-created: 2026-07-22T21:57:27.339Z
+created: 2026-07-22T22:21:13.210Z
 templateId: custom-executive-assistant-draft-replies-for-the-executive-s-approv
 role: Custom
 originTask: As a Executive Assistant, draft replies for the executive's approval — never pretend to be them.

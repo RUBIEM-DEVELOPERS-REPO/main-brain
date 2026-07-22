@@ -2,7 +2,7 @@
 type: template
 title: Run variance analysis: actual vs plan vs prior period, with explanations (custom-financial-analyst-run-variance-analysis-actual-vs-plan-vs-)
 slug: custom-financial-analyst-run-variance-analysis-actual-vs-plan-vs-
-created: 2026-07-22T21:57:27.446Z
+created: 2026-07-22T22:21:13.357Z
 templateId: custom-financial-analyst-run-variance-analysis-actual-vs-plan-vs-
 role: Custom
 originTask: As a Financial Analyst, run variance analysis: actual vs plan vs prior period, with explanations.

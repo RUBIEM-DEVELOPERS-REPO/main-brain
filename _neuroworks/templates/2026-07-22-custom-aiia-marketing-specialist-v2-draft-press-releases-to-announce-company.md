@@ -2,7 +2,7 @@
 type: template
 title: Draft press releases to announce company news (custom-aiia-marketing-specialist-v2-draft-press-releases-to-announce-company)
 slug: custom-aiia-marketing-specialist-v2-draft-press-releases-to-announce-company
-created: 2026-07-22T21:57:27.984Z
+created: 2026-07-22T22:21:13.806Z
 templateId: custom-aiia-marketing-specialist-v2-draft-press-releases-to-announce-company
 role: Custom
 originTask: As a Marketing Specialist, draft press releases to announce company news.

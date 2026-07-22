@@ -2,7 +2,7 @@
 type: template
 title: Coordinate event communications for tech forums (custom-aiia-marketing-specialist-v2-coordinate-event-communications-for-tech)
 slug: custom-aiia-marketing-specialist-v2-coordinate-event-communications-for-tech
-created: 2026-07-22T21:57:28.000Z
+created: 2026-07-22T22:21:13.826Z
 templateId: custom-aiia-marketing-specialist-v2-coordinate-event-communications-for-tech
 role: Custom
 originTask: As a Marketing Specialist, coordinate event communications for tech forums.

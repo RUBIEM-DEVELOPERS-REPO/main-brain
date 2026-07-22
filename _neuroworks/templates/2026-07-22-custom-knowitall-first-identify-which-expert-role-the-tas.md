@@ -2,7 +2,7 @@
 type: template
 title: First identify which expert role the task wants (one named role) (custom-knowitall-first-identify-which-expert-role-the-tas)
 slug: custom-knowitall-first-identify-which-expert-role-the-tas
-created: 2026-07-22T21:57:27.123Z
+created: 2026-07-22T22:21:13.070Z
 templateId: custom-knowitall-first-identify-which-expert-role-the-tas
 role: Custom
 originTask: As a Polymath, any-persona adapter, first identify which expert role the task wants (one named role).

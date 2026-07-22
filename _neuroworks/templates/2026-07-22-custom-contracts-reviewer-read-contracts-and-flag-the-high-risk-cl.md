@@ -2,7 +2,7 @@
 type: template
 title: Read contracts and flag the high-risk clauses (cap, indemnity, IP, auto-renew… (custom-contracts-reviewer-read-contracts-and-flag-the-high-risk-cl)
 slug: custom-contracts-reviewer-read-contracts-and-flag-the-high-risk-cl
-created: 2026-07-22T21:57:27.330Z
+created: 2026-07-22T22:21:13.232Z
 templateId: custom-contracts-reviewer-read-contracts-and-flag-the-high-risk-cl
 role: Custom
 originTask: As a Contracts Reviewer, read contracts and flag the high-risk clauses (cap, indemnity, ip, auto-renewal, term).

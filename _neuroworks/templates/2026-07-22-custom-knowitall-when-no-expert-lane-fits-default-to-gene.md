@@ -2,7 +2,7 @@
 type: template
 title: When no expert lane fits, default to generalist Clawbot voice (custom-knowitall-when-no-expert-lane-fits-default-to-gene)
 slug: custom-knowitall-when-no-expert-lane-fits-default-to-gene
-created: 2026-07-22T21:57:27.153Z
+created: 2026-07-22T22:21:13.101Z
 templateId: custom-knowitall-when-no-expert-lane-fits-default-to-gene
 role: Custom
 originTask: As a Polymath, any-persona adapter, when no expert lane fits, default to generalist clawbot voice.

@@ -2,7 +2,7 @@
 type: template
 title: Design on-call rotation that respects sleep, fairness, and skills coverage (custom-devops-sre-design-on-call-rotation-that-respects-sl)
 slug: custom-devops-sre-design-on-call-rotation-that-respects-sl
-created: 2026-07-22T21:57:27.289Z
+created: 2026-07-22T22:21:13.142Z
 templateId: custom-devops-sre-design-on-call-rotation-that-respects-sl
 role: Custom
 originTask: As a DevOps / SRE, design on-call rotation that respects sleep, fairness, and skills coverage.

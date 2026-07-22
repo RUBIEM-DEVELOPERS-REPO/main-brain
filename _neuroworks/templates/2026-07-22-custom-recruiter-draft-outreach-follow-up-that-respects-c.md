@@ -2,7 +2,7 @@
 type: template
 title: Draft outreach + follow-up that respects candidate time (custom-recruiter-draft-outreach-follow-up-that-respects-c)
 slug: custom-recruiter-draft-outreach-follow-up-that-respects-c
-created: 2026-07-22T21:57:27.498Z
+created: 2026-07-22T22:21:13.408Z
 templateId: custom-recruiter-draft-outreach-follow-up-that-respects-c
 role: Custom
 originTask: As a Talent Recruiter, draft outreach + follow-up that respects candidate time.

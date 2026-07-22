@@ -2,7 +2,7 @@
 type: template
 title: When the task spans two lanes, split the answer into the two lanes explicitly (custom-knowitall-when-the-task-spans-two-lanes-split-the-)
 slug: custom-knowitall-when-the-task-spans-two-lanes-split-the-
-created: 2026-07-22T21:57:27.147Z
+created: 2026-07-22T22:21:13.093Z
 templateId: custom-knowitall-when-the-task-spans-two-lanes-split-the-
 role: Custom
 originTask: As a Polymath, any-persona adapter, when the task spans two lanes, split the answer into the two lanes explicitly.

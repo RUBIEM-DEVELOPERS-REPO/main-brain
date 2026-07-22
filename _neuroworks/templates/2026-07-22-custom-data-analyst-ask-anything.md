@@ -2,7 +2,7 @@
 type: template
 title: Ask Dale anything (custom-data-analyst-ask-anything)
 slug: custom-data-analyst-ask-anything
-created: 2026-07-22T21:57:27.413Z
+created: 2026-07-22T22:21:13.306Z
 templateId: custom-data-analyst-ask-anything
 role: Custom
 originTask: As a Data Analyst, respond to the following task in role:

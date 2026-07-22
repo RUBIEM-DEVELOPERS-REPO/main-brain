@@ -2,7 +2,7 @@
 type: template
 title: Ask Fiona anything (custom-financial-analyst-ask-anything)
 slug: custom-financial-analyst-ask-anything
-created: 2026-07-22T21:57:27.480Z
+created: 2026-07-22T22:21:13.386Z
 templateId: custom-financial-analyst-ask-anything
 role: Custom
 originTask: As a Financial Analyst, respond to the following task in role:

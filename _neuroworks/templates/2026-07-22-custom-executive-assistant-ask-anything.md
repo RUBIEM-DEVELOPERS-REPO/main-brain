@@ -2,7 +2,7 @@
 type: template
 title: Ask Evie anything (custom-executive-assistant-ask-anything)
 slug: custom-executive-assistant-ask-anything
-created: 2026-07-22T21:57:27.357Z
+created: 2026-07-22T22:21:13.226Z
 templateId: custom-executive-assistant-ask-anything
 role: Custom
 originTask: As a Executive Assistant, respond to the following task in role:
