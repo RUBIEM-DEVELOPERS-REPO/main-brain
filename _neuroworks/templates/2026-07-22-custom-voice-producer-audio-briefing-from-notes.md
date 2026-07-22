@@ -2,7 +2,7 @@
 type: template
 title: Audio briefing from notes (custom-voice-producer-audio-briefing-from-notes)
 slug: custom-voice-producer-audio-briefing-from-notes
-created: 2026-07-22T20:40:04.837Z
+created: 2026-07-22T20:41:45.155Z
 templateId: custom-voice-producer-audio-briefing-from-notes
 role: Custom
 originTask: Condense the following into a 60-90 second SPOKEN briefing — only what matters, written for the ear. Then use media.tts to narrate it (neutral, clear voice). Return the script + the audio path, and note anything you trimmed.
