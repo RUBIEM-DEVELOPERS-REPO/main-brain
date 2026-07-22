@@ -2,7 +2,7 @@
 type: template
 title: Weekly schedule from priorities (custom-operations-coordinator-weekly-schedule-from-priorities)
 slug: custom-operations-coordinator-weekly-schedule-from-priorities
-created: 2026-07-22T10:43:28.858Z
+created: 2026-07-22T13:27:00.848Z
 templateId: custom-operations-coordinator-weekly-schedule-from-priorities
 role: Custom
 originTask: Take the following priorities and turn them into a dated weekly schedule. Today is the start of the week unless stated. Output: Mon-Fri (dated), each day with 2-4 named time blocks. Each block has Owner / Purpose / Output. Surface conflicts and overcommitment honestly; don't pretend everything fits.
