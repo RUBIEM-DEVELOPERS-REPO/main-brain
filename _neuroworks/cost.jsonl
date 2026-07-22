@@ -3034,3 +3034,11 @@
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":647,"outputTokens":706,"costUsd":0,"ts":"2026-07-21T17:33:32.633Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":1440,"outputTokens":2247,"costUsd":0.0060495,"ts":"2026-07-22T06:16:29.186Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":4997,"outputTokens":1498,"costUsd":0.0052441,"ts":"2026-07-22T06:17:19.679Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":6603,"outputTokens":4092,"costUsd":0.0122109,"ts":"2026-07-22T06:17:53.944Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1019,"outputTokens":1215,"costUsd":0,"ts":"2026-07-22T06:18:07.733Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":633,"outputTokens":523,"costUsd":0,"ts":"2026-07-22T06:18:18.076Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7233,"outputTokens":4076,"costUsd":0.0123599,"ts":"2026-07-22T06:18:48.207Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":2115,"outputTokens":561,"costUsd":0,"ts":"2026-07-22T06:18:54.799Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7357,"outputTokens":4092,"costUsd":0.0124371,"ts":"2026-07-22T06:19:19.663Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":702,"outputTokens":564,"costUsd":0,"ts":"2026-07-22T06:19:30.080Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1104,"outputTokens":1176,"costUsd":0,"ts":"2026-07-22T06:19:39.472Z"}
