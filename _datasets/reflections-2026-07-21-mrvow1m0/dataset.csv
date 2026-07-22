@@ -1,0 +1,6 @@
+date,template,total,succeeded,failed,success_rate,avg_duration_sec,top_failure
+2026-07-21,reflection:daily,1,1,0,1,50.4,
+2026-07-21,general-task,35,31,4,0.89,98.8,Cancelled by the operator
+2026-07-21,search-brain,1,1,0,1,0.7,
+2026-07-21,custom-clawbot-quick-web-look-up,1,1,0,1,168.7,
+2026-07-21,daily-briefing,1,1,0,1,187.8,
