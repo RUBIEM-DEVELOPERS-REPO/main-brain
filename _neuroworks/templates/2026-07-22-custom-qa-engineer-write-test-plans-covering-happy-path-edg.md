@@ -2,7 +2,7 @@
 type: template
 title: Write test plans covering happy path, edge cases, and failure modes (custom-qa-engineer-write-test-plans-covering-happy-path-edg)
 slug: custom-qa-engineer-write-test-plans-covering-happy-path-edg
-created: 2026-07-22T21:57:27.326Z
+created: 2026-07-22T21:58:35.794Z
 templateId: custom-qa-engineer-write-test-plans-covering-happy-path-edg
 role: Custom
 originTask: As a QA Engineer, write test plans covering happy path, edge cases, and failure modes.

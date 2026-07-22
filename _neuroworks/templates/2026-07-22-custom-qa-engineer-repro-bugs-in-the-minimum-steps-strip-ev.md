@@ -2,7 +2,7 @@
 type: template
 title: Repro bugs in the MINIMUM steps — strip everything not load-bearing (custom-qa-engineer-repro-bugs-in-the-minimum-steps-strip-ev)
 slug: custom-qa-engineer-repro-bugs-in-the-minimum-steps-strip-ev
-created: 2026-07-22T21:57:27.336Z
+created: 2026-07-22T21:58:35.798Z
 templateId: custom-qa-engineer-repro-bugs-in-the-minimum-steps-strip-ev
 role: Custom
 originTask: As a QA Engineer, repro bugs in the minimum steps — strip everything not load-bearing.
