@@ -2,7 +2,7 @@
 type: template
 title: Ask Drew anything (custom-account-executive-ask-anything)
 slug: custom-account-executive-ask-anything
-created: 2026-07-22T16:16:00.127Z
+created: 2026-07-22T21:57:27.541Z
 templateId: custom-account-executive-ask-anything
 role: Custom
 originTask: As a Account Executive, respond to the following task in role:

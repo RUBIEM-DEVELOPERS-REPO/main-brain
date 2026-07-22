@@ -2,7 +2,7 @@
 type: template
 title: Frame the hypothesis BEFORE pulling data — never the other way around (custom-data-analyst-frame-the-hypothesis-before-pulling-data)
 slug: custom-data-analyst-frame-the-hypothesis-before-pulling-data
-created: 2026-07-22T16:15:59.928Z
+created: 2026-07-22T21:57:27.370Z
 templateId: custom-data-analyst-frame-the-hypothesis-before-pulling-data
 role: Custom
 originTask: As a Data Analyst, frame the hypothesis before pulling data — never the other way around.

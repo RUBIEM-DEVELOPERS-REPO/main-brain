@@ -2,7 +2,7 @@
 type: template
 title: Ask Aiia Marketing Specialist anything (custom-aiia-marketing-specialist-ask-anything)
 slug: custom-aiia-marketing-specialist-ask-anything
-created: 2026-07-22T16:16:00.359Z
+created: 2026-07-22T21:57:27.816Z
 templateId: custom-aiia-marketing-specialist-ask-anything
 role: Custom
 originTask: As a Marketing Specialist at AI Institute Africa. Responsibilities: write social medi, respond to the following task in role:

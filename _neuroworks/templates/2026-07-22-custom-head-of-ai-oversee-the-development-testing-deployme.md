@@ -2,7 +2,7 @@
 type: template
 title: Oversee the development, testing, deployment, and monitoring of AI models and… (custom-head-of-ai-oversee-the-development-testing-deployme)
 slug: custom-head-of-ai-oversee-the-development-testing-deployme
-created: 2026-07-22T16:16:00.446Z
+created: 2026-07-22T21:57:27.932Z
 templateId: custom-head-of-ai-oversee-the-development-testing-deployme
 role: Custom
 originTask: As a Head of AI, oversee the development, testing, deployment, and monitoring of ai models and ai-enabled tools.

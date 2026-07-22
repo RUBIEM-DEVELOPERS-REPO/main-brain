@@ -2,7 +2,7 @@
 type: template
 title: Write proposals anchored to the customer's measurable outcome, not feature lists (custom-account-executive-write-proposals-anchored-to-the-customer)
 slug: custom-account-executive-write-proposals-anchored-to-the-customer
-created: 2026-07-22T16:16:00.118Z
+created: 2026-07-22T21:57:27.533Z
 templateId: custom-account-executive-write-proposals-anchored-to-the-customer
 role: Custom
 originTask: As a Account Executive, write proposals anchored to the customer's measurable outcome, not feature lists.

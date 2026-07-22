@@ -2,7 +2,7 @@
 type: template
 title: Identify opportunities to use AI to improve products, operations, customer ex… (custom-head-of-ai-identify-opportunities-to-use-ai-to-impr)
 slug: custom-head-of-ai-identify-opportunities-to-use-ai-to-impr
-created: 2026-07-22T16:16:00.427Z
+created: 2026-07-22T21:57:27.896Z
 templateId: custom-head-of-ai-identify-opportunities-to-use-ai-to-impr
 role: Custom
 originTask: As a Head of AI, identify opportunities to use ai to improve products, operations, customer experience, and decision-making.

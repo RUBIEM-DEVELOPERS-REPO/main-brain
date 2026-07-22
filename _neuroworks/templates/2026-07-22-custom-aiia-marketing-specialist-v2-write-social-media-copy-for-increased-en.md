@@ -2,7 +2,7 @@
 type: template
 title: Write social media copy for increased engagement (custom-aiia-marketing-specialist-v2-write-social-media-copy-for-increased-en)
 slug: custom-aiia-marketing-specialist-v2-write-social-media-copy-for-increased-en
-created: 2026-07-22T16:16:00.441Z
+created: 2026-07-22T21:57:27.973Z
 templateId: custom-aiia-marketing-specialist-v2-write-social-media-copy-for-increased-en
 role: Custom
 originTask: As a Marketing Specialist, write social media copy for increased engagement.

@@ -2,7 +2,7 @@
 type: template
 title: Write reference docs that are skim-able and grep-able (custom-technical-writer-write-reference-docs-that-are-skim-able-)
 slug: custom-technical-writer-write-reference-docs-that-are-skim-able-
-created: 2026-07-22T16:15:59.785Z
+created: 2026-07-22T21:57:27.172Z
 templateId: custom-technical-writer-write-reference-docs-that-are-skim-able-
 role: Custom
 originTask: As a Technical Writer, write reference docs that are skim-able and grep-able.

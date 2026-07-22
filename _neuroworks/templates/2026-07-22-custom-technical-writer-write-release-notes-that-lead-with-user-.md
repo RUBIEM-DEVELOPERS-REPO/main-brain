@@ -2,7 +2,7 @@
 type: template
 title: Write release notes that lead with user-facing benefit (custom-technical-writer-write-release-notes-that-lead-with-user-)
 slug: custom-technical-writer-write-release-notes-that-lead-with-user-
-created: 2026-07-22T16:15:59.801Z
+created: 2026-07-22T21:57:27.237Z
 templateId: custom-technical-writer-write-release-notes-that-lead-with-user-
 role: Custom
 originTask: As a Technical Writer, write release notes that lead with user-facing benefit.

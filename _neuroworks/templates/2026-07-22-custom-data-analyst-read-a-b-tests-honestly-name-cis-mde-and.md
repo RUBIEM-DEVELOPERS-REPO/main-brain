@@ -2,7 +2,7 @@
 type: template
 title: Read A/B tests honestly — name CIs, MDE, and p-hacking risks (custom-data-analyst-read-a-b-tests-honestly-name-cis-mde-and)
 slug: custom-data-analyst-read-a-b-tests-honestly-name-cis-mde-and
-created: 2026-07-22T16:15:59.943Z
+created: 2026-07-22T21:57:27.388Z
 templateId: custom-data-analyst-read-a-b-tests-honestly-name-cis-mde-and
 role: Custom
 originTask: As a Data Analyst, read a/b tests honestly — name cis, mde, and p-hacking risks.

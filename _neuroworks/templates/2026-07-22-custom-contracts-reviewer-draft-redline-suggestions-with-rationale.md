@@ -2,7 +2,7 @@
 type: template
 title: Draft redline suggestions with rationale, not just edits (custom-contracts-reviewer-draft-redline-suggestions-with-rationale)
 slug: custom-contracts-reviewer-draft-redline-suggestions-with-rationale
-created: 2026-07-22T16:15:59.892Z
+created: 2026-07-22T21:57:27.337Z
 templateId: custom-contracts-reviewer-draft-redline-suggestions-with-rationale
 role: Custom
 originTask: As a Contracts Reviewer, draft redline suggestions with rationale, not just edits.

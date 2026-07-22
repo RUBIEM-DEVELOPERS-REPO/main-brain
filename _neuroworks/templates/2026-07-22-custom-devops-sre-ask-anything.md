@@ -2,7 +2,7 @@
 type: template
 title: Ask Devon anything (custom-devops-sre-ask-anything)
 slug: custom-devops-sre-ask-anything
-created: 2026-07-22T16:15:59.870Z
+created: 2026-07-22T21:57:27.316Z
 templateId: custom-devops-sre-ask-anything
 role: Custom
 originTask: As a DevOps / SRE, respond to the following task in role:

@@ -2,7 +2,7 @@
 type: template
 title: Identify client needs and recommend suitable insurance products. (custom-insurance-sales-agent-identify-client-needs-and-recommend-suit)
 slug: custom-insurance-sales-agent-identify-client-needs-and-recommend-suit
-created: 2026-07-22T16:16:00.384Z
+created: 2026-07-22T21:57:27.848Z
 templateId: custom-insurance-sales-agent-identify-client-needs-and-recommend-suit
 role: Custom
 originTask: As a Insurance Sales Agent, identify client needs and recommend suitable insurance products.

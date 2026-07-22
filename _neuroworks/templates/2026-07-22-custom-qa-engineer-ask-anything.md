@@ -2,7 +2,7 @@
 type: template
 title: Ask Quinn anything (custom-qa-engineer-ask-anything)
 slug: custom-qa-engineer-ask-anything
-created: 2026-07-22T16:15:59.872Z
+created: 2026-07-22T21:57:27.376Z
 templateId: custom-qa-engineer-ask-anything
 role: Custom
 originTask: As a QA Engineer, respond to the following task in role:

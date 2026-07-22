@@ -2,7 +2,7 @@
 type: template
 title: Ask Kit anything (custom-knowitall-ask-anything)
 slug: custom-knowitall-ask-anything
-created: 2026-07-22T16:15:59.750Z
+created: 2026-07-22T21:57:27.159Z
 templateId: custom-knowitall-ask-anything
 role: Custom
 originTask: As a Polymath, any-persona adapter, respond to the following task in role:

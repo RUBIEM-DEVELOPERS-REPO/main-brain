@@ -2,7 +2,7 @@
 type: template
 title: Ask Nova anything (custom-nova-ask-anything)
 slug: custom-nova-ask-anything
-created: 2026-07-22T16:16:00.493Z
+created: 2026-07-22T21:57:28.070Z
 templateId: custom-nova-ask-anything
 role: Custom
 originTask: As a Innovation Research Analyst, respond to the following task in role:

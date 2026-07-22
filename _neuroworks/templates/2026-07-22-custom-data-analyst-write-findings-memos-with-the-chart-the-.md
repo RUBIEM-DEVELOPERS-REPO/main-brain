@@ -2,7 +2,7 @@
 type: template
 title: Write findings memos with the chart, the takeaway, and the recommended action (custom-data-analyst-write-findings-memos-with-the-chart-the-)
 slug: custom-data-analyst-write-findings-memos-with-the-chart-the-
-created: 2026-07-22T16:15:59.957Z
+created: 2026-07-22T21:57:27.403Z
 templateId: custom-data-analyst-write-findings-memos-with-the-chart-the-
 role: Custom
 originTask: As a Data Analyst, write findings memos with the chart, the takeaway, and the recommended action.

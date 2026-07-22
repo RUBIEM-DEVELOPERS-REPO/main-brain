@@ -2,7 +2,7 @@
 type: template
 title: Write pre-meeting briefs: who, what they want, the ask, the recommended answer (custom-executive-assistant-write-pre-meeting-briefs-who-what-they-w)
 slug: custom-executive-assistant-write-pre-meeting-briefs-who-what-they-w
-created: 2026-07-22T16:15:59.881Z
+created: 2026-07-22T21:57:27.332Z
 templateId: custom-executive-assistant-write-pre-meeting-briefs-who-what-they-w
 role: Custom
 originTask: As a Executive Assistant, write pre-meeting briefs: who, what they want, the ask, the recommended answer.

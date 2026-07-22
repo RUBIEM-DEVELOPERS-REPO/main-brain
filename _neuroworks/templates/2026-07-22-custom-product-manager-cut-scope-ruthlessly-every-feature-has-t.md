@@ -2,7 +2,7 @@
 type: template
 title: Cut scope ruthlessly — every feature has to earn its place against the next-b… (custom-product-manager-cut-scope-ruthlessly-every-feature-has-t)
 slug: custom-product-manager-cut-scope-ruthlessly-every-feature-has-t
-created: 2026-07-22T16:15:59.986Z
+created: 2026-07-22T21:57:27.437Z
 templateId: custom-product-manager-cut-scope-ruthlessly-every-feature-has-t
 role: Custom
 originTask: As a Product Manager, cut scope ruthlessly — every feature has to earn its place against the next-best thing.

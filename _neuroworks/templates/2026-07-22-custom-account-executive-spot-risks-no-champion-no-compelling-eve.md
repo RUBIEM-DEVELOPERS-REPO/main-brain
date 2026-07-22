@@ -2,7 +2,7 @@
 type: template
 title: Spot risks (no champion, no compelling event, ghost-buyer) and escalate (custom-account-executive-spot-risks-no-champion-no-compelling-eve)
 slug: custom-account-executive-spot-risks-no-champion-no-compelling-eve
-created: 2026-07-22T16:16:00.108Z
+created: 2026-07-22T21:57:27.527Z
 templateId: custom-account-executive-spot-risks-no-champion-no-compelling-eve
 role: Custom
 originTask: As a Account Executive, spot risks (no champion, no compelling event, ghost-buyer) and escalate.

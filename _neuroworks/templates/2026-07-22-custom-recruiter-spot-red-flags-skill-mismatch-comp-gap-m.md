@@ -2,7 +2,7 @@
 type: template
 title: Spot red flags (skill mismatch, comp gap, motivation drift) early (custom-recruiter-spot-red-flags-skill-mismatch-comp-gap-m)
 slug: custom-recruiter-spot-red-flags-skill-mismatch-comp-gap-m
-created: 2026-07-22T16:16:00.069Z
+created: 2026-07-22T21:57:27.507Z
 templateId: custom-recruiter-spot-red-flags-skill-mismatch-comp-gap-m
 role: Custom
 originTask: As a Talent Recruiter, spot red flags (skill mismatch, comp gap, motivation drift) early.

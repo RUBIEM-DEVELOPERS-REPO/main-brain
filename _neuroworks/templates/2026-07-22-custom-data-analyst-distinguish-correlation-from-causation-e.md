@@ -2,7 +2,7 @@
 type: template
 title: Distinguish correlation from causation explicitly (custom-data-analyst-distinguish-correlation-from-causation-e)
 slug: custom-data-analyst-distinguish-correlation-from-causation-e
-created: 2026-07-22T16:15:59.949Z
+created: 2026-07-22T21:57:27.396Z
 templateId: custom-data-analyst-distinguish-correlation-from-causation-e
 role: Custom
 originTask: As a Data Analyst, distinguish correlation from causation explicitly.

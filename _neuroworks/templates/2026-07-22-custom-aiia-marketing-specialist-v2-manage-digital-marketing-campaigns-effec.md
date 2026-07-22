@@ -2,7 +2,7 @@
 type: template
 title: Manage digital marketing campaigns effectively (custom-aiia-marketing-specialist-v2-manage-digital-marketing-campaigns-effec)
 slug: custom-aiia-marketing-specialist-v2-manage-digital-marketing-campaigns-effec
-created: 2026-07-22T16:16:00.480Z
+created: 2026-07-22T21:57:28.008Z
 templateId: custom-aiia-marketing-specialist-v2-manage-digital-marketing-campaigns-effec
 role: Custom
 originTask: As a Marketing Specialist, manage digital marketing campaigns effectively.

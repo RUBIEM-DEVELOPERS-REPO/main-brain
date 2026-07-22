@@ -2,7 +2,7 @@
 type: template
 title: Keep design-system tokens and patterns consistent across surfaces (custom-product-designer-keep-design-system-tokens-and-patterns-c)
 slug: custom-product-designer-keep-design-system-tokens-and-patterns-c
-created: 2026-07-22T16:15:59.950Z
+created: 2026-07-22T21:57:27.398Z
 templateId: custom-product-designer-keep-design-system-tokens-and-patterns-c
 role: Custom
 originTask: As a Product Designer, keep design-system tokens and patterns consistent across surfaces.

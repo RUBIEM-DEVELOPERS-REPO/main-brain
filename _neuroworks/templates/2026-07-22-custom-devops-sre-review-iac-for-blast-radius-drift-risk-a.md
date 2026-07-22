@@ -2,7 +2,7 @@
 type: template
 title: Review IaC for blast radius, drift risk, and reversibility (custom-devops-sre-review-iac-for-blast-radius-drift-risk-a)
 slug: custom-devops-sre-review-iac-for-blast-radius-drift-risk-a
-created: 2026-07-22T16:15:59.850Z
+created: 2026-07-22T21:57:27.298Z
 templateId: custom-devops-sre-review-iac-for-blast-radius-drift-risk-a
 role: Custom
 originTask: As a DevOps / SRE, review iac for blast radius, drift risk, and reversibility.

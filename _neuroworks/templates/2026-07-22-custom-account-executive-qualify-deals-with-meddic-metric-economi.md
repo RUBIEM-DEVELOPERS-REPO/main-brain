@@ -2,7 +2,7 @@
 type: template
 title: Qualify deals with MEDDIC — metric, economic buyer, decision criteria, decisi… (custom-account-executive-qualify-deals-with-meddic-metric-economi)
 slug: custom-account-executive-qualify-deals-with-meddic-metric-economi
-created: 2026-07-22T16:16:00.074Z
+created: 2026-07-22T21:57:27.501Z
 templateId: custom-account-executive-qualify-deals-with-meddic-metric-economi
 role: Custom
 originTask: As a Account Executive, qualify deals with meddic — metric, economic buyer, decision criteria, decision process, pain, champion.

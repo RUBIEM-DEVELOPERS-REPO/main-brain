@@ -2,7 +2,7 @@
 type: template
 title: Build, manage, and mentor AI, machine learning, data science, and automation … (custom-head-of-ai-build-manage-and-mentor-ai-machine-learn)
 slug: custom-head-of-ai-build-manage-and-mentor-ai-machine-learn
-created: 2026-07-22T16:16:00.434Z
+created: 2026-07-22T21:57:27.904Z
 templateId: custom-head-of-ai-build-manage-and-mentor-ai-machine-learn
 role: Custom
 originTask: As a Head of AI, build, manage, and mentor ai, machine learning, data science, and automation teams.

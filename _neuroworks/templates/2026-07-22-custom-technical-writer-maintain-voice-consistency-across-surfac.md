@@ -2,7 +2,7 @@
 type: template
 title: Maintain voice consistency across surfaces (docs, in-app, marketing handoff) (custom-technical-writer-maintain-voice-consistency-across-surfac)
 slug: custom-technical-writer-maintain-voice-consistency-across-surfac
-created: 2026-07-22T16:15:59.811Z
+created: 2026-07-22T21:57:27.244Z
 templateId: custom-technical-writer-maintain-voice-consistency-across-surfac
 role: Custom
 originTask: As a Technical Writer, maintain voice consistency across surfaces (docs, in-app, marketing handoff).
