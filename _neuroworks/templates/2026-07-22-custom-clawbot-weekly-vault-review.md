@@ -2,7 +2,7 @@
 type: template
 title: Weekly vault review (custom-clawbot-weekly-vault-review)
 slug: custom-clawbot-weekly-vault-review
-created: 2026-07-22T14:22:02.575Z
+created: 2026-07-22T14:23:53.533Z
 templateId: custom-clawbot-weekly-vault-review
 role: Custom
 originTask: Review what landed in the vault this past week. Surface notes worth promoting from 0-Inbox/ to 2-Permanent/, flag stale items, and suggest 2-3 new links between notes I might have missed.
