@@ -2,7 +2,7 @@
 type: template
 title: RAID log (custom-project-manager-raid-log)
 slug: custom-project-manager-raid-log
-created: 2026-07-22T20:39:14.675Z
+created: 2026-07-22T20:39:56.288Z
 templateId: custom-project-manager-raid-log
 role: Custom
 originTask: Create a RAID log for the project described: risks, assumptions, issues, and dependencies — each with an owner and a next action. Surface the blockers early.
