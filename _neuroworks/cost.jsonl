@@ -3191,3 +3191,4 @@
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"planning","inputTokens":6550,"outputTokens":486,"costUsd":0.0031799999999999997,"ts":"2026-07-22T15:15:13.953Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":4723,"outputTokens":1972,"costUsd":0.0063469,"ts":"2026-07-22T15:15:47.132Z"}
 {"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":138,"outputTokens":2,"costUsd":0,"ts":"2026-07-22T15:24:39.312Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":138,"outputTokens":2,"costUsd":0,"ts":"2026-07-22T15:25:16.642Z"}
