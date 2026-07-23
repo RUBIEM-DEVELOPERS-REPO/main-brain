@@ -3570,3 +3570,11 @@
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":5717,"outputTokens":1643,"costUsd":0.0058226,"ts":"2026-07-23T15:24:55.492Z"}
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":831,"outputTokens":563,"costUsd":0,"ts":"2026-07-23T15:25:01.449Z"}
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":1526,"outputTokens":940,"costUsd":0,"ts":"2026-07-23T15:25:15.574Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":135,"outputTokens":2,"costUsd":0,"ts":"2026-07-23T15:30:52.274Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":4213,"outputTokens":1498,"costUsd":0.0050089,"ts":"2026-07-23T15:31:03.604Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":2950,"outputTokens":1142,"costUsd":0,"ts":"2026-07-23T15:31:14.747Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":2567,"outputTokens":804,"costUsd":0,"ts":"2026-07-23T15:31:37.112Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7595,"outputTokens":1931,"costUsd":0.0071059999999999995,"ts":"2026-07-23T15:31:47.343Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":2977,"outputTokens":1927,"costUsd":0,"ts":"2026-07-23T15:32:16.047Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7706,"outputTokens":1584,"costUsd":0.006271799999999999,"ts":"2026-07-23T15:32:25.213Z"}
+{"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":2577,"outputTokens":722,"costUsd":0,"ts":"2026-07-23T15:32:39.152Z"}
