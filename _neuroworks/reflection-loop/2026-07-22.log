@@ -1,0 +1,105 @@
+Reflection-action run for 2026-07-22 (executed 2026-07-23, unattended).
+No commits made this run.
+
+STOP CONDITION — uncommitted changes not from this run.
+git status at start showed 10 modified files (server/src/lib/agent.ts,
+jobs.ts, quality.ts; server/src/routes/cost.ts, templates.ts; plus
+web/src/App.tsx, components/Layout.tsx, lib/api.ts, pages/Approvals.tsx,
+pages/Cost.tsx) and 2 untracked files (server/test/heuristicPlan.test.ts,
+web/src/pages/Security.tsx) — none created by me. Per the hard limits in
+action-prompt.md I made no changes, committed nothing, and discarded nothing.
+Everything below is read-only investigation so the operator still gets the
+analysis the run would have produced. tsc/vitest were not run (nothing of mine
+to validate, and running them against an in-progress tree would report the
+operator's state, not mine).
+
+RELATION TO THE REFLECTION ITEMS: the uncommitted work is UNRELATED to today's
+four "try next" items. The diffs are an approval-TTL / stale-park guard plus
+edit-before-approve on the templates approve route, cost-tracking additions
+(routes/cost.ts, web Cost page), a new Security page, and agent/jobs changes —
+none of them touch email.send, fs.read_external, the general-task input guard,
+or persona routing. So unlike the 2026-07-20 run (where the operator's tree
+already carried that day's fixes), this run's items are genuinely unaddressed;
+they simply couldn't be committed because the tree wasn't mine to commit on.
+
+ITEM 1 — "Debug the email.send tool integration to resolve the 75% failure
+rate." LIKELY CONFIG/CREDENTIALS, NOT A CODE BUG — but under-evidenced, flagged
+for the operator. email.send failed 3/4 runs at a 1.5s average. Read the whole
+outbound path: primitives.ts:2062 (email.send handler) → email.ts sendEmail
+(line 1051) → sendViaMailjet (line 183) / nodemailer SMTP fallback. The 1.5s
+duration is the tell: a purely local validation reject (empty 'to', no
+recipients, placeholder address, missing attachment) throws in ~0s (compare
+fs.read_external's 0s below), whereas 1.5s is consistent with a real HTTPS POST
+to api.mailjet.com that came back rejected — most plausibly the auth/4xx branch
+(email.ts:238 "mailjet auth failed", :242 "mailjet <status>", or a sender/
+domain-not-validated 400). That points to bad or unvalidated Mailjet
+credentials / an unverified From domain — a config decision I can't make
+unilaterally (I don't have the operator's Mailjet account state), and can't
+edit toward anyway under the stop condition. IMPORTANT VISIBILITY GAP: the
+reflection captured NO error string for this tool (topFailures only lists the
+general-task errors), so the exact cause is inferred from timing, not read from
+a logged message. Recommended operator action: (a) check the Mailjet key/secret
+and sender-domain verification in .env; (b) separately, tool-level failures
+should surface their error text into the reflection the way general-task
+failures do, so the next occurrence is diagnosable without guessing from
+avgDurationSec. The one succeeding run (1/4) confirms the transport CAN send, so
+this is intermittent/config, not a total outage.
+
+ITEM 2 — "Audit the input schema for fs.read_external to ensure external paths
+are correctly formatted and accessible." CONFIRMED-NOT-A-BUG (single run, 0s,
+correct behavior). Read the handler at primitives.ts:1046. Its input schema and
+resolution are already robust: it accepts absolute OR vault-relative paths,
+falls back to vault resolution on a bare/hallucinated path, returns a structured
+directory listing instead of erroring when handed a folder, and extracts binary
+docs (PDF/DOCX/XLSX). A 0-second failure on its single run is the expected fast
+path for exactly one of three legitimate outcomes: an empty path ("path is
+empty", line 1055), a security-gate reject (assertSafeExternalPath at line 1061
+refusing a sensitive path like .env / SSH keys — correct, not a defect), or a
+genuine file-not-found. None of these is a schema problem; a single 0s failure
+is the guardrails working, not a bug to fix. As with item 1, the reflection
+logged no error string, so I can't distinguish which of the three fired — but
+none warrants a code change. No action taken.
+
+ITEM 3 — "Update the general-task template configuration to make the 'task'
+input field strictly required, preventing empty submissions." ALREADY ENFORCED
+— confirm-not-a-bug; the requested change already exists in two places. The
+template definition already marks the field required (templates.ts:104:
+{ name: "task", ..., required: true }), and the runner independently guards it:
+generalTaskRunner throws "missing 'task' input" on an empty/whitespace task
+(templates.ts:602-603). The failure the reflection saw was that guard WORKING —
+it rejected an empty submission — not a missing validation. So making the field
+"strictly required" is a no-op; it already is. The unanswered question is why a
+caller submitted an empty task at all (the UI form's required:true can't be the
+source, so it came from an API call, a scheduled run, or a peer delegation with
+no task text). That's a caller-side data question the reflection stats don't
+resolve, and not something to fix by editing the template. NOTE: routes/
+templates.ts is among the operator's uncommitted files, but the diff there is
+the approval-TTL / edit-before-approve work (lines ~305-330), not a change to
+the general-task guard — so the operator is not currently touching this path.
+No action taken.
+
+ITEM 4 — "Rebalance workloads by routing research-heavy tasks directly to the
+underutilized 'Researcher' persona instead of 'Neuro'." CONFIRMED SKEW, NOT A
+BUG — no code change appropriate (same conclusion as the 2026-07-19 and
+2026-07-20 persona items). The day's split was Neuro 30 / Researcher 2. Persona
+selection is either explicit (the operator/schedule names the persona) or
+auto-routed by pickPersonaForTask, which scores personas by how well the TASK
+TEXT matches their patterns above a confidence floor — it has no notion of
+"who's had fewer tasks today" and deliberately shouldn't, because forcing
+general work onto Researcher purely to level the count would route tasks to the
+wrong specialist and degrade output. The skew is that most of the day's 38 tasks
+were general-task/insights work that legitimately matched Neuro, not research
+briefs. If the operator genuinely wants more work on Researcher, that is a
+schedule/template authoring choice (which persona each scheduled task names) —
+not something an unattended run should impose by editing the router. No action
+taken.
+
+CARRY-OVER NOTES (still latent, not acted on — outside today's item cap and
+blocked by the stop condition anyway): (a) tool-level failure error strings are
+not surfaced into the reflection (see items 1 & 2) — the single biggest thing
+that would make future email.send / fs.read_external diagnoses possible without
+timing-based guesswork. (b) the peer-picker tie-break skew flagged on 2026-07-19
+(byPeer today: managed-worker-7473 got 8 of 11 delegations, 73%) remains
+unfixed. (c) the 2026-07-17 soft-error-persisted-as-reflection bug in
+reflection.ts remains latent; today's reflection generated cleanly so it did not
+bite. All three should be picked up on a run that starts from a clean tree.

@@ -1,0 +1,12 @@
+﻿Done. Summary log written to `2026-07-22.log`, marker bumped to `2026-07-22`.
+
+**Stopped — no commits.** git status showed 10 modified + 2 untracked files, none mine (operator's in-progress: approval-TTL/edit-before-approve, cost tracking, Security page). Hard limit → no edits, no commits, no discards. Read-only analysis only.
+
+Four "try next" items, investigated in source:
+
+- **email.send (75% fail)** — likely config/creds, not code. 1.5s avg = real HTTPS POST to Mailjet that got rejected (auth/4xx branch, `email.ts:238-242`), not a 0s local reject. Can't fix unilaterally + tree not mine. Flagged for operator: check Mailjet key/secret + sender-domain verification. **Visibility gap: reflection logged no error string for the tool — cause inferred from timing.**
+- **fs.read_external (1 run, 0s fail)** — confirm-not-a-bug. Handler (`primitives.ts:1046`) already robust: vault fallback, dir listing, binary extract. 0s fail = empty path / security-gate reject / file-not-found. Guardrails working, no schema fix warranted.
+- **general-task "task" required** — already enforced twice: `required:true` (`templates.ts:104`) + runner throw (`templates.ts:603`). The failure WAS the guard firing. No-op. Real question (why a caller sent empty task) isn't in the stats.
+- **Rebalance to Researcher (30 vs 2)** — confirmed skew, not a bug. Router scores by task-text match, not load; forcing work onto Researcher to level counts misroutes specialists. Schedule-authoring choice, not a router edit. Same as 2026-07-19/20.
+
+Carry-over: (a) tool-level errors don't reach the reflection — biggest fix for future diagnosability; (b) peer-picker tie-break skew (7473 got 8/11); (c) 2026-07-17 reflection.ts soft-error bug, still latent. All need a clean-tree run.
