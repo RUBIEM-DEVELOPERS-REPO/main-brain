@@ -1,5 +1,44 @@
 [
   {
+    "id": "bb4d8d55-a6bd-41c3-afd4-27df72813386",
+    "label": "Zimbabwe AI Landscape Analysis",
+    "objective": "research the  AI landscape in zimbabwe and the biggest competitors, opportunities and areas to mitigate risk",
+    "decomposition": "To provide a comprehensive analysis of the AI landscape in Zimbabwe, the objective is split into three parallel, independent tracks: mapping the current ecosystem and competitive landscape, identifying high-potential sector opportunities, and analyzing infrastructure, policy, and ethical risks along with mitigation strategies. This ensures deep, specialized research into each dimension simultaneously.",
+    "subTasks": [
+      {
+        "label": "Ecosystem and Competitive Landscape",
+        "personaName": "Tech Market Analyst",
+        "personaId": "tech-market-analyst",
+        "instructions": "Research the current state of Artificial Intelligence in Zimbabwe. Identify key local players, startups, tech hubs, and academic institutions driving AI development and adoption. Analyze the competitive dynamics, including local tech firms and regional/international competitors entering the Zimbabwean market. Provide a structured report detailing: 1) Key AI Startups and Players, 2) Academic and Hub Ecosystem, and 3) Competitive Dynamics (Local vs. International).",
+        "status": "pending",
+        "id": "bb4d8d55-a6bd-41c3-afd4-27df72813386-0",
+        "output": ""
+      },
+      {
+        "label": "AI Opportunities and Sector Growth",
+        "personaName": "Economic Development Strategist",
+        "personaId": "economic-strategist",
+        "instructions": "Identify and analyze the most promising opportunities for AI adoption and growth in Zimbabwe. Focus on high-impact sectors such as Agriculture (AgriTech), Fintech/Banking, Healthcare, and Education. Explain how AI can address specific local challenges (e.g., climate-smart agriculture, financial inclusion, public health). Provide a detailed report outlining the top 3-4 sector-specific opportunities, including concrete use cases and potential socio-economic impact.",
+        "status": "pending",
+        "id": "bb4d8d55-a6bd-41c3-afd4-27df72813386-1",
+        "output": ""
+      },
+      {
+        "label": "Risks, Barriers, and Mitigation Strategies",
+        "personaName": "Risk and Policy Advisor",
+        "personaId": "risk-policy-advisor",
+        "instructions": "Analyze the primary risks, barriers, and challenges facing AI adoption and scaling in Zimbabwe. Address critical areas such as infrastructure deficits (e.g., power supply/load shedding, internet connectivity costs), regulatory and policy gaps (data privacy, AI governance), talent drain (brain drain), and ethical considerations. For each identified risk, provide concrete, actionable mitigation strategies. Format the output as a structured Risk-Mitigation Matrix followed by detailed explanatory text.",
+        "status": "pending",
+        "id": "bb4d8d55-a6bd-41c3-afd4-27df72813386-2",
+        "output": ""
+      }
+    ],
+    "status": "running",
+    "finalReport": "",
+    "createdAt": "2026-07-23T12:01:26.940Z",
+    "updatedAt": "2026-07-23T12:01:26.943Z"
+  },
+  {
     "id": "916366b1-ca06-4b14-8988-3b0cea2c153d",
     "label": "Aiia Operations Snapshot",
     "objective": "Prepare an Aiia operations snapshot: 1) pull the live financial dashboard via the Aiia Finance connector, 2) list current public events from the Aiia Website connector (use its list-events endpoint), 3) check who is in the org directory, then combine everything into a short operations brief.",
