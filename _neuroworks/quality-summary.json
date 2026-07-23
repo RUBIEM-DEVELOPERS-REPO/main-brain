@@ -1,0 +1,161 @@
+{
+  "totalFlags": 27,
+  "upvotes": 16,
+  "downvotes": 11,
+  "rate": 0.5925925925925926,
+  "topCategories": [
+    {
+      "category": "accuracy",
+      "count": 1
+    }
+  ],
+  "recentFlags": [
+    {
+      "jobId": "66e7b754-906f-46fc-89d7-8d3f83d33980",
+      "rating": "down",
+      "score": 0.51,
+      "category": "accuracy",
+      "template": "innovation-scan",
+      "note": "auto · quality.check",
+      "source": "auto",
+      "ts": "2026-07-23T04:33:53.189Z"
+    },
+    {
+      "jobId": "833c33a1-9d72-4047-9f02-3c7baee3777d",
+      "rating": "down",
+      "note": "give me the consolidated doc not a summary",
+      "persona": "Neuro",
+      "template": "general-task",
+      "score": 0.62,
+      "ts": "2026-07-22T12:52:35.299Z"
+    },
+    {
+      "jobId": "0993b7e8-6c75-4cef-8ee9-687d45d45545",
+      "rating": "up",
+      "persona": "Bram",
+      "template": "general-task",
+      "score": 0.62,
+      "ts": "2026-07-19T23:16:29.501Z"
+    },
+    {
+      "jobId": "dbdaf232-9614-4c39-a9cc-ae858587d334",
+      "rating": "down",
+      "note": "you gave me json not a doc",
+      "persona": "Cora",
+      "template": "general-task",
+      "ts": "2026-07-19T22:49:38.995Z"
+    },
+    {
+      "jobId": "26f5d757-d3dc-4af4-81f7-c230b0442b8f",
+      "rating": "up",
+      "persona": "Milo",
+      "template": "general-task",
+      "score": 0.69,
+      "ts": "2026-07-19T16:20:56.041Z"
+    },
+    {
+      "jobId": "5ef617dd-daab-4097-b141-85c16f89d7a4",
+      "rating": "up",
+      "persona": "Milo",
+      "template": "general-task",
+      "ts": "2026-07-19T09:38:51.598Z"
+    },
+    {
+      "jobId": "0f3ddba8-e5f2-47cc-8b1c-83354655dc0e",
+      "rating": "up",
+      "persona": "Hana",
+      "template": "general-task",
+      "ts": "2026-07-19T08:21:52.217Z"
+    },
+    {
+      "jobId": "6608ecdc-71a7-4f40-aed8-4091a7c1c9ee",
+      "rating": "up",
+      "persona": "Priya",
+      "template": "general-task",
+      "ts": "2026-07-16T11:09:54.190Z"
+    },
+    {
+      "jobId": "88ff4543-be33-4f20-9dfb-b8784c21c0da",
+      "rating": "up",
+      "persona": "Aiia Marketing Specialist",
+      "template": "general-task",
+      "ts": "2026-07-16T11:09:39.528Z"
+    },
+    {
+      "jobId": "3dffa745-9747-4117-ba0d-6b1151160db3",
+      "rating": "up",
+      "persona": "Pia",
+      "template": "general-task",
+      "ts": "2026-07-16T11:08:59.107Z"
+    },
+    {
+      "jobId": "a420627d-3959-443c-86fe-b9ba71289d78",
+      "rating": "up",
+      "template": "general-task",
+      "ts": "2026-07-16T11:08:52.399Z"
+    },
+    {
+      "jobId": "7ee372e9-4bb0-4267-8ce1-66fd41be1be9",
+      "rating": "down",
+      "note": "doc cut out text",
+      "template": "general-task",
+      "ts": "2026-07-15T18:56:34.444Z"
+    },
+    {
+      "jobId": "fb051534-0038-43f4-8f33-b473d74bb9e1",
+      "rating": "up",
+      "persona": "Priya",
+      "template": "general-task",
+      "ts": "2026-07-15T18:56:07.307Z"
+    },
+    {
+      "jobId": "4a367cb4-4301-4a0f-b2fe-ad965202b090",
+      "rating": "up",
+      "template": "general-task",
+      "ts": "2026-07-15T18:55:56.146Z"
+    },
+    {
+      "jobId": "f88636bc-f158-47f5-b3bf-6f04e87e49fd",
+      "rating": "down",
+      "persona": "Neuro",
+      "template": "general-task",
+      "ts": "2026-07-12T15:15:01.183Z"
+    },
+    {
+      "jobId": "1a48d17c-a105-4470-8104-3fa14bca5d0c",
+      "rating": "up",
+      "persona": "Neuro",
+      "template": "general-task",
+      "score": 0.91,
+      "ts": "2026-07-12T15:04:05.269Z"
+    },
+    {
+      "jobId": "0d9e484a-916d-4989-9603-7a82f7d622ab",
+      "rating": "up",
+      "persona": "Sam",
+      "template": "general-task",
+      "ts": "2026-07-12T14:57:33.876Z"
+    },
+    {
+      "jobId": "418a6727-8809-46d6-b19b-3e1563ccbc39",
+      "rating": "down",
+      "persona": "Neuro",
+      "template": "general-task",
+      "ts": "2026-07-12T14:57:25.161Z"
+    },
+    {
+      "jobId": "7f5c84f4-b458-418b-b14f-8628fe16f6cb",
+      "rating": "down",
+      "template": "general-task",
+      "ts": "2026-07-12T14:56:39.824Z"
+    },
+    {
+      "jobId": "730d33b9-a75d-4778-8bbb-efe9baf484bd",
+      "rating": "down",
+      "persona": "Neuro",
+      "template": "general-task",
+      "score": 0.78,
+      "ts": "2026-07-12T14:56:15.567Z"
+    }
+  ]
+}
