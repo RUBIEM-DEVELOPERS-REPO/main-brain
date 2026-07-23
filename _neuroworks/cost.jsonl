@@ -3337,3 +3337,11 @@
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":888,"outputTokens":1396,"costUsd":0.0037564,"ts":"2026-07-23T00:01:33.717Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"planning","inputTokens":14474,"outputTokens":2375,"costUsd":0.0102797,"ts":"2026-07-23T04:30:55.136Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":1704,"outputTokens":454,"costUsd":0.0016462,"ts":"2026-07-23T04:31:43.631Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":12747,"outputTokens":4092,"costUsd":0.0140541,"ts":"2026-07-23T04:32:13.541Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"extraction","inputTokens":7646,"outputTokens":983,"costUsd":0.0047513,"ts":"2026-07-23T04:32:23.599Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"extraction","inputTokens":7373,"outputTokens":2247,"costUsd":0.0078294,"ts":"2026-07-23T04:32:39.692Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":13902,"outputTokens":4092,"costUsd":0.0144006,"ts":"2026-07-23T04:33:03.534Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"extraction","inputTokens":7571,"outputTokens":720,"costUsd":0.0040713,"ts":"2026-07-23T04:33:09.024Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":14034,"outputTokens":4092,"costUsd":0.0144402,"ts":"2026-07-23T04:33:30.069Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"extraction","inputTokens":7284,"outputTokens":2247,"costUsd":0.007802699999999999,"ts":"2026-07-23T04:33:44.882Z"}
+{"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"extraction","inputTokens":7573,"outputTokens":641,"costUsd":0.0038744,"ts":"2026-07-23T04:33:49.410Z"}
