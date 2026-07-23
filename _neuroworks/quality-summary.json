@@ -1,15 +1,26 @@
 {
-  "totalFlags": 30,
+  "totalFlags": 31,
   "upvotes": 17,
-  "downvotes": 13,
-  "rate": 0.5666666666666667,
+  "downvotes": 14,
+  "rate": 0.5483870967741935,
   "topCategories": [
     {
       "category": "accuracy",
-      "count": 4
+      "count": 5
     }
   ],
   "recentFlags": [
+    {
+      "jobId": "cdd455c9-b237-461d-bb9d-d120cf1eb940",
+      "rating": "down",
+      "score": 0,
+      "category": "accuracy",
+      "persona": "Neuro",
+      "template": "general-task",
+      "note": "auto · quality.check",
+      "source": "auto",
+      "ts": "2026-07-23T15:19:09.592Z"
+    },
     {
       "jobId": "aa0a57ca-55ed-4b24-800f-d86be01d0988",
       "rating": "down",
@@ -160,13 +171,6 @@
       "template": "general-task",
       "score": 0.91,
       "ts": "2026-07-12T15:04:05.269Z"
-    },
-    {
-      "jobId": "0d9e484a-916d-4989-9603-7a82f7d622ab",
-      "rating": "up",
-      "persona": "Sam",
-      "template": "general-task",
-      "ts": "2026-07-12T14:57:33.876Z"
     }
   ]
 }

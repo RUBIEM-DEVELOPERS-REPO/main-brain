@@ -2,3 +2,4 @@
 {"jobId":"83abd00f-8c40-4ba6-9c72-0adba42237e5","rating":"up","score":0.7,"category":"accuracy","template":"daily-briefing","note":"auto · quality.check","source":"auto","ts":"2026-07-23T09:18:40.521Z"}
 {"jobId":"7e6df85a-f543-4a78-88de-08664d0fe4f9","rating":"down","score":0.76,"category":"accuracy","persona":"Vince","template":"general-task","note":"auto · quality.check","source":"auto","ts":"2026-07-23T13:28:29.837Z"}
 {"jobId":"aa0a57ca-55ed-4b24-800f-d86be01d0988","rating":"down","score":0.76,"category":"accuracy","persona":"Vince","template":"general-task","note":"auto · quality.check","source":"auto","ts":"2026-07-23T13:28:41.831Z"}
+{"jobId":"cdd455c9-b237-461d-bb9d-d120cf1eb940","rating":"down","score":0,"category":"accuracy","persona":"Neuro","template":"general-task","note":"auto · quality.check","source":"auto","ts":"2026-07-23T15:19:09.592Z"}
