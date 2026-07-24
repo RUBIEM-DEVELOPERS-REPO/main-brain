@@ -7,3 +7,4 @@
 {"jobId":"9178c020-6719-424d-a3a2-1bbd01a8dc83","rating":"down","score":0.62,"category":"accuracy","persona":"Neuro","template":"general-task","note":"auto · quality.check","source":"auto","ts":"2026-07-23T15:25:20.401Z"}
 {"jobId":"0b6f8af8-75da-4b3b-9698-9e714324a2d6","rating":"down","score":0.74,"category":"accuracy","persona":"Neuro","template":"general-task","note":"auto · quality.check","source":"auto","ts":"2026-07-23T15:32:39.316Z"}
 {"jobId":"761f15c4-c722-4721-9c0e-4f56b6355e9b","rating":"down","score":0.74,"category":"accuracy","persona":"Neuro","template":"general-task","note":"auto · quality.check","source":"auto","ts":"2026-07-23T15:32:40.224Z"}
+{"jobId":"db7d722e-d642-450d-a496-a7d3f75536b4","rating":"up","score":0.7,"category":"accuracy","template":"innovation-scan","note":"auto · quality.check","source":"auto","ts":"2026-07-24T06:33:49.044Z"}

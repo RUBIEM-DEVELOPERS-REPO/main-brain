@@ -1,15 +1,25 @@
 {
-  "totalFlags": 35,
-  "upvotes": 17,
+  "totalFlags": 36,
+  "upvotes": 18,
   "downvotes": 18,
-  "rate": 0.4857142857142857,
+  "rate": 0.5,
   "topCategories": [
     {
       "category": "accuracy",
-      "count": 9
+      "count": 10
     }
   ],
   "recentFlags": [
+    {
+      "jobId": "db7d722e-d642-450d-a496-a7d3f75536b4",
+      "rating": "up",
+      "score": 0.7,
+      "category": "accuracy",
+      "template": "innovation-scan",
+      "note": "auto · quality.check",
+      "source": "auto",
+      "ts": "2026-07-24T06:33:49.044Z"
+    },
     {
       "jobId": "761f15c4-c722-4721-9c0e-4f56b6355e9b",
       "rating": "down",
@@ -180,13 +190,6 @@
       "rating": "up",
       "template": "general-task",
       "ts": "2026-07-16T11:08:52.399Z"
-    },
-    {
-      "jobId": "7ee372e9-4bb0-4267-8ce1-66fd41be1be9",
-      "rating": "down",
-      "note": "doc cut out text",
-      "template": "general-task",
-      "ts": "2026-07-15T18:56:34.444Z"
     }
   ]
 }
