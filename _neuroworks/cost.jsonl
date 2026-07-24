@@ -3578,3 +3578,5 @@
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":2977,"outputTokens":1927,"costUsd":0,"ts":"2026-07-23T15:32:16.047Z"}
 {"jobId":"adhoc","model":"google/gemini-3.5-flash","backend":"openrouter","profile":"synthesis","inputTokens":7706,"outputTokens":1584,"costUsd":0.006271799999999999,"ts":"2026-07-23T15:32:25.213Z"}
 {"jobId":"adhoc","model":"nvidia/nemotron-3-super-120b-a12b:free","backend":"openrouter","profile":"extraction","inputTokens":2577,"outputTokens":722,"costUsd":0,"ts":"2026-07-23T15:32:39.152Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":132,"outputTokens":2,"costUsd":0,"ts":"2026-07-24T06:38:54.928Z"}
+{"jobId":"adhoc","model":"qwen2.5:3b","backend":"ollama","profile":"triage","inputTokens":2065,"outputTokens":79,"costUsd":0,"ts":"2026-07-24T06:40:46.208Z"}
