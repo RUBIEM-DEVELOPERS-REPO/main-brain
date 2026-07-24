@@ -1,0 +1,22 @@
+{"type":"node","id":"reflections-2026-07-23-mrykd9bu:search-brain","label":"search-brain","props":{"date":"2026-07-23","template":"search-brain","total":1,"succeeded":1,"failed":0,"success_rate":1,"avg_duration_sec":2.2,"top_failure":null},"confidence":0.875,"hash":"00fe385169b681a4e502f6b2bf507d82f4d0ceade72d2043ca8b2ba643185399"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:search-brain","rel":"date","to":"2026-07-23"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:search-brain","rel":"total","to":"1"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:search-brain","rel":"succeeded","to":"1"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:search-brain","rel":"failed","to":"0"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:search-brain","rel":"success_rate","to":"1"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:search-brain","rel":"avg_duration_sec","to":"2.2"}
+{"type":"node","id":"reflections-2026-07-23-mrykd9bu:daily-briefing","label":"daily-briefing","props":{"date":"2026-07-23","template":"daily-briefing","total":1,"succeeded":1,"failed":0,"success_rate":1,"avg_duration_sec":261.3,"top_failure":null},"confidence":0.875,"hash":"a5326dbc14ae11dcca16ab5109ea1c26b771f48deecb12c5c6cf5a83481f681a"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:daily-briefing","rel":"date","to":"2026-07-23"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:daily-briefing","rel":"total","to":"1"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:daily-briefing","rel":"succeeded","to":"1"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:daily-briefing","rel":"failed","to":"0"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:daily-briefing","rel":"success_rate","to":"1"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:daily-briefing","rel":"avg_duration_sec","to":"261.3"}
+{"type":"node","id":"reflections-2026-07-23-mrykd9bu:general-task","label":"general-task","props":{"date":"2026-07-23","template":"general-task","total":16,"succeeded":14,"failed":2,"success_rate":0.88,"avg_duration_sec":95.8,"top_failure":"Cancelled by the operator"},"confidence":1,"hash":"ec9461713e34c7202d7e618bfd201974639e7bea6b622169c1e2f4380b8324c4"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:general-task","rel":"date","to":"2026-07-23"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:general-task","rel":"total","to":"16"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:general-task","rel":"succeeded","to":"14"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:general-task","rel":"failed","to":"2"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:general-task","rel":"success_rate","to":"0.88"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:general-task","rel":"avg_duration_sec","to":"95.8"}
+{"type":"edge","from":"reflections-2026-07-23-mrykd9bu:general-task","rel":"top_failure","to":"Cancelled by the operator"}

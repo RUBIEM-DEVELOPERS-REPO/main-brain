@@ -1,0 +1,4 @@
+date,template,total,succeeded,failed,success_rate,avg_duration_sec,top_failure
+2026-07-23,search-brain,1,1,0,1,2.2,
+2026-07-23,daily-briefing,1,1,0,1,261.3,
+2026-07-23,general-task,16,14,2,0.88,95.8,Cancelled by the operator
